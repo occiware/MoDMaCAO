@@ -3,6 +3,11 @@
   <viewpoint:DAnalysis xmi:id="_M1glQKgPEeeCK5N9CLagAQ" selectedViews="_M3uLwKgPEeeCK5N9CLagAQ" version="12.0.0.201704271200">
     <semanticResources>model/platform.occie</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
+    <semanticResources>model/platform.ecore</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>model/platform.genmodel</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_M3uLwKgPEeeCK5N9CLagAQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_NGCUkKgPEeeCK5N9CLagAQ" name="platform" repPath="#_NF_4UKgPEeeCK5N9CLagAQ">
