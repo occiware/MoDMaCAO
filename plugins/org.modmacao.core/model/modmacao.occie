@@ -13,7 +13,7 @@
     <applies href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
   </mixins>
   <mixins name="Component" scheme="http://schemas.modmacao.org/modmacao#">
-    <attributes name="modmacao.component.version" mutable="true" type="//@types.0"/>
+    <attributes name="modmacao.component.version" mutable="false" type="//@types.0"/>
     <constraints name="OnlyOnePlacementLink" body="true"/>
     <applies href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
   </mixins>
@@ -21,5 +21,5 @@
   <mixins name="InstallationDependency" scheme="http://schemas.modmacao.org/modmacao#" depends="//@mixins[term='dependency']"/>
   <mixins name="ExecutionDependency" scheme="http://schemas.modmacao.org/modmacao#" depends="//@mixins[term='dependency']"/>
   <types xsi:type="occi:StringType" name="Version"/>
-  <types xsi:type="occi:NumericType" name="Port" type="Short" minExclusive="0"/>
+  <types xsi:type="occi:NumericType" name="Port" type="Integer" minInclusive="0" maxInclusive="65535"/>
 </occi:Extension>
