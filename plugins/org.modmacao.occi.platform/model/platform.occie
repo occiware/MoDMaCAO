@@ -11,32 +11,33 @@
     <attributes name="occi.app.state.message" mutable="false" description="Human-readable explanation of the current instance state.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <actions name="Start" scheme="http://schemas.modmacao.org/occi/platform/application/action#" title="Start the application."/>
-    <actions name="Stop" scheme="http://schemas.modmacao.org/occi/platform/application/action#" title="Stop the application."/>
-    <actions name="configure" scheme="http://schemas.modmacao.org/occi/platform/application/action#"/>
     <actions name="deploy" scheme="http://schemas.modmacao.org/occi/platform/application/action#"/>
     <actions name="undeploy" scheme="http://schemas.modmacao.org/occi/platform/application/action#"/>
+    <actions name="configure" scheme="http://schemas.modmacao.org/occi/platform/application/action#"/>
+    <actions name="Start" scheme="http://schemas.modmacao.org/occi/platform/application/action#" title="Start the application."/>
+    <actions name="Stop" scheme="http://schemas.modmacao.org/occi/platform/application/action#" title="Stop the application."/>
     <fsm attribute="//@kinds[term='application']/@attributes.3">
-      <ownedState literal="//@types.2/@literals.0" initial="false" final="true">
-        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.1" action="//@kinds[term='application']/@actions.1"/>
+      <ownedState literal="//@types.2/@literals.2" initial="false" final="true">
+        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.1" action="//@kinds[term='application']/@actions.4"/>
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.2"/>
-        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.4"/>
+        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.1"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.1" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.0" action="//@kinds[term='application']/@actions.0"/>
+      <ownedState literal="//@types.2/@literals.3" initial="false" final="false">
+        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.0" action="//@kinds[term='application']/@actions.3"/>
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.2"/>
-        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.4"/>
-      </ownedState>
-      <ownedState literal="//@types.2/@literals.2" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.4"/>
+        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.1"/>
       </ownedState>
       <ownedState literal="//@types.2/@literals.4" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.4"/>
+        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.1"/>
+      </ownedState>
+      <ownedState literal="//@types.2/@literals.1" initial="false" final="false">
+        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.1" action="//@kinds[term='application']/@actions.2"/>
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.3" initial="true" final="false">
-        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.3" action="//@kinds[term='application']/@actions.3"/>
+      <ownedState literal="//@types.2/@literals.0" initial="true" final="false">
+        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.3" action="//@kinds[term='application']/@actions.0"/>
+        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.0" action="//@kinds[term='application']/@actions.3"/>
       </ownedState>
     </fsm>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
@@ -46,32 +47,33 @@
     <attributes name="occi.component.state.message" mutable="false" description="Human-readable explanation of the current instance state.">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <actions name="Start" scheme="http://schemas.modmacao.org/occi/platform/component/action#" title="Start the application."/>
-    <actions name="Stop" scheme="http://schemas.modmacao.org/occi/platform/component/action#" title="Stop the application."/>
-    <actions name="configure" scheme="http://schemas.modmacao.org/occi/platform/component/action#"/>
     <actions name="deploy" scheme="http://schemas.modmacao.org/occi/platform/component/action#"/>
     <actions name="undeploy" scheme="http://schemas.modmacao.org/occi/platform/component/action#"/>
+    <actions name="configure" scheme="http://schemas.modmacao.org/occi/platform/component/action#"/>
+    <actions name="Start" scheme="http://schemas.modmacao.org/occi/platform/component/action#" title="Start the application."/>
+    <actions name="Stop" scheme="http://schemas.modmacao.org/occi/platform/component/action#" title="Stop the application."/>
     <fsm attribute="//@kinds[term='component']/@attributes.0">
-      <ownedState literal="//@types.2/@literals.0" initial="false" final="true">
-        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.1" action="//@kinds[term='component']/@actions.1"/>
+      <ownedState literal="//@types.2/@literals.2" initial="false" final="true">
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.1" action="//@kinds[term='component']/@actions.4"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.2"/>
-        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.4"/>
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.1"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.1" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.0" action="//@kinds[term='component']/@actions.0"/>
+      <ownedState literal="//@types.2/@literals.3" initial="false" final="false">
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.0" action="//@kinds[term='component']/@actions.3"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.2"/>
-        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.4"/>
-      </ownedState>
-      <ownedState literal="//@types.2/@literals.2" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.4"/>
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.1"/>
       </ownedState>
       <ownedState literal="//@types.2/@literals.4" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.4"/>
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.1"/>
+      </ownedState>
+      <ownedState literal="//@types.2/@literals.1" initial="false" final="false">
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.1"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.1" action="//@kinds[term='component']/@actions.2"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.2"/>
       </ownedState>
-      <ownedState literal="//@types.2/@literals.3" initial="true" final="false">
-        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.3" action="//@kinds[term='component']/@actions.3"/>
+      <ownedState literal="//@types.2/@literals.0" initial="true" final="false">
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.3" action="//@kinds[term='component']/@actions.0"/>
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.0" action="//@kinds[term='component']/@actions.3"/>
       </ownedState>
     </fsm>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
@@ -94,10 +96,10 @@
   <types xsi:type="occi:EObjectType" name="URL" instanceClassName="java.net.URL"/>
   <types xsi:type="occi:EObjectType" name="URI" instanceClassName="java.net.URI"/>
   <types xsi:type="occi:EnumerationType" name="Status">
+    <literals name="undeployed"/>
+    <literals name="deployed"/>
     <literals name="active"/>
     <literals name="inactive"/>
     <literals name="error"/>
-    <literals name="undeployed"/>
-    <literals name="deployed"/>
   </types>
 </occi:Extension>
