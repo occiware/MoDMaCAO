@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.modcacao.all.extensions
-Bundle-SymbolicName: org.modcacao.all.extensions;singleton:=true
+Bundle-SymbolicName: org.modmacao.all.extensions;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: OCCIware
