@@ -3,7 +3,7 @@
   <use href="http://schemas.modmacao.org/placement#/"/>
   <use href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <use href="http://schemas.modmacao.org/occi/platform#/"/>
-  <use href="../org.modmacao.mongodb/model/mongodb.occie#/"/>
+  <use href="http://schemas.modmacao.org/mongodb#/"/>
   <resources id="urn:uuid:ed0973fb-f6f2-4f76-84b1-2dccfbb0abf7" title="mongodb-cluster" summary="MongoDB Cluster">
     <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='application']"/>
     <attributes name="occi.core.id" value="urn:uuid:ed0973fb-f6f2-4f76-84b1-2dccfbb0abf7"/>
@@ -12,7 +12,7 @@
     <attributes name="occi.app.name" value="My Cluster"/>
     <attributes name="occi.app.url" value="mongodb.com"/>
     <parts>
-      <mixin href="../org.modmacao.mongodb/model/mongodb.occie#//@mixins[term='cluster']"/>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='cluster']"/>
     </parts>
     <links id="urn:uuid:700cc548-7091-45a2-8976-7ecc2f5c4d05" title="" target="//@resources.1">
       <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
@@ -46,7 +46,7 @@
     <attributes name="occi.core.title" value="router"/>
     <attributes name="occi.core.summary" value="MongoDB cluster router"/>
     <parts>
-      <mixin href="../org.modmacao.mongodb/model/mongodb.occie#//@mixins[term='router']"/>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='router']"/>
       <attributes name="mongodb.replication.set.name" value="router"/>
     </parts>
     <links id="urn:uuid:82d8693c-fdd9-45ef-b9d5-22c786a9a2b0" title="" target="//@resources.5">
@@ -59,7 +59,7 @@
       <attributes name="occi.core.id" value="urn:uuid:4b9a6567-7cc8-4643-98a6-533068062b55"/>
       <attributes name="occi.core.title" value=""/>
       <parts>
-        <mixin href="../org.modmacao.mongodb/model/mongodb.occie#//@mixins[term='configserverdependency']"/>
+        <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='configserverdependency']"/>
       </parts>
     </links>
   </resources>
@@ -69,7 +69,7 @@
     <attributes name="occi.core.title" value="shard3"/>
     <attributes name="occi.core.summary" value="3rd MongoDB cluster shard"/>
     <parts>
-      <mixin href="../org.modmacao.mongodb/model/mongodb.occie#//@mixins[term='shard']"/>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='shard']"/>
       <attributes name="mongodb.replication.set.name" value="data"/>
     </parts>
     <links id="urn:uuid:f170b1e6-1962-4946-8f86-d9f0a0ae15cb" title="" target="//@resources.9">
@@ -82,7 +82,7 @@
       <attributes name="occi.core.id" value="urn:uuid:014801d3-adff-460d-ba77-47e9c1e45aca"/>
       <attributes name="occi.core.title" value=""/>
       <parts>
-        <mixin href="../org.modmacao.mongodb/model/mongodb.occie#//@mixins[term='configserverdependency']"/>
+        <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='configserverdependency']"/>
       </parts>
     </links>
   </resources>
@@ -92,7 +92,7 @@
     <attributes name="occi.core.title" value="shard2"/>
     <attributes name="occi.core.summary" value="2nd MongoDB cluster shard"/>
     <parts>
-      <mixin href="../org.modmacao.mongodb/model/mongodb.occie#//@mixins[term='shard']"/>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='shard']"/>
       <attributes name="mongodb.replication.set.name" value="data"/>
     </parts>
     <links id="urn:uuid:dd97e5f2-7f97-4037-b668-cfc2d856eee1" title="" target="//@resources.8">
@@ -105,7 +105,7 @@
       <attributes name="occi.core.id" value="urn:uuid:4ac35332-79f5-4363-969e-65e0462ea8eb"/>
       <attributes name="occi.core.title" value=""/>
       <parts>
-        <mixin href="../org.modmacao.mongodb/model/mongodb.occie#//@mixins[term='configserverdependency']"/>
+        <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='configserverdependency']"/>
       </parts>
     </links>
   </resources>
@@ -115,7 +115,7 @@
     <attributes name="occi.core.title" value="shard1"/>
     <attributes name="occi.core.summary" value="1st MongoDB shard"/>
     <parts>
-      <mixin href="../org.modmacao.mongodb/model/mongodb.occie#//@mixins[term='shard']"/>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='shard']"/>
       <attributes name="mongodb.replication.set.name" value="data"/>
     </parts>
     <links id="urn:uuid:c423c383-2adf-49df-8c3e-725e564c1b4e" title="" target="//@resources.7">
@@ -128,7 +128,7 @@
       <attributes name="occi.core.id" value="urn:uuid:ec281cd1-1657-43f8-b897-4228209b7461"/>
       <attributes name="occi.core.title" value=""/>
       <parts>
-        <mixin href="../org.modmacao.mongodb/model/mongodb.occie#//@mixins[term='configserverdependency']"/>
+        <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='configserverdependency']"/>
       </parts>
     </links>
   </resources>
@@ -162,7 +162,7 @@
     <attributes name="occi.core.title" value="configserver"/>
     <attributes name="occi.core.summary" value="MongoDB config server"/>
     <parts>
-      <mixin href="../org.modmacao.mongodb/model/mongodb.occie#//@mixins[term='configserver']"/>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='configserver']"/>
       <attributes name="mongodb.replication.set.name" value="config"/>
     </parts>
     <links id="urn:uuid:e5cf79ab-9763-4ebb-b047-448574e33dc4" title="" target="//@resources.10">

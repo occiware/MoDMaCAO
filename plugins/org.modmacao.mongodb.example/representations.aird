@@ -10429,7 +10429,7 @@
         </edges>
       </data>
     </ownedAnnotationEntries>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7Q_CUEeeLg9ZLZ6N5rg" name="mongodb-cluster: application" outgoingEdges="_E-Ri3PCUEeeLg9ZLZ6N5rg _E-Ri3_CUEeeLg9ZLZ6N5rg _E-Ri4vCUEeeLg9ZLZ6N5rg _E-Ri5fCUEeeLg9ZLZ6N5rg _E-Ri6PCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7Q_CUEeeLg9ZLZ6N5rg" name="mongodb-cluster: invalid" outgoingEdges="_E-Ri3PCUEeeLg9ZLZ6N5rg _E-Ri3_CUEeeLg9ZLZ6N5rg _E-Ri4vCUEeeLg9ZLZ6N5rg _E-Ri5fCUEeeLg9ZLZ6N5rg _E-Ri6PCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.0"/>
       <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -10440,7 +10440,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7RfCUEeeLg9ZLZ6N5rg" name="application">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7RfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.0"/>
         <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.0"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-Q7RvCUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
@@ -10504,7 +10504,7 @@
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@subContainerMappings[name='ResourceMixinBase']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7U_CUEeeLg9ZLZ6N5rg" name="router: component" outgoingEdges="_E-Ri6_CUEeeLg9ZLZ6N5rg _E-Ri7vCUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjFfCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7U_CUEeeLg9ZLZ6N5rg" name="router: invalid" outgoingEdges="_E-Ri6_CUEeeLg9ZLZ6N5rg _E-Ri7vCUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjFfCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.1"/>
       <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -10515,7 +10515,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7VfCUEeeLg9ZLZ6N5rg" name="component">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7VfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.1"/>
         <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.1"/>
         <graphicalFilters xmi:type="diagram:AbsoluteBoundsFilter" xmi:id="_R9reYPCcEeeTzucrVGpgmQ" height="-1" width="-1"/>
@@ -10572,7 +10572,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7YfCUEeeLg9ZLZ6N5rg" name="shard3: component" outgoingEdges="_E-Ri8fCUEeeLg9ZLZ6N5rg _E-Ri9PCUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjHvCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7YfCUEeeLg9ZLZ6N5rg" name="shard3: invalid" outgoingEdges="_E-Ri8fCUEeeLg9ZLZ6N5rg _E-Ri9PCUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjHvCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.2"/>
       <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -10583,7 +10583,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7Y_CUEeeLg9ZLZ6N5rg" name="component">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7Y_CUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.2"/>
         <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.2"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-Q7ZPCUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
@@ -10638,7 +10638,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7b_CUEeeLg9ZLZ6N5rg" name="shard2: component" outgoingEdges="_E-Ri9_CUEeeLg9ZLZ6N5rg _E-Ri-vCUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjG_CUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7b_CUEeeLg9ZLZ6N5rg" name="shard2: invalid" outgoingEdges="_E-Ri9_CUEeeLg9ZLZ6N5rg _E-Ri-vCUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjG_CUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.3"/>
       <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.3"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -10649,7 +10649,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7cfCUEeeLg9ZLZ6N5rg" name="component">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7cfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.3"/>
         <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.3"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-Q7cvCUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
@@ -10704,7 +10704,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7ffCUEeeLg9ZLZ6N5rg" name="shard1: component" outgoingEdges="_E-Ri_fCUEeeLg9ZLZ6N5rg _E-RjAPCUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjGPCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7ffCUEeeLg9ZLZ6N5rg" name="shard1: invalid" outgoingEdges="_E-Ri_fCUEeeLg9ZLZ6N5rg _E-RjAPCUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjGPCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.4"/>
       <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.4"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -10715,7 +10715,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7f_CUEeeLg9ZLZ6N5rg" name="component">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7f_CUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.4"/>
         <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.4"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-Q7gPCUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
@@ -10863,7 +10863,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7n_CUEeeLg9ZLZ6N5rg" name="configserver: component" outgoingEdges="_E-RjBvCUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjIfCUEeeLg9ZLZ6N5rg _E-RjJ_CUEeeLg9ZLZ6N5rg _E-RjLfCUEeeLg9ZLZ6N5rg _E-RjM_CUEeeLg9ZLZ6N5rg _E-RjOfCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q7n_CUEeeLg9ZLZ6N5rg" name="configserver: invalid" outgoingEdges="_E-RjBvCUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjIfCUEeeLg9ZLZ6N5rg _E-RjJ_CUEeeLg9ZLZ6N5rg _E-RjLfCUEeeLg9ZLZ6N5rg _E-RjM_CUEeeLg9ZLZ6N5rg _E-RjOfCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.6"/>
       <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.6"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -10874,7 +10874,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7ofCUEeeLg9ZLZ6N5rg" name="component">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q7ofCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.6"/>
         <semanticElements xmi:type="occi:Resource" href="MongoDB-Cluster.occic#//@resources.6"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-Q7ovCUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
@@ -11371,7 +11371,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8E_CUEeeLg9ZLZ6N5rg" name=": componentlink" outgoingEdges="_E-RjFfCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri3PCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8E_CUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjFfCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri3PCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.0"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11382,7 +11382,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8FfCUEeeLg9ZLZ6N5rg" name="componentlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8FfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.0"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.0"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_FwqdAPCeEeeTzucrVGpgmQ"/>
@@ -11411,7 +11411,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8G_CUEeeLg9ZLZ6N5rg" name=": componentlink" outgoingEdges="_E-RjGPCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri3_CUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8G_CUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjGPCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri3_CUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.1"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11422,7 +11422,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8HfCUEeeLg9ZLZ6N5rg" name="componentlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8HfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.1"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.1"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_H_9mIPCeEeeTzucrVGpgmQ"/>
@@ -11451,7 +11451,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8I_CUEeeLg9ZLZ6N5rg" name=": componentlink" outgoingEdges="_E-RjG_CUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri4vCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8I_CUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjG_CUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri4vCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.2"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11462,7 +11462,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8JfCUEeeLg9ZLZ6N5rg" name="componentlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8JfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.2"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.2"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_fijOEPCbEeeTzucrVGpgmQ"/>
@@ -11491,7 +11491,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8K_CUEeeLg9ZLZ6N5rg" name=": componentlink" outgoingEdges="_E-RjHvCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri5fCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8K_CUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjHvCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri5fCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.3"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.3"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11502,7 +11502,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8LfCUEeeLg9ZLZ6N5rg" name="componentlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8LfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.3"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.3"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_f-9dQPCbEeeTzucrVGpgmQ"/>
@@ -11531,7 +11531,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8M_CUEeeLg9ZLZ6N5rg" name=": componentlink" outgoingEdges="_E-RjIfCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri6PCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8M_CUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjIfCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri6PCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.4"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.4"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11542,7 +11542,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8NfCUEeeLg9ZLZ6N5rg" name="componentlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8NfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.4"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.0/@links.4"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_gcaOQPCbEeeTzucrVGpgmQ"/>
@@ -11571,7 +11571,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8O_CUEeeLg9ZLZ6N5rg" name=": placementlink" outgoingEdges="_E-RjJPCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri6_CUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8O_CUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjJPCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri6_CUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.1/@links.0"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.1/@links.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11582,7 +11582,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8PfCUEeeLg9ZLZ6N5rg" name="placementlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8PfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.1/@links.0"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.1/@links.0"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-Q8PvCUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
@@ -11610,7 +11610,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8Q_CUEeeLg9ZLZ6N5rg" name=": componentlink" outgoingEdges="_E-RjJ_CUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri7vCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8Q_CUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjJ_CUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri7vCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.1/@links.1"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.1/@links.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11621,7 +11621,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8RfCUEeeLg9ZLZ6N5rg" name="componentlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8RfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.1/@links.1"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.1/@links.1"/>
         <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_7ruNUPCdEeeTzucrVGpgmQ"/>
@@ -11659,7 +11659,7 @@
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@subContainerMappings[name='LinkMixinBase']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8TfCUEeeLg9ZLZ6N5rg" name=": placementlink" outgoingEdges="_E-RjKvCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri8fCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8TfCUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjKvCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri8fCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.2/@links.0"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.2/@links.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11670,7 +11670,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8T_CUEeeLg9ZLZ6N5rg" name="placementlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8T_CUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.2/@links.0"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.2/@links.0"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-Q8UPCUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
@@ -11744,7 +11744,7 @@
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@subContainerMappings[name='LinkMixinBase']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8X_CUEeeLg9ZLZ6N5rg" name=": placementlink" outgoingEdges="_E-RjMPCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri9_CUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-Q8X_CUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjMPCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri9_CUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.3/@links.0"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.3/@links.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11755,7 +11755,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8YfCUEeeLg9ZLZ6N5rg" name="placementlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-Q8YfCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.3/@links.0"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.3/@links.0"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-Q8YvCUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
@@ -11781,7 +11781,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-RiVPCUEeeLg9ZLZ6N5rg" name=": componentlink" outgoingEdges="_E-RjM_CUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri-vCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-RiVPCUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjM_CUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri-vCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.3/@links.1"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.3/@links.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11792,7 +11792,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-RiVvCUEeeLg9ZLZ6N5rg" name="componentlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-RiVvCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.3/@links.1"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.3/@links.1"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-RiV_CUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
@@ -11829,7 +11829,7 @@
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@subContainerMappings[name='LinkMixinBase']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-RiXvCUEeeLg9ZLZ6N5rg" name=": placementlink" outgoingEdges="_E-RjNvCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri_fCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-RiXvCUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjNvCUEeeLg9ZLZ6N5rg" incomingEdges="_E-Ri_fCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.4/@links.0"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.4/@links.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -11840,7 +11840,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-RiYPCUEeeLg9ZLZ6N5rg" name="placementlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-RiYPCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.4/@links.0"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.4/@links.0"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-RiYfCUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
@@ -12000,7 +12000,7 @@
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-RihPCUEeeLg9ZLZ6N5rg" name=": placementlink" outgoingEdges="_E-RjP_CUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjBvCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_E-RihPCUEeeLg9ZLZ6N5rg" name=": invalid" outgoingEdges="_E-RjP_CUEeeLg9ZLZ6N5rg" incomingEdges="_E-RjBvCUEeeLg9ZLZ6N5rg" childrenPresentation="VerticalStack">
       <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.6/@links.0"/>
       <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.6/@links.0"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -12011,7 +12011,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Configuration']/@ownedRepresentations[name='Configuration%20diagram']/@defaultLayer/@containerMappings[name='LinkContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-RihvCUEeeLg9ZLZ6N5rg" name="placementlink">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_E-RihvCUEeeLg9ZLZ6N5rg" name="Invalid feature as name">
         <target xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.6/@links.0"/>
         <semanticElements xmi:type="occi:Link" href="MongoDB-Cluster.occic#//@resources.6/@links.0"/>
         <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_E-Rih_CUEeeLg9ZLZ6N5rg" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1">
