@@ -9,6 +9,7 @@
  * Contributors:
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
+ * - Fabian Korte <fabian.korte@cs.uni-goettingen.de>
  *
  * Generated at Wed Oct 11 21:54:19 CEST 2017 from platform:/resource/org.modmacao.occi.platform/model/platform.occie by org.eclipse.cmf.occi.core.gen.connector
  */
@@ -17,11 +18,13 @@ package org.modmacao.ansible.connector;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.Mixin;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.infrastructure.Networkinterface;
 import org.eclipse.emf.common.util.EList;
@@ -127,8 +130,21 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 
 		case Status.INACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=inactive, action=\"start\")...");
-			// TODO Implement transition(state=inactive, action="start")
-			setOcciComponentState(Status.ACTIVE);
+			List<String> roles = this.getRoles();
+			for (int i = 0; i < roles.size(); i++) {
+				roles.set(i, roles.get(i) + "_start");
+			}
+			int status = -1;
+			
+			try {
+				status = this.executeRoles(roles);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if (status == 0)
+				setOcciComponentState(Status.ACTIVE);
 			break;
 
 		default:
@@ -153,8 +169,21 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 
 		case Status.DEPLOYED_VALUE:
 			LOGGER.debug("Fire transition(state=deployed, action=\"configure\")...");
-			// TODO Implement transition(state=deployed, action="configure")
-			setOcciComponentState(Status.INACTIVE);
+			List<String> roles = this.getRoles();
+			for (int i = 0; i < roles.size(); i++) {
+				roles.set(i, roles.get(i) + "configure");
+			}
+			int status = -1;
+			
+			try {
+				status = this.executeRoles(roles);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if (status == 0)
+				setOcciComponentState(Status.INACTIVE);
 			break;
 
 		default:
@@ -179,32 +208,28 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 
 		case Status.DEPLOYED_VALUE:
 			LOGGER.debug("Fire transition(state=deployed, action=\"undeploy\")...");
-			// TODO Implement transition(state=deployed, action="undeploy")
-			setOcciComponentState(Status.UNDEPLOYED);
-			break;
-
-
 		case Status.INACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=inactive, action=\"undeploy\")...");
-			// TODO Implement transition(state=inactive, action="undeploy")
-			setOcciComponentState(Status.UNDEPLOYED);
-			break;
-
-
 		case Status.ACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=active, action=\"undeploy\")...");
-			// TODO Implement transition(state=active, action="undeploy")
-			setOcciComponentState(Status.UNDEPLOYED);
-			break;
-
-
 		case Status.ERROR_VALUE:
 			LOGGER.debug("Fire transition(state=error, action=\"undeploy\")...");
-			// TODO Implement transition(state=error, action="undeploy")
-			setOcciComponentState(Status.UNDEPLOYED);
-			break;
-
 		default:
+			List<String> roles = this.getRoles();
+			for (int i = 0; i < roles.size(); i++) {
+				roles.set(i, roles.get(i) + "_undeploy");
+			}
+			int status = -1;
+			
+			try {
+				status = this.executeRoles(roles);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if (status == 0)
+				setOcciComponentState(Status.UNDEPLOYED);
 			break;
 		}
 	}
@@ -264,8 +289,21 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 
 		case Status.ACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=active, action=\"stop\")...");
-			// TODO Implement transition(state=active, action="stop")
-			setOcciComponentState(Status.INACTIVE);
+			List<String> roles = this.getRoles();
+			for (int i = 0; i < roles.size(); i++) {
+				roles.set(i, roles.get(i) + "_stop");
+			}
+			int status = -1;
+			
+			try {
+				status = this.executeRoles(roles);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if (status == 0)
+				setOcciComponentState(Status.INACTIVE);
 			break;
 
 		default:
@@ -275,18 +313,19 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 	// End of user code
 	
 	private String getUser() {
+		// TODO: should be provided as additional mixin
 		return "ubuntu";
 	}
 	
 	private List<String> getRoles() {
-		List<String> mixins = new ArrayList<String>();
+		List<String> roles = new ArrayList<String>();
 		for (Mixin mixin : this.getMixins()) {
 			if (mixin.getScheme().equals("http://schemas.modmacao.org/modmacao#")){
 				LOGGER.info("Found mixin " + mixin.getName());
-				mixins.add(mixin.getName());
+				roles.add(mixin.getName());
 			}
 		}
-		return mixins;
+		return roles;
 	}
 	
 	private String getIPAddress() {
@@ -310,15 +349,21 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 
 			for (Link link:links) {
 				if (link instanceof Networkinterface) {
-					LOGGER.info("Found network link for " + target);
+					LOGGER.info("Found network interface for " + target);
 					networklink = (Networkinterface) link;
 					break;
 				}	
 			}
 			if (networklink == null) {
-				LOGGER.error("No network link found for " + target);	
+				LOGGER.error("No network interface found for " + target);	
 			} else {
-				for (AttributeState attribute: networklink.getAttributes() ) {
+				List<AttributeState> attributes  = new LinkedList<AttributeState>();
+				attributes.addAll(networklink.getAttributes());
+				for (MixinBase base: networklink.getParts()) {
+					attributes.addAll(base.getAttributes());
+				}
+				
+				for (AttributeState attribute: attributes ) {
 					if (attribute.getName().equals("occi.networkinterface.address")) {
 						LOGGER.info("Found IP address for " + networklink);
 						ipaddress = attribute.getValue();
@@ -339,7 +384,8 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 		
 		AnsibleHelper helper = new AnsibleHelper();
 		
-		helper.createConfiguration(Paths.get(".", "ansible.cfg"), null);
+		helper.createConfiguration(Paths.get(".", "ansible.cfg"), 
+				Paths.get("/home/fglaser/.ssh/mongoscale-key.pem"));
 		Path variablefile = helper.createVariableFile(Paths.get(".", "vars.yaml"), this);
 			
 		Path playbook = helper.createPlaybook(ipaddress, roles, user, variablefile, 
@@ -347,7 +393,7 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 			
 		Path inventory = helper.createInventory(ipaddress, Paths.get(basedir, "inventory"));
 			
-		LOGGER.info("Executing role " + roles + " on host " + ipaddress + " with user " + user);	
+		LOGGER.info("Executing role " + roles + " on host " + ipaddress + " with user " + user + ".");	
 		int status = helper.executePlaybook(playbook, inventory);
 			
 		return status;

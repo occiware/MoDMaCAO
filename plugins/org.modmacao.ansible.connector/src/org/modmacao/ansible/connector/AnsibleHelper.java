@@ -40,10 +40,10 @@ public class AnsibleHelper {
 	public Path createConfiguration(Path configuration, Path keyPath) throws IOException{
 		String lb = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder("[defaults]").append(lb);
-		// Roles path should not be hardcoded, but instead be given by configuration file
+		// TODO: Roles path should not be hardcoded, but instead be given by configuration file
 		//sb.append("roles_path = /opt/ansibleconnector/roles").append(lb);
 		sb.append("roles_path = /home/fglaser/occiware_current/workspace/org.modmacao.ansible.connector.test/roles").append(lb);
-		
+		sb.append("ssh_args = -o StrictHostKeyChecking=no").append(lb);
 		sb.append("private_key_file = " + keyPath.toString());
 		
 		FileUtils.writeStringToFile(configuration.toFile(), sb.toString(), (Charset) null);
@@ -52,7 +52,7 @@ public class AnsibleHelper {
 	
 	public int executePlaybook(Path playbook, Path inventory) throws IOException, 
 		InterruptedException {
-		// Command path should not be hardcoded, but instead be given by configuration file
+		// TODO: Command path should not be hardcoded, but instead be given by configuration file
 		String command = "/usr/local/bin/ansible-playbook";
 		Process process = new ProcessBuilder(command, "--inventory", inventory.toString(), 
 				playbook.toString())
