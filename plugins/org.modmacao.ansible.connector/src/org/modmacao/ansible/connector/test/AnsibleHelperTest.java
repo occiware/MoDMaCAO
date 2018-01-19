@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Properties;
 
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
@@ -104,7 +105,7 @@ public class AnsibleHelperTest {
 			Path inventory = helper.createInventory("192.168.35.24", 
 					Paths.get("testdata/inventory"));
 			
-			int status = helper.executePlaybook(playbook, inventory);
+			int status = helper.executePlaybook(playbook, "TEST", inventory);
 			
 			assertEquals(0, status);
 			
@@ -112,7 +113,16 @@ public class AnsibleHelperTest {
 			e.printStackTrace();
 			fail("Should not throw exception.");
 		}
+		
 	}
+	@Test
+	public void testGetProperties() {
+		AnsibleHelper helper = new AnsibleHelper();
+		Properties props = helper.getProperties();
+		System.out.println(props.propertyNames());
+		System.out.println(props.getProperty("test"));
+	}
+	
 
 
 
