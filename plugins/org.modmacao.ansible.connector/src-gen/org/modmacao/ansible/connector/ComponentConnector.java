@@ -381,9 +381,9 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 		
 		AnsibleHelper helper = new AnsibleHelper();
 		
-		helper.createConfiguration(Paths.get(".", "ansible.cfg"), 
-				Paths.get("/home/fglaser/.ssh/mongoscale-key.pem"));
-		Path variablefile = helper.createVariableFile(Paths.get(".", "vars.yaml"), this);
+		helper.createConfiguration(Paths.get(basedir, "ansible.cfg"), 
+				Paths.get(helper.getProperties().getProperty("private_key_path")));
+		Path variablefile = helper.createVariableFile(Paths.get(basedir, "vars.yaml"), this);
 			
 		Path playbook = helper.createPlaybook(ipaddress, roles, user, variablefile, 
 				Paths.get(basedir, "playbook.yml"));

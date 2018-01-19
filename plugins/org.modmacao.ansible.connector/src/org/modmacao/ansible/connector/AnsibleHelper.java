@@ -1,10 +1,12 @@
 package org.modmacao.ansible.connector;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
 import org.eclipse.cmf.occi.core.AttributeState;
@@ -12,6 +14,42 @@ import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.MixinBase;
 
 public class AnsibleHelper {
+	
+	private Properties props = null;
+	
+	public Properties getProperties() {
+		if (props == null)
+			loadProperties();
+		
+		return props;
+	}
+	
+	private void loadProperties() {
+		
+		props = new Properties();
+    	InputStream input = null;
+
+    	try {
+
+    		String filename = "ansible.properties";
+    		input = this.getClass().getClassLoader().getResourceAsStream(filename);
+
+    		props.load(input);
+    		
+    	} catch (IOException ex) {
+    		ex.printStackTrace();
+        } finally{
+        	if(input!=null){
+        		try {
+				input.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        	}
+        }
+		
+	}
+	
 	
 	public Path createInventory(String ipaddress, Path path) throws IOException {
 		FileUtils.writeStringToFile(path.toFile(), ipaddress, (Charset) null);
@@ -44,9 +82,9 @@ public class AnsibleHelper {
 		StringBuilder sb = new StringBuilder("[defaults]").append(lb);
 		// TODO: Roles path should not be hardcoded, but instead be given by configuration file
 		//sb.append("roles_path = /opt/ansibleconnector/roles").append(lb);
-		sb.append("roles_path = /home/fglaser/occiware_current/workspace/org.modmacao.ansible.connector.test/roles").append(lb);
+		sb.append("roles_path = ").append(this.getProperties().getProperty("ansible_rolespath")).append(lb);
 		sb.append("ssh_args = -o StrictHostKeyChecking=no").append(lb);
-		sb.append("private_key_file = " + keyPath.toString());
+		sb.append("private_key_file = ").append(keyPath.toString());
 		
 		FileUtils.writeStringToFile(configuration.toFile(), sb.toString(), (Charset) null);
 		return configuration;
@@ -54,8 +92,7 @@ public class AnsibleHelper {
 	
 	public int executePlaybook(Path playbook, String task, Path inventory) throws IOException, 
 		InterruptedException {
-		// TODO: Command path should not be hardcoded, but instead be given by configuration file
-		String command = "/usr/local/bin/ansible-playbook";
+		String command = this.getProperties().getProperty("ansible_bin");
 		Process process = new ProcessBuilder(command, "--inventory", inventory.toString(),
 				"-e", "task=" + task,
 				playbook.toString())
