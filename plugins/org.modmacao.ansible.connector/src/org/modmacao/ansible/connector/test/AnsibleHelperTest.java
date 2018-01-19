@@ -104,7 +104,7 @@ public class AnsibleHelperTest {
 			Path inventory = helper.createInventory("192.168.35.24", 
 					Paths.get("testdata/inventory"));
 			
-			int status = helper.executePlaybook(playbook, inventory);
+			int status = helper.executePlaybook(playbook, "TEST", inventory);
 			
 			assertEquals(0, status);
 			

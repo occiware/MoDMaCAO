@@ -1,40 +1,25 @@
 package org.modmacao.ansible.connector.test;
 
+import static org.junit.Assert.assertEquals;
+
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.AttributeState;
-import org.eclipse.cmf.occi.core.DataType;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.OCCIFactory;
-import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.core.impl.OCCIFactoryImpl;
-import org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl;
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
 import org.eclipse.cmf.occi.infrastructure.Networkinterface;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Before;
 import org.junit.Test;
-import org.modmacao.ansible.connector.ComponentConnector;
 import org.modmacao.ansible.connector.ConnectorFactory;
+import org.modmacao.mongodb.MongodbFactory;
 import org.modmacao.occi.platform.Component;
-import org.modmacao.occi.platform.PlatformFactory;
-import org.modmacao.occi.platform.PlatformPackage;
-import org.modmacao.occi.platform.impl.PlatformFactoryImpl;
+import org.modmacao.occi.platform.Status;
 import org.modmacao.placement.PlacementFactory;
 import org.modmacao.placement.Placementlink;
-import org.slf4j.LoggerFactory;
-
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
-import modmacao.ModmacaoFactory;
-import modmacao.ModmacaoPackage;
-import modmacao.impl.ModmacaoFactoryImpl;
 
 public class ComponentConnectorTest {
 	Component cut;
@@ -50,16 +35,24 @@ public class ComponentConnectorTest {
 		OcciRegistry.getInstance().registerExtension("http://schemas.modmacao.org/occi/platform#", "file:///home/fglaser/MoDMaCAO/plugins/org.modmacao.occi.platform/model/platform.occie");
 		OcciRegistry.getInstance().registerExtension("http://schemas.modmacao.org/modmacao#", "file:///home/fglaser/MoDMaCAO/plugins/org.modmacao.core/model/modmacao.occie");
 		OcciRegistry.getInstance().registerExtension("http://schemas.modmacao.org/placement#", "file:///home/fglaser/MoDMaCAO/plugins/org.modmacao.placement/model/placement.occie");
+		OcciRegistry.getInstance().registerExtension("http://schemas.modmacao.org/mongodb#", "file:///home/fglaser/MoDMaCAO/plugins/org.modmacao.mongodb/model/mongodb.occie");
 		
 		// Create component
 		cut = new ConnectorFactory().createComponent();
 		cut.setTitle("shard1");
-		MixinBase modmacaoComponentMixinBase = ModmacaoFactory.eINSTANCE.createComponent();
+		MixinBase modmacaoComponentMixinBase = MongodbFactory.eINSTANCE.createShard();
 		Mixin mixin = OCCIFactory.eINSTANCE.createMixin();
 		mixin.setScheme("http://schemas.modmacao.org/modmacao#");
 		mixin.setName("shard");
 		modmacaoComponentMixinBase.setMixin(mixin);
+		
+		
 		cut.getParts().add(modmacaoComponentMixinBase);
+		AttributeState replicationset = OCCIFactory.eINSTANCE.createAttributeState();
+		replicationset.setName("mongodb.replication.set.name");
+		replicationset.setValue("shard1");
+		
+		cut.getAttributes().add(replicationset);
 		
 		// create compute 
 		Compute vm1 = InfrastructureFactory.eINSTANCE.createCompute();
@@ -92,14 +85,42 @@ public class ComponentConnectorTest {
 		
 	}
 	
-	@Test
-	public void testComponentDeploy() {
-		cut.deploy();
-	}
+//	@Test
+//	public void testComponentDeploy() {
+//		cut.deploy();
+//	}
+//	
+//	@Test
+//	public void testComponentConfigure() {
+//		cut.configure();
+//	}
+//	
+//	@Test
+//	public void testComponentStart() {
+//		cut.start();
+//	}
+//	
+//	@Test
+//	public void testComponentStop() {
+//		cut.stop();
+//	}
+//	
+//	@Test
+//	public void testComponentUndeploy() {
+//		cut.undeploy();
+//	}
 	
 	@Test
-	public void testComponentUndeploy() {
+	public void testComponentFullLifeCycle() {
+		cut.deploy();
+		assertEquals(Status.DEPLOYED, cut.getOcciComponentState());
+		cut.configure();
+		assertEquals(Status.INACTIVE, cut.getOcciComponentState());
+		cut.start();
+		assertEquals(Status.ACTIVE, cut.getOcciComponentState());
+		cut.stop();
+		assertEquals(Status.INACTIVE, cut.getOcciComponentState() );
 		cut.undeploy();
+		assertEquals(Status.UNDEPLOYED, cut.getOcciComponentState());
 	}
-
 }

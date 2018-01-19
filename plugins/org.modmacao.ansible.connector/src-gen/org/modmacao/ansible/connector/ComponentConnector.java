@@ -131,13 +131,10 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 		case Status.INACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=inactive, action=\"start\")...");
 			List<String> roles = this.getRoles();
-			for (int i = 0; i < roles.size(); i++) {
-				roles.set(i, roles.get(i) + "_start");
-			}
 			int status = -1;
 			
 			try {
-				status = this.executeRoles(roles);
+				status = this.executeRoles(roles, "START");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -145,6 +142,8 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 			
 			if (status == 0)
 				setOcciComponentState(Status.ACTIVE);
+			else 
+				setOcciComponentState(Status.ERROR);
 			break;
 
 		default:
@@ -170,13 +169,10 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 		case Status.DEPLOYED_VALUE:
 			LOGGER.debug("Fire transition(state=deployed, action=\"configure\")...");
 			List<String> roles = this.getRoles();
-			for (int i = 0; i < roles.size(); i++) {
-				roles.set(i, roles.get(i) + "configure");
-			}
 			int status = -1;
 			
 			try {
-				status = this.executeRoles(roles);
+				status = this.executeRoles(roles, "CONFIGURE");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -184,6 +180,8 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 			
 			if (status == 0)
 				setOcciComponentState(Status.INACTIVE);
+			else 
+				setOcciComponentState(Status.ERROR);
 			break;
 
 		default:
@@ -216,13 +214,10 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 			LOGGER.debug("Fire transition(state=error, action=\"undeploy\")...");
 		default:
 			List<String> roles = this.getRoles();
-			for (int i = 0; i < roles.size(); i++) {
-				roles.set(i, roles.get(i) + "_undeploy");
-			}
 			int status = -1;
 			
 			try {
-				status = this.executeRoles(roles);
+				status = this.executeRoles(roles, "UNDEPLOY");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -230,6 +225,8 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 			
 			if (status == 0)
 				setOcciComponentState(Status.UNDEPLOYED);
+			else 
+				setOcciComponentState(Status.ERROR);
 			break;
 		}
 	}
@@ -256,7 +253,7 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 			int status = -1;
 			
 			try {
-				status = this.executeRoles(roles);
+				status = this.executeRoles(roles, "DEPLOY");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -264,7 +261,8 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 			
 			if (status == 0)
 				setOcciComponentState(Status.DEPLOYED);
-			
+			else 
+				setOcciComponentState(Status.ERROR);	
 			break;
 
 		default:
@@ -290,13 +288,10 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 		case Status.ACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=active, action=\"stop\")...");
 			List<String> roles = this.getRoles();
-			for (int i = 0; i < roles.size(); i++) {
-				roles.set(i, roles.get(i) + "_stop");
-			}
 			int status = -1;
 			
 			try {
-				status = this.executeRoles(roles);
+				status = this.executeRoles(roles, "STOP");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -304,6 +299,8 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 			
 			if (status == 0)
 				setOcciComponentState(Status.INACTIVE);
+			else 
+				setOcciComponentState(Status.ERROR);
 			break;
 
 		default:
@@ -376,7 +373,7 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 		return ipaddress;
 	}
 	
-	private int executeRoles(List<String> roles) throws Exception{
+	private int executeRoles(List<String> roles, String task) throws Exception{
 		String ipaddress = this.getIPAddress();
 		String user = this.getUser();
 		
@@ -394,7 +391,7 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 		Path inventory = helper.createInventory(ipaddress, Paths.get(basedir, "inventory"));
 			
 		LOGGER.info("Executing role " + roles + " on host " + ipaddress + " with user " + user + ".");	
-		int status = helper.executePlaybook(playbook, inventory);
+		int status = helper.executePlaybook(playbook, task, inventory);
 			
 		return status;
 	}	

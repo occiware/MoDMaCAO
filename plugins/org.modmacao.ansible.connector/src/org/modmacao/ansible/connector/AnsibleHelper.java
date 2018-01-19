@@ -3,11 +3,13 @@ package org.modmacao.ansible.connector;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.MixinBase;
 
 public class AnsibleHelper {
 	
@@ -50,11 +52,12 @@ public class AnsibleHelper {
 		return configuration;
 	}
 	
-	public int executePlaybook(Path playbook, Path inventory) throws IOException, 
+	public int executePlaybook(Path playbook, String task, Path inventory) throws IOException, 
 		InterruptedException {
 		// TODO: Command path should not be hardcoded, but instead be given by configuration file
 		String command = "/usr/local/bin/ansible-playbook";
-		Process process = new ProcessBuilder(command, "--inventory", inventory.toString(), 
+		Process process = new ProcessBuilder(command, "--inventory", inventory.toString(),
+				"-e", "task=" + task,
 				playbook.toString())
 				.inheritIO().start();
 		process.waitFor();
@@ -64,7 +67,15 @@ public class AnsibleHelper {
 	public Path createVariableFile(Path variablefile, Entity entity) throws IOException{
 		String lb = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder();
-		for (AttributeState attribute: entity.getAttributes()) {
+		List<AttributeState> attributes  = new LinkedList<AttributeState>();
+		
+		// Collect all attribute states
+		attributes.addAll(entity.getAttributes());
+		for (MixinBase base: entity.getParts()) {
+			attributes.addAll(base.getAttributes());
+		}
+		
+		for (AttributeState attribute: attributes) {
 			//  Ansible does not allow variable names with points, so we replace them with underscores
 			String name = attribute.getName().replace('.', '_');
 			sb.append(name);
