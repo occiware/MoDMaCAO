@@ -1,4 +1,4 @@
-package org.modmacao.ansible.connector.test;
+package org.modmacao.cm.ansible.test;
 
 import static org.junit.Assert.*;
 
@@ -16,7 +16,7 @@ import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 import org.junit.Test;
-import org.modmacao.ansible.connector.AnsibleHelper;
+import org.modmacao.cm.ansible.AnsibleHelper;
 
 
 public class AnsibleHelperTest {

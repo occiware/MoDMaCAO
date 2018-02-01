@@ -1,4 +1,4 @@
-package org.modmacao.ansible.connector;
+package org.modmacao.cm.ansible;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -80,12 +80,9 @@ public class AnsibleHelper {
 	public Path createConfiguration(Path configuration, Path keyPath) throws IOException{
 		String lb = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder("[defaults]").append(lb);
-		// TODO: Roles path should not be hardcoded, but instead be given by configuration file
-		//sb.append("roles_path = /opt/ansibleconnector/roles").append(lb);
 		sb.append("roles_path = ").append(this.getProperties().getProperty("ansible_rolespath")).append(lb);
 		sb.append("ssh_args = -o StrictHostKeyChecking=no").append(lb);
 		sb.append("private_key_file = ").append(keyPath.toString());
-		
 		FileUtils.writeStringToFile(configuration.toFile(), sb.toString(), (Charset) null);
 		return configuration;
 	}

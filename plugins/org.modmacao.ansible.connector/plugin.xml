@@ -15,10 +15,5 @@
 <plugin>
 
    <!-- Register the factory of this connector. -->
-   <extension point="org.eclipse.emf.ecore.factory_override">
-      <factory
-            uri="http://schemas.modmacao.org/occi/platform/ecore"
-            class="org.modmacao.ansible.connector.ConnectorFactory"/>
-   </extension>
 
 </plugin>

@@ -1,4 +1,4 @@
-package org.modmacao.ansible.connector.test;
+package org.modmacao.cm.ansible.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,15 +14,18 @@ import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
 import org.eclipse.cmf.occi.infrastructure.Networkinterface;
 import org.junit.Before;
 import org.junit.Test;
-import org.modmacao.ansible.connector.ConnectorFactory;
+import org.modmacao.cm.ansible.AnsibleCMTool;
 import org.modmacao.mongodb.MongodbFactory;
+import org.modmacao.occi.platform.Application;
 import org.modmacao.occi.platform.Component;
-import org.modmacao.occi.platform.Status;
+import org.modmacao.occi.platform.impl.PlatformFactoryImpl;
 import org.modmacao.placement.PlacementFactory;
 import org.modmacao.placement.Placementlink;
 
-public class ComponentConnectorTest {
+public class AnsibleCMToolTest {
+	AnsibleCMTool  cmtool = new AnsibleCMTool();
 	Component cut;
+	Application aut;
 	
 	
 	@Before
@@ -38,7 +41,8 @@ public class ComponentConnectorTest {
 		OcciRegistry.getInstance().registerExtension("http://schemas.modmacao.org/mongodb#", "file:///home/fglaser/MoDMaCAO/plugins/org.modmacao.mongodb/model/mongodb.occie");
 		
 		// Create component
-		cut = new ConnectorFactory().createComponent();
+		cut = new PlatformFactoryImpl().createComponent();
+		
 		cut.setTitle("shard1");
 		MixinBase modmacaoComponentMixinBase = MongodbFactory.eINSTANCE.createShard();
 		Mixin mixin = OCCIFactory.eINSTANCE.createMixin();
@@ -85,11 +89,11 @@ public class ComponentConnectorTest {
 		
 	}
 	
-//	@Test
-//	public void testComponentDeploy() {
-//		cut.deploy();
-//	}
-//	
+	@Test
+	public void testComponentDeploy() {
+		assertEquals(0, cmtool.deploy(cut));
+	}
+	
 //	@Test
 //	public void testComponentConfigure() {
 //		cut.configure();
@@ -110,17 +114,4 @@ public class ComponentConnectorTest {
 //		cut.undeploy();
 //	}
 	
-	@Test
-	public void testComponentFullLifeCycle() {
-		cut.deploy();
-		assertEquals(Status.DEPLOYED, cut.getOcciComponentState());
-		cut.configure();
-		assertEquals(Status.INACTIVE, cut.getOcciComponentState());
-		cut.start();
-		assertEquals(Status.ACTIVE, cut.getOcciComponentState());
-		cut.stop();
-		assertEquals(Status.INACTIVE, cut.getOcciComponentState() );
-		cut.undeploy();
-		assertEquals(Status.UNDEPLOYED, cut.getOcciComponentState());
-	}
 }
