@@ -5,40 +5,21 @@ import static org.junit.Assert.assertEquals;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Configuration;
-import org.eclipse.cmf.occi.core.Mixin;
-import org.eclipse.cmf.occi.core.MixinBase;
-import org.eclipse.cmf.occi.core.OCCIFactory;
-import org.eclipse.cmf.occi.core.util.OcciRegistry;
-import org.eclipse.cmf.occi.infrastructure.Compute;
-import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
-import org.eclipse.cmf.occi.infrastructure.Networkinterface;
+import org.eclipse.cmf.occi.core.OCCIPackage;
+import org.eclipse.cmf.occi.core.util.OCCIResourceFactoryImpl;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EFactory;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.Resource.Factory.Registry;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.modmacao.core.connector.ApplicationConnector;
-import org.modmacao.core.connector.ConnectorFactory;
-import org.modmacao.mongodb.MongodbPackage;
-import org.modmacao.occi.platform.Application;
-import org.modmacao.occi.platform.Component;
-import org.modmacao.occi.platform.PlatformPackage;
 import org.modmacao.occi.platform.Status;
-import org.modmacao.placement.PlacementFactory;
-import org.modmacao.placement.PlacementPackage;
-import org.modmacao.placement.Placementlink;
-
-import de.ugoe.cs.oco.occi2deployment.ModelUtility;
-import modmacao.ModmacaoPackage;
 
 
 public class ApplicationConnectorTest {
@@ -47,7 +28,7 @@ public class ApplicationConnectorTest {
 	
 	@Before
 	public void setUP() {
-		org.apache.log4j.BasicConfigurator.configure();
+		//org.apache.log4j.BasicConfigurator.configure();
 		Logger.getRootLogger().setLevel(Level.DEBUG);
 		
 		org.eclipse.cmf.occi.platform.PlatformPackage.eINSTANCE.eClass();
@@ -72,9 +53,22 @@ public class ApplicationConnectorTest {
 		
 		
 		Path occiPath = Paths.get("file://home/fglaser/MoDMaCAO/plugins/org.modmacao.mongodb.example/model-anonymous.occic");
-		org.eclipse.emf.ecore.resource.Resource occi = ModelUtility.loadOCCIResource(occiPath, null);
+		OCCIPackage.eINSTANCE.eClass();
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		
-		Configuration configuration =  (Configuration) occi.getContents().get(0);
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("occie", new OCCIResourceFactoryImpl());
+		m.put("occic", new OCCIResourceFactoryImpl());
+		
+		ResourceSet resSet = new ResourceSetImpl();
+		
+		String file = occiPath.toString();
+	    //URI fileURI = URI.createURI(path.toString());
+	    URI fileURI = URI.createURI(file);
+	    Resource resource = resSet.getResource(fileURI, true);
+		
+		
+		Configuration configuration =  (Configuration) resource.getContents().get(0);
 		
 		aut = (ApplicationConnector) configuration.getResources().get(0);
 		
@@ -83,9 +77,9 @@ public class ApplicationConnectorTest {
 	
 //	@Test
 //	public void testComponentDeploy() {
-//		cut.deploy();
+//		aut.deploy();
 //	}
-//	
+	
 //	@Test
 //	public void testComponentConfigure() {
 //		cut.configure();
@@ -93,7 +87,8 @@ public class ApplicationConnectorTest {
 //	
 //	@Test
 //	public void testComponentStart() {
-//		cut.start();
+//		aut.stop();
+//		assertEquals(Status.ACTIVE_VALUE, aut.getOcciAppState().getValue());
 //	}
 //	
 //	@Test
@@ -105,7 +100,7 @@ public class ApplicationConnectorTest {
 //	public void testComponentUndeploy() {
 //		cut.undeploy();
 //	}
-	
+//	
 	@Test
 	public void testComponentFullLifeCycle() {
 		aut.deploy();

@@ -25,6 +25,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.MixinBase;
 import org.modmacao.cm.ConfigurationManagementTool;
 import org.modmacao.cm.ansible.AnsibleCMTool;
 import org.modmacao.occi.platform.Component;
@@ -172,6 +173,7 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 	@Override
 	public void stop()
 	{
+		int status = -1;
 		LOGGER.debug("Action stop() called on " + this);
 
 		// Component State Machine.
@@ -179,8 +181,11 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 
 		case Status.ACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=active, action=\"stop\")...");
-			cmtool.stop(this);			
+			
+			status = cmtool.stop(this);
+						
 			setOcciComponentState(Status.INACTIVE);
+		
 			break;
 
 		default:
@@ -198,6 +203,7 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 	@Override
 	public void start()
 	{
+		int status = -1;
 		LOGGER.debug("Action start() called on " + this);
 
 		// Component State Machine.
@@ -209,9 +215,13 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 				component.start();
 			}
 			
-			cmtool.start(this);
+			status = cmtool.start(this);
+						
+			if (status == 0 && assertCompsStatusEquals(getExecutionDependendComps(), Status.ACTIVE))
+				setOcciComponentState(Status.ACTIVE);
+			else
+				setOcciComponentState(Status.ERROR);
 			
-			setOcciComponentState(Status.ACTIVE);
 			break;
 
 
@@ -231,10 +241,12 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 				component.start();
 			}
 			
-			cmtool.start(this);
+			status = cmtool.start(this);
 			
-			// TODO: Check status of other components first
-			setOcciComponentState(Status.ACTIVE);
+			if (status == 0 && assertCompsStatusEquals(getExecutionDependendComps(), Status.ACTIVE))
+				setOcciComponentState(Status.ACTIVE);
+			else 
+				setOcciComponentState(Status.ERROR);
 
 		default:
 			break;
@@ -251,6 +263,7 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 	@Override
 	public void configure()
 	{
+		int status = -1;
 		LOGGER.debug("Action configure() called on " + this);
 
 		// Component State Machine.
@@ -261,8 +274,12 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 			for (Component component: this.getInstallDependendComps()) {
 				component.configure();
 			}
-			cmtool.configure(this);
-			setOcciComponentState(Status.INACTIVE);
+			status = cmtool.configure(this);
+			
+			if (status == 0 && assertCompsStatusEquals(getInstallDependendComps(), Status.INACTIVE))
+					setOcciComponentState(Status.INACTIVE);
+			else
+					setOcciComponentState(Status.ERROR);
 			break;
 
 		default:
@@ -280,6 +297,7 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 	@Override
 	public void deploy()
 	{
+		int status = -1;
 		LOGGER.debug("Action deploy() called on " + this);
 
 		// Component State Machine.
@@ -290,8 +308,12 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 			for (Component component: this.getInstallDependendComps()) {
 				component.deploy();
 			}
-			cmtool.deploy(this);
-			setOcciComponentState(Status.DEPLOYED);
+			status = cmtool.deploy(this);
+			
+			if (status == 0 && assertCompsStatusEquals(getInstallDependendComps(), Status.DEPLOYED))
+				setOcciComponentState(Status.DEPLOYED);
+			else
+				setOcciComponentState(Status.ERROR);
 			break;
 
 		default:
@@ -303,8 +325,11 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 	private List<Component> getInstallDependendComps(){
 		LinkedList<Component> dependendComponents = new LinkedList<Component>();
 		for (Link link: this.getLinks()) {
-			if (link instanceof Installationdependency) {
-				dependendComponents.add((Component) link.getTarget());
+			for (MixinBase mixin: link.getParts()) {
+				if (mixin instanceof Installationdependency) {
+					dependendComponents.add((Component) link.getTarget());
+					break;
+				}
 			}
 		}
 		return dependendComponents;		
@@ -313,11 +338,26 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 	private List<Component> getExecutionDependendComps(){
 		LinkedList<Component> dependendComponents = new LinkedList<Component>();
 		for (Link link: this.getLinks()) {
-			if (link instanceof Executiondependency) {
-				dependendComponents.add((Component) link.getTarget());
+			for (MixinBase mixin: link.getParts()) {
+				if (mixin instanceof Executiondependency) {
+					dependendComponents.add((Component) link.getTarget());
+					break;
+				}
 			}
 		}
 		return dependendComponents;
+	}
+	
+	private boolean assertCompsStatusEquals(List<Component> components, Status status) {
+		for (Component component: components) {
+			if (component.getOcciComponentState().getValue() != status.getValue()) {
+				LOGGER.debug("Missmatching state of component " + component.getTitle() + " detected. "
+						+ "Expected " + status.getName() + " but was " 
+						+ component.getOcciComponentState().getName() + ".");
+				return false;
+			}
+		}	
+		return true;
 	}
 
 }	

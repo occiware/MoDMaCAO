@@ -118,6 +118,7 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 	@Override
 	public void stop()
 	{
+		int status = -1;
 		LOGGER.debug("Action stop() called on " + this);
 
 		// Application State Machine.
@@ -128,8 +129,11 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 			for (Component component: this.getConnectedComponents()) {
 				component.stop();
 			}
-			cmtool.stop(this);
-			setOcciAppState(Status.INACTIVE);	
+			status = cmtool.stop(this);
+			if (status == 0 && assertCompsStatusEquals(getConnectedComponents(), Status.INACTIVE))
+				setOcciAppState(Status.INACTIVE);
+			else
+				setOcciAppState(Status.ERROR);	
 			break;
 
 		default:
@@ -147,6 +151,7 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 	@Override
 	public void start()
 	{
+		int status = -1;
 		LOGGER.debug("Action start() called on " + this);
 		
 		// Application State Machine.
@@ -157,8 +162,11 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 			for (Component component: this.getConnectedComponents()) {
 				component.start();
 			}
-			cmtool.start(this);
-			setOcciAppState(Status.ACTIVE);		
+			status = cmtool.start(this);
+			if (status == 0 && assertCompsStatusEquals(getConnectedComponents(), Status.ACTIVE))
+				setOcciAppState(Status.ACTIVE);
+			else
+				setOcciAppState(Status.ERROR);	
 			break;
 
 
@@ -180,9 +188,12 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 			for (Component component: this.getConnectedComponents()) {
 				component.start();
 			}
-			cmtool.start(this);
+			status = cmtool.start(this);
 			
-			setOcciAppState(Status.ACTIVE);
+			if (status == 0 && assertCompsStatusEquals(getConnectedComponents(), Status.ACTIVE))
+				setOcciAppState(Status.ACTIVE);
+			else
+				setOcciAppState(Status.ERROR);
 			break;
 
 		default:
@@ -200,6 +211,7 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 	@Override
 	public void undeploy()
 	{
+		int status = -1;
 		LOGGER.debug("Action undeploy() called on " + this);
 
 		// Application State Machine.
@@ -215,33 +227,44 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 			for (Component component: this.getConnectedComponents()) {
 				component.undeploy();
 			}
-			cmtool.undeploy(this);
-			
-			setOcciAppState(Status.UNDEPLOYED);
+			status = cmtool.undeploy(this);
+			if (status == 0 && assertCompsStatusEquals(getConnectedComponents(), Status.UNDEPLOYED))
+				setOcciAppState(Status.UNDEPLOYED);
+			else
+				setOcciAppState(Status.ERROR);
 			break;
 		case Status.INACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=inactive, action=\"undeploy\")...");
 			for (Component component: this.getConnectedComponents()) {
 				component.undeploy();
 			}
-			cmtool.undeploy(this);
-			setOcciAppState(Status.UNDEPLOYED);
+			status = cmtool.undeploy(this);
+			if (status == 0 && assertCompsStatusEquals(getConnectedComponents(), Status.UNDEPLOYED))
+				setOcciAppState(Status.UNDEPLOYED);
+			else
+				setOcciAppState(Status.ERROR);
 			break;
 		case Status.DEPLOYED_VALUE:
 			LOGGER.debug("Fire transition(state=deployed, action=\"undeploy\")...");
 			for (Component component: this.getConnectedComponents()) {
 				component.undeploy();
 			}
-			cmtool.undeploy(this);
-			setOcciAppState(Status.UNDEPLOYED);
+			status = cmtool.undeploy(this);
+			if (status == 0 && assertCompsStatusEquals(getConnectedComponents(), Status.UNDEPLOYED))
+				setOcciAppState(Status.UNDEPLOYED);
+			else
+				setOcciAppState(Status.ERROR);
 			break;
 		case Status.ERROR_VALUE:
 			LOGGER.debug("Fire transition(state=error, action=\"undeploy\")...");
 			for (Component component: this.getConnectedComponents()) {
 				component.undeploy();
 			}
-			cmtool.undeploy(this);
-			setOcciAppState(Status.UNDEPLOYED);
+			status = cmtool.undeploy(this);
+			if (status == 0 && assertCompsStatusEquals(getConnectedComponents(), Status.UNDEPLOYED))
+				setOcciAppState(Status.UNDEPLOYED);
+			else
+				setOcciAppState(Status.ERROR);
 			break;
 
 		default:
@@ -259,6 +282,7 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 	@Override
 	public void configure()
 	{
+		int status = -1;
 		LOGGER.debug("Action configure() called on " + this);
 
 		// Application State Machine.
@@ -270,8 +294,11 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 				component.configure();
 			}
 			
-			cmtool.configure(this);
-			setOcciAppState(Status.INACTIVE);
+			status = cmtool.configure(this);
+			if (status == 0 && assertCompsStatusEquals(getConnectedComponents(), Status.INACTIVE))
+				setOcciAppState(Status.INACTIVE);
+			else
+				setOcciAppState(Status.ERROR);
 			break;
 
 		default:
@@ -289,6 +316,7 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 	@Override
 	public void deploy()
 	{
+		int status = -1;
 		LOGGER.debug("Action deploy() called on " + this);
 
 		// Application State Machine.
@@ -300,15 +328,17 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 				component.deploy();
 			}
 			
-			cmtool.deploy(this);
-			setOcciAppState(Status.DEPLOYED);
+			status = cmtool.deploy(this);
+			if (status == 0 && assertCompsStatusEquals(getConnectedComponents(), Status.DEPLOYED))
+				setOcciAppState(Status.DEPLOYED);
+			else
+				setOcciAppState(Status.ERROR);
 			break;
 
 		default:
 			break;
 		}
 	}
-	// End of user code
 	
 	private List<Component> getConnectedComponents() {
 		LinkedList<Component> connectedComponents = new LinkedList<Component>();
@@ -320,4 +350,18 @@ public class ApplicationConnector extends org.modmacao.occi.platform.impl.Applic
 		return connectedComponents;
 		
 	}
+	
+	private boolean assertCompsStatusEquals(List<Component> components, Status status) {
+		for (Component component: components) {
+			if (component.getOcciComponentState().getValue() != status.getValue()) {
+				LOGGER.debug("Missmatching state of component " + component.getTitle() + " detected. "
+						+ "Expected " + status.getName() + " but was " 
+						+ component.getOcciComponentState().getName() + ".");
+				return false;
+			}
+		}	
+		return true;
+	}
+	
+	// end of user code
 }	
