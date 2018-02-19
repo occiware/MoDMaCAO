@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Link;
-import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.infrastructure.Compute;
@@ -17,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.modmacao.cm.ConfigurationManagementTool;
 import org.modmacao.occi.platform.Application;
 import org.modmacao.occi.platform.Component;
-import org.modmacao.occi.platform.Status;
 import org.modmacao.placement.Placementlink;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,8 +23,6 @@ import org.slf4j.LoggerFactory;
 public class AnsibleCMTool implements ConfigurationManagementTool {
 	private static Logger LOGGER = LoggerFactory.getLogger(AnsibleCMTool.class);
 
-	
-	
 	@Override
 	public int deploy(Application app) {
 		List<String> roles = getRoles(app);
@@ -178,10 +174,11 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	
 	private List<String> getRoles(Resource resource) {
 		List<String> roles = new ArrayList<String>();
-		for (Mixin mixin : resource.getMixins()) {
-			if (mixin.getScheme().equals("http://schemas.modmacao.org/modmacao#")){
-				LOGGER.info("Found mixin " + mixin.getName());
-				roles.add(mixin.getName());
+		for (MixinBase mixin : resource.getParts()) {
+			LOGGER.debug("Mixin has schema: " + mixin.getMixin().getScheme());
+			if (mixin.getMixin().getScheme().matches(".*(schemas\\.modmacao\\.org).*")){
+				LOGGER.info("Found mixin " + mixin.getMixin().getName());
+				roles.add(mixin.getMixin().getName().toLowerCase());
 			}
 		}
 		return roles;
@@ -201,7 +198,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 			}	
 		}
 		if (hosting == null) {
-			LOGGER.error("No hosting found for component " + resource.getTitle());	
+			LOGGER.warn("No hosting found for component " + resource.getTitle() + ". Falling back to localhost.");
+			ipaddress = "127.0.0.1";
+			return ipaddress;					
 		} else {
 			Compute target = (Compute) hosting.getTarget();
 			links = target.getLinks();
@@ -227,6 +226,7 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 						LOGGER.info("Found IP address for " + networklink);
 						ipaddress = attribute.getValue();
 						LOGGER.info("IP address is " + ipaddress);
+						break;
 					}
 				}
 			}
@@ -238,12 +238,17 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	private int executeRoles(Resource resource, List<String> roles, String task) throws Exception{
 		String ipaddress = getIPAddress(resource);
 		String user = this.getUser();
+		String options = null;
+		
+		if (ipaddress.equals("127.0.0.1")) {
+			options = "--connection=local";
+		}
 		
 		String basedir = "/tmp/" + resource.getTitle() + "_ansible";
 		
 		AnsibleHelper helper = new AnsibleHelper();
 		
-		helper.createConfiguration(Paths.get(basedir, "ansible.cfg"), 
+		helper.createConfiguration(Paths.get("ansible.cfg"), 
 				Paths.get(helper.getProperties().getProperty("private_key_path")));
 		Path variablefile = helper.createVariableFile(Paths.get(basedir, "vars.yaml"), resource);
 			
@@ -253,7 +258,7 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		Path inventory = helper.createInventory(ipaddress, Paths.get(basedir, "inventory"));
 			
 		LOGGER.info("Executing role " + roles + " on host " + ipaddress + " with user " + user + ".");	
-		int status = helper.executePlaybook(playbook, task, inventory);
+		int status = helper.executePlaybook(playbook, task, inventory, options);
 			
 		return status;
 	}

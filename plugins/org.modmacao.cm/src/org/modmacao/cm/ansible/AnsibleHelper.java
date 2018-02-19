@@ -2,6 +2,7 @@ package org.modmacao.cm.ansible;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.util.LinkedList;
@@ -12,6 +13,8 @@ import org.apache.commons.io.FileUtils;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.MixinBase;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
 
 public class AnsibleHelper {
 	
@@ -32,8 +35,19 @@ public class AnsibleHelper {
     	try {
 
     		String filename = "ansible.properties";
-    		input = this.getClass().getClassLoader().getResourceAsStream(filename);
+    		
+    		// try to load bundle
+    		Bundle bundle = FrameworkUtil.getBundle(this.getClass());
+    		if (bundle != null) {
+    			URL url = FrameworkUtil.getBundle(this.getClass()).getResource(filename);
+    			input = url.openConnection().getInputStream();
+    		}
 
+    		if (input == null) {
+    			// try to read properties without BundleLoader
+    			input = this.getClass().getClassLoader().getResourceAsStream(filename);	
+    		}
+    		
     		props.load(input);
     		
     	} catch (IOException ex) {
@@ -87,13 +101,21 @@ public class AnsibleHelper {
 		return configuration;
 	}
 	
-	public int executePlaybook(Path playbook, String task, Path inventory) throws IOException, 
+	public int executePlaybook(Path playbook, String task, Path inventory, String options) throws IOException, 
 		InterruptedException {
 		String command = this.getProperties().getProperty("ansible_bin");
-		Process process = new ProcessBuilder(command, "--inventory", inventory.toString(),
-				"-e", "task=" + task,
-				playbook.toString())
-				.inheritIO().start();
+		Process process = null;
+		
+		if (options == null) {
+			process = new ProcessBuilder(command, "--inventory", inventory.toString(),
+				"-e", "task=" + task, 
+				playbook.toString()).inheritIO().start();
+		}
+		else {
+			process = new ProcessBuilder(command, "--inventory", inventory.toString(),
+					"-e", "task=" + task, 
+					playbook.toString(), options).inheritIO().start();
+		}
 		process.waitFor();
 		return process.exitValue();
 	}
