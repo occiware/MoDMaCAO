@@ -10,4 +10,7 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.cmf.occi.core.ui,
- org.eclipse.cmf.occi.core.gen.emf.ui
+ org.eclipse.cmf.occi.core.gen.emf.ui,
+ org.eclipse.cmf.occi.infrastructure;bundle-version="1.0.0",
+ org.modmacao.occi.platform;bundle-version="1.0.0"
+Export-Package: org.modmacao.placement

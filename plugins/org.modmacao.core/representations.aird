@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_tbSfoKhGEeeE7NivNQpQQw" selectedViews="_tcdkUKhGEeeE7NivNQpQQw" version="12.0.0.201704271200">
+  <viewpoint:DAnalysis xmi:id="_tbSfoKhGEeeE7NivNQpQQw" selectedViews="_tcdkUKhGEeeE7NivNQpQQw" version="12.1.0.201708031200">
     <semanticResources>model/modmacao.occie</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/infrastructure/compute/template/1.1</semanticResources>
@@ -14,15 +14,19 @@
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore</semanticResources>
+    <semanticResources>model/modmacao.ecore</semanticResources>
+    <semanticResources>model/modmacao.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.modmacao.occi.platform/model/platform.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.modmacao.occi.platform/model/platform.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_tcdkUKhGEeeE7NivNQpQQw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_teF8TahGEeeE7NivNQpQQw" name="modmacao" repPath="#_teFU8KhGEeeE7NivNQpQQw">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_teF8TahGEeeE7NivNQpQQw" name="modmacao" repPath="#_9mir8Pn4Eee0d-Mln569Ww">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']"/>
         <target xmi:type="occi:Extension" href="model/modmacao.occie#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_teFU8KhGEeeE7NivNQpQQw" name="modmacao">
+  <diagram:DSemanticDiagram xmi:id="_teFU8KhGEeeE7NivNQpQQw" name="modmacao" uid="_9mir8Pn4Eee0d-Mln569Ww">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_teFU8ahGEeeE7NivNQpQQw" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_teFU8qhGEeeE7NivNQpQQw"/>
     </ownedAnnotationEntries>
@@ -1502,7 +1506,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_teN316hGEeeE7NivNQpQQw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_teN32KhGEeeE7NivNQpQQw" fontName=".AppleSystemUIFont" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_teN32ahGEeeE7NivNQpQQw" points="[0, 0, -143, 16]$[143, -16, 0, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_teN32ahGEeeE7NivNQpQQw" points="[1, -1, -223, 76]$[221, -76, -3, 1]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_teN34KhGEeeE7NivNQpQQw" id="(0.5064102564102564,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_teN34ahGEeeE7NivNQpQQw" id="(0.723404255319149,1.0)"/>
         </edges>
@@ -1534,7 +1538,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_teSwdahGEeeE7NivNQpQQw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_teSwdqhGEeeE7NivNQpQQw" fontName=".AppleSystemUIFont" fontHeight="10" bold="true"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_teSwd6hGEeeE7NivNQpQQw" points="[-96, 6, 113, -9]$[-208, 6, 1, -9]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_teSwd6hGEeeE7NivNQpQQw" points="[0, 0, 366, 4]$[-315, -4, 51, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_teSwfqhGEeeE7NivNQpQQw" id="(0.8421052631578947,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_teSwf6hGEeeE7NivNQpQQw" id="(0.9935897435897436,0.4090909090909091)"/>
         </edges>
@@ -2222,7 +2226,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_xUe-w6hGEeeE7NivNQpQQw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_xUe-xKhGEeeE7NivNQpQQw" fontName=".AppleSystemUIFont" fontHeight="8" bold="true"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xUe-xahGEeeE7NivNQpQQw" points="[0, 0, 8, 60]$[-9, -60, -1, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xUe-xahGEeeE7NivNQpQQw" points="[0, 0, 40, 101]$[-39, -99, 1, 2]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xUe-zKhGEeeE7NivNQpQQw" id="(0.5,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xUe-zahGEeeE7NivNQpQQw" id="(0.5172413793103449,1.0)"/>
         </edges>
@@ -2238,7 +2242,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_xUe-z6hGEeeE7NivNQpQQw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_xUe-0KhGEeeE7NivNQpQQw" fontName=".AppleSystemUIFont" fontHeight="8" bold="true"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xUe-0ahGEeeE7NivNQpQQw" points="[0, 0, -1, 60]$[0, -60, -1, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xUe-0ahGEeeE7NivNQpQQw" points="[0, 0, 28, 101]$[-27, -98, 1, 3]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xUe-2KhGEeeE7NivNQpQQw" id="(0.5,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xUe-2ahGEeeE7NivNQpQQw" id="(0.5172413793103449,1.0)"/>
         </edges>
@@ -2254,7 +2258,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_xUe-26hGEeeE7NivNQpQQw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_xUe-3KhGEeeE7NivNQpQQw" fontName=".AppleSystemUIFont" fontHeight="8" bold="true"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xUe-3ahGEeeE7NivNQpQQw" points="[0, 0, 1, 60]$[-2, -60, -1, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xUe-3ahGEeeE7NivNQpQQw" points="[0, 0, 32, 101]$[-31, -98, 1, 3]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xUe-5KhGEeeE7NivNQpQQw" id="(0.5,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xUe-5ahGEeeE7NivNQpQQw" id="(0.5172413793103449,1.0)"/>
         </edges>
@@ -2270,7 +2274,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_xUe-56hGEeeE7NivNQpQQw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_xUe-6KhGEeeE7NivNQpQQw" fontName=".AppleSystemUIFont" fontHeight="8" bold="true"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xUe-6ahGEeeE7NivNQpQQw" points="[0, 0, 28, 60]$[-29, -60, -1, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xUe-6ahGEeeE7NivNQpQQw" points="[0, 0, 56, 101]$[-56, -100, 0, 1]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xUe-8KhGEeeE7NivNQpQQw" id="(0.5,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xUe-8ahGEeeE7NivNQpQQw" id="(0.5172413793103449,1.0)"/>
         </edges>
@@ -2286,7 +2290,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_xUfl0ahGEeeE7NivNQpQQw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_xUfl0qhGEeeE7NivNQpQQw" fontName=".AppleSystemUIFont" fontHeight="8" bold="true"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xUfl06hGEeeE7NivNQpQQw" points="[0, 0, 28, 60]$[-29, -60, -1, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_xUfl06hGEeeE7NivNQpQQw" points="[0, 0, 56, 101]$[-56, -100, 0, 1]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xUfl2qhGEeeE7NivNQpQQw" id="(0.5,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_xUfl26hGEeeE7NivNQpQQw" id="(0.5172413793103449,1.0)"/>
         </edges>
@@ -2398,7 +2402,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_mHUKoahlEeeE7NivNQpQQw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_mHUKoqhlEeeE7NivNQpQQw" fontName=".AppleSystemUIFont" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mHUKo6hlEeeE7NivNQpQQw" points="[0, 0, -5, 32]$[5, -32, 0, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mHUKo6hlEeeE7NivNQpQQw" points="[0, 0, -5, 77]$[4, -76, -1, 1]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mHUKqqhlEeeE7NivNQpQQw" id="(0.42857142857142855,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mHUKq6hlEeeE7NivNQpQQw" id="(0.4965986394557823,1.0)"/>
         </edges>
@@ -2574,7 +2578,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_NHLWa6p7Eeesr8D3pjkarg"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_NHLWbKp7Eeesr8D3pjkarg" fontName=".AppleSystemUIFont" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NHLWbap7Eeesr8D3pjkarg" points="[3, 0, 0, 30]$[3, -26, 0, 4]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_NHLWbap7Eeesr8D3pjkarg" points="[0, 0, 2, 71]$[-2, -70, 0, 1]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NHL9YKp7Eeesr8D3pjkarg" id="(0.48299319727891155,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_NHL9Yap7Eeesr8D3pjkarg" id="(0.49645390070921985,0.8947368421052632)"/>
         </edges>

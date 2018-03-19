@@ -13,15 +13,22 @@
  - Faiez Zalila <faiez.zalila@inria.fr>
 -->
 <plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated modmacao -->
+      <package
+            uri="http://schemas.modmacao.org/modmacao/ecore"
+            class="modmacao.ModmacaoPackage"
+            genModel="model/modmacao.genmodel"/>
+   </extension>
 
    <!-- Register the modmacao extension. -->
    <extension point="org.eclipse.cmf.occi.core.occie">
-      <occie scheme="http:://schemas.modmacao.org/modmacao#" file="model/modmacao.occie"/>
+      <occie scheme="http://schemas.modmacao.org/modmacao#" file="model/modmacao.occie"/>
    </extension>
 
    <!-- Define URI mapping. -->
    <extension point="org.eclipse.emf.ecore.uri_mapping">
-      <mapping source="http:://schemas.modmacao.org/modmacao" target="platform:/plugin/org.modmacao.core/model/modmacao.occie"/>
+      <mapping source="http://schemas.modmacao.org/modmacao" target="platform:/plugin/org.modmacao.core/model/modmacao.occie"/>
    </extension>
 
    <!-- Register the parser for .modmacao files. -->
@@ -50,4 +57,6 @@
          </action>
       </objectContribution>
    </extension>
+
+
 </plugin>
