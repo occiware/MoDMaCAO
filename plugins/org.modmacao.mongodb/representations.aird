@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_Rx5xsKN4Eeez5JyMYQYaiw" selectedViews="_Ry8TgKN4Eeez5JyMYQYaiw" version="12.0.0.201704271200">
+  <viewpoint:DAnalysis xmi:id="_Rx5xsKN4Eeez5JyMYQYaiw" selectedViews="_Ry8TgKN4Eeez5JyMYQYaiw" version="12.1.0.201708031200">
     <semanticResources>model/mongodb.occie</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/platform</semanticResources>
@@ -12,15 +12,24 @@
     <semanticResources>http://schemas.modmacao.org/occi/platform</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>model/mongodb.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.modmacao.core/model/modmacao.ecore</semanticResources>
+    <semanticResources>model/mongodb.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.modmacao.core/model/modmacao.genmodel</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.modmacao.occi.platform/model/platform.genmodel</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.modmacao.occi.platform/model/platform.ecore</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_Ry8TgKN4Eeez5JyMYQYaiw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_R0-T0KN4Eeez5JyMYQYaiw" name="mongodb" repPath="#_R09swKN4Eeez5JyMYQYaiw">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_R0-T0KN4Eeez5JyMYQYaiw" name="mongodb" repPath="#_33mpkP-SEeevppxMoGr1ow">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']"/>
         <target xmi:type="occi:Extension" href="model/mongodb.occie#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_R09swKN4Eeez5JyMYQYaiw" name="mongodb">
+  <diagram:DSemanticDiagram xmi:id="_R09swKN4Eeez5JyMYQYaiw" name="mongodb" uid="_33mpkP-SEeevppxMoGr1ow">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_R09swaN4Eeez5JyMYQYaiw" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_R09swqN4Eeez5JyMYQYaiw"/>
     </ownedAnnotationEntries>
@@ -470,7 +479,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_9wA1I7jKEeeJOtn0hDgXLQ"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_9wA1JLjKEeeJOtn0hDgXLQ" fontName="Ubuntu" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9wA1JbjKEeeJOtn0hDgXLQ" points="[-74, -44, 91, 75]$[-193, -115, -28, 4]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9wA1JbjKEeeJOtn0hDgXLQ" points="[-61, -45, 139, 103]$[-199, -147, 1, 1]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9wBcNLjKEeeJOtn0hDgXLQ" id="(0.5,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9wBcNbjKEeeJOtn0hDgXLQ" id="(0.5,0.5)"/>
         </edges>
@@ -518,7 +527,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_DqokAbjMEeeJOtn0hDgXLQ"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_DqokArjMEeeJOtn0hDgXLQ" fontName="Ubuntu" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DqokA7jMEeeJOtn0hDgXLQ" points="[0, 0, 287, 51]$[-287, -51, 0, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DqokA7jMEeeJOtn0hDgXLQ" points="[0, 0, 392, 100]$[-389, -99, 3, 1]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DqpLELjMEeeJOtn0hDgXLQ" id="(0.8275862068965517,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DqpLEbjMEeeJOtn0hDgXLQ" id="(0.38866396761133604,1.0)"/>
         </edges>
@@ -534,7 +543,7 @@
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_FKsokbjMEeeJOtn0hDgXLQ"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_FKsokrjMEeeJOtn0hDgXLQ" fontName="Ubuntu" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FKsok7jMEeeJOtn0hDgXLQ" points="[0, 0, -17, 75]$[17, -75, 0, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FKsok7jMEeeJOtn0hDgXLQ" points="[0, 0, 61, 124]$[-60, -122, 1, 2]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FKtPpLjMEeeJOtn0hDgXLQ" id="(0.13953488372093023,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FKtPpbjMEeeJOtn0hDgXLQ" id="(0.291497975708502,1.0)"/>
         </edges>
