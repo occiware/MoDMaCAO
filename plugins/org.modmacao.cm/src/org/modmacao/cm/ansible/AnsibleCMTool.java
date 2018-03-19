@@ -168,8 +168,7 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	}
 	
 	private String getUser() {
-		// TODO: should be provided as additional mixin
-		return "ubuntu";
+		return AnsibleHelper.getInstance().getProperties().getProperty("ansible_user");
 	}
 	
 	private List<String> getRoles(Resource resource) {
@@ -246,7 +245,7 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		
 		String basedir = "/tmp/" + resource.getTitle() + "_ansible";
 		
-		AnsibleHelper helper = new AnsibleHelper();
+		AnsibleHelper helper = AnsibleHelper.getInstance();
 		
 		helper.createConfiguration(Paths.get("ansible.cfg"), 
 				Paths.get(helper.getProperties().getProperty("private_key_path")));
