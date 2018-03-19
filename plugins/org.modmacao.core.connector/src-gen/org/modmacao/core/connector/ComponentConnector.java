@@ -7,8 +7,6 @@
  * http://www.eclipse.org/legal/epl-v10.html
  * 
  * Contributors:
- * - Philippe Merle <philippe.merle@inria.fr>
- * - Faiez Zalila <faiez.zalila@inria.fr>
  * - Fabian Korte <fabian.korte@cs.uni-goettingen.de>
  *
  * Generated at Fri Jan 12 16:41:42 CET 2018 from platform:/resource/org.modmacao.occi.platform/model/platform.occie by org.eclipse.cmf.occi.core.gen.connector

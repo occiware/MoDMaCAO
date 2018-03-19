@@ -54,7 +54,8 @@
       <!-- @generated openstackruntime -->
       <package
             uri="http://schemas.modmacao.org/openstack/runtime/ecore"
-            class="openstackruntime.OpenstackruntimePackage"/>
+            class="openstackruntime.OpenstackruntimePackage"
+            genModel="model/openstackruntime.genmodel"/>
    </extension>
 
 </plugin>

@@ -20,10 +20,16 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+  		<buildCommand>
+            		<name>org.eclipse.jdt.core.javabuilder</name>
+            		<arguments>
+            		</arguments>
+        	</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.sirius.nature.modelingproject</nature>
 		<nature>org.eclipse.pde.PluginNature</nature>
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
+		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 </projectDescription>
