@@ -16,10 +16,38 @@ import org.eclipse.cmf.occi.core.MixinBase;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
-public class AnsibleHelper {
+/**
+* This class provides utility methods for the configuration management tool Ansible.
+* This class is a singleton, that holds loaded Ansible properties.
+* @author Fabian Korte - UGOE
+*/
+public final class AnsibleHelper {
+	Properties props;
+	private static AnsibleHelper helper;
 	
-	private Properties props = null;
+	private AnsibleHelper() {
+		loadProperties();
+	}
 	
+	
+	/**
+	 * Getter method for getting the instance of the AnsibleHelper.
+	 * In case, the instance does not exist yet, it will be created automatically.
+	 * @return The instance of the AnsibleHelper.
+	 */
+	public static AnsibleHelper getInstance() {
+		if (AnsibleHelper.helper == null) {
+			AnsibleHelper.helper = new AnsibleHelper();
+		}
+		return AnsibleHelper.helper;
+	}
+	
+	
+	/**
+	 * Getter method for providing the properties of this AnsibleHelper.
+	 * Properties will be read from local file ansible.properties.
+	 * @return The properties
+	 */
 	public Properties getProperties() {
 		if (props == null)
 			loadProperties();
@@ -28,7 +56,6 @@ public class AnsibleHelper {
 	}
 	
 	private void loadProperties() {
-		
 		props = new Properties();
     	InputStream input = null;
 
@@ -60,16 +87,34 @@ public class AnsibleHelper {
 				e.printStackTrace();
 			}
         	}
-        }
-		
+        }		
 	}
 	
 	
+	/**
+	 * Creates an Ansible inventory file at the given path with the given IP address.
+	 * @param ipaddress The IP address that should be added to the inventory.
+	 * @param path The path where the inventory file should be created.
+	 * @return The path where the inventory was created.
+	 * @throws IOException
+	 */
 	public Path createInventory(String ipaddress, Path path) throws IOException {
 		FileUtils.writeStringToFile(path.toFile(), ipaddress, (Charset) null);
 		return path;
 	}
 	
+	/**
+	 * Creates a Ansible playbook, with host given by ipaddress, roles given by roles,
+	 * the remote user, given by user, a link to a variable file, given by variables
+	 * at path path.
+	 * @param ipaddress The ipaddres of the host on which this playbook shoule be executed.
+	 * @param roles The roles that should be executed on the host.
+	 * @param user The user that is used to connect to the host.
+	 * @param variables A path to the variables file that should be used. 
+	 * @param path The path where this playbook should be created.
+	 * @return The path where this playbook was created.
+	 * @throws IOException
+	 */
 	public Path createPlaybook(String ipaddress, List<String> roles, String user, Path variables,
 			Path path) throws IOException {
 		String lb = System.getProperty("line.separator");
@@ -91,6 +136,13 @@ public class AnsibleHelper {
 		return path;
 	}
 	
+	/**
+	 * Creates an Ansible configuration at the given path linking to a private key file given by a path.
+	 * @param configuration The path where this configuration should be created.
+	 * @param keyPath The path to the private key file which should be used in the configuration.
+	 * @return The path where the configuration was created.
+	 * @throws IOException
+	 */
 	public Path createConfiguration(Path configuration, Path keyPath) throws IOException{
 		String lb = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder("[defaults]").append(lb);
@@ -101,6 +153,16 @@ public class AnsibleHelper {
 		return configuration;
 	}
 	
+	/**
+	 * Executes an Ansible playbook.
+	 * @param playbook The path to the Ansible playbook.
+	 * @param task The task that should be executed (used to select block in Ansible playbook)
+	 * @param inventory The inventory that should be used.
+	 * @param options Additional options that should be handed over to the call of the Ansible binary. 
+	 * @return The return code of the external Ansible binary.
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public int executePlaybook(Path playbook, String task, Path inventory, String options) throws IOException, 
 		InterruptedException {
 		String command = this.getProperties().getProperty("ansible_bin");
@@ -120,6 +182,13 @@ public class AnsibleHelper {
 		return process.exitValue();
 	}
 	
+	/**
+	 * Creates an Ansible variables file at the given path from the AttributeStates of a given OCCI Entity.
+	 * @param variablefile The Path where this variable file should be created.
+	 * @param entity The entity for whichs AttributeStates the variable file should be created.
+	 * @return The path where this variable file was created.
+	 * @throws IOException
+	 */
 	public Path createVariableFile(Path variablefile, Entity entity) throws IOException{
 		String lb = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder();
