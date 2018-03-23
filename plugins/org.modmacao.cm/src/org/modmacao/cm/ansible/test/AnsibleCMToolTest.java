@@ -2,8 +2,6 @@ package org.modmacao.cm.ansible.test;
 
 import static org.junit.Assert.assertEquals;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Mixin;
 import org.eclipse.cmf.occi.core.MixinBase;
@@ -29,10 +27,7 @@ public class AnsibleCMToolTest {
 	
 	
 	@Before
-	public void setUP() {
-		org.apache.log4j.BasicConfigurator.configure();
-		Logger.getRootLogger().setLevel(Level.DEBUG);
-		
+	public void setUP() {		
 		OcciRegistry.getInstance().registerExtension("http://schemas.ogf.org/occi/core#", "jar:file:////home/fglaser/occiware_current_03012017/plugins/org.eclipse.cmf.occi.core_1.0.0.201801031230.jar!/model/core.occie");
 		OcciRegistry.getInstance().registerExtension("http://schemas.ogf.org/occi/infrastructure#", "jar:file:////home/fglaser/occiware_current_03012017/plugins/org.eclipse.cmf.occi.infrastructure_1.0.0.201801031230.jar!/model/infrastructure.occie");
 		OcciRegistry.getInstance().registerExtension("http://schemas.modmacao.org/occi/platform#", "file:///home/fglaser/MoDMaCAO/plugins/org.modmacao.occi.platform/model/platform.occie");

@@ -147,8 +147,9 @@ public final class AnsibleHelper {
 		String lb = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder("[defaults]").append(lb);
 		sb.append("roles_path = ").append(this.getProperties().getProperty("ansible_rolespath")).append(lb);
-		sb.append("ssh_args = -o StrictHostKeyChecking=no").append(lb);
-		sb.append("private_key_file = ").append(keyPath.toString());
+		sb.append("private_key_file = ").append(keyPath.toString()).append(lb);
+		sb.append("[ssh_connection]").append(lb);
+		sb.append("ssh_args = -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no").append(lb);
 		FileUtils.writeStringToFile(configuration.toFile(), sb.toString(), (Charset) null);
 		return configuration;
 	}

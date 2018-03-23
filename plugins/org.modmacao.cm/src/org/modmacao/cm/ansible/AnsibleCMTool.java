@@ -11,6 +11,7 @@ import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.infrastructure.Compute;
+import org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface;
 import org.eclipse.cmf.occi.infrastructure.Networkinterface;
 import org.eclipse.emf.common.util.EList;
 import org.modmacao.cm.ConfigurationManagementTool;
@@ -211,23 +212,27 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 					break;
 				}	
 			}
+			
 			if (networklink == null) {
 				LOGGER.error("No network interface found for " + target);	
 			} else {
 				List<AttributeState> attributes  = new LinkedList<AttributeState>();
 				attributes.addAll(networklink.getAttributes());
 				for (MixinBase base: networklink.getParts()) {
-					attributes.addAll(base.getAttributes());
-				}
-				
-				for (AttributeState attribute: attributes ) {
-					if (attribute.getName().equals("occi.networkinterface.address")) {
-						LOGGER.info("Found IP address for " + networklink);
-						ipaddress = attribute.getValue();
-						LOGGER.info("IP address is " + ipaddress);
-						break;
+					if (base instanceof Ipnetworkinterface) {
+						ipaddress = ((Ipnetworkinterface) base).getOcciNetworkinterfaceAddress();
 					}
 				}
+				
+//				for (AttributeState attribute: attributes ) {
+//					LOGGER.debug(attribute.getName() + ":" + attribute.getValue());
+//					if (attribute.getName().equals("occi.networkinterface.address")) {
+//						LOGGER.info("Found IP address for " + networklink);
+//						ipaddress = attribute.getValue();
+//						LOGGER.info("IP address is " + ipaddress);
+//						break;
+//					}
+//				}
 			}
 		}
 
