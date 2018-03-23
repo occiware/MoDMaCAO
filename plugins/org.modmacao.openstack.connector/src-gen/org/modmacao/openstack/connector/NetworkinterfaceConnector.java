@@ -15,11 +15,11 @@
  */
 package org.modmacao.openstack.connector;
 
-import org.eclipse.cmf.occi.core.Attribute;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
 import org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface;
+import org.eclipse.cmf.occi.infrastructure.NetworkInterfaceStatus;
 import org.openstack4j.api.Builders;
 import org.openstack4j.api.OSClient.OSClientV2;
 import org.openstack4j.model.compute.Server;
@@ -56,7 +56,6 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 	NetworkinterfaceConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		os = OpenStackHelper.getOSClient();
 	}
 	// End of user code
 	//
@@ -71,13 +70,27 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
-		String networkID = this.getTarget().getId();
+		
+		os = OpenStackHelper.getInstance().getOSClient();
+		
+		String networkID = OpenStackHelper.getInstance().getRuntimeID(this.getTarget());
 		Network network = os.networking().network().get(networkID);
-		String serverID = ((ComputeConnector) this.getSource()).getRuntimeID();
+		String serverID = OpenStackHelper.getInstance().getRuntimeID(this.getSource());
 		Server server = os.compute().servers().get(serverID);
 		String fixedIP = null;
 						
 		String subnetID = network.getSubnets().get(0);
+		
+		String runtimeID = OpenStackHelper.getInstance().getRuntimeID(this);
+		
+		if (runtimeID != null) {
+			port = os.networking().port().get(runtimeID);
+			if (port == null) {
+				this.setOcciNetworkinterfaceState(NetworkInterfaceStatus.ERROR);
+				this.setOcciNetworkinterfaceStateMessage("Runtime id set, but unable to connect to runtime object.");
+			}
+			return;
+		}
 		
 		for (MixinBase mixin: this.getParts()) {
 			if (mixin instanceof Ipnetworkinterface) {
@@ -107,7 +120,11 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 		}
 		
 		if (exists) {
-			LOGGER.debug("Port found with matching properties, nothing to be done.");
+			LOGGER.debug("Port found with matching properties, set runtimeid accordingly.");
+			
+			Runtimeid runtimeIDMixin = OpenstackruntimeFactory.eINSTANCE.createRuntimeid();
+			runtimeIDMixin.setOpenstackRuntimeId(port.getId());
+			this.getParts().add(runtimeIDMixin);
 		}
 		else {
 			LOGGER.debug("No port found with matching properties, creating new port.");
@@ -122,12 +139,12 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 		
 			port = os.networking().port().create(builder.build());
 			
-			Runtimeid runtimeID = OpenstackruntimeFactory.eINSTANCE.createRuntimeid();
-			runtimeID.setOpenstackRuntimeId(port.getId());
-			this.getParts().add(runtimeID);
+			Runtimeid runtimeIDMixin = OpenstackruntimeFactory.eINSTANCE.createRuntimeid();
+			runtimeIDMixin.setOpenstackRuntimeId(port.getId());
+			this.getParts().add(runtimeIDMixin);
 			
 			os.compute().servers().interfaces().create(
-				((ComputeConnector) this.getSource()).getRuntimeID(), 
+				serverID,
 				port.getId());
 		}	
 	}
@@ -141,9 +158,15 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		os = OpenStackHelper.getOSClient();
+		os = OpenStackHelper.getInstance().getOSClient();
 		
-		port = os.networking().port().get(port.getId());
+		port = getRuntimeObject();
+		
+		if (port == null) {
+			this.setOcciNetworkinterfaceState(NetworkInterfaceStatus.ERROR);
+			this.setOcciNetworkinterfaceStateMessage("Unable to retrieve runtime object.");
+			return;
+		}
 		
 		// Update IP address
 		for (MixinBase mixin: this.getParts()) {
@@ -158,7 +181,6 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 				
 				OcciHelper.setAttribute(mixin, "occi.networkinterface.address", 
 						port.getFixedIps().iterator().next().getIpAddress());
-
 			}
 		}
 	}
@@ -183,16 +205,32 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 	@Override
 	public void occiDelete()
 	{
-		LOGGER.debug("occiDelete() called on " + this);		
-		os.networking().port().delete(port.getId());
+		LOGGER.debug("occiDelete() called on " + this);
+		os = OpenStackHelper.getInstance().getOSClient();
+		
+		port = getRuntimeObject();
+		
+		if (port != null) {
+			os.networking().port().delete(port.getId());
+		}
+		
+		OpenStackHelper.getInstance().removeRuntimeID(this);
+		
+		this.setOcciNetworkinterfaceState(NetworkInterfaceStatus.INACTIVE);
 	}
+	
+	private Port getRuntimeObject() {
+		String runtimeid = OpenStackHelper.getInstance().getRuntimeID(this);
+		if (runtimeid == null) {
+			return null;
+		}
+		port = os.networking().port().get(runtimeid);
+		return port;
+	}
+	
 	// End of user code
 
 	//
 	// Networkinterface actions.
 	//
-
-		
-
-
 }	

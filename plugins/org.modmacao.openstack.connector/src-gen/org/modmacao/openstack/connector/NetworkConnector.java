@@ -9,23 +9,26 @@
  * Contributors:
  * - Philippe Merle <philippe.merle@inria.fr>
  * - Faiez Zalila <faiez.zalila@inria.fr>
+ * - Fabian Korte <fabian.korte@cs.uni-goettingen.de>
  *
  * Generated at Fri Mar 02 15:56:56 CET 2018 from platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.occie by org.eclipse.cmf.occi.core.gen.connector
  */
 package org.modmacao.openstack.connector;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.infrastructure.Ipnetwork;
 import org.eclipse.cmf.occi.infrastructure.NetworkStatus;
 import org.openstack4j.api.Builders;
 import org.openstack4j.api.OSClient.OSClientV2;
-import org.openstack4j.model.compute.NetworkCreate;
 import org.openstack4j.model.network.IPVersionType;
 import org.openstack4j.model.network.Network;
 import org.openstack4j.model.network.builder.NetworkBuilder;
 import org.openstack4j.model.network.builder.SubnetBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import openstackruntime.OpenstackruntimeFactory;
+import openstackruntime.Runtimeid;
 
 
 /**
@@ -50,7 +53,6 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 	NetworkConnector()
 	{
 		LOGGER.debug("Constructor called on " + this);
-		os = OpenStackHelper.getOSClient();
 	}
 	// End of user code
 	//
@@ -66,7 +68,18 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 	{
 		LOGGER.debug("occiCreate() called on " + this);
 		
-		network = os.networking().network().get(this.getId());
+		os = OpenStackHelper.getInstance().getOSClient();
+		// first check if runtime id is present; if yes try to connect to runtime state
+		String runtimeID = OpenStackHelper.getInstance().getRuntimeID(this);
+		
+		if (runtimeID != null){
+			network = getRuntimeObject();
+			if (network == null) {
+				this.setOcciNetworkState(occiNetworkState.ERROR);
+				this.setOcciNetworkStateMessage("Runtime id set, but unable to connect to runtime object.");
+			}
+			return;
+		}
 		
 		if (network == null) {
 			NetworkBuilder builder = Builders.network();
@@ -84,6 +97,10 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 					os.networking().subnet().create(snbuilder.build());
 				}
 			}
+			Runtimeid runtimeMixin = OpenstackruntimeFactory.eINSTANCE.createRuntimeid();
+			runtimeMixin.setOpenstackRuntimeId(network.getId());
+	
+			this.getParts().add(runtimeMixin);		
 		}
 		
 	}
@@ -97,7 +114,14 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// TODO: Implement this callback or remove this method.
+		os = OpenStackHelper.getInstance().getOSClient();
+		
+		network = getRuntimeObject();
+		
+		if (network == null) {
+			this.setOcciNetworkState(NetworkStatus.ERROR);
+			this.setOcciNetworkStateMessage("Unable to retrieve runtime object");
+		}
 	}
 	// End of user code
 
@@ -121,7 +145,16 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		os.networking().network().delete(network.getId());
+		os = OpenStackHelper.getInstance().getOSClient();
+		
+		network = getRuntimeObject();
+		
+		if (network != null) {
+			os.networking().network().delete(network.getId());
+		}
+		OpenStackHelper.getInstance().removeRuntimeID(this);
+		
+		this.setOcciNetworkState(NetworkStatus.INACTIVE);
 	}
 	// End of user code
 
@@ -192,8 +225,15 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 			break;
 		}
 	}
+	
+	private Network getRuntimeObject() {
+		String runtimeid = OpenStackHelper.getInstance().getRuntimeID(this);
+		if (runtimeid == null) {
+			return null;
+		}
+		network = os.networking().network().get(runtimeid);
+		return network;
+	}	
+
 	// End of user code
-		
-
-
 }	
