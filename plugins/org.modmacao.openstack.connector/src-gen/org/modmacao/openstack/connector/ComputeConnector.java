@@ -31,6 +31,7 @@ import org.eclipse.cmf.occi.infrastructure.SaveMethod;
 import org.eclipse.cmf.occi.infrastructure.Ssh_key;
 import org.eclipse.cmf.occi.infrastructure.StopMethod;
 import org.eclipse.cmf.occi.infrastructure.SuspendMethod;
+import org.eclipse.cmf.occi.infrastructure.User_data;
 import org.openstack4j.api.Builders;
 import org.openstack4j.api.OSClient.OSClientV2;
 import org.openstack4j.model.compute.FloatingIP;
@@ -40,6 +41,7 @@ import org.openstack4j.model.compute.ServerCreate;
 import org.openstack4j.model.compute.builder.ServerCreateBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.apache.commons.codec.binary.Base64;
 
 import openstackruntime.Floatingip;
 import openstackruntime.OpenstackruntimeFactory;
@@ -146,7 +148,7 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 					}
 				}
 			}
-			
+	
 			if (mixin instanceof Os_tpl) {
 				LOGGER.info("Found os template in " + this);
 				for (Attribute attribute: mixin.getMixin().getAttributes()) {
@@ -155,6 +157,12 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 						break;
 					}
 				}
+			}
+			
+			if (mixin instanceof User_data) {
+				LOGGER.info("Found user data in " + this);
+				byte[] encodedBytes = ((User_data) mixin).getOcciComputeUserdata().getBytes();
+				builder.userData(Base64.encodeBase64String(encodedBytes));
 			}
 		}
 		
