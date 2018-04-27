@@ -75,10 +75,32 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 		
 		String networkID = OpenStackHelper.getInstance().getRuntimeID(this.getTarget());
 		Network network = os.networking().network().get(networkID);
+		
+		if (network == null) {
+			LOGGER.error("Target network not found.");
+			this.setOcciNetworkinterfaceState(NetworkInterfaceStatus.ERROR);
+			this.setOcciNetworkinterfaceStateMessage("Target network not found.");
+			return;
+		}
+		
 		String serverID = OpenStackHelper.getInstance().getRuntimeID(this.getSource());
 		Server server = os.compute().servers().get(serverID);
+		
+		if (serverID == null) {
+			LOGGER.error("Source server not found.");
+			this.setOcciNetworkinterfaceState(NetworkInterfaceStatus.ERROR);
+			this.setOcciNetworkinterfaceStateMessage("Source server not found.");
+			return;
+		}
+		
 		String fixedIP = null;
-						
+		
+		if (network.getSubnets().isEmpty()) {
+			LOGGER.error("Target network contains no subnets");
+			this.setOcciNetworkinterfaceState(NetworkInterfaceStatus.ERROR);
+			this.setOcciNetworkinterfaceStateMessage("Target network contains no subnets.");
+			return;
+		}
 		String subnetID = network.getSubnets().get(0);
 		
 		String runtimeID = OpenStackHelper.getInstance().getRuntimeID(this);
@@ -173,13 +195,7 @@ public class NetworkinterfaceConnector extends org.eclipse.cmf.occi.infrastructu
 			if (mixin instanceof Ipnetworkinterface) {
 				LOGGER.debug("Associated port has IP: " 
 						+ port.getFixedIps().iterator().next().getIpAddress());
-				for (AttributeState state: this.getAttributes()) {
-					if (state.getName().equals("occi.networkinterface.address")){
-						state.setValue(port.getFixedIps().iterator().next().getIpAddress());
-					}
-				}
-				
-				OcciHelper.setAttribute(mixin, "occi.networkinterface.address", 
+				OpenStackHelper.getInstance().setAttributeState(mixin, "occi.networkinterface.address",
 						port.getFixedIps().iterator().next().getIpAddress());
 			}
 		}

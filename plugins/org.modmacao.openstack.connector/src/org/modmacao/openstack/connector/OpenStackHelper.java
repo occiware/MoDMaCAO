@@ -5,9 +5,16 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Properties;
 
+import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.MixinBase;
-import org.eclipse.cmf.occi.core.Resource;
+import org.eclipse.cmf.occi.core.util.Occi2Ecore;
+import org.eclipse.cmf.occi.core.util.OcciHelper;
+import org.eclipse.emf.common.notify.Adapter;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.openstack4j.api.OSClient.OSClientV2;
 import org.openstack4j.openstack.OSFactory;
 import org.osgi.framework.Bundle;
@@ -23,6 +30,7 @@ public final class OpenStackHelper {
 	private Properties props;
 	
 	private static OpenStackHelper helper;
+	
 	
 	private OpenStackHelper() {
 		loadProperties();
@@ -88,7 +96,7 @@ public final class OpenStackHelper {
 		os = OSFactory.builderV2()
 				.endpoint(endpoint)
 	            .credentials(username, password)
-	            .tenantName(username)
+	            .tenantName(tenant)
 	            .authenticate();
 		//}
 			
@@ -126,4 +134,48 @@ public final class OpenStackHelper {
 		}	
 		entity.getParts().remove(runtimeid);	
 	}
+	
+	// for synchronized setting of AttributeStates and corresponding EStructuralFeatures
+	public void setAttributeState(Entity entity, String attributeName, String attributeValue) {
+		for (AttributeState state: entity.getAttributes()) {
+			if (state.getName().equals(attributeName)){
+				state.setValue(attributeValue);
+			}
+		}
+		OcciHelper.setAttribute(entity, attributeName, attributeValue);
+	}
+	
+	public void setAttributeState(MixinBase mixinBase, String attributeName, String attributeValue) {
+		for (AttributeState state: mixinBase.getAttributes()) {
+			if (state.getName().equals(attributeName)){
+				state.setValue(attributeValue);
+			}
+		}
+		OcciHelper.setAttribute(mixinBase, attributeName, attributeValue);	
+	}
+	
+	public String getAttributeState(Entity entity, String attributeName) {
+		String eAttributeName = Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attributeName);
+		final EStructuralFeature eStructuralFeature = entity.eClass().getEStructuralFeature(eAttributeName);
+		
+		if (!(eStructuralFeature instanceof EAttribute) || (eStructuralFeature == null)) {
+			throw new IllegalArgumentException(
+					"'" + eAttributeName + "' is not an Ecore attribute!");
+		}
+		// Get the attribute.
+		return entity.eGet(eStructuralFeature).toString();
+	}
+	
+	public String getAttributeState(MixinBase mixinBase, String attributeName) {
+		String eAttributeName = Occi2Ecore.convertOcciAttributeName2EcoreAttributeName(attributeName);
+		final EStructuralFeature eStructuralFeature = mixinBase.eClass().getEStructuralFeature(eAttributeName);
+		
+		if (!(eStructuralFeature instanceof EAttribute) || (eStructuralFeature == null)) {
+			throw new IllegalArgumentException(
+					"'" + eAttributeName + "' is not an Ecore attribute!");
+		}
+		// Get the attribute.
+		return mixinBase.eGet(eStructuralFeature).toString();
+	}
+	
 }

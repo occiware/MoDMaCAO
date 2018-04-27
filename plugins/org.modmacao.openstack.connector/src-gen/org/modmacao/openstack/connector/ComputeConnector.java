@@ -185,7 +185,8 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		server = os.compute().servers().bootAndWaitActive(sc, 50000);
 		
 		Runtimeid runtimeIDMixin = OpenstackruntimeFactory.eINSTANCE.createRuntimeid();
-		runtimeIDMixin.setOpenstackRuntimeId(server.getId());
+		OpenStackHelper.getInstance().setAttributeState(runtimeIDMixin, "openstack.runtime.id", 
+				server.getId());
 		
 		this.getParts().add(runtimeIDMixin);
 		

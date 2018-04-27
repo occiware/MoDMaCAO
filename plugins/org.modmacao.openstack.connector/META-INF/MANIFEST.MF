@@ -15,7 +15,8 @@ Require-Bundle: org.slf4j.api,
  org.modmacao.openstack.runtime,
  org.eclipse.cmf.occi.crtp,
  org.eclipse.emf.ecore,
- org.eclipse.osgi
+ org.eclipse.osgi,
+ org.eclipse.emf.common
 Export-Package: org.modmacao.openstack.connector
 Import-Package: org.apache.log4j,
  ossweruntime
