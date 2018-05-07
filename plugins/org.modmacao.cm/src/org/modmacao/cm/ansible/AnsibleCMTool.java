@@ -209,6 +209,8 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 				if (link instanceof Networkinterface) {
 					LOGGER.info("Found network interface for " + target);
 					networklink = (Networkinterface) link;
+					// Retrieving object to ensure ip address is correct
+					networklink.occiRetrieve();
 					break;
 				}	
 			}
