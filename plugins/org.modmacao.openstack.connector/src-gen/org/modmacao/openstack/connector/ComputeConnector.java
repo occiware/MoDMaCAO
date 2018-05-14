@@ -161,8 +161,8 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 			
 			if (mixin instanceof User_data) {
 				LOGGER.info("Found user data in " + this);
-				byte[] encodedBytes = ((User_data) mixin).getOcciComputeUserdata().getBytes();
-				builder.userData(Base64.encodeBase64String(encodedBytes));
+				//byte[] encodedBytes = ((User_data) mixin).getOcciComputeUserdata().getBytes();
+				builder.userData(((User_data) mixin).getOcciComputeUserdata());
 			}
 		}
 		
@@ -219,8 +219,10 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		server = getRuntimeObject();
 		
 		if (server == null) {
+			LOGGER.debug("Unable to retrieve runtime object.");
 			this.setOcciComputeState(ComputeStatus.ERROR);
-			this.setOcciComputeStateMessage("Unable to retrieve runtime object");
+			this.setOcciComputeStateMessage("Unable to retrieve runtime object.");
+			return;
 		}
 		
 		// Retrieving Status
@@ -229,13 +231,6 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		if (status == Status.ACTIVE) {
 			this.setOcciComputeState(ComputeStatus.ACTIVE);
 		}
-		
-		// call retrieve methods for all applied mixins to update runtime information
-		//for (Link link: this.getLinks()) {
-			//if (link instanceof NetworkinterfaceConnector) {
-			//	link.occiRetrieve();
-			//}
-		//}
 	}
 	// End of user code
 
@@ -430,6 +425,7 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 	private Server getRuntimeObject() {
 		String runtimeid = OpenStackHelper.getInstance().getRuntimeID(this);
 		if (runtimeid == null) {
+			LOGGER.debug("Object hat no runtime id");
 			return null;
 		}
 		server = os.compute().servers().get(runtimeid);

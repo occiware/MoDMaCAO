@@ -15,6 +15,7 @@
  */
 package org.modmacao.openstack.connector;
 
+import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.infrastructure.Ipnetwork;
 import org.eclipse.cmf.occi.infrastructure.NetworkStatus;
@@ -83,8 +84,18 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 		
 		if (network == null) {
 			NetworkBuilder builder = Builders.network();
-			builder.name(this.getTitle());
-		
+			
+			if (this.getTitle() == null) {
+				// Check if an attribute state with title is present and set
+				// title accordingly
+				for (AttributeState attribute: this.getAttributes()) {
+					if (attribute.getName().equals("occi.core.title"))
+						this.setTitle(attribute.getValue());
+				}	
+			} else {
+				builder.name(this.getTitle());
+			}	
+				
 			network = os.networking().network().create(builder.build());
 		
 			for (MixinBase mixin: this.getParts()) {
@@ -121,6 +132,7 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 		if (network == null) {
 			this.setOcciNetworkState(NetworkStatus.ERROR);
 			this.setOcciNetworkStateMessage("Unable to retrieve runtime object");
+			return;
 		}
 	}
 	// End of user code
@@ -148,8 +160,10 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 		os = OpenStackHelper.getInstance().getOSClient();
 		
 		network = getRuntimeObject();
-		
-		if (network != null) {
+		if (network == null) {
+			LOGGER.error("Runtime object for network " + this.getTitle() + " not found!");
+		}
+		else {
 			os.networking().network().delete(network.getId());
 		}
 		OpenStackHelper.getInstance().removeRuntimeID(this);

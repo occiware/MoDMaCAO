@@ -4,6 +4,7 @@ import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 import org.eclipse.cmf.occi.infrastructure.Os_tpl;
 import org.eclipse.cmf.occi.infrastructure.Resource_tpl;
 import org.eclipse.cmf.occi.infrastructure.Ssh_key;
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.junit.Before;
 import org.junit.Test;
 import org.modmacao.openstack.connector.ComputeConnector;
@@ -20,9 +21,8 @@ public class ComputeConnectorTest {
 	private ComputeConnector cut = null;
 	
 	@Before
-	public void setUp() {
-		
-		InfrastructurePackage.eINSTANCE.eClass();
+	public void setUp() {	
+//		InfrastructurePackage.eINSTANCE.eClass();
 //		OcciRegistry.getInstance().registerExtension("http://schemas.ogf.org/occi/infrastructure#", 
 //				"jar:file:////home/fglaser/occiware_current_03012017/plugins/org.eclipse.cmf.occi."
 //				+ "infrastructure_1.0.0.201801031230.jar!/model/infrastructure.occie");
@@ -93,7 +93,6 @@ public class ComputeConnectorTest {
 		// then delete server
 		cut.occiDelete();
 	}
-	
 //	@Test
 //	public void testOcciDelete() {
 //		cut.occiDelete();

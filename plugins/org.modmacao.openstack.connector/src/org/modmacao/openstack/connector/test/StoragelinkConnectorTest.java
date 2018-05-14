@@ -2,24 +2,21 @@ package org.modmacao.openstack.connector.test;
 
 import org.eclipse.cmf.occi.core.util.OcciRegistry;
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
-import org.eclipse.cmf.occi.infrastructure.Network;
 import org.eclipse.cmf.occi.infrastructure.Ssh_key;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.modmacao.openstack.connector.ComputeConnector;
 import org.modmacao.openstack.connector.ConnectorFactory;
-import org.modmacao.openstack.connector.NetworkinterfaceConnector;
-
-import com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser;
+import org.modmacao.openstack.connector.StorageConnector;
+import org.modmacao.openstack.connector.StoragelinkConnector;
 
 import openstackruntime.OpenstackruntimePackage;
-import openstackruntime.Runtimeid;
-import ossweruntime.OssweruntimePackage;
 
-public class NetworkinterfaceConnectorTest {
-	private NetworkinterfaceConnector niut = null;	
+public class StoragelinkConnectorTest {
+	private StoragelinkConnector slut = null;	
 	private ComputeConnector cut = null;
+	private StorageConnector sut = null;
 	@Before
 	public void setUp() throws Exception {
 		InfrastructurePackage.eINSTANCE.eClass();
@@ -47,30 +44,28 @@ public class NetworkinterfaceConnectorTest {
 		
 		cut.occiCreate();
 		
-		niut = (NetworkinterfaceConnector) factory.createNetworkinterface();
+		slut = (StoragelinkConnector) factory.createStoragelink();		
+		sut = (StorageConnector) factory.createStorage();
 		
-		//Ipnetworkinterface ipmixin = factory.createIpnetworkinterface();
-		//ipmixin.setOcciNetworkinterfaceAddress("10.0.0.25");
+		sut.setTitle("Storage1");
+		sut.setOcciStorageSize(100f);
 		
-		//niut.getParts().add(ipmixin);
-		Network publicnet = factory.createNetwork();
-		//TODO: Fix test to use runtime id mixin
+		sut.occiCreate();
 		
-		publicnet.setId("29d78078-fb4c-47aa-a9af-b8aaf3339590");
-		
-		niut.setTarget(publicnet);
-		niut.setSource(cut);
+		slut.setTarget(sut);
+		slut.setSource(cut);
 	}
 
 	@Test
 	public void testOcciCreateAndOcciDelete() {
-		niut.occiCreate();	
-		niut.occiDelete();
+		slut.occiCreate();
+		slut.occiDelete();
 	}
 	
 	@After
 	public void tearDown() throws Exception{
 		cut.occiDelete();
+		sut.occiDelete();
 	}
 	
 	
