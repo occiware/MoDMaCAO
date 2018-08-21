@@ -135,7 +135,8 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 			if (mixin instanceof Ssh_key) {
 				String publickey = ((Ssh_key) mixin).getOcciCredentialsSshPublickey();
 				// create new ssh key on OpenStack
-				os.compute().keypairs().create(this.getTitle() + "_keypair", publickey);
+			    os.compute().keypairs().create(this.getTitle() + "_keypair", publickey);	
+					
 				builder.keypairName(this.getTitle() + "_keypair");
 			}
 			
@@ -182,26 +183,31 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		
 		ServerCreate sc = builder.build();
 		
-		server = os.compute().servers().bootAndWaitActive(sc, 50000);
-		
-		Runtimeid runtimeIDMixin = OpenstackruntimeFactory.eINSTANCE.createRuntimeid();
-		OpenStackHelper.getInstance().setAttributeState(runtimeIDMixin, "openstack.runtime.id", 
-				server.getId());
-		
-		this.getParts().add(runtimeIDMixin);
-		
-		for (MixinBase mixin: this.getParts()) {
-			if (mixin instanceof Floatingip) {
-				String pool = ((Floatingip) mixin).getOpenstackFloatingipPool();
-				String address = ((Floatingip) mixin).getOpenstackFloatingipAddress();
-				if (address != null) {
-					//TODO: Implement
-				} else {
-					FloatingIP fip = os.compute().floatingIps().allocateIP(pool);
-					LOGGER.debug("Allocated new floating ip " + fip.getFloatingIpAddress());
-					os.compute().floatingIps().addFloatingIP(server, fip.getFloatingIpAddress());
-				}				
-			}
+		try {
+			server = os.compute().servers().bootAndWaitActive(sc, 50000);
+
+			Runtimeid runtimeIDMixin = OpenstackruntimeFactory.eINSTANCE.createRuntimeid();
+			OpenStackHelper.getInstance().setAttributeState(runtimeIDMixin, "openstack.runtime.id", 
+						server.getId());
+
+				this.getParts().add(runtimeIDMixin);
+
+				for (MixinBase mixin: this.getParts()) {
+					if (mixin instanceof Floatingip) {
+						String pool = ((Floatingip) mixin).getOpenstackFloatingipPool();
+						String address = ((Floatingip) mixin).getOpenstackFloatingipAddress();
+						if (address != null) {
+							//TODO: Implement
+						} else {
+							FloatingIP fip = os.compute().floatingIps().allocateIP(pool);
+							LOGGER.debug("Allocated new floating ip " + fip.getFloatingIpAddress());
+							os.compute().floatingIps().addFloatingIP(server, fip.getFloatingIpAddress());
+						}				
+					}
+				}
+		} catch (Exception e) {
+			LOGGER.debug("Problem while creating VM: " + e.getMessage());
+			os.compute().keypairs().delete(this.getTitle() + "_keypair");
 		}
 	}
 	// End of user code
