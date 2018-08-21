@@ -84,6 +84,7 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 		
 		if (network == null) {
 			NetworkBuilder builder = Builders.network();
+			builder.adminStateUp(true);
 			
 			if (this.getTitle() == null) {
 				// Check if an attribute state with title is present and set
@@ -95,23 +96,28 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 			} else {
 				builder.name(this.getTitle());
 			}	
-				
-			network = os.networking().network().create(builder.build());
-		
-			for (MixinBase mixin: this.getParts()) {
-				if (mixin instanceof Ipnetwork) {
-					SubnetBuilder snbuilder = Builders.subnet();
-					snbuilder.name(this.getTitle() + "-subnet");
-					snbuilder.cidr(((Ipnetwork) mixin).getOcciNetworkAddress());
-					snbuilder.ipVersion(IPVersionType.V4);
-					snbuilder.networkId(network.getId());
-					os.networking().subnet().create(snbuilder.build());
+			
+			try {
+				network = os.networking().network().create(builder.build());
+
+				for (MixinBase mixin: this.getParts()) {
+					if (mixin instanceof Ipnetwork) {
+						SubnetBuilder snbuilder = Builders.subnet();
+						snbuilder.name(this.getTitle() + "-subnet");
+						snbuilder.cidr(((Ipnetwork) mixin).getOcciNetworkAddress());
+						snbuilder.ipVersion(IPVersionType.V4);
+						snbuilder.networkId(network.getId());
+						snbuilder.enableDHCP(true);
+						os.networking().subnet().create(snbuilder.build());
+					}
 				}
+				Runtimeid runtimeMixin = OpenstackruntimeFactory.eINSTANCE.createRuntimeid();
+				runtimeMixin.setOpenstackRuntimeId(network.getId());
+
+				this.getParts().add(runtimeMixin);
+			} catch (Exception e) {
+				LOGGER.debug("Problems creating network: " + e.getMessage());
 			}
-			Runtimeid runtimeMixin = OpenstackruntimeFactory.eINSTANCE.createRuntimeid();
-			runtimeMixin.setOpenstackRuntimeId(network.getId());
-	
-			this.getParts().add(runtimeMixin);		
 		}
 		
 	}
