@@ -23,6 +23,7 @@ import org.openstack4j.api.Builders;
 import org.openstack4j.api.OSClient.OSClientV2;
 import org.openstack4j.model.network.IPVersionType;
 import org.openstack4j.model.network.Network;
+import org.openstack4j.model.network.State;
 import org.openstack4j.model.network.builder.NetworkBuilder;
 import org.openstack4j.model.network.builder.SubnetBuilder;
 import org.slf4j.Logger;
@@ -78,6 +79,8 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 			if (network == null) {
 				this.setOcciNetworkState(occiNetworkState.ERROR);
 				this.setOcciNetworkStateMessage("Runtime id set, but unable to connect to runtime object.");
+			} else {
+				setNetworkStatus();
 			}
 			return;
 		}
@@ -139,6 +142,8 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 			this.setOcciNetworkState(NetworkStatus.ERROR);
 			this.setOcciNetworkStateMessage("Unable to retrieve runtime object");
 			return;
+		} else {
+			setNetworkStatus();
 		}
 	}
 	// End of user code
@@ -243,6 +248,20 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 
 		default:
 			break;
+		}
+	}
+	
+	private void setNetworkStatus() {
+		Network network = getRuntimeObject();
+		State state = network.getStatus();
+		if (state == State.ACTIVE) {
+			this.setOcciNetworkState(NetworkStatus.ACTIVE);
+		}
+		else if (state == State.ERROR ) {
+			this.setOcciNetworkState(NetworkStatus.ERROR);
+		}
+		else {
+			this.setOcciNetworkState(NetworkStatus.INACTIVE);
 		}
 	}
 	
