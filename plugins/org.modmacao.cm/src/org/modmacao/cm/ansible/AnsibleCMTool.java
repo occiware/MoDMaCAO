@@ -250,7 +250,7 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 			options = "--connection=local";
 		}
 		
-		String basedir = "/tmp/" + resource.getTitle() + "_ansible";
+		String basedir = "/tmp/" + resource.getTitle() + "_ansible_" + System.currentTimeMillis();
 		
 		AnsibleHelper helper = AnsibleHelper.getInstance();
 		
