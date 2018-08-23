@@ -14,6 +14,7 @@ import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface;
 import org.eclipse.cmf.occi.infrastructure.Networkinterface;
 import org.eclipse.emf.common.util.EList;
+import org.modmacao.ansibleconfiguration.Ansibleendpoint;
 import org.modmacao.cm.ConfigurationManagementTool;
 import org.modmacao.occi.platform.Application;
 import org.modmacao.occi.platform.Component;
@@ -205,19 +206,32 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 			Compute target = (Compute) hosting.getTarget();
 			links = target.getLinks();
 
+			List<Link> endpointCandidates = new LinkedList<Link>();
+			
 			for (Link link:links) {
 				if (link instanceof Networkinterface) {
 					LOGGER.info("Found network interface for " + target);
-					networklink = (Networkinterface) link;
-					// Retrieving object to ensure ip address is correct
-					networklink.occiRetrieve();
-					break;
+					endpointCandidates.add(link);
+					for (MixinBase mixin: link.getParts()) {
+						if (mixin instanceof Ansibleendpoint) {
+							LOGGER.info("Found explicitly specified Ansible endpoint for " + target);
+							networklink = (Networkinterface) link;
+							endpointCandidates.clear();
+							break;
+						}
+					}
 				}	
+			}
+			
+			if (endpointCandidates.size() > 0) {
+				networklink = (Networkinterface) endpointCandidates.get(0);
 			}
 			
 			if (networklink == null) {
 				LOGGER.error("No network interface found for " + target);	
 			} else {
+				// Retrieving object to ensure ip address is correct
+				networklink.occiRetrieve();
 				List<AttributeState> attributes  = new LinkedList<AttributeState>();
 				attributes.addAll(networklink.getAttributes());
 				for (MixinBase base: networklink.getParts()) {
