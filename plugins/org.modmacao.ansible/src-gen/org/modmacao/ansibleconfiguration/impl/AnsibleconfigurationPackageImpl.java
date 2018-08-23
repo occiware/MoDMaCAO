@@ -20,14 +20,18 @@ import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.modmacao.ansibleconfiguration.Ansibleconfiguration;
 import org.modmacao.ansibleconfiguration.AnsibleconfigurationFactory;
 import org.modmacao.ansibleconfiguration.AnsibleconfigurationPackage;
 import org.modmacao.ansibleconfiguration.Ansibleendpoint;
+import org.modmacao.ansibleconfiguration.util.AnsibleconfigurationValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,6 +112,15 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 		// Initialize created meta-data
 		theAnsibleconfigurationPackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theAnsibleconfigurationPackage,
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return AnsibleconfigurationValidator.INSTANCE;
+				 }
+			 });
+
 		// Mark meta-data to indicate it can't be changed
 		theAnsibleconfigurationPackage.freeze();
 
@@ -123,6 +136,15 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 	 */
 	public EClass getAnsibleendpoint() {
 		return ansibleendpointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getAnsibleendpoint__AppliesConstraint__DiagnosticChain_Map() {
+		return ansibleendpointEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -181,6 +203,7 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 
 		// Create classes and their features
 		ansibleendpointEClass = createEClass(ANSIBLEENDPOINT);
+		createEOperation(ansibleendpointEClass, ANSIBLEENDPOINT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		ansibleconfigurationEClass = createEClass(ANSIBLECONFIGURATION);
 		createEAttribute(ansibleconfigurationEClass, ANSIBLECONFIGURATION__ANSIBLE_PRIVATEKEY);
@@ -211,7 +234,6 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
 		ModmacaoPackage theModmacaoPackage = (ModmacaoPackage)EPackage.Registry.INSTANCE.getEPackage(ModmacaoPackage.eNS_URI);
 
@@ -220,13 +242,21 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		ansibleendpointEClass.getESuperTypes().add(theInfrastructurePackage.getIpnetworkinterface());
 		ansibleendpointEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		ansibleconfigurationEClass.getESuperTypes().add(theModmacaoPackage.getComponent());
 		ansibleconfigurationEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ansibleendpointEClass, Ansibleendpoint.class, "Ansibleendpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getAnsibleendpoint__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(ansibleconfigurationEClass, Ansibleconfiguration.class, "Ansibleconfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAnsibleconfiguration_AnsiblePrivatekey(), theOCCIPackage.getString(), "ansiblePrivatekey", null, 0, 1, Ansibleconfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -252,6 +282,12 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 		  (this,
 		   source,
 		   new String[] {
+		   });
+		addAnnotation
+		  (ansibleendpointEClass,
+		   source,
+		   new String[] {
+			   "constraints", "appliesConstraint"
 		   });
 	}
 

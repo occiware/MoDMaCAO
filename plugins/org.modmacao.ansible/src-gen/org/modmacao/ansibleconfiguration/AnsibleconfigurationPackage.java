@@ -14,10 +14,12 @@ package org.modmacao.ansibleconfiguration;
 
 import modmacao.ModmacaoPackage;
 
+import org.eclipse.cmf.occi.core.OCCIPackage;
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -86,7 +88,7 @@ public interface AnsibleconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANSIBLEENDPOINT__MIXIN = InfrastructurePackage.IPNETWORKINTERFACE__MIXIN;
+	int ANSIBLEENDPOINT__MIXIN = OCCIPackage.MIXIN_BASE__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -95,7 +97,7 @@ public interface AnsibleconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANSIBLEENDPOINT__ENTITY = InfrastructurePackage.IPNETWORKINTERFACE__ENTITY;
+	int ANSIBLEENDPOINT__ENTITY = OCCIPackage.MIXIN_BASE__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -104,34 +106,7 @@ public interface AnsibleconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANSIBLEENDPOINT__ATTRIBUTES = InfrastructurePackage.IPNETWORKINTERFACE__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Occi Networkinterface Address</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANSIBLEENDPOINT__OCCI_NETWORKINTERFACE_ADDRESS = InfrastructurePackage.IPNETWORKINTERFACE__OCCI_NETWORKINTERFACE_ADDRESS;
-
-	/**
-	 * The feature id for the '<em><b>Occi Networkinterface Gateway</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANSIBLEENDPOINT__OCCI_NETWORKINTERFACE_GATEWAY = InfrastructurePackage.IPNETWORKINTERFACE__OCCI_NETWORKINTERFACE_GATEWAY;
-
-	/**
-	 * The feature id for the '<em><b>Occi Networkinterface Allocation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANSIBLEENDPOINT__OCCI_NETWORKINTERFACE_ALLOCATION = InfrastructurePackage.IPNETWORKINTERFACE__OCCI_NETWORKINTERFACE_ALLOCATION;
+	int ANSIBLEENDPOINT__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
 	 * The number of structural features of the '<em>Ansibleendpoint</em>' class.
@@ -140,7 +115,16 @@ public interface AnsibleconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANSIBLEENDPOINT_FEATURE_COUNT = InfrastructurePackage.IPNETWORKINTERFACE_FEATURE_COUNT + 0;
+	int ANSIBLEENDPOINT_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ANSIBLEENDPOINT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Ansibleendpoint</em>' class.
@@ -149,7 +133,7 @@ public interface AnsibleconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANSIBLEENDPOINT_OPERATION_COUNT = InfrastructurePackage.IPNETWORKINTERFACE_OPERATION_COUNT + 0;
+	int ANSIBLEENDPOINT_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link org.modmacao.ansibleconfiguration.impl.AnsibleconfigurationImpl <em>Ansibleconfiguration</em>}' class.
@@ -245,6 +229,16 @@ public interface AnsibleconfigurationPackage extends EPackage {
 	EClass getAnsibleendpoint();
 
 	/**
+	 * Returns the meta object for the '{@link org.modmacao.ansibleconfiguration.Ansibleendpoint#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see org.modmacao.ansibleconfiguration.Ansibleendpoint#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getAnsibleendpoint__AppliesConstraint__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for class '{@link org.modmacao.ansibleconfiguration.Ansibleconfiguration <em>Ansibleconfiguration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -308,6 +302,14 @@ public interface AnsibleconfigurationPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ANSIBLEENDPOINT = eINSTANCE.getAnsibleendpoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ANSIBLEENDPOINT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAnsibleendpoint__AppliesConstraint__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.modmacao.ansibleconfiguration.impl.AnsibleconfigurationImpl <em>Ansibleconfiguration</em>}' class.

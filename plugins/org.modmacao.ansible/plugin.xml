@@ -16,12 +16,12 @@
 
    <!-- Register the Ansible Configuration Extension extension. -->
    <extension point="org.eclipse.cmf.occi.core.occie">
-      <occie scheme="http://schemas.modmacao.org/occi/ansible#" file="model/Ansible Configuration Extension.occie"/>
+      <occie scheme="http://schemas.modmacao.org/occi/ansible#" file="model/ansibleconfiguration.occie"/>
    </extension>
 
    <!-- Define URI mapping. -->
    <extension point="org.eclipse.emf.ecore.uri_mapping">
-      <mapping source="http://schemas.modmacao.org/occi/ansible" target="platform:/plugin/org.modmacao.ansible/model/Ansible Configuration Extension.occie"/>
+      <mapping source="http://schemas.modmacao.org/occi/ansible" target="platform:/plugin/org.modmacao.ansible/model/ansibleconfiguration.occie"/>
    </extension>
 
    <!-- Register the parser for .Ansible Configuration Extension files. -->

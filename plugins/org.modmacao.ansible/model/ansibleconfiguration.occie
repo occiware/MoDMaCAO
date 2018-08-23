@@ -4,7 +4,7 @@
   <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <import href="http://schemas.modmacao.org/modmacao#/"/>
   <mixins name="AnsibleEndpoint" scheme="http://schemas.modmacao.org/occi/ansible#">
-    <depends href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ipnetworkinterface']"/>
+    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
   </mixins>
   <mixins name="AnsibleConfiguration" scheme="http://schemas.modmacao.org/occi/ansible#">
     <attributes name="ansible.privatekey" mutable="true">

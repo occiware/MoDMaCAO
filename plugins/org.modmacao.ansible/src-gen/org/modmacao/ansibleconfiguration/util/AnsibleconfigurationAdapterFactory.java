@@ -96,10 +96,6 @@ public class AnsibleconfigurationAdapterFactory extends AdapterFactoryImpl {
 				return createMixinBaseAdapter();
 			}
 			@Override
-			public Adapter caseIpnetworkinterface(Ipnetworkinterface object) {
-				return createIpnetworkinterfaceAdapter();
-			}
-			@Override
 			public Adapter caseComponent(Component object) {
 				return createComponentAdapter();
 			}
@@ -162,20 +158,6 @@ public class AnsibleconfigurationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMixinBaseAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface <em>Ipnetworkinterface</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface
-	 * @generated
-	 */
-	public Adapter createIpnetworkinterfaceAdapter() {
 		return null;
 	}
 

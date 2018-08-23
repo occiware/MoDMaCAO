@@ -23,7 +23,6 @@ package org.modmacao.ansibleconfiguration;
 
 import modmacao.ModmacaoTables;
 import org.eclipse.cmf.occi.core.OCCITables;
-import org.eclipse.cmf.occi.infrastructure.InfrastructureTables;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorPackage;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorProperty;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorType;
@@ -59,6 +58,16 @@ public class AnsibleconfigurationTables
 	/**
 	 *	Constants used by auto-generated code.
 	 */
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_ansible_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/occi/ansible/ecore", null, org.modmacao.ansibleconfiguration.AnsibleconfigurationPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", null, org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/infrastructure/ecore", null, org.eclipse.cmf.occi.infrastructure.InfrastructurePackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Ansibleendpoint = org.modmacao.ansibleconfiguration.AnsibleconfigurationTables.PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_ansible_s_ecore.getClassId("Ansibleendpoint", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.modmacao.ansibleconfiguration.AnsibleconfigurationTables.PACKid_$metamodel$.getClassId("Class", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.modmacao.ansibleconfiguration.AnsibleconfigurationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Networkinterface = org.modmacao.ansibleconfiguration.AnsibleconfigurationTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Networkinterface", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ java.lang.String STR_Ansibleendpoint_c_c_appliesConstraint = "Ansibleendpoint::appliesConstraint";
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -126,7 +135,6 @@ public class AnsibleconfigurationTables
 		private static final /*@NonNull*/ ExecutorFragment _Ansibleconfiguration__OclElement = new ExecutorFragment(Types._Ansibleconfiguration, OCLstdlibTables.Types._OclElement);
 
 		private static final /*@NonNull*/ ExecutorFragment _Ansibleendpoint__Ansibleendpoint = new ExecutorFragment(Types._Ansibleendpoint, AnsibleconfigurationTables.Types._Ansibleendpoint);
-		private static final /*@NonNull*/ ExecutorFragment _Ansibleendpoint__Ipnetworkinterface = new ExecutorFragment(Types._Ansibleendpoint, InfrastructureTables.Types._Ipnetworkinterface);
 		private static final /*@NonNull*/ ExecutorFragment _Ansibleendpoint__MixinBase = new ExecutorFragment(Types._Ansibleendpoint, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Ansibleendpoint__OclAny = new ExecutorFragment(Types._Ansibleendpoint, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Ansibleendpoint__OclElement = new ExecutorFragment(Types._Ansibleendpoint, OCLstdlibTables.Types._OclElement);
@@ -237,10 +245,9 @@ public class AnsibleconfigurationTables
 				Fragments._Ansibleendpoint__OclAny /* 0 */,
 				Fragments._Ansibleendpoint__OclElement /* 1 */,
 				Fragments._Ansibleendpoint__MixinBase /* 2 */,
-				Fragments._Ansibleendpoint__Ipnetworkinterface /* 3 */,
-				Fragments._Ansibleendpoint__Ansibleendpoint /* 4 */
+				Fragments._Ansibleendpoint__Ansibleendpoint /* 3 */
 			};
-		private static final int /*@NonNull*/ [] __Ansibleendpoint = { 1,1,1,1,1 };
+		private static final int /*@NonNull*/ [] __Ansibleendpoint = { 1,1,1,1 };
 
 		/**
 		 *	Install the fragment descriptors in the class descriptors.
@@ -298,7 +305,6 @@ public class AnsibleconfigurationTables
 		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ansibleendpoint__Ansibleendpoint = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ansibleendpoint__Ipnetworkinterface = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ansibleendpoint__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Ansibleendpoint__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -338,7 +344,6 @@ public class AnsibleconfigurationTables
 			Fragments._Ansibleconfiguration__OclElement.initOperations(_Ansibleconfiguration__OclElement);
 
 			Fragments._Ansibleendpoint__Ansibleendpoint.initOperations(_Ansibleendpoint__Ansibleendpoint);
-			Fragments._Ansibleendpoint__Ipnetworkinterface.initOperations(_Ansibleendpoint__Ipnetworkinterface);
 			Fragments._Ansibleendpoint__MixinBase.initOperations(_Ansibleendpoint__MixinBase);
 			Fragments._Ansibleendpoint__OclAny.initOperations(_Ansibleendpoint__OclAny);
 			Fragments._Ansibleendpoint__OclElement.initOperations(_Ansibleendpoint__OclElement);
