@@ -18,28 +18,13 @@ import org.osgi.framework.FrameworkUtil;
 
 /**
 * This class provides utility methods for the configuration management tool Ansible.
-* This class is a singleton, that holds loaded Ansible properties.
 * @author Fabian Korte - UGOE
 */
 public final class AnsibleHelper {
 	Properties props;
-	private static AnsibleHelper helper;
 	
-	private AnsibleHelper() {
+	public AnsibleHelper() {
 		loadProperties();
-	}
-	
-	
-	/**
-	 * Getter method for getting the instance of the AnsibleHelper.
-	 * In case, the instance does not exist yet, it will be created automatically.
-	 * @return The instance of the AnsibleHelper.
-	 */
-	public static AnsibleHelper getInstance() {
-		if (AnsibleHelper.helper == null) {
-			AnsibleHelper.helper = new AnsibleHelper();
-		}
-		return AnsibleHelper.helper;
 	}
 	
 	

@@ -170,7 +170,7 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	}
 	
 	private String getUser() {
-		return AnsibleHelper.getInstance().getProperties().getProperty("ansible_user");
+		return new AnsibleHelper().getProperties().getProperty("ansible_user");
 	}
 	
 	private List<String> getRoles(Resource resource) {
@@ -266,7 +266,7 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		
 		String basedir = "/tmp/" + resource.getTitle() + "_ansible_" + System.currentTimeMillis();
 		
-		AnsibleHelper helper = AnsibleHelper.getInstance();
+		AnsibleHelper helper = new AnsibleHelper();
 		
 		helper.createConfiguration(Paths.get("ansible.cfg"), 
 				Paths.get(helper.getProperties().getProperty("private_key_path")));
