@@ -131,6 +131,7 @@ public final class AnsibleHelper {
 	public Path createConfiguration(Path configuration, Path keyPath) throws IOException{
 		String lb = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder("[defaults]").append(lb);
+		sb.append("timeout = ").append(this.getProperties().getProperty("ssh_timeout")).append(lb);
 		sb.append("roles_path = ").append(this.getProperties().getProperty("ansible_rolespath")).append(lb);
 		sb.append("private_key_file = ").append(keyPath.toString()).append(lb);
 		sb.append("[ssh_connection]").append(lb);
