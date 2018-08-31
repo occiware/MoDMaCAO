@@ -21,7 +21,7 @@ import org.modmacao.cm.ansible.AnsibleHelper;
 public class AnsibleHelperTest {
 	@Test
 	public void testCreateInventory() {
-		AnsibleHelper helper = AnsibleHelper.getInstance();
+		AnsibleHelper helper = new AnsibleHelper();
 		try {
 			helper.createInventory("127.0.0.1", Paths.get("testdata/inventory"));
 			
@@ -33,7 +33,7 @@ public class AnsibleHelperTest {
 	
 	@Test
 	public void testCreateVariableFile() {
-		AnsibleHelper helper = AnsibleHelper.getInstance();
+		AnsibleHelper helper = new AnsibleHelper();
 		try {
 			Compute vm = InfrastructureFactory.eINSTANCE.createCompute();
 			AttributeState state1 = OCCIFactory.eINSTANCE.createAttributeState();
@@ -53,7 +53,7 @@ public class AnsibleHelperTest {
 	
 	@Test
 	public void testCreatePlaybook() {
-		AnsibleHelper helper = AnsibleHelper.getInstance();
+		AnsibleHelper helper = new AnsibleHelper();
 		try {
 			ArrayList<String> roles = new ArrayList<String>();		
 			roles.add("testrole");
@@ -67,7 +67,7 @@ public class AnsibleHelperTest {
 	
 	@Test
 	public void testCreateConfiguration() {
-		AnsibleHelper helper = AnsibleHelper.getInstance();
+		AnsibleHelper helper = new AnsibleHelper();
 		try {
 			helper.createConfiguration(Paths.get("ansible.cfg"), Paths.get("testdata/testkey.pem"));
 		} catch(IOException e) {
@@ -77,7 +77,7 @@ public class AnsibleHelperTest {
 	
 	@Test
 	public void testExecutePlaybook() {
-		AnsibleHelper helper = AnsibleHelper.getInstance();
+		AnsibleHelper helper = new AnsibleHelper();
 		try {
 			ArrayList<String> roles = new ArrayList<String>();
 			roles.add("testrole");
@@ -118,9 +118,9 @@ public class AnsibleHelperTest {
 	}
 	@Test
 	public void testGetProperties() {
-		AnsibleHelper helper = AnsibleHelper.getInstance();
+		AnsibleHelper helper = new AnsibleHelper();
 		Properties props = helper.getProperties();
-		assertEquals("testuser", props.getProperty("ansible_user"));
+		assertEquals("ubuntu", props.getProperty("ansible_user"));
 	}
 	
 

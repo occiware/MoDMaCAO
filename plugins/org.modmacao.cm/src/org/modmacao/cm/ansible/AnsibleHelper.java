@@ -153,7 +153,6 @@ public final class AnsibleHelper {
 		InterruptedException {
 		String command = this.getProperties().getProperty("ansible_bin");
 		Process process = null;
-		
 		if (options == null) {
 			process = new ProcessBuilder(command, "--inventory", inventory.toString(),
 				"-e", "task=" + task, 

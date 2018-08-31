@@ -220,7 +220,10 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 							break;
 						}
 					}
-				}	
+				}
+				if (networklink != null) {
+					break;
+				}
 			}
 			
 			if (endpointCandidates.size() > 0) {
@@ -278,8 +281,8 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		Path inventory = helper.createInventory(ipaddress, Paths.get(basedir, "inventory"));
 			
 		LOGGER.info("Executing role " + roles + " on host " + ipaddress + " with user " + user + ".");	
-		int status = helper.executePlaybook(playbook, task, inventory, options);
-			
+		int status = helper.executePlaybook(playbook, task, inventory, options);	
+		
 		return status;
 	}
 
