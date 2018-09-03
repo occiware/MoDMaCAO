@@ -9,14 +9,8 @@ Bundle-Vendor: OCCIware
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.slf4j.api,
- org.eclipse.cmf.occi.core,
- org.eclipse.cmf.occi.infrastructure,
  org.junit,
- org.modmacao.openstack.runtime,
- org.eclipse.cmf.occi.crtp,
- org.eclipse.emf.ecore,
  org.eclipse.osgi,
- org.eclipse.emf.common
+ org.modmacao.openstack.swe.runtime
 Export-Package: org.modmacao.openstack.connector
-Import-Package: org.apache.log4j,
- ossweruntime
+Import-Package: org.apache.log4j
