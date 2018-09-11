@@ -16,7 +16,7 @@
 
    <!-- Register the placement extension. -->
    <extension point="org.eclipse.cmf.occi.core.occie">
-      <occie scheme="http://schemas.occiware.org/placement#" file="model/placement.occie"/>
+      <occie scheme="http://schemas.modmcacao.org/placement#" file="model/placement.occie"/>
    </extension>
 
    <!-- Define URI mapping. -->
