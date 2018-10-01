@@ -1,13 +1,23 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: spark
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.modmacao.apache.spark;singleton:=true
+Automatic-Module-Name: org.modmacao.apache.spark
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: OCCIware
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: apache_spark,
+ apache_spark.impl,
+ apache_spark.util
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport,
+ org.eclipse.ocl.examples.codegen;visibility:=reexport,
+ org.eclipse.cmf.occi.infrastructure;visibility:=reexport,
+ org.modmacao.core;visibility:=reexport,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.cmf.occi.core.ui,
  org.eclipse.cmf.occi.core.gen.emf.ui

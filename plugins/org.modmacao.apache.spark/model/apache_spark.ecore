@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apache_spark" nsURI="http://schemas.modmacao.org/apache/spark/ecore"
+    nsPrefix="apache_spark">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
+    <details key="infrastructure" value="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
+    <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Master" eSuperTypes="#//Apachesparkcomponent platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Worker" eSuperTypes="#//Apachesparkcomponent platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OnlyOneMasterDependency WorkerCoresSmallerThanComputeCores WorkerMemorySmallerThanComputeMemory"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="OnlyOneMasterDependency" value="true"/>
+      <details key="WorkerCoresSmallerThanComputeCores" value="true"/>
+      <details key="WorkerMemorySmallerThanComputeMemory" value="true"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apacheSparkWorkerCores"
+        eType="ecore:EDataType platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Total CPU cores to allow Spark applications to use on the machine (default: all available)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apacheSparkWorkerMemory"
+        eType="ecore:EDataType platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Total amount of memory to allow Spark applications to use on the machine, in a format like 1000M or 2G (default: your machine's total RAM minus 1 GB)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Apachesparkcomponent" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apacheSparkPort" eType="ecore:EDataType platform:/resource/org.modmacao.core/model/modmacao.ecore#//Port">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Port for service to listen on (default: 7077 for master, random for worker)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="apacheSparkWebuiPort" eType="ecore:EDataType platform:/resource/org.modmacao.core/model/modmacao.ecore#//Port">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Port for Web UI (default: 8080 for master, 8081 for worker)"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Apachesparkcluster" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Cluster platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OnlyOneMaster OneOrMoreWorkers"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="OnlyOneMaster" value="true"/>
+      <details key="OneOrMoreWorkers" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Masterdependency" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Executiondependency platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SourceMustBeWorker TargetMustBeMaster"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="SourceMustBeWorker" value="true"/>
+      <details key="TargetMustBeMaster" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>
