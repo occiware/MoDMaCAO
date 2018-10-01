@@ -7,11 +7,9 @@
     <semanticResources>http://schemas.modmacao.org/placement</semanticResources>
     <semanticResources>http://schemas.modmacao.org/modmacao</semanticResources>
     <semanticResources>http://schemas.ogf.org/occi/infrastructure</semanticResources>
-    <semanticResources>model/mongodb.ecore</semanticResources>
     <semanticResources>platform:/resource/org.modmacao.core/model/modmacao.ecore</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore</semanticResources>
     <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
-    <semanticResources>model/mongodb.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.modmacao.occi.platform/model/platform.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.modmacao.placement/model/placement.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.modmacao.core/model/modmacao.genmodel</semanticResources>
@@ -20,6 +18,8 @@
     <semanticResources>platform:/resource/org.modmacao.occi.platform/model/platform.ecore</semanticResources>
     <semanticResources>platform:/resource/org.modmacao.placement/model/placement.ecore</semanticResources>
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore</semanticResources>
+    <semanticResources>model/mongodb.ecore</semanticResources>
+    <semanticResources>model/mongodb.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_HggXoCRfEei5GZn6_EF4uw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_H4KpsCRfEei5GZn6_EF4uw" name="mongodb" repPath="#_Hp2g4CRfEei5GZn6_EF4uw">

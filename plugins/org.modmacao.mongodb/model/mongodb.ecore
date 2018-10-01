@@ -7,11 +7,11 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
-    <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
-    <details key="platform" value="http://schemas.modmacao.org/occi/platform/ecore"/>
-    <details key="placement" value="http://schemas.modmacao.org/placement/ecore"/>
-    <details key="modmacao" value="http://schemas.modmacao.org/modmacao/ecore"/>
-    <details key="infrastructure" value="http://schemas.ogf.org/occi/infrastructure/ecore"/>
+    <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
+    <details key="platform" value="platform:/resource/org.modmacao.occi.platform/model/platform.ecore#/"/>
+    <details key="placement" value="platform:/resource/org.modmacao.placement/model/placement.ecore#/"/>
+    <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
+    <details key="infrastructure" value="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mongodbReplicationSetName"
