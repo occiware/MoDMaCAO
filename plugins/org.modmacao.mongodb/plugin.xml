@@ -21,7 +21,7 @@
 
    <!-- Define URI mapping. -->
    <extension point="org.eclipse.emf.ecore.uri_mapping">
-      <mapping source="http://schemas.occiware.org/mongodb" target="platform:/plugin/mongodb/model/mongodb.occie"/>
+      <mapping source="http://schemas.modmacao.org/mongodb" target="platform:/plugin/org.modmacao.mongodb/model/mongodb.occie"/>
    </extension>
 
    <!-- Register the parser for .mongodb files. -->
@@ -32,7 +32,7 @@
    <!-- Popup menu for converting to an OCCI Configuration file. -->
    <extension point="org.eclipse.ui.popupMenus">
       <objectContribution
-            id="mongodb.contribution"
+            id="org.modmacao.mongodb.contribution"
             nameFilter="*.mongodb"
             objectClass="org.eclipse.core.resources.IFile">
          <menu
@@ -44,18 +44,17 @@
          <action
                class="org.eclipse.cmf.occi.core.ui.popup.actions.ExtensionConfiguration2OCCICAction"
                enablesFor="1"
-               id="mongodb.ecore2occi"
+               id="org.modmacao.mongodb.ecore2occi"
                label="Convert to an OCCI Configuration File"
                menubarPath="org.eclipse.cmf.occi.core.occi-studio.ui.menu/group">
          </action>
       </objectContribution>
    </extension>
-    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated modmacao -->
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated mongodb -->
       <package
             uri="http://schemas.modmacao.org/mongodb/ecore"
             class="org.modmacao.mongodb.MongodbPackage"/>
    </extension>
-   
-   
+
 </plugin>

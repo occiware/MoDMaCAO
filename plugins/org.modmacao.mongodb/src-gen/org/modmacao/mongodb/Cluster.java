@@ -12,11 +12,7 @@
  */
 package org.modmacao.mongodb;
 
-import java.util.Map;
-
 import org.eclipse.cmf.occi.core.MixinBase;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,32 +21,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  *
  *
  * @see org.modmacao.mongodb.MongodbPackage#getCluster()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OneOrMoreShards'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='OneOrMoreRouters OneOrMoreShards OneOrMoreConfigServers'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot OneOrMoreRouters='true' OneOrMoreShards='true' OneOrMoreConfigServers='true'"
  * @generated
  */
 public interface Cluster extends modmacao.Cluster, MixinBase {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n * inv OneOrMoreConfigServers: true\n \052/\nreturn &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;'"
-	 * @generated
-	 */
-	boolean OneOrMoreConfigServers(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n * inv OneOrMoreRouters: true\n \052/\nreturn &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;'"
-	 * @generated
-	 */
-	boolean OneOrMoreRouters(DiagnosticChain diagnostics, Map<Object, Object> context);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n * inv OneOrMoreShards: true\n \052/\nreturn &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;'"
-	 * @generated
-	 */
-	boolean OneOrMoreShards(DiagnosticChain diagnostics, Map<Object, Object> context);
-
 } // Cluster
