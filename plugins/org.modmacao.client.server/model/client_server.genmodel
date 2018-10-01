@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015-2017 Obeo, Inria&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#x9;&#xA;Contributors:&#xA;- William Piers &lt;william.piers@obeo.fr>&#xA;- Philippe Merle &lt;philippe.merle@inria.fr>&#xA;- Faiez Zalila &lt;faiez.zalila@inria.fr>" modelDirectory="/org.modmacao.client.server/src-gen" editDirectory="/org.modmacao.client.server.edit/src-gen" editorDirectory="/org.modmacao.client.server.editor/src-gen" modelPluginID="org.modmacao.client.server" modelName="Client_server" testsDirectory="/org.modmacao.client.server.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="org.modmacao.client.server.edit" editorPluginID="org.modmacao.client.server.editor" testsPluginID="org.modmacao.client.server.tests" operationReflection="true">
+  <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
+    <details key="Use Delegates" value="false"/>
+  </genAnnotations>
+  <foreignModel>client_server.ecore</foreignModel>
+  <genPackages prefix="Client_server" disposableProviderFactory="true">
+    <ecorePackage href="client_server.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="client_server.ecore#//Clientserver"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="client_server.ecore#//Serverdependency"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="client_server.ecore#//Client"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="client_server.ecore#//Server"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="client_server.ecore#//Server/serverPort"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="platform:/resource/org.modmacao.core/model/modmacao.genmodel#//modmacao"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.occi.platform/model/platform.genmodel#//platform"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
+</genmodel:GenModel>
