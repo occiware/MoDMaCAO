@@ -28,7 +28,7 @@
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.1"/>
       </ownedState>
       <ownedState literal="//@types.2/@literals.4" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.1"/>
+        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.3" action="//@kinds[term='application']/@actions.0"/>
       </ownedState>
       <ownedState literal="//@types.2/@literals.1" initial="false" final="false">
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.4" action="//@kinds[term='application']/@actions.1"/>
@@ -38,6 +38,7 @@
       <ownedState literal="//@types.2/@literals.0" initial="true" final="false">
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.3" action="//@kinds[term='application']/@actions.0"/>
         <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.0" action="//@kinds[term='application']/@actions.3"/>
+        <outgoingTransition target="//@kinds[term='application']/@fsm/@ownedState.2"/>
       </ownedState>
     </fsm>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
@@ -62,9 +63,11 @@
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.0" action="//@kinds[term='component']/@actions.3"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.2"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.1"/>
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.1" action="//@kinds[term='application']/@actions.2"/>
       </ownedState>
       <ownedState literal="//@types.2/@literals.4" initial="false" final="false">
-        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.1"/>
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.3" action="//@kinds[term='component']/@actions.0"/>
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.0" action="//@kinds[term='application']/@actions.3"/>
       </ownedState>
       <ownedState literal="//@types.2/@literals.1" initial="false" final="false">
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.4" action="//@kinds[term='component']/@actions.1"/>
@@ -74,11 +77,13 @@
       <ownedState literal="//@types.2/@literals.0" initial="true" final="false">
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.3" action="//@kinds[term='component']/@actions.0"/>
         <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.0" action="//@kinds[term='component']/@actions.3"/>
+        <outgoingTransition target="//@kinds[term='component']/@fsm/@ownedState.2"/>
       </ownedState>
     </fsm>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='resource']"/>
   </kinds>
   <kinds name="ComponentLink" scheme="http://schemas.modmacao.org/occi/platform#" title="ComponentLink" target="//@kinds[term='component']">
+    <annotations key="Containment" value="Application contains Component"/>
     <parent href="http://schemas.ogf.org/occi/core#//@kinds[term='link']"/>
   </kinds>
   <mixins name="App_Tpl" scheme="http://schemas.modmacao.org/occi/platform#" title="Application Template" applies="//@kinds[term='application']"/>
