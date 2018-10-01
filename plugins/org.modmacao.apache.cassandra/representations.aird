@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis xmi:id="_wb8bAKn4EeeqjJw2zm7qgg" selectedViews="_wdFqgKn4EeeqjJw2zm7qgg" version="12.0.0.201704271200">
+  <viewpoint:DAnalysis xmi:id="_wb8bAKn4EeeqjJw2zm7qgg" selectedViews="_wdFqgKn4EeeqjJw2zm7qgg" version="13.0.0.201804031646">
     <semanticResources>http://schemas.ogf.org/occi/core</semanticResources>
     <semanticResources>http://schemas.modmacao.org/modmacao</semanticResources>
     <semanticResources>http://schemas.modmacao.org/placement</semanticResources>
@@ -8,15 +8,26 @@
     <semanticResources>http://schemas.ogf.org/occi/infrastructure</semanticResources>
     <semanticResources>model/apache_cassandra.occie</semanticResources>
     <semanticResources>http://schemas.modmacao.org/occi/platform</semanticResources>
+    <semanticResources>model/apache_cassandra.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.modmacao.core/model/modmacao.ecore</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+    <semanticResources>model/apache_cassandra.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.modmacao.core/model/modmacao.genmodel</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.modmacao.occi.platform/model/platform.genmodel</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.modmacao.occi.platform/model/platform.ecore</semanticResources>
+    <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_wdFqgKn4EeeqjJw2zm7qgg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_-AAngKn5EeeqjJw2zm7qgg" name="apache_cassandra" repPath="#_-AAAcKn5EeeqjJw2zm7qgg">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_-AAngKn5EeeqjJw2zm7qgg" name="apache_cassandra" repPath="#_PIamcKnxEeiGeIrqB9jcoQ">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']/@ownedRepresentations[name='Extension%20diagram']"/>
         <target xmi:type="occi:Extension" href="model/apache_cassandra.occie#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
-  <diagram:DSemanticDiagram xmi:id="_-AAAcKn5EeeqjJw2zm7qgg" name="apache_cassandra">
+  <diagram:DSemanticDiagram xmi:id="_-AAAcKn5EeeqjJw2zm7qgg" name="apache_cassandra" uid="_PIamcKnxEeiGeIrqB9jcoQ">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_-AAAcan5EeeqjJw2zm7qgg" source="DANNOTATION_CUSTOMIZATION_KEY">
       <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_-AAAcqn5EeeqjJw2zm7qgg"/>
     </ownedAnnotationEntries>
