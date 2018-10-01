@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:infrastructure="http://schemas.ogf.org/occi/infrastructure/ecore" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:placement="http://schemas.modmacao.org/placement/ecore" xmlns:platform="http://schemas.modmacao.org/occi/platform/ecore">
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <use href="http://schemas.modmacao.org/lamp#/"/>
+  <resources xsi:type="platform:Application" id="urn:uuid:57174641-5ea3-4fc6-9eb3-6099101b6a16" title="application1">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='application']"/>
+    <attributes name="occi.core.id" value="urn:uuid:57174641-5ea3-4fc6-9eb3-6099101b6a16"/>
+    <attributes name="occi.core.title" value="application1"/>
+    <links xsi:type="platform:Componentlink" id="urn:uuid:040123c9-e444-4d16-8f5e-3d66deee46a8" target="//@resources.1">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+    </links>
+    <links xsi:type="platform:Componentlink" id="urn:uuid:542ddfba-1885-499d-81e7-13540399d84b" target="//@resources.2">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+    </links>
+  </resources>
+  <resources xsi:type="platform:Component" id="urn:uuid:ac5c30c3-f917-43d3-9e69-24523a1770d1" title="component2" rlinks="//@resources.0/@links.0 //@resources.6/@links.1">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
+    <attributes name="occi.core.id" value="urn:uuid:ac5c30c3-f917-43d3-9e69-24523a1770d1"/>
+    <attributes name="occi.core.title" value="component2"/>
+    <links xsi:type="platform:Componentlink" id="urn:uuid:1f73193f-bed3-4c94-96ae-4805db0df2d1" target="//@resources.2">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+    </links>
+    <links xsi:type="placement:Placementlink" id="urn:uuid:73bbc5a6-627a-4b6a-a800-76ec9b47dc86" target="//@resources.3">
+      <kind href="http://schemas.modmacao.org/placement#//@kinds[term='placementlink']"/>
+    </links>
+  </resources>
+  <resources xsi:type="platform:Component" id="urn:uuid:519d4a1c-8fb8-4297-b49b-00dec62b42a3" title="component3" rlinks="//@resources.0/@links.1 //@resources.1/@links.0">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
+    <attributes name="occi.core.id" value="urn:uuid:519d4a1c-8fb8-4297-b49b-00dec62b42a3"/>
+    <attributes name="occi.core.title" value="component3"/>
+    <links xsi:type="placement:Placementlink" id="urn:uuid:333dee94-4422-42b9-b5eb-1e7f0e348437" target="//@resources.4">
+      <kind href="http://schemas.modmacao.org/placement#//@kinds[term='placementlink']"/>
+    </links>
+  </resources>
+  <resources xsi:type="infrastructure:Compute" id="urn:uuid:35d36cdf-532d-4d5e-8c66-c5765c566fa1" title="compute4" rlinks="//@resources.1/@links.1 //@resources.6/@links.0" occiComputeState="inactive">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <attributes name="occi.core.id" value="urn:uuid:35d36cdf-532d-4d5e-8c66-c5765c566fa1"/>
+    <attributes name="occi.core.title" value="compute4"/>
+    <links xsi:type="infrastructure:Networkinterface" id="urn:uuid:1db4665f-9c9d-4020-9698-b8173c13d6d3" target="//@resources.5">
+      <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+    </links>
+  </resources>
+  <resources xsi:type="infrastructure:Compute" id="urn:uuid:7584e310-49f6-4f61-8413-c42c5edfa3dc" title="compute5" rlinks="//@resources.2/@links.0" occiComputeState="inactive">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <attributes name="occi.core.id" value="urn:uuid:7584e310-49f6-4f61-8413-c42c5edfa3dc"/>
+    <attributes name="occi.core.title" value="compute5"/>
+    <links xsi:type="infrastructure:Networkinterface" id="urn:uuid:19cd3bae-09f0-486f-bebe-2f3431b71f45" target="//@resources.5">
+      <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+    </links>
+  </resources>
+  <resources xsi:type="infrastructure:Network" id="urn:uuid:753a9e45-c6e6-4e5b-a8e3-c044860806de" title="network6" rlinks="//@resources.4/@links.0 //@resources.3/@links.0" occiNetworkState="inactive">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='network']"/>
+    <attributes name="occi.core.id" value="urn:uuid:753a9e45-c6e6-4e5b-a8e3-c044860806de"/>
+    <attributes name="occi.core.title" value="network6"/>
+  </resources>
+  <resources xsi:type="platform:Component" id="urn:uuid:79256b9d-9d61-4ffc-8257-66b2a6e6677c" title="component7">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
+    <links xsi:type="placement:Placementlink" id="urn:uuid:21aa39e4-25db-483a-b91f-ba261ee4bece" target="//@resources.3">
+      <kind href="http://schemas.modmacao.org/placement#//@kinds[term='placementlink']"/>
+    </links>
+    <links xsi:type="platform:Componentlink" id="urn:uuid:458ad674-d5df-4f71-bca8-f648925806b3" target="//@resources.1">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+    </links>
+  </resources>
+</occi:Configuration>
