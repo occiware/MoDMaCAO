@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="lamp" nsURI="http://schemas.modmacao.org/lamp/ecore" nsPrefix="lamp">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Lamp" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Application platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OnlyOneApacheServer OneOrMoreTomcats OnlyOneMySQL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="OnlyOneApacheServer" value="true"/>
+      <details key="OneOrMoreTomcats" value="true"/>
+      <details key="OnlyOneMySQL" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Apacheserver" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OneOrMoreTomcatDependencies"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="OneOrMoreTomcatDependencies" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tomcat" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OnlyOneMySQLDependency"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="OnlyOneMySQLDependency" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mysql" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Tomcatdependency" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Executiondependency platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TargetMustBeTomcat"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="TargetMustBeTomcat" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mysqldependency" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Executiondependency platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="TargetMustBeMySQL"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="TargetMustBeMySQL" value="true"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,71 @@
+h1. OCCI lamp extension
+
+
+
+| *Name* | lamp |
+| *Scheme* | http://schemas.modmacao.org/lamp# |
+
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+| <a href="core.textile">core</a> | http://schemas.ogf.org/occi/core# |
+| <a href="modmacao.textile">modmacao</a> | http://schemas.modmacao.org/modmacao# |
+| <a href="platform.textile">platform</a> | http://schemas.modmacao.org/occi/platform# |
+| <a href="placement.textile">placement</a> | http://schemas.modmacao.org/placement# |
+| <a href="infrastructure.textile">infrastructure</a> | http://schemas.ogf.org/occi/infrastructure# |
+
+h1. Mixins
+
+h2. Mixin lamp
+
+| *Term* | lamp |
+| *Scheme* | http://schemas.modmacao.org/lamp# |
+| *Title* |  |
+Depends on:
+* <a href="modmacao.textile#mixin-application">http://schemas.modmacao.org/modmacao#application</a>
+Applies to:
+* <a href="core.textile#kind-resource">http://schemas.ogf.org/occi/core#resource</a>
+
+h2. Mixin apacheserver
+
+| *Term* | apacheserver |
+| *Scheme* | http://schemas.modmacao.org/lamp# |
+| *Title* |  |
+Depends on:
+* <a href="modmacao.textile#mixin-component">http://schemas.modmacao.org/modmacao#component</a>
+
+h2. Mixin tomcat
+
+| *Term* | tomcat |
+| *Scheme* | http://schemas.modmacao.org/lamp# |
+| *Title* |  |
+Depends on:
+* <a href="modmacao.textile#mixin-component">http://schemas.modmacao.org/modmacao#component</a>
+
+h2. Mixin mysql
+
+| *Term* | mysql |
+| *Scheme* | http://schemas.modmacao.org/lamp# |
+| *Title* |  |
+Depends on:
+* <a href="modmacao.textile#mixin-component">http://schemas.modmacao.org/modmacao#component</a>
+
+h2. Mixin tomcatdependency
+
+| *Term* | tomcatdependency |
+| *Scheme* | http://schemas.modmacao.org/lamp# |
+| *Title* |  |
+Depends on:
+* <a href="modmacao.textile#mixin-executiondependency">http://schemas.modmacao.org/modmacao#executiondependency</a>
+
+h2. Mixin mysqldependency
+
+| *Term* | mysqldependency |
+| *Scheme* | http://schemas.modmacao.org/lamp# |
+| *Title* |  |
+Depends on:
+* <a href="modmacao.textile#mixin-executiondependency">http://schemas.modmacao.org/modmacao#executiondependency</a>
+
+
+Generated at Mon Jul 23 13:45:33 CEST 2018 from platform:/resource/org.modmacao.lamp/model/lamp.occie by org.eclipse.cmf.occi.core.gen.textile

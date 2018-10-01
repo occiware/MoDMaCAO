@@ -1,0 +1,83 @@
+h1. OCCI modmacao extension
+
+
+
+| *Name* | modmacao |
+| *Scheme* | http://schemas.modmacao.org/modmacao# |
+
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+| <a href="core.textile">core</a> | http://schemas.ogf.org/occi/core# |
+| <a href="platform.textile">platform</a> | http://schemas.modmacao.org/occi/platform# |
+| <a href="infrastructure.textile">infrastructure</a> | http://schemas.ogf.org/occi/infrastructure# |
+
+h1. Mixins
+
+h2. Mixin application
+
+| *Term* | application |
+| *Scheme* | http://schemas.modmacao.org/modmacao# |
+| *Title* |  |
+Applies to:
+* <a href="platform.textile#kind-application">http://schemas.modmacao.org/occi/platform#application</a>
+
+h2. Mixin dependency
+
+| *Term* | dependency |
+| *Scheme* | http://schemas.modmacao.org/modmacao# |
+| *Title* |  |
+Applies to:
+* <a href="platform.textile#kind-componentlink">http://schemas.modmacao.org/occi/platform#componentlink</a>
+
+h2. Mixin component
+
+| *Term* | component |
+| *Scheme* | http://schemas.modmacao.org/modmacao# |
+| *Title* |  |
+Applies to:
+* <a href="platform.textile#kind-component">http://schemas.modmacao.org/occi/platform#component</a>
+
+Attributes of component are:
+
+| *Attribute* | *Type* | *Required* | *Mutable* | *Default* | *Description* |
+| modmacao.component.version | <a href="modmacao.textile#-version">Version</a> | false | false |  |  |
+
+
+h2. Mixin cluster
+
+| *Term* | cluster |
+| *Scheme* | http://schemas.modmacao.org/modmacao# |
+| *Title* |  |
+Depends on:
+* <a href="modmacao.textile#mixin-application">http://schemas.modmacao.org/modmacao#application</a>
+
+h2. Mixin installationdependency
+
+| *Term* | installationdependency |
+| *Scheme* | http://schemas.modmacao.org/modmacao# |
+| *Title* |  |
+Depends on:
+* <a href="modmacao.textile#mixin-dependency">http://schemas.modmacao.org/modmacao#dependency</a>
+
+h2. Mixin executiondependency
+
+| *Term* | executiondependency |
+| *Scheme* | http://schemas.modmacao.org/modmacao# |
+| *Title* |  |
+Depends on:
+* <a href="modmacao.textile#mixin-dependency">http://schemas.modmacao.org/modmacao#dependency</a>
+
+
+h1. Types
+
+h2. StringType Version
+
+
+h2. NumericType Port : Integer
+
+* minInclusive = 0
+* maxInclusive = 65535
+
+Generated at Mon Jul 23 13:45:33 CEST 2018 from http://schemas.modmacao.org/modmacao by org.eclipse.cmf.occi.core.gen.textile
