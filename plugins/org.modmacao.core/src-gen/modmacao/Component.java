@@ -13,9 +13,7 @@
 package modmacao;
 
 import java.util.Map;
-
 import org.eclipse.cmf.occi.core.MixinBase;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**

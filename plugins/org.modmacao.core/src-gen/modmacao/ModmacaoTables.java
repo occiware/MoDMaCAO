@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 	
+ *
  * Contributors:
  * - William Piers <william.piers@obeo.fr>
  * - Philippe Merle <philippe.merle@inria.fr>
@@ -38,7 +38,6 @@ import org.eclipse.ocl.pivot.oclstdlib.OCLstdlibTables;
  * In order to ensure correct static initialization, a top level class element must be accessed
  * before any nested class element. Therefore an access to PACKAGE.getClass() is recommended.
  */
-@SuppressWarnings("nls")
 public class ModmacaoTables
 {
 	static {
@@ -278,74 +277,74 @@ public class ModmacaoTables
 		}
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Application =
-		{
-			Fragments._Application__OclAny /* 0 */,
-			Fragments._Application__OclElement /* 1 */,
-			Fragments._Application__MixinBase /* 2 */,
-			Fragments._Application__Application /* 3 */
-		};
+			{
+				Fragments._Application__OclAny /* 0 */,
+				Fragments._Application__OclElement /* 1 */,
+				Fragments._Application__MixinBase /* 2 */,
+				Fragments._Application__Application /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Application = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Cluster =
-		{
-			Fragments._Cluster__OclAny /* 0 */,
-			Fragments._Cluster__OclElement /* 1 */,
-			Fragments._Cluster__MixinBase /* 2 */,
-			Fragments._Cluster__Application /* 3 */,
-			Fragments._Cluster__Cluster /* 4 */
-		};
+			{
+				Fragments._Cluster__OclAny /* 0 */,
+				Fragments._Cluster__OclElement /* 1 */,
+				Fragments._Cluster__MixinBase /* 2 */,
+				Fragments._Cluster__Application /* 3 */,
+				Fragments._Cluster__Cluster /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Cluster = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Component =
-		{
-			Fragments._Component__OclAny /* 0 */,
-			Fragments._Component__OclElement /* 1 */,
-			Fragments._Component__MixinBase /* 2 */,
-			Fragments._Component__Component /* 3 */
-		};
+			{
+				Fragments._Component__OclAny /* 0 */,
+				Fragments._Component__OclElement /* 1 */,
+				Fragments._Component__MixinBase /* 2 */,
+				Fragments._Component__Component /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Component = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Dependency =
-		{
-			Fragments._Dependency__OclAny /* 0 */,
-			Fragments._Dependency__OclElement /* 1 */,
-			Fragments._Dependency__MixinBase /* 2 */,
-			Fragments._Dependency__Dependency /* 3 */
-		};
+			{
+				Fragments._Dependency__OclAny /* 0 */,
+				Fragments._Dependency__OclElement /* 1 */,
+				Fragments._Dependency__MixinBase /* 2 */,
+				Fragments._Dependency__Dependency /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Dependency = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Executiondependency =
-		{
-			Fragments._Executiondependency__OclAny /* 0 */,
-			Fragments._Executiondependency__OclElement /* 1 */,
-			Fragments._Executiondependency__MixinBase /* 2 */,
-			Fragments._Executiondependency__Dependency /* 3 */,
-			Fragments._Executiondependency__Executiondependency /* 4 */
-		};
+			{
+				Fragments._Executiondependency__OclAny /* 0 */,
+				Fragments._Executiondependency__OclElement /* 1 */,
+				Fragments._Executiondependency__MixinBase /* 2 */,
+				Fragments._Executiondependency__Dependency /* 3 */,
+				Fragments._Executiondependency__Executiondependency /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Executiondependency = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Installationdependency =
-		{
-			Fragments._Installationdependency__OclAny /* 0 */,
-			Fragments._Installationdependency__OclElement /* 1 */,
-			Fragments._Installationdependency__MixinBase /* 2 */,
-			Fragments._Installationdependency__Dependency /* 3 */,
-			Fragments._Installationdependency__Installationdependency /* 4 */
-		};
+			{
+				Fragments._Installationdependency__OclAny /* 0 */,
+				Fragments._Installationdependency__OclElement /* 1 */,
+				Fragments._Installationdependency__MixinBase /* 2 */,
+				Fragments._Installationdependency__Dependency /* 3 */,
+				Fragments._Installationdependency__Installationdependency /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Installationdependency = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Port =
-		{
-			Fragments._Port__OclAny /* 0 */,
-			Fragments._Port__Port /* 1 */
-		};
+			{
+				Fragments._Port__OclAny /* 0 */,
+				Fragments._Port__Port /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __Port = { 1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Version =
-		{
-			Fragments._Version__OclAny /* 0 */,
-			Fragments._Version__Version /* 1 */
-		};
+			{
+				Fragments._Version__OclAny /* 0 */,
+				Fragments._Version__Version /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __Version = { 1,1 };
 
 		/**

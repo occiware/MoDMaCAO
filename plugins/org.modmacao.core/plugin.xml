@@ -17,8 +17,7 @@
       <!-- @generated modmacao -->
       <package
             uri="http://schemas.modmacao.org/modmacao/ecore"
-            class="modmacao.ModmacaoPackage"
-            genModel="model/modmacao.genmodel"/>
+            class="modmacao.ModmacaoPackage"/>
    </extension>
 
    <!-- Register the modmacao extension. -->

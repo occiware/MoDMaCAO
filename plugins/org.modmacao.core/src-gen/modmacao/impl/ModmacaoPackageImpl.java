@@ -130,7 +130,7 @@ public class ModmacaoPackageImpl extends EPackageImpl implements ModmacaoPackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link ModmacaoPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -144,7 +144,8 @@ public class ModmacaoPackageImpl extends EPackageImpl implements ModmacaoPackage
 		if (isInited) return (ModmacaoPackage)EPackage.Registry.INSTANCE.getEPackage(ModmacaoPackage.eNS_URI);
 
 		// Obtain or create and register package
-		ModmacaoPackageImpl theModmacaoPackage = (ModmacaoPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ModmacaoPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ModmacaoPackageImpl());
+		Object registeredModmacaoPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		ModmacaoPackageImpl theModmacaoPackage = registeredModmacaoPackage instanceof ModmacaoPackageImpl ? (ModmacaoPackageImpl)registeredModmacaoPackage : new ModmacaoPackageImpl();
 
 		isInited = true;
 
@@ -161,7 +162,7 @@ public class ModmacaoPackageImpl extends EPackageImpl implements ModmacaoPackage
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
-			(theModmacaoPackage, 
+			(theModmacaoPackage,
 			 new EValidator.Descriptor() {
 				 public EValidator getEValidator() {
 					 return ModmacaoValidator.INSTANCE;
@@ -171,7 +172,6 @@ public class ModmacaoPackageImpl extends EPackageImpl implements ModmacaoPackage
 		// Mark meta-data to indicate it can't be changed
 		theModmacaoPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(ModmacaoPackage.eNS_URI, theModmacaoPackage);
 		return theModmacaoPackage;
@@ -513,29 +513,29 @@ public class ModmacaoPackageImpl extends EPackageImpl implements ModmacaoPackage
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
-		  (this, 
-		   source, 
+		  (this,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (applicationEClass, 
-		   source, 
+		  (applicationEClass,
+		   source,
 		   new String[] {
-			 "constraints", "OneOrMoreComponents"
-		   });	
+			   "constraints", "OneOrMoreComponents"
+		   });
 		addAnnotation
-		  (dependencyEClass, 
-		   source, 
+		  (dependencyEClass,
+		   source,
 		   new String[] {
-			 "constraints", "SourceMustBeComponent"
-		   });	
+			   "constraints", "SourceMustBeComponent"
+		   });
 		addAnnotation
-		  (componentEClass, 
-		   source, 
+		  (componentEClass,
+		   source,
 		   new String[] {
-			 "constraints", "OnlyOnePlacementLink"
+			   "constraints", "OnlyOnePlacementLink"
 		   });
 	}
 
@@ -546,13 +546,13 @@ public class ModmacaoPackageImpl extends EPackageImpl implements ModmacaoPackage
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation
-		  (portEDataType, 
-		   source, 
+		  (portEDataType,
+		   source,
 		   new String[] {
-			 "MinInclusive", "0",
-			 "MaxInclusive", "65535"
+			   "MinInclusive", "0",
+			   "MaxInclusive", "65535"
 		   });
 	}
 

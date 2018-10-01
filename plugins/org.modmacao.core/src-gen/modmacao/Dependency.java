@@ -13,9 +13,7 @@
 package modmacao;
 
 import java.util.Map;
-
 import org.eclipse.cmf.occi.core.MixinBase;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
@@ -29,6 +27,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @generated
  */
 public interface Dependency extends MixinBase {
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -52,5 +51,4 @@ public interface Dependency extends MixinBase {
 	 * @generated
 	 */
 	boolean SourceMustBeComponent(DiagnosticChain diagnostics, Map<Object, Object> context);
-
 } // Dependency

@@ -13,41 +13,30 @@
 package modmacao.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Map;
-
 import modmacao.Component;
 import modmacao.ModmacaoPackage;
+
 import modmacao.ModmacaoTables;
-
 import org.eclipse.cmf.occi.core.Entity;
-
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.ocl.pivot.evaluation.Executor;
-
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
-
 import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
-
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
-
 import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
-
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
 import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
@@ -258,7 +247,7 @@ public class ComponentImpl extends MixinBaseImpl implements Component {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (modmacaoComponentVersion: ");
 		result.append(modmacaoComponentVersion);
 		result.append(')');

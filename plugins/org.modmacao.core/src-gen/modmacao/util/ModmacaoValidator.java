@@ -16,6 +16,7 @@ import java.util.Map;
 
 import modmacao.*;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -244,16 +245,6 @@ public class ModmacaoValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the appliesConstraint constraint of '<em>Dependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateDependency_appliesConstraint(Dependency dependency, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return dependency.appliesConstraint(diagnostics, context);
-	}
-
-	/**
 	 * Validates the TargetMustBeComponent constraint of '<em>Dependency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -261,6 +252,16 @@ public class ModmacaoValidator extends EObjectValidator {
 	 */
 	public boolean validateDependency_TargetMustBeComponent(Dependency dependency, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return dependency.TargetMustBeComponent(diagnostics, context);
+	}
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Dependency</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDependency_appliesConstraint(Dependency dependency, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return dependency.appliesConstraint(diagnostics, context);
 	}
 
 	/**
