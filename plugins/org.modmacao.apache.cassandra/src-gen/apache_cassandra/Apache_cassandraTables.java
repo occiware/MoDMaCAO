@@ -57,8 +57,25 @@ public class Apache_cassandraTables
 	/**
 	 *	Constants used by auto-generated code.
 	 */
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_apache_s_cassandra_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/apache/cassandra/ecore", null, apache_cassandra.Apache_cassandraPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", null, org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = apache_cassandra.Apache_cassandraTables.PACKid_$metamodel$.getClassId("Class", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Cluster = apache_cassandra.Apache_cassandraTables.PACKid_http_c_s_s_schemas_modmacao_org_s_apache_s_cassandra_s_ecore.getClassId("Cluster", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = apache_cassandra.Apache_cassandraTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Link = apache_cassandra.Apache_cassandraTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Link", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_MixinBase = apache_cassandra.Apache_cassandraTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("MixinBase", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Node = apache_cassandra.Apache_cassandraTables.PACKid_http_c_s_s_schemas_modmacao_org_s_apache_s_cassandra_s_ecore.getClassId("Node", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = apache_cassandra.Apache_cassandraTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Seed = apache_cassandra.Apache_cassandraTables.PACKid_http_c_s_s_schemas_modmacao_org_s_apache_s_cassandra_s_ecore.getClassId("Seed", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_1 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("1");
+	public static final /*@NonInvalid*/ java.lang.String STR_Cluster_c_c_OneOrMoreNodes = "Cluster::OneOrMoreNodes";
+	public static final /*@NonInvalid*/ java.lang.String STR_Cluster_c_c_OneOrMoreSeeds = "Cluster::OneOrMoreSeeds";
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Link = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(apache_cassandra.Apache_cassandraTables.CLSSid_Link);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(apache_cassandra.Apache_cassandraTables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(apache_cassandra.Apache_cassandraTables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(apache_cassandra.Apache_cassandraTables.CLSSid_Resource);
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -122,8 +139,8 @@ public class Apache_cassandraTables
 		}
 
 		private static final /*@NonNull*/ ExecutorFragment _Cluster__Application = new ExecutorFragment(Types._Cluster, ModmacaoTables.Types._Application);
-		private static final /*@NonNull*/ ExecutorFragment _Cluster__Cluster = new ExecutorFragment(Types._Cluster, Apache_cassandraTables.Types._Cluster);
-		private static final /*@NonNull*/ ExecutorFragment _Cluster__Cluster_1 = new ExecutorFragment(Types._Cluster, ModmacaoTables.Types._Cluster);
+		private static final /*@NonNull*/ ExecutorFragment _Cluster__Cluster = new ExecutorFragment(Types._Cluster, ModmacaoTables.Types._Cluster);
+		private static final /*@NonNull*/ ExecutorFragment _Cluster__Cluster_1 = new ExecutorFragment(Types._Cluster, Apache_cassandraTables.Types._Cluster);
 		private static final /*@NonNull*/ ExecutorFragment _Cluster__MixinBase = new ExecutorFragment(Types._Cluster, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Cluster__OclAny = new ExecutorFragment(Types._Cluster, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Cluster__OclElement = new ExecutorFragment(Types._Cluster, OCLstdlibTables.Types._OclElement);
@@ -236,8 +253,8 @@ public class Apache_cassandraTables
 				Fragments._Cluster__OclElement /* 1 */,
 				Fragments._Cluster__MixinBase /* 2 */,
 				Fragments._Cluster__Application /* 3 */,
-				Fragments._Cluster__Cluster_1 /* 4 */,
-				Fragments._Cluster__Cluster /* 5 */
+				Fragments._Cluster__Cluster /* 4 */,
+				Fragments._Cluster__Cluster_1 /* 5 */
 			};
 		private static final int /*@NonNull*/ [] __Cluster = { 1,1,1,1,1,1 };
 
@@ -288,9 +305,9 @@ public class Apache_cassandraTables
 			TypeFragments.init();
 		}
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__Cluster = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__Application = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__Cluster_1 = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__Application = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__Cluster = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -432,7 +449,7 @@ public class Apache_cassandraTables
 		 *	Install the property descriptors in the fragment descriptors.
 		 */
 		static {
-			Fragments._Cluster__Cluster.initProperties(_Cluster);
+			Fragments._Cluster__Cluster_1.initProperties(_Cluster);
 			Fragments._Node__Node.initProperties(_Node);
 			Fragments._Seed__Seed.initProperties(_Seed);
 

@@ -3,8 +3,8 @@
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://schemas.modmacao.org/modmacao#/"/>
   <mixins name="Cluster" scheme="http://schemas.modmacao.org/apache/cassandra#">
-    <constraints name="OneOrMoreNodes" body="true"/>
-    <constraints name="OneOrMoreSeeds" body="true"/>
+    <constraints name="OneOrMoreNodes" body="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(apache_cassandra::Node))->size()>=1"/>
+    <constraints name="OneOrMoreSeeds" body="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(apache_cassandra::Seed))->size()>=1"/>
     <depends href="http://schemas.modmacao.org/modmacao#//@mixins[term='cluster']"/>
   </mixins>
   <mixins name="Node" scheme="http://schemas.modmacao.org/apache/cassandra#">
