@@ -11,14 +11,16 @@
     <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
     <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
     <details key="platform" value="platform:/resource/org.modmacao.occi.platform/model/platform.ecore#/"/>
+    <details key="infrastructure" value="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
+    <details key="placement" value="platform:/resource/org.modmacao.placement/model/placement.ecore#/"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Clientserver" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Application platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="OneOrMoreClients OnlyOneServer"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="OneOrMoreClients" value="true"/>
-      <details key="OnlyOneServer" value="true"/>
+      <details key="OneOrMoreClients" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(client_server::Client))->size()>=1"/>
+      <details key="OnlyOneServer" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(client_server::Server))->size()=1"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Serverdependency" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Executiondependency platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
@@ -26,8 +28,8 @@
       <details key="constraints" value="SourceMustBeClient TargetMustBeServer"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="SourceMustBeClient" value="true"/>
-      <details key="TargetMustBeServer" value="true"/>
+      <details key="SourceMustBeClient" value="self.entity.oclAsType(occi::Link).source.oclAsType(occi::Resource).parts->exists(m|m.oclIsTypeOf(client_server::Client))"/>
+      <details key="TargetMustBeServer" value="self.entity.oclAsType(occi::Link).target.oclAsType(occi::Resource).parts->exists(m|m.oclIsTypeOf(client_server::Server))"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Client" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
@@ -35,7 +37,7 @@
       <details key="constraints" value="OneServerDependency"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="OneServerDependency" value="true"/>
+      <details key="OneServerDependency" value="self.entity.oclAsType(occi::Resource).links->select(l:occi::Link|l.oclIsTypeOf(platform::Componentlink))->collect(l:occi::Link|l.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(client_server::Serverdependency))->size()=1"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Server" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">

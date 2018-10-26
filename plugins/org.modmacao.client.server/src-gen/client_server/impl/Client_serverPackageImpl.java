@@ -25,6 +25,7 @@ import modmacao.ModmacaoPackage;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
+import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EGenericType;
@@ -35,6 +36,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.modmacao.occi.platform.PlatformPackage;
+import org.modmacao.placement.PlacementPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,6 +123,8 @@ public class Client_serverPackageImpl extends EPackageImpl implements Client_ser
 		// Initialize simple dependencies
 		ModmacaoPackage.eINSTANCE.eClass();
 		PlatformPackage.eINSTANCE.eClass();
+		InfrastructurePackage.eINSTANCE.eClass();
+		PlacementPackage.eINSTANCE.eClass();
 		OCCIPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

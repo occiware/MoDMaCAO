@@ -58,12 +58,33 @@ public class Client_serverTables
 	/**
 	 *	Constants used by auto-generated code.
 	 */
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_client_server_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/client_server/ecore", null, client_server.Client_serverPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_modmacao_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/modmacao/ecore", null, modmacao.ModmacaoPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_platform_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/occi/platform/ecore", null, org.modmacao.occi.platform.PlatformPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", null, org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = client_server.Client_serverTables.PACKid_$metamodel$.getClassId("Class", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Client = client_server.Client_serverTables.PACKid_http_c_s_s_schemas_modmacao_org_s_client_server_s_ecore.getClassId("Client", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Clientserver = client_server.Client_serverTables.PACKid_http_c_s_s_schemas_modmacao_org_s_client_server_s_ecore.getClassId("Clientserver", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Componentlink = client_server.Client_serverTables.PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_platform_s_ecore.getClassId("Componentlink", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = client_server.Client_serverTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Link = client_server.Client_serverTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Link", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_MixinBase = client_server.Client_serverTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("MixinBase", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = client_server.Client_serverTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Server = client_server.Client_serverTables.PACKid_http_c_s_s_schemas_modmacao_org_s_client_server_s_ecore.getClassId("Server", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Serverdependency = client_server.Client_serverTables.PACKid_http_c_s_s_schemas_modmacao_org_s_client_server_s_ecore.getClassId("Serverdependency", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Port = client_server.Client_serverTables.PACKid_http_c_s_s_schemas_modmacao_org_s_modmacao_s_ecore.getDataTypeId("Port", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_1 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("1");
+	public static final /*@NonInvalid*/ java.lang.String STR_Client_c_c_OneServerDependency = "Client::OneServerDependency";
+	public static final /*@NonInvalid*/ java.lang.String STR_Clientserver_c_c_OneOrMoreClients = "Clientserver::OneOrMoreClients";
+	public static final /*@NonInvalid*/ java.lang.String STR_Clientserver_c_c_OnlyOneServer = "Clientserver::OnlyOneServer";
+	public static final /*@NonInvalid*/ java.lang.String STR_Serverdependency_c_c_SourceMustBeClient = "Serverdependency::SourceMustBeClient";
+	public static final /*@NonInvalid*/ java.lang.String STR_Serverdependency_c_c_TargetMustBeServer = "Serverdependency::TargetMustBeServer";
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Link = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(client_server.Client_serverTables.CLSSid_Link);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(client_server.Client_serverTables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(client_server.Client_serverTables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(client_server.Client_serverTables.CLSSid_Resource);
 
 	/**
 	 *	The type parameters for templated types and operations.
