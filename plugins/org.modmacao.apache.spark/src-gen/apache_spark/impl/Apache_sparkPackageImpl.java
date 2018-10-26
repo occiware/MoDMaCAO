@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.modmacao.occi.platform.PlatformPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -129,6 +130,7 @@ public class Apache_sparkPackageImpl extends EPackageImpl implements Apache_spar
 		// Initialize simple dependencies
 		InfrastructurePackage.eINSTANCE.eClass();
 		ModmacaoPackage.eINSTANCE.eClass();
+		PlatformPackage.eINSTANCE.eClass();
 		OCCIPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects

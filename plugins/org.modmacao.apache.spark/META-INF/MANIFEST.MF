@@ -18,6 +18,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ocl.examples.codegen;visibility:=reexport,
  org.eclipse.cmf.occi.infrastructure;visibility:=reexport,
  org.modmacao.core;visibility:=reexport,
+ org.modmacao.occi.platform;visibility:=reexport,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.cmf.occi.core.ui,
  org.eclipse.cmf.occi.core.gen.emf.ui

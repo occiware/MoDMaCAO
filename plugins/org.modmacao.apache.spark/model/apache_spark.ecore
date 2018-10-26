@@ -9,8 +9,9 @@
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
-    <details key="infrastructure" value="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
+    <details key="infrastructure" value="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
     <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
+    <details key="platform" value="platform:/resource/org.modmacao.occi.platform/model/platform.ecore#/"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Master" eSuperTypes="#//Apachesparkcomponent platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
   <eClassifiers xsi:type="ecore:EClass" name="Worker" eSuperTypes="#//Apachesparkcomponent platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
@@ -18,18 +19,18 @@
       <details key="constraints" value="OnlyOneMasterDependency WorkerCoresSmallerThanComputeCores WorkerMemorySmallerThanComputeMemory"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="OnlyOneMasterDependency" value="true"/>
-      <details key="WorkerCoresSmallerThanComputeCores" value="true"/>
-      <details key="WorkerMemorySmallerThanComputeMemory" value="true"/>
+      <details key="OnlyOneMasterDependency" value="self.entity.oclAsType(occi::Resource).links->select(l:occi::Link|l.oclIsTypeOf(platform::Componentlink))->collect(l:occi::Link|l.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(apache_spark::Masterdependency))->size()=1"/>
+      <details key="WorkerCoresSmallerThanComputeCores" value="self.apacheSparkWorkerCores&lt;self.entity.oclAsType(occi::Resource).links->select(l:occi::Link|l.oclIsTypeOf(placement::Placementlink))->first().target.oclAsType(infrastructure::Compute).occiComputeCores"/>
+      <details key="WorkerMemorySmallerThanComputeMemory" value="self.apacheSparkWorkerMemory&lt;self.entity.oclAsType(occi::Resource).links->select(l:occi::Link|l.oclIsTypeOf(placement::Placementlink))->first().target.oclAsType(infrastructure::Compute).occiComputeMemory"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apacheSparkWorkerCores"
-        eType="ecore:EDataType platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//Core">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Total CPU cores to allow Spark applications to use on the machine (default: all available)"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="apacheSparkWorkerMemory"
-        eType="ecore:EDataType platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB">
+        eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#//GiB">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Total amount of memory to allow Spark applications to use on the machine, in a format like 1000M or 2G (default: your machine's total RAM minus 1 GB)"/>
       </eAnnotations>
@@ -52,8 +53,8 @@
       <details key="constraints" value="OnlyOneMaster OneOrMoreWorkers"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="OnlyOneMaster" value="true"/>
-      <details key="OneOrMoreWorkers" value="true"/>
+      <details key="OnlyOneMaster" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(apache_spark::Master))->size()=1"/>
+      <details key="OneOrMoreWorkers" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(apache_spark::Worker))->size()>=1"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Masterdependency" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Executiondependency platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
@@ -61,8 +62,8 @@
       <details key="constraints" value="SourceMustBeWorker TargetMustBeMaster"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="SourceMustBeWorker" value="true"/>
-      <details key="TargetMustBeMaster" value="true"/>
+      <details key="SourceMustBeWorker" value="self.entity.oclAsType(occi::Link).source.oclAsType(occi::Resource).parts->exists(m|m.oclIsTypeOf(apache_spark::Worker))"/>
+      <details key="TargetMustBeMaster" value="self.entity.oclAsType(occi::Link).target.oclAsType(occi::Resource).parts->exists(m|m.oclIsTypeOf(apache_spark::Master))"/>
     </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>
