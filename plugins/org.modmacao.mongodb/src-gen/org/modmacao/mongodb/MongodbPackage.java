@@ -16,6 +16,7 @@ import modmacao.ModmacaoPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -32,8 +33,6 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see org.modmacao.mongodb.MongodbFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
- *        annotation="http://www.eclipse.org/OCL/Import occi='http://schemas.ogf.org/occi/core/ecore' platform='http://schemas.modmacao.org/occi/platform/ecore' placement='http://schemas.modmacao.org/placement/ecore' modmacao='http://schemas.modmacao.org/modmacao/ecore' infrastructure='http://schemas.ogf.org/occi/infrastructure/ecore'"
  * @generated
  */
 public interface MongodbPackage extends EPackage {
@@ -408,13 +407,40 @@ public interface MongodbPackage extends EPackage {
 	int CLUSTER_FEATURE_COUNT = ModmacaoPackage.CLUSTER_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>One Or More Config Servers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>One Or More Routers</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>One Or More Shards</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>Cluster</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTER_OPERATION_COUNT = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 0;
+	int CLUSTER_OPERATION_COUNT = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 3;
 
 
 	/**
@@ -477,6 +503,36 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCluster();
+
+	/**
+	 * Returns the meta object for the '{@link org.modmacao.mongodb.Cluster#OneOrMoreConfigServers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>One Or More Config Servers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>One Or More Config Servers</em>' operation.
+	 * @see org.modmacao.mongodb.Cluster#OneOrMoreConfigServers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getCluster__OneOrMoreConfigServers__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.modmacao.mongodb.Cluster#OneOrMoreRouters(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>One Or More Routers</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>One Or More Routers</em>' operation.
+	 * @see org.modmacao.mongodb.Cluster#OneOrMoreRouters(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getCluster__OneOrMoreRouters__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for the '{@link org.modmacao.mongodb.Cluster#OneOrMoreShards(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>One Or More Shards</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>One Or More Shards</em>' operation.
+	 * @see org.modmacao.mongodb.Cluster#OneOrMoreShards(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getCluster__OneOrMoreShards__DiagnosticChain_Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -558,6 +614,30 @@ public interface MongodbPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLUSTER = eINSTANCE.getCluster();
+
+		/**
+		 * The meta object literal for the '<em><b>One Or More Config Servers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCluster__OneOrMoreConfigServers__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>One Or More Routers</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCluster__OneOrMoreRouters__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>One Or More Shards</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCluster__OneOrMoreShards__DiagnosticChain_Map();
 
 	}
 

@@ -20,6 +20,8 @@ import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EValidator;
 
@@ -109,7 +111,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link MongodbPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -123,7 +125,8 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		if (isInited) return (MongodbPackage)EPackage.Registry.INSTANCE.getEPackage(MongodbPackage.eNS_URI);
 
 		// Obtain or create and register package
-		MongodbPackageImpl theMongodbPackage = (MongodbPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MongodbPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MongodbPackageImpl());
+		Object registeredMongodbPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		MongodbPackageImpl theMongodbPackage = registeredMongodbPackage instanceof MongodbPackageImpl ? (MongodbPackageImpl)registeredMongodbPackage : new MongodbPackageImpl();
 
 		isInited = true;
 
@@ -142,7 +145,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
-			(theMongodbPackage, 
+			(theMongodbPackage,
 			 new EValidator.Descriptor() {
 				 public EValidator getEValidator() {
 					 return MongodbValidator.INSTANCE;
@@ -152,7 +155,6 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		// Mark meta-data to indicate it can't be changed
 		theMongodbPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(MongodbPackage.eNS_URI, theMongodbPackage);
 		return theMongodbPackage;
@@ -217,6 +219,33 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getCluster__OneOrMoreConfigServers__DiagnosticChain_Map() {
+		return clusterEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getCluster__OneOrMoreRouters__DiagnosticChain_Map() {
+		return clusterEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getCluster__OneOrMoreShards__DiagnosticChain_Map() {
+		return clusterEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MongodbFactory getMongodbFactory() {
 		return (MongodbFactory)getEFactoryInstance();
 	}
@@ -250,6 +279,9 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		shardEClass = createEClass(SHARD);
 
 		clusterEClass = createEClass(CLUSTER);
+		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP);
 	}
 
 	/**
@@ -307,16 +339,39 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 
 		initEClass(clusterEClass, Cluster.class, "Cluster", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		EOperation op = initEOperation(getCluster__OneOrMoreConfigServers__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "OneOrMoreConfigServers", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCluster__OneOrMoreRouters__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "OneOrMoreRouters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getCluster__OneOrMoreShards__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "OneOrMoreShards", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/OCL/Import
-		createImportAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
-		createPivotAnnotations();
 	}
 
 	/**
@@ -326,58 +381,17 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
-		  (this, 
-		   source, 
+		  (this,
+		   source,
 		   new String[] {
-			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
-		   });	
-		addAnnotation
-		  (clusterEClass, 
-		   source, 
-		   new String[] {
-			 "constraints", "OneOrMoreRouters OneOrMoreShards OneOrMoreConfigServers"
 		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createImportAnnotations() {
-		String source = "http://www.eclipse.org/OCL/Import";	
 		addAnnotation
-		  (this, 
-		   source, 
+		  (clusterEClass,
+		   source,
 		   new String[] {
-			 "occi", "http://schemas.ogf.org/occi/core/ecore",
-			 "platform", "http://schemas.modmacao.org/occi/platform/ecore",
-			 "placement", "http://schemas.modmacao.org/placement/ecore",
-			 "modmacao", "http://schemas.modmacao.org/modmacao/ecore",
-			 "infrastructure", "http://schemas.ogf.org/occi/infrastructure/ecore"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createPivotAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
-		addAnnotation
-		  (clusterEClass, 
-		   source, 
-		   new String[] {
-			 "OneOrMoreRouters", "true",
-			 "OneOrMoreShards", "true",
-			 "OneOrMoreConfigServers", "true"
+			   "constraints", "OneOrMoreShards"
 		   });
 	}
 

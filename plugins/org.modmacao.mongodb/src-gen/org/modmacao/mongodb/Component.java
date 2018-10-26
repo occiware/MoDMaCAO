@@ -42,6 +42,7 @@ public interface Component extends modmacao.Component, MixinBase {
 	 * @see #setMongodbReplicationSetName(String)
 	 * @see org.modmacao.mongodb.MongodbPackage#getComponent_MongodbReplicationSetName()
 	 * @model dataType="org.eclipse.cmf.occi.core.String" required="true"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/mongodb/ecore!Component!mongodbReplicationSetName'"
 	 * @generated
 	 */
 	String getMongodbReplicationSetName();

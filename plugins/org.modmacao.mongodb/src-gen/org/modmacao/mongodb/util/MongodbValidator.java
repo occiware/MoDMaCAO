@@ -53,12 +53,36 @@ public class MongodbValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.modmacao.mongodb";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'One Or More Config Servers' of 'Cluster'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CLUSTER__ONE_OR_MORE_CONFIG_SERVERS = 1;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'One Or More Routers' of 'Cluster'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CLUSTER__ONE_OR_MORE_ROUTERS = 2;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'One Or More Shards' of 'Cluster'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int CLUSTER__ONE_OR_MORE_SHARDS = 3;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 3;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -219,19 +243,11 @@ public class MongodbValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cluster, diagnostics, context);
 		if (result || diagnostics != null) result &= modmacaoValidator.validateApplication_OneOrMoreComponents(cluster, diagnostics, context);
 		if (result || diagnostics != null) result &= modmacaoValidator.validateApplication_appliesConstraint(cluster, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCluster_OneOrMoreRouters(cluster, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCluster_OneOrMoreShards(cluster, diagnostics, context);
 		if (result || diagnostics != null) result &= validateCluster_OneOrMoreConfigServers(cluster, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCluster_OneOrMoreRouters(cluster, diagnostics, context);
 		return result;
 	}
-
-	/**
-	 * The cached validation expression for the OneOrMoreRouters constraint of '<em>Cluster</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CLUSTER__ONE_OR_MORE_ROUTERS__EEXPRESSION = "true";
 
 	/**
 	 * Validates the OneOrMoreRouters constraint of '<em>Cluster</em>'.
@@ -240,27 +256,8 @@ public class MongodbValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCluster_OneOrMoreRouters(Cluster cluster, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(MongodbPackage.Literals.CLUSTER,
-				 cluster,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "OneOrMoreRouters",
-				 CLUSTER__ONE_OR_MORE_ROUTERS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return cluster.OneOrMoreRouters(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the OneOrMoreShards constraint of '<em>Cluster</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CLUSTER__ONE_OR_MORE_SHARDS__EEXPRESSION = "true";
 
 	/**
 	 * Validates the OneOrMoreShards constraint of '<em>Cluster</em>'.
@@ -269,27 +266,8 @@ public class MongodbValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCluster_OneOrMoreShards(Cluster cluster, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(MongodbPackage.Literals.CLUSTER,
-				 cluster,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "OneOrMoreShards",
-				 CLUSTER__ONE_OR_MORE_SHARDS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return cluster.OneOrMoreShards(diagnostics, context);
 	}
-
-	/**
-	 * The cached validation expression for the OneOrMoreConfigServers constraint of '<em>Cluster</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CLUSTER__ONE_OR_MORE_CONFIG_SERVERS__EEXPRESSION = "true";
 
 	/**
 	 * Validates the OneOrMoreConfigServers constraint of '<em>Cluster</em>'.
@@ -298,18 +276,7 @@ public class MongodbValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateCluster_OneOrMoreConfigServers(Cluster cluster, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(MongodbPackage.Literals.CLUSTER,
-				 cluster,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "OneOrMoreConfigServers",
-				 CLUSTER__ONE_OR_MORE_CONFIG_SERVERS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		return cluster.OneOrMoreConfigServers(diagnostics, context);
 	}
 
 	/**

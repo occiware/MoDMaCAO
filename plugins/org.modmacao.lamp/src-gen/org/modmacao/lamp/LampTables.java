@@ -57,12 +57,35 @@ public class LampTables
 	/**
 	 *	Constants used by auto-generated code.
 	 */
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_lamp_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/lamp/ecore", null, org.modmacao.lamp.LampPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_platform_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/occi/platform/ecore", null, org.modmacao.occi.platform.PlatformPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", "occi", org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Apacheserver = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_modmacao_org_s_lamp_s_ecore.getClassId("Apacheserver", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.modmacao.lamp.LampTables.PACKid_$metamodel$.getClassId("Class", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Componentlink = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_platform_s_ecore.getClassId("Componentlink", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Lamp = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_modmacao_org_s_lamp_s_ecore.getClassId("Lamp", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Link = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Link", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_MixinBase = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("MixinBase", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Mysql = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_modmacao_org_s_lamp_s_ecore.getClassId("Mysql", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Mysqldependency = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_modmacao_org_s_lamp_s_ecore.getClassId("Mysqldependency", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Tomcat = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_modmacao_org_s_lamp_s_ecore.getClassId("Tomcat", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Tomcatdependency = org.modmacao.lamp.LampTables.PACKid_http_c_s_s_schemas_modmacao_org_s_lamp_s_ecore.getClassId("Tomcatdependency", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_1 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("1");
+	public static final /*@NonInvalid*/ java.lang.String STR_Apacheserver_c_c_OneOrMoreTomcatDependencies = "Apacheserver::OneOrMoreTomcatDependencies";
+	public static final /*@NonInvalid*/ java.lang.String STR_Lamp_c_c_OneOrMoreTomcats = "Lamp::OneOrMoreTomcats";
+	public static final /*@NonInvalid*/ java.lang.String STR_Lamp_c_c_OnlyOneApacheServer = "Lamp::OnlyOneApacheServer";
+	public static final /*@NonInvalid*/ java.lang.String STR_Lamp_c_c_OnlyOneMySQL = "Lamp::OnlyOneMySQL";
+	public static final /*@NonInvalid*/ java.lang.String STR_Mysqldependency_c_c_TargetMustBeMySQL = "Mysqldependency::TargetMustBeMySQL";
+	public static final /*@NonInvalid*/ java.lang.String STR_Tomcat_c_c_OnlyOneMySQLDependency = "Tomcat::OnlyOneMySQLDependency";
+	public static final /*@NonInvalid*/ java.lang.String STR_Tomcatdependency_c_c_TargetMustBeTomcat = "Tomcatdependency::TargetMustBeTomcat";
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Link = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.modmacao.lamp.LampTables.CLSSid_Link);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.modmacao.lamp.LampTables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.modmacao.lamp.LampTables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.modmacao.lamp.LampTables.CLSSid_Resource);
 
 	/**
 	 *	The type parameters for templated types and operations.

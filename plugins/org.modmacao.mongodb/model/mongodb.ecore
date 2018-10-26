@@ -11,7 +11,7 @@
     <details key="platform" value="platform:/resource/org.modmacao.occi.platform/model/platform.ecore#/"/>
     <details key="placement" value="platform:/resource/org.modmacao.placement/model/placement.ecore#/"/>
     <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
-    <details key="infrastructure" value="platform:/resource/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
+    <details key="infrastructure" value="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mongodbReplicationSetName"
@@ -29,9 +29,9 @@
       <details key="constraints" value="OneOrMoreRouters OneOrMoreShards OneOrMoreConfigServers"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="OneOrMoreRouters" value="true"/>
-      <details key="OneOrMoreShards" value="true"/>
-      <details key="OneOrMoreConfigServers" value="true"/>
+      <details key="OneOrMoreRouters" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(mongodb::Router))->size()>=1"/>
+      <details key="OneOrMoreShards" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(mongodb::Shard))->size()>=1"/>
+      <details key="OneOrMoreConfigServers" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(mongodb::Configserver))->size()>=1"/>
     </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>

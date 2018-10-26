@@ -6,14 +6,21 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
+    <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
+    <details key="platform" value="platform:/resource/org.modmacao.occi.platform/model/platform.ecore#/"/>
+    <details key="placement" value="platform:/resource/org.modmacao.placement/model/placement.ecore#/"/>
+    <details key="infrastructure" value="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Lamp" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Application platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="OnlyOneApacheServer OneOrMoreTomcats OnlyOneMySQL"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="OnlyOneApacheServer" value="true"/>
-      <details key="OneOrMoreTomcats" value="true"/>
-      <details key="OnlyOneMySQL" value="true"/>
+      <details key="OnlyOneApacheServer" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(lamp::Apacheserver))->size()=1"/>
+      <details key="OneOrMoreTomcats" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(lamp::Tomcat))->size()>=1"/>
+      <details key="OnlyOneMySQL" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(lamp::Mysql))->size()=1"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Apacheserver" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
@@ -21,7 +28,7 @@
       <details key="constraints" value="OneOrMoreTomcatDependencies"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="OneOrMoreTomcatDependencies" value="true"/>
+      <details key="OneOrMoreTomcatDependencies" value="self.entity.oclAsType(occi::Resource).links->select(l:occi::Link|l.oclIsTypeOf(platform::Componentlink))->collect(l:occi::Link|l.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(lamp::Tomcatdependency))->size()>=1"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tomcat" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
@@ -29,7 +36,7 @@
       <details key="constraints" value="OnlyOneMySQLDependency"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="OnlyOneMySQLDependency" value="true"/>
+      <details key="OnlyOneMySQLDependency" value="self.entity.oclAsType(occi::Resource).links->select(l:occi::Link|l.oclIsTypeOf(platform::Componentlink))->collect(l:occi::Link|l.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(lamp::Mysqldependency))->size()>=1"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mysql" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
@@ -38,7 +45,7 @@
       <details key="constraints" value="TargetMustBeTomcat"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="TargetMustBeTomcat" value="true"/>
+      <details key="TargetMustBeTomcat" value="self.entity.oclAsType(occi::Link).target.oclAsType(occi::Resource).parts->exists(m|m.oclIsTypeOf(lamp::Tomcat))"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Mysqldependency" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Executiondependency platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
@@ -46,7 +53,7 @@
       <details key="constraints" value="TargetMustBeMySQL"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="TargetMustBeMySQL" value="true"/>
+      <details key="TargetMustBeMySQL" value="self.entity.oclAsType(occi::Link).target.oclAsType(occi::Resource).parts->exists(m|m.oclIsTypeOf(lamp::Mysql))"/>
     </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>
