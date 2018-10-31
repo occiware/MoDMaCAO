@@ -21,6 +21,7 @@ import org.eclipse.emf.common.EMFPlugin;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.modmacao.occi.platform.provider.PlatformEditPlugin;
+import org.modmacao.placement.provider.PlacementEditPlugin;
 
 /**
  * This is the central singleton for the Modmacao edit plugin.
@@ -55,7 +56,7 @@ public final class ModmacaoEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     PlatformEditPlugin.INSTANCE,
-		     InfrastructureEditPlugin.INSTANCE,
+		     PlacementEditPlugin.INSTANCE,
 		     OCCIEditPlugin.INSTANCE,
 		   });
 	}

@@ -20,6 +20,9 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
@@ -381,7 +384,51 @@ public class ModmacaoValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validatePort(Integer port, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return true;
+		boolean result = validatePort_Min(port, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePort_Max(port, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validatePort_Min
+	 */
+	public static final Integer PORT__MIN__VALUE = new Integer(0);
+
+	/**
+	 * Validates the Min constraint of '<em>Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePort_Min(Integer port, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = port.compareTo(PORT__MIN__VALUE) >= 0;
+		if (!result && diagnostics != null)
+			reportMinViolation(ModmacaoPackage.Literals.PORT, port, PORT__MIN__VALUE, true, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @see #validatePort_Max
+	 */
+	public static final Integer PORT__MAX__VALUE = new Integer(65535);
+
+	/**
+	 * Validates the Max constraint of '<em>Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePort_Max(Integer port, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		boolean result = port.compareTo(PORT__MAX__VALUE) <= 0;
+		if (!result && diagnostics != null)
+			reportMaxViolation(ModmacaoPackage.Literals.PORT, port, PORT__MAX__VALUE, true, diagnostics, context);
+		return result;
 	}
 
 	/**

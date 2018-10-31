@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.modmacao.occi.platform.PlatformPackage;
+import org.modmacao.placement.PlacementPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -151,7 +152,7 @@ public class ModmacaoPackageImpl extends EPackageImpl implements ModmacaoPackage
 
 		// Initialize simple dependencies
 		PlatformPackage.eINSTANCE.eClass();
-		InfrastructurePackage.eINSTANCE.eClass();
+		PlacementPackage.eINSTANCE.eClass();
 		OCCIPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -551,8 +552,8 @@ public class ModmacaoPackageImpl extends EPackageImpl implements ModmacaoPackage
 		  (portEDataType,
 		   source,
 		   new String[] {
-			   "MinInclusive", "0",
-			   "MaxInclusive", "65535"
+			   "minInclusive", "0",
+			   "maxInclusive", "65535"
 		   });
 	}
 
