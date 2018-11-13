@@ -16,12 +16,12 @@
 
    <!-- Register the placement extension. -->
    <extension point="org.eclipse.cmf.occi.core.occie">
-      <occie scheme="http://schemas.occiware.org/placement#" file="model/placement.occie"/>
+      <occie scheme="http://schemas.modmcacao.org/placement#" file="model/placement.occie"/>
    </extension>
 
    <!-- Define URI mapping. -->
    <extension point="org.eclipse.emf.ecore.uri_mapping">
-      <mapping source="http://schemas.modmacao.org/placement" target="platform:/plugin/placement/model/placement.occie"/>
+      <mapping source="http://schemas.modmacao.org/placement" target="platform:/plugin/org.modmacao.placement/model/placement.occie"/>
    </extension>
 
    <!-- Register the parser for .placement files. -->

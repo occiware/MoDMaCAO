@@ -17,7 +17,17 @@ package org.modmacao.openstack.connector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import openstackruntime.OpenstackruntimeFactory;
+import openstackruntime.Runtimeid;
+
+import org.eclipse.cmf.occi.core.AttributeState;
+import org.eclipse.cmf.occi.infrastructure.ComputeStatus;
 import org.eclipse.cmf.occi.infrastructure.StorageStatus;
+import org.openstack4j.api.Builders;
+import org.openstack4j.api.OSClient.OSClientV2;
+import org.openstack4j.model.storage.block.Volume.Status;
+import org.openstack4j.model.storage.block.Volume;
+import org.openstack4j.model.storage.block.builder.VolumeBuilder;
 
 
 /**
@@ -32,6 +42,9 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 	 * Initialize the logger.
 	 */
 	private static Logger LOGGER = LoggerFactory.getLogger(StorageConnector.class);
+	
+	private OSClientV2 os = null;
+	private Volume volume = null;
 
 	// Start of user code Storageconnector_constructor
 	/**
@@ -55,7 +68,49 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
-		// TODO: Implement this callback or remove this method.
+		VolumeBuilder builder = Builders.storage().volume();
+		
+		os = OpenStackHelper.getInstance().getOSClient();
+		
+		// first check if runtime id is present; if yes try to connect to runtime state
+		String runtimeID = OpenStackHelper.getInstance().getRuntimeID(this);
+		
+		if (runtimeID != null)	{
+			volume = getRuntimeObject();
+			if (volume == null) {
+				this.setOcciStorageState(StorageStatus.ERROR);
+				this.setOcciStorageStateMessage("Runtime id set, but unable to connect to runtime object.");	
+			}
+			return;
+		}
+		
+		if (this.getTitle() == null) {
+			// Check if an attribute state with title is present and set
+			// title accordingly
+			for (AttributeState attribute: this.getAttributes()) {
+				if (attribute.getName().equals("occi.core.title"))
+					this.setTitle(attribute.getValue());
+			}	
+		}
+		
+		builder.name(this.getTitle());
+		
+		if (this.getOcciStorageSize() == null) {
+			for (AttributeState attribute: this.getAttributes()) {
+				if (attribute.getName().equals("occi.storage.size"))
+					this.setOcciStorageSize(Float.parseFloat(attribute.getValue()));
+			}
+		}
+		
+		builder.size(this.getOcciStorageSize().intValue());
+		
+		volume = os.blockStorage().volumes().create(builder.build());
+		
+		Runtimeid runtimeIDMixin = OpenstackruntimeFactory.eINSTANCE.createRuntimeid();
+		OpenStackHelper.getInstance().setAttributeState(runtimeIDMixin, "openstack.runtime.id", 
+				volume.getId());
+		
+		this.getParts().add(runtimeIDMixin);
 	}
 	// End of user code
 
@@ -67,7 +122,22 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 	public void occiRetrieve()
 	{
 		LOGGER.debug("occiRetrieve() called on " + this);
-		// TODO: Implement this callback or remove this method.
+		os = OpenStackHelper.getInstance().getOSClient();
+		
+		volume = getRuntimeObject();
+		
+		if (volume == null) {
+			this.setOcciStorageState(StorageStatus.ERROR);
+			this.setOcciStorageStateMessage("Unable to retrieve runtime object");
+			return;
+		}
+		
+		// Retrieving Status
+		Status status = volume.getStatus();
+		
+		if (status == Status.AVAILABLE || status == Status.IN_USE) {
+			this.setOcciStorageState(StorageStatus.ONLINE);
+		}
 	}
 	// End of user code
 
@@ -91,7 +161,17 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// TODO: Implement this callback or remove this method.
+		os = OpenStackHelper.getInstance().getOSClient();
+		
+		volume = getRuntimeObject();
+		
+		if (volume != null) {
+			os.blockStorage().volumes().delete(volume.getId());
+		}
+		
+		OpenStackHelper.getInstance().removeRuntimeID(this);
+		
+		this.setOcciStorageState(StorageStatus.OFFLINE);
 	}
 	// End of user code
 
@@ -161,6 +241,15 @@ public class StorageConnector extends org.eclipse.cmf.occi.infrastructure.impl.S
 		default:
 			break;
 		}
+	}
+	
+	private Volume getRuntimeObject() {
+		String runtimeid = OpenStackHelper.getInstance().getRuntimeID(this);
+		if (runtimeid == null) {
+			return null;
+		}
+		volume = os.blockStorage().volumes().get(runtimeid);
+		return volume;
 	}
 	// End of user code
 		

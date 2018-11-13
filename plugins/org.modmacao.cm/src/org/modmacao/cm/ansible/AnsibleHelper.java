@@ -18,28 +18,13 @@ import org.osgi.framework.FrameworkUtil;
 
 /**
 * This class provides utility methods for the configuration management tool Ansible.
-* This class is a singleton, that holds loaded Ansible properties.
 * @author Fabian Korte - UGOE
 */
 public final class AnsibleHelper {
 	Properties props;
-	private static AnsibleHelper helper;
 	
-	private AnsibleHelper() {
+	public AnsibleHelper() {
 		loadProperties();
-	}
-	
-	
-	/**
-	 * Getter method for getting the instance of the AnsibleHelper.
-	 * In case, the instance does not exist yet, it will be created automatically.
-	 * @return The instance of the AnsibleHelper.
-	 */
-	public static AnsibleHelper getInstance() {
-		if (AnsibleHelper.helper == null) {
-			AnsibleHelper.helper = new AnsibleHelper();
-		}
-		return AnsibleHelper.helper;
 	}
 	
 	
@@ -146,9 +131,11 @@ public final class AnsibleHelper {
 	public Path createConfiguration(Path configuration, Path keyPath) throws IOException{
 		String lb = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder("[defaults]").append(lb);
+		sb.append("timeout = ").append(this.getProperties().getProperty("ssh_timeout")).append(lb);
 		sb.append("roles_path = ").append(this.getProperties().getProperty("ansible_rolespath")).append(lb);
-		sb.append("ssh_args = -o StrictHostKeyChecking=no").append(lb);
-		sb.append("private_key_file = ").append(keyPath.toString());
+		sb.append("private_key_file = ").append(keyPath.toString()).append(lb);
+		sb.append("[ssh_connection]").append(lb);
+		sb.append("ssh_args = -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no").append(lb);
 		FileUtils.writeStringToFile(configuration.toFile(), sb.toString(), (Charset) null);
 		return configuration;
 	}
@@ -167,7 +154,6 @@ public final class AnsibleHelper {
 		InterruptedException {
 		String command = this.getProperties().getProperty("ansible_bin");
 		Process process = null;
-		
 		if (options == null) {
 			process = new ProcessBuilder(command, "--inventory", inventory.toString(),
 				"-e", "task=" + task, 
