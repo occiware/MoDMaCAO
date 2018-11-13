@@ -1,0 +1,26 @@
+h1. OCCI placement extension
+
+
+
+| *Name* | placement |
+| *Scheme* | http://schemas.modmacao.org/placement# |
+
+
+Imported OCCI Extensions:
+
+| *Name* | *Scheme* |
+| <a href="core.textile">core</a> | http://schemas.ogf.org/occi/core# |
+| <a href="infrastructure.textile">infrastructure</a> | http://schemas.ogf.org/occi/infrastructure# |
+| <a href="platform.textile">platform</a> | http://schemas.modmacao.org/occi/platform# |
+
+h1. Kinds
+
+h2. Kind placementlink
+
+| *Term* | placementlink |
+| *Scheme* | http://schemas.modmacao.org/placement# |
+| *Title* |  |
+| *Parent* | <a href="core.textile#kind-link">http://schemas.ogf.org/occi/core#link</a> |
+
+
+Generated at Mon Jul 23 13:45:33 CEST 2018 from http://schemas.modmacao.org/placement by org.eclipse.cmf.occi.core.gen.textile

@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 	
+ *
  * Contributors:
  * - William Piers <william.piers@obeo.fr>
  * - Philippe Merle <philippe.merle@inria.fr>
@@ -38,7 +38,6 @@ import org.eclipse.ocl.pivot.oclstdlib.OCLstdlibTables;
  * In order to ensure correct static initialization, a top level class element must be accessed
  * before any nested class element. Therefore an access to PACKAGE.getClass() is recommended.
  */
-@SuppressWarnings("nls")
 public class ModmacaoTables
 {
 	static {
@@ -61,20 +60,31 @@ public class ModmacaoTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_modmacao_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/modmacao/ecore", null, modmacao.ModmacaoPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_platform_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/occi/platform/ecore", null, org.modmacao.occi.platform.PlatformPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_placement_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/placement/ecore", null, org.modmacao.placement.PlacementPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", "occi", org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Application = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_modmacao_org_s_modmacao_s_ecore.getClassId("Application", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Application_0 = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_platform_s_ecore.getClassId("Application", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = modmacao.ModmacaoTables.PACKid_$metamodel$.getClassId("Class", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Component = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_modmacao_org_s_modmacao_s_ecore.getClassId("Component", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Component_0 = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_platform_s_ecore.getClassId("Component", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Component = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_platform_s_ecore.getClassId("Component", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Component_0 = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_modmacao_org_s_modmacao_s_ecore.getClassId("Component", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Componentlink = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_modmacao_org_s_occi_s_platform_s_ecore.getClassId("Componentlink", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Dependency = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_modmacao_org_s_modmacao_s_ecore.getClassId("Dependency", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Link = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Link", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Placementlink = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_modmacao_org_s_placement_s_ecore.getClassId("Placementlink", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Version = modmacao.ModmacaoTables.PACKid_http_c_s_s_schemas_modmacao_org_s_modmacao_s_ecore.getDataTypeId("Version", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_1 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("1");
+	public static final /*@NonInvalid*/ java.lang.String STR_Application_c_c_OneOrMoreComponents = "Application::OneOrMoreComponents";
 	public static final /*@NonInvalid*/ java.lang.String STR_Application_c_c_appliesConstraint = "Application::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Component_c_c_OnlyOnePlacementLink = "Component::OnlyOnePlacementLink";
 	public static final /*@NonInvalid*/ java.lang.String STR_Component_c_c_appliesConstraint = "Component::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Dependency_c_c_SourceMustBeComponent = "Dependency::SourceMustBeComponent";
+	public static final /*@NonInvalid*/ java.lang.String STR_Dependency_c_c_TargetMustBeComponent = "Dependency::TargetMustBeComponent";
 	public static final /*@NonInvalid*/ java.lang.String STR_Dependency_c_c_appliesConstraint = "Dependency::appliesConstraint";
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Link = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(modmacao.ModmacaoTables.CLSSid_Link);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(modmacao.ModmacaoTables.CLSSid_Resource);
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -278,74 +288,74 @@ public class ModmacaoTables
 		}
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Application =
-		{
-			Fragments._Application__OclAny /* 0 */,
-			Fragments._Application__OclElement /* 1 */,
-			Fragments._Application__MixinBase /* 2 */,
-			Fragments._Application__Application /* 3 */
-		};
+			{
+				Fragments._Application__OclAny /* 0 */,
+				Fragments._Application__OclElement /* 1 */,
+				Fragments._Application__MixinBase /* 2 */,
+				Fragments._Application__Application /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Application = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Cluster =
-		{
-			Fragments._Cluster__OclAny /* 0 */,
-			Fragments._Cluster__OclElement /* 1 */,
-			Fragments._Cluster__MixinBase /* 2 */,
-			Fragments._Cluster__Application /* 3 */,
-			Fragments._Cluster__Cluster /* 4 */
-		};
+			{
+				Fragments._Cluster__OclAny /* 0 */,
+				Fragments._Cluster__OclElement /* 1 */,
+				Fragments._Cluster__MixinBase /* 2 */,
+				Fragments._Cluster__Application /* 3 */,
+				Fragments._Cluster__Cluster /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Cluster = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Component =
-		{
-			Fragments._Component__OclAny /* 0 */,
-			Fragments._Component__OclElement /* 1 */,
-			Fragments._Component__MixinBase /* 2 */,
-			Fragments._Component__Component /* 3 */
-		};
+			{
+				Fragments._Component__OclAny /* 0 */,
+				Fragments._Component__OclElement /* 1 */,
+				Fragments._Component__MixinBase /* 2 */,
+				Fragments._Component__Component /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Component = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Dependency =
-		{
-			Fragments._Dependency__OclAny /* 0 */,
-			Fragments._Dependency__OclElement /* 1 */,
-			Fragments._Dependency__MixinBase /* 2 */,
-			Fragments._Dependency__Dependency /* 3 */
-		};
+			{
+				Fragments._Dependency__OclAny /* 0 */,
+				Fragments._Dependency__OclElement /* 1 */,
+				Fragments._Dependency__MixinBase /* 2 */,
+				Fragments._Dependency__Dependency /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Dependency = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Executiondependency =
-		{
-			Fragments._Executiondependency__OclAny /* 0 */,
-			Fragments._Executiondependency__OclElement /* 1 */,
-			Fragments._Executiondependency__MixinBase /* 2 */,
-			Fragments._Executiondependency__Dependency /* 3 */,
-			Fragments._Executiondependency__Executiondependency /* 4 */
-		};
+			{
+				Fragments._Executiondependency__OclAny /* 0 */,
+				Fragments._Executiondependency__OclElement /* 1 */,
+				Fragments._Executiondependency__MixinBase /* 2 */,
+				Fragments._Executiondependency__Dependency /* 3 */,
+				Fragments._Executiondependency__Executiondependency /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Executiondependency = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Installationdependency =
-		{
-			Fragments._Installationdependency__OclAny /* 0 */,
-			Fragments._Installationdependency__OclElement /* 1 */,
-			Fragments._Installationdependency__MixinBase /* 2 */,
-			Fragments._Installationdependency__Dependency /* 3 */,
-			Fragments._Installationdependency__Installationdependency /* 4 */
-		};
+			{
+				Fragments._Installationdependency__OclAny /* 0 */,
+				Fragments._Installationdependency__OclElement /* 1 */,
+				Fragments._Installationdependency__MixinBase /* 2 */,
+				Fragments._Installationdependency__Dependency /* 3 */,
+				Fragments._Installationdependency__Installationdependency /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Installationdependency = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Port =
-		{
-			Fragments._Port__OclAny /* 0 */,
-			Fragments._Port__Port /* 1 */
-		};
+			{
+				Fragments._Port__OclAny /* 0 */,
+				Fragments._Port__Port /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __Port = { 1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Version =
-		{
-			Fragments._Version__OclAny /* 0 */,
-			Fragments._Version__Version /* 1 */
-		};
+			{
+				Fragments._Version__OclAny /* 0 */,
+				Fragments._Version__Version /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __Version = { 1,1 };
 
 		/**

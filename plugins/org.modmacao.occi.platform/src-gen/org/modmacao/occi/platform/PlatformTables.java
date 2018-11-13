@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 	
+ *
  * Contributors:
  * - William Piers <william.piers@obeo.fr>
  * - Philippe Merle <philippe.merle@inria.fr>
@@ -43,7 +43,6 @@ import org.modmacao.occi.platform.PlatformTables;
  * In order to ensure correct static initialization, a top level class element must be accessed
  * before any nested class element. Therefore an access to PACKAGE.getClass() is recommended.
  */
-@SuppressWarnings("nls")
 public class PlatformTables
 {
 	static {
@@ -343,94 +342,94 @@ public class PlatformTables
 		}
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _App_tpl =
-		{
-			Fragments._App_tpl__OclAny /* 0 */,
-			Fragments._App_tpl__OclElement /* 1 */,
-			Fragments._App_tpl__MixinBase /* 2 */,
-			Fragments._App_tpl__App_tpl /* 3 */
-		};
+			{
+				Fragments._App_tpl__OclAny /* 0 */,
+				Fragments._App_tpl__OclElement /* 1 */,
+				Fragments._App_tpl__MixinBase /* 2 */,
+				Fragments._App_tpl__App_tpl /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __App_tpl = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Application =
-		{
-			Fragments._Application__OclAny /* 0 */,
-			Fragments._Application__OclElement /* 1 */,
-			Fragments._Application__Entity /* 2 */,
-			Fragments._Application__Resource /* 3 */,
-			Fragments._Application__Application /* 4 */
-		};
+			{
+				Fragments._Application__OclAny /* 0 */,
+				Fragments._Application__OclElement /* 1 */,
+				Fragments._Application__Entity /* 2 */,
+				Fragments._Application__Resource /* 3 */,
+				Fragments._Application__Application /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Application = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Component =
-		{
-			Fragments._Component__OclAny /* 0 */,
-			Fragments._Component__OclElement /* 1 */,
-			Fragments._Component__Entity /* 2 */,
-			Fragments._Component__Resource /* 3 */,
-			Fragments._Component__Component /* 4 */
-		};
+			{
+				Fragments._Component__OclAny /* 0 */,
+				Fragments._Component__OclElement /* 1 */,
+				Fragments._Component__Entity /* 2 */,
+				Fragments._Component__Resource /* 3 */,
+				Fragments._Component__Component /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Component = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Componentlink =
-		{
-			Fragments._Componentlink__OclAny /* 0 */,
-			Fragments._Componentlink__OclElement /* 1 */,
-			Fragments._Componentlink__Entity /* 2 */,
-			Fragments._Componentlink__Link /* 3 */,
-			Fragments._Componentlink__Componentlink /* 4 */
-		};
+			{
+				Fragments._Componentlink__OclAny /* 0 */,
+				Fragments._Componentlink__OclElement /* 1 */,
+				Fragments._Componentlink__Entity /* 2 */,
+				Fragments._Componentlink__Link /* 3 */,
+				Fragments._Componentlink__Componentlink /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Componentlink = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Database =
-		{
-			Fragments._Database__OclAny /* 0 */,
-			Fragments._Database__OclElement /* 1 */,
-			Fragments._Database__MixinBase /* 2 */,
-			Fragments._Database__Database /* 3 */
-		};
+			{
+				Fragments._Database__OclAny /* 0 */,
+				Fragments._Database__OclElement /* 1 */,
+				Fragments._Database__MixinBase /* 2 */,
+				Fragments._Database__Database /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Database = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Databaselink =
-		{
-			Fragments._Databaselink__OclAny /* 0 */,
-			Fragments._Databaselink__OclElement /* 1 */,
-			Fragments._Databaselink__MixinBase /* 2 */,
-			Fragments._Databaselink__Databaselink /* 3 */
-		};
+			{
+				Fragments._Databaselink__OclAny /* 0 */,
+				Fragments._Databaselink__OclElement /* 1 */,
+				Fragments._Databaselink__MixinBase /* 2 */,
+				Fragments._Databaselink__Databaselink /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Databaselink = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Res_tpl =
-		{
-			Fragments._Res_tpl__OclAny /* 0 */,
-			Fragments._Res_tpl__OclElement /* 1 */,
-			Fragments._Res_tpl__MixinBase /* 2 */,
-			Fragments._Res_tpl__Res_tpl /* 3 */
-		};
+			{
+				Fragments._Res_tpl__OclAny /* 0 */,
+				Fragments._Res_tpl__OclElement /* 1 */,
+				Fragments._Res_tpl__MixinBase /* 2 */,
+				Fragments._Res_tpl__Res_tpl /* 3 */
+			};
 		private static final int /*@NonNull*/ [] __Res_tpl = { 1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Status =
-		{
-			Fragments._Status__OclAny /* 0 */,
-			Fragments._Status__OclElement /* 1 */,
-			Fragments._Status__OclType /* 2 */,
-			Fragments._Status__OclEnumeration /* 3 */,
-			Fragments._Status__Status /* 4 */
-		};
+			{
+				Fragments._Status__OclAny /* 0 */,
+				Fragments._Status__OclElement /* 1 */,
+				Fragments._Status__OclType /* 2 */,
+				Fragments._Status__OclEnumeration /* 3 */,
+				Fragments._Status__Status /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Status = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _URI =
-		{
-			Fragments._URI__OclAny /* 0 */,
-			Fragments._URI__OclComparable /* 1 */,
-			Fragments._URI__URI /* 2 */
-		};
+			{
+				Fragments._URI__OclAny /* 0 */,
+				Fragments._URI__OclComparable /* 1 */,
+				Fragments._URI__URI /* 2 */
+			};
 		private static final int /*@NonNull*/ [] __URI = { 1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _URL =
-		{
-			Fragments._URL__OclAny /* 0 */,
-			Fragments._URL__URL /* 1 */
-		};
+			{
+				Fragments._URL__OclAny /* 0 */,
+				Fragments._URL__URL /* 1 */
+			};
 		private static final int /*@NonNull*/ [] __URL = { 1,1 };
 
 		/**
@@ -504,12 +503,8 @@ public class PlatformTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Application__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Application__OclAny = {
@@ -549,12 +544,8 @@ public class PlatformTables
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Component__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Component__OclAny = {
@@ -588,18 +579,12 @@ public class PlatformTables
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Componentlink__Componentlink = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Componentlink__Entity = {
 			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiCreate /* occiCreate() */,
-			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiDelete /* occiDelete() */,
 			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiRetrieve /* occiRetrieve() */,
-			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */,
 			OCCITables.Operations._Entity__occiUpdate /* occiUpdate() */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Componentlink__Link = {
 			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkSourceInvariant /* LinkSourceInvariant(Kind[?],Kind[?]) */,
-			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */,
 			OCCITables.Operations._Link__LinkTargetInvariant /* LinkTargetInvariant(Kind[?],Kind[?]) */
 		};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Componentlink__OclAny = {

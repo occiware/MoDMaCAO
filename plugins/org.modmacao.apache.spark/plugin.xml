@@ -16,12 +16,12 @@
 
    <!-- Register the spark extension. -->
    <extension point="org.eclipse.cmf.occi.core.occie">
-      <occie scheme="http://schemas.modmacao.org/apache/spark#" file="model/spark.occie"/>
+      <occie scheme="http://schemas.modmacao.org/apache/spark#" file="model/apache_spark.occie"/>
    </extension>
 
    <!-- Define URI mapping. -->
    <extension point="org.eclipse.emf.ecore.uri_mapping">
-      <mapping source="http://schemas.occiware.org/spark" target="platform:/plugin/spark/model/spark.occie"/>
+      <mapping source="http://schemas.modmacao.org/apache/spark" target="platform:/plugin/org.modmacao.apache.spark/model/apache_spark.occie"/>
    </extension>
 
    <!-- Register the parser for .spark files. -->
@@ -50,4 +50,11 @@
          </action>
       </objectContribution>
    </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated apache_spark -->
+      <package
+            uri="http://schemas.modmacao.org/apache/spark/ecore"
+            class="apache_spark.Apache_sparkPackage"/>
+   </extension>
+
 </plugin>

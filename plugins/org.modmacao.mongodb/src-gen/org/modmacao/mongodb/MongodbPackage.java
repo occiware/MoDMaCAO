@@ -69,14 +69,14 @@ public interface MongodbPackage extends EPackage {
 	MongodbPackage eINSTANCE = org.modmacao.mongodb.impl.MongodbPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.modmacao.mongodb.impl.MongodbcomponentImpl <em>Mongodbcomponent</em>}' class.
+	 * The meta object id for the '{@link org.modmacao.mongodb.impl.ComponentImpl <em>Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.modmacao.mongodb.impl.MongodbcomponentImpl
-	 * @see org.modmacao.mongodb.impl.MongodbPackageImpl#getMongodbcomponent()
+	 * @see org.modmacao.mongodb.impl.ComponentImpl
+	 * @see org.modmacao.mongodb.impl.MongodbPackageImpl#getComponent()
 	 * @generated
 	 */
-	int MONGODBCOMPONENT = 0;
+	int COMPONENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Mixin</b></em>' reference.
@@ -85,7 +85,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONGODBCOMPONENT__MIXIN = ModmacaoPackage.COMPONENT__MIXIN;
+	int COMPONENT__MIXIN = ModmacaoPackage.COMPONENT__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -94,7 +94,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONGODBCOMPONENT__ENTITY = ModmacaoPackage.COMPONENT__ENTITY;
+	int COMPONENT__ENTITY = ModmacaoPackage.COMPONENT__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -103,7 +103,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONGODBCOMPONENT__ATTRIBUTES = ModmacaoPackage.COMPONENT__ATTRIBUTES;
+	int COMPONENT__ATTRIBUTES = ModmacaoPackage.COMPONENT__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Modmacao Component Version</b></em>' attribute.
@@ -112,107 +112,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MONGODBCOMPONENT__MODMACAO_COMPONENT_VERSION = ModmacaoPackage.COMPONENT__MODMACAO_COMPONENT_VERSION;
-
-	/**
-	 * The feature id for the '<em><b>Mongodb Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONGODBCOMPONENT__MONGODB_PORT = ModmacaoPackage.COMPONENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Mongodb Bindip</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONGODBCOMPONENT__MONGODB_BINDIP = ModmacaoPackage.COMPONENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Mongodbcomponent</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONGODBCOMPONENT_FEATURE_COUNT = ModmacaoPackage.COMPONENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Mongodbcomponent</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MONGODBCOMPONENT_OPERATION_COUNT = ModmacaoPackage.COMPONENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.modmacao.mongodb.impl.ReplicablemongodbcomponentImpl <em>Replicablemongodbcomponent</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.modmacao.mongodb.impl.ReplicablemongodbcomponentImpl
-	 * @see org.modmacao.mongodb.impl.MongodbPackageImpl#getReplicablemongodbcomponent()
-	 * @generated
-	 */
-	int REPLICABLEMONGODBCOMPONENT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPLICABLEMONGODBCOMPONENT__MIXIN = MONGODBCOMPONENT__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPLICABLEMONGODBCOMPONENT__ENTITY = MONGODBCOMPONENT__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPLICABLEMONGODBCOMPONENT__ATTRIBUTES = MONGODBCOMPONENT__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Modmacao Component Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPLICABLEMONGODBCOMPONENT__MODMACAO_COMPONENT_VERSION = MONGODBCOMPONENT__MODMACAO_COMPONENT_VERSION;
-
-	/**
-	 * The feature id for the '<em><b>Mongodb Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPLICABLEMONGODBCOMPONENT__MONGODB_PORT = MONGODBCOMPONENT__MONGODB_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Mongodb Bindip</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPLICABLEMONGODBCOMPONENT__MONGODB_BINDIP = MONGODBCOMPONENT__MONGODB_BINDIP;
+	int COMPONENT__MODMACAO_COMPONENT_VERSION = ModmacaoPackage.COMPONENT__MODMACAO_COMPONENT_VERSION;
 
 	/**
 	 * The feature id for the '<em><b>Mongodb Replication Set Name</b></em>' attribute.
@@ -221,25 +121,25 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME = MONGODBCOMPONENT_FEATURE_COUNT + 0;
+	int COMPONENT__MONGODB_REPLICATION_SET_NAME = ModmacaoPackage.COMPONENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Replicablemongodbcomponent</em>' class.
+	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPLICABLEMONGODBCOMPONENT_FEATURE_COUNT = MONGODBCOMPONENT_FEATURE_COUNT + 1;
+	int COMPONENT_FEATURE_COUNT = ModmacaoPackage.COMPONENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Replicablemongodbcomponent</em>' class.
+	 * The number of operations of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REPLICABLEMONGODBCOMPONENT_OPERATION_COUNT = MONGODBCOMPONENT_OPERATION_COUNT + 0;
+	int COMPONENT_OPERATION_COUNT = ModmacaoPackage.COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.modmacao.mongodb.impl.ConfigserverImpl <em>Configserver</em>}' class.
@@ -258,7 +158,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGSERVER__MIXIN = REPLICABLEMONGODBCOMPONENT__MIXIN;
+	int CONFIGSERVER__MIXIN = COMPONENT__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -267,7 +167,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGSERVER__ENTITY = REPLICABLEMONGODBCOMPONENT__ENTITY;
+	int CONFIGSERVER__ENTITY = COMPONENT__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -276,7 +176,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGSERVER__ATTRIBUTES = REPLICABLEMONGODBCOMPONENT__ATTRIBUTES;
+	int CONFIGSERVER__ATTRIBUTES = COMPONENT__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Modmacao Component Version</b></em>' attribute.
@@ -285,25 +185,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGSERVER__MODMACAO_COMPONENT_VERSION = REPLICABLEMONGODBCOMPONENT__MODMACAO_COMPONENT_VERSION;
-
-	/**
-	 * The feature id for the '<em><b>Mongodb Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGSERVER__MONGODB_PORT = REPLICABLEMONGODBCOMPONENT__MONGODB_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Mongodb Bindip</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGSERVER__MONGODB_BINDIP = REPLICABLEMONGODBCOMPONENT__MONGODB_BINDIP;
+	int CONFIGSERVER__MODMACAO_COMPONENT_VERSION = COMPONENT__MODMACAO_COMPONENT_VERSION;
 
 	/**
 	 * The feature id for the '<em><b>Mongodb Replication Set Name</b></em>' attribute.
@@ -312,7 +194,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGSERVER__MONGODB_REPLICATION_SET_NAME = REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME;
+	int CONFIGSERVER__MONGODB_REPLICATION_SET_NAME = COMPONENT__MONGODB_REPLICATION_SET_NAME;
 
 	/**
 	 * The number of structural features of the '<em>Configserver</em>' class.
@@ -321,7 +203,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGSERVER_FEATURE_COUNT = REPLICABLEMONGODBCOMPONENT_FEATURE_COUNT + 0;
+	int CONFIGSERVER_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Configserver</em>' class.
@@ -330,7 +212,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIGSERVER_OPERATION_COUNT = REPLICABLEMONGODBCOMPONENT_OPERATION_COUNT + 0;
+	int CONFIGSERVER_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.modmacao.mongodb.impl.RouterImpl <em>Router</em>}' class.
@@ -349,7 +231,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTER__MIXIN = MONGODBCOMPONENT__MIXIN;
+	int ROUTER__MIXIN = COMPONENT__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -358,7 +240,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTER__ENTITY = MONGODBCOMPONENT__ENTITY;
+	int ROUTER__ENTITY = COMPONENT__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -367,7 +249,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTER__ATTRIBUTES = MONGODBCOMPONENT__ATTRIBUTES;
+	int ROUTER__ATTRIBUTES = COMPONENT__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Modmacao Component Version</b></em>' attribute.
@@ -376,25 +258,16 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTER__MODMACAO_COMPONENT_VERSION = MONGODBCOMPONENT__MODMACAO_COMPONENT_VERSION;
+	int ROUTER__MODMACAO_COMPONENT_VERSION = COMPONENT__MODMACAO_COMPONENT_VERSION;
 
 	/**
-	 * The feature id for the '<em><b>Mongodb Port</b></em>' attribute.
+	 * The feature id for the '<em><b>Mongodb Replication Set Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTER__MONGODB_PORT = MONGODBCOMPONENT__MONGODB_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Mongodb Bindip</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROUTER__MONGODB_BINDIP = MONGODBCOMPONENT__MONGODB_BINDIP;
+	int ROUTER__MONGODB_REPLICATION_SET_NAME = COMPONENT__MONGODB_REPLICATION_SET_NAME;
 
 	/**
 	 * The number of structural features of the '<em>Router</em>' class.
@@ -403,7 +276,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTER_FEATURE_COUNT = MONGODBCOMPONENT_FEATURE_COUNT + 0;
+	int ROUTER_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Router</em>' class.
@@ -412,7 +285,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROUTER_OPERATION_COUNT = MONGODBCOMPONENT_OPERATION_COUNT + 0;
+	int ROUTER_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.modmacao.mongodb.impl.ShardImpl <em>Shard</em>}' class.
@@ -431,7 +304,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHARD__MIXIN = REPLICABLEMONGODBCOMPONENT__MIXIN;
+	int SHARD__MIXIN = COMPONENT__MIXIN;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' container reference.
@@ -440,7 +313,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHARD__ENTITY = REPLICABLEMONGODBCOMPONENT__ENTITY;
+	int SHARD__ENTITY = COMPONENT__ENTITY;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
@@ -449,7 +322,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHARD__ATTRIBUTES = REPLICABLEMONGODBCOMPONENT__ATTRIBUTES;
+	int SHARD__ATTRIBUTES = COMPONENT__ATTRIBUTES;
 
 	/**
 	 * The feature id for the '<em><b>Modmacao Component Version</b></em>' attribute.
@@ -458,25 +331,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHARD__MODMACAO_COMPONENT_VERSION = REPLICABLEMONGODBCOMPONENT__MODMACAO_COMPONENT_VERSION;
-
-	/**
-	 * The feature id for the '<em><b>Mongodb Port</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHARD__MONGODB_PORT = REPLICABLEMONGODBCOMPONENT__MONGODB_PORT;
-
-	/**
-	 * The feature id for the '<em><b>Mongodb Bindip</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SHARD__MONGODB_BINDIP = REPLICABLEMONGODBCOMPONENT__MONGODB_BINDIP;
+	int SHARD__MODMACAO_COMPONENT_VERSION = COMPONENT__MODMACAO_COMPONENT_VERSION;
 
 	/**
 	 * The feature id for the '<em><b>Mongodb Replication Set Name</b></em>' attribute.
@@ -485,7 +340,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHARD__MONGODB_REPLICATION_SET_NAME = REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME;
+	int SHARD__MONGODB_REPLICATION_SET_NAME = COMPONENT__MONGODB_REPLICATION_SET_NAME;
 
 	/**
 	 * The number of structural features of the '<em>Shard</em>' class.
@@ -494,7 +349,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHARD_FEATURE_COUNT = REPLICABLEMONGODBCOMPONENT_FEATURE_COUNT + 0;
+	int SHARD_FEATURE_COUNT = COMPONENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Shard</em>' class.
@@ -503,7 +358,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHARD_OPERATION_COUNT = REPLICABLEMONGODBCOMPONENT_OPERATION_COUNT + 0;
+	int SHARD_OPERATION_COUNT = COMPONENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.modmacao.mongodb.impl.ClusterImpl <em>Cluster</em>}' class.
@@ -587,102 +442,27 @@ public interface MongodbPackage extends EPackage {
 	 */
 	int CLUSTER_OPERATION_COUNT = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 3;
 
-	/**
-	 * The meta object id for the '{@link org.modmacao.mongodb.impl.ConfigserverdependencyImpl <em>Configserverdependency</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.modmacao.mongodb.impl.ConfigserverdependencyImpl
-	 * @see org.modmacao.mongodb.impl.MongodbPackageImpl#getConfigserverdependency()
-	 * @generated
-	 */
-	int CONFIGSERVERDEPENDENCY = 6;
 
 	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * Returns the meta object for class '{@link org.modmacao.mongodb.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component</em>'.
+	 * @see org.modmacao.mongodb.Component
 	 * @generated
-	 * @ordered
 	 */
-	int CONFIGSERVERDEPENDENCY__MIXIN = ModmacaoPackage.EXECUTIONDEPENDENCY__MIXIN;
+	EClass getComponent();
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * Returns the meta object for the attribute '{@link org.modmacao.mongodb.Component#getMongodbReplicationSetName <em>Mongodb Replication Set Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGSERVERDEPENDENCY__ENTITY = ModmacaoPackage.EXECUTIONDEPENDENCY__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGSERVERDEPENDENCY__ATTRIBUTES = ModmacaoPackage.EXECUTIONDEPENDENCY__ATTRIBUTES;
-
-	/**
-	 * The number of structural features of the '<em>Configserverdependency</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGSERVERDEPENDENCY_FEATURE_COUNT = ModmacaoPackage.EXECUTIONDEPENDENCY_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Target Must Be Config Server</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGSERVERDEPENDENCY___TARGET_MUST_BE_CONFIG_SERVER__DIAGNOSTICCHAIN_MAP = ModmacaoPackage.EXECUTIONDEPENDENCY_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Configserverdependency</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIGSERVERDEPENDENCY_OPERATION_COUNT = ModmacaoPackage.EXECUTIONDEPENDENCY_OPERATION_COUNT + 1;
-
-
-	/**
-	 * Returns the meta object for class '{@link org.modmacao.mongodb.Mongodbcomponent <em>Mongodbcomponent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Mongodbcomponent</em>'.
-	 * @see org.modmacao.mongodb.Mongodbcomponent
+	 * @return the meta object for the attribute '<em>Mongodb Replication Set Name</em>'.
+	 * @see org.modmacao.mongodb.Component#getMongodbReplicationSetName()
+	 * @see #getComponent()
 	 * @generated
 	 */
-	EClass getMongodbcomponent();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.modmacao.mongodb.Mongodbcomponent#getMongodbPort <em>Mongodb Port</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mongodb Port</em>'.
-	 * @see org.modmacao.mongodb.Mongodbcomponent#getMongodbPort()
-	 * @see #getMongodbcomponent()
-	 * @generated
-	 */
-	EAttribute getMongodbcomponent_MongodbPort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.modmacao.mongodb.Mongodbcomponent#getMongodbBindip <em>Mongodb Bindip</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mongodb Bindip</em>'.
-	 * @see org.modmacao.mongodb.Mongodbcomponent#getMongodbBindip()
-	 * @see #getMongodbcomponent()
-	 * @generated
-	 */
-	EAttribute getMongodbcomponent_MongodbBindip();
+	EAttribute getComponent_MongodbReplicationSetName();
 
 	/**
 	 * Returns the meta object for class '{@link org.modmacao.mongodb.Configserver <em>Configserver</em>}'.
@@ -755,47 +535,6 @@ public interface MongodbPackage extends EPackage {
 	EOperation getCluster__OneOrMoreShards__DiagnosticChain_Map();
 
 	/**
-	 * Returns the meta object for class '{@link org.modmacao.mongodb.Replicablemongodbcomponent <em>Replicablemongodbcomponent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Replicablemongodbcomponent</em>'.
-	 * @see org.modmacao.mongodb.Replicablemongodbcomponent
-	 * @generated
-	 */
-	EClass getReplicablemongodbcomponent();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.modmacao.mongodb.Replicablemongodbcomponent#getMongodbReplicationSetName <em>Mongodb Replication Set Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mongodb Replication Set Name</em>'.
-	 * @see org.modmacao.mongodb.Replicablemongodbcomponent#getMongodbReplicationSetName()
-	 * @see #getReplicablemongodbcomponent()
-	 * @generated
-	 */
-	EAttribute getReplicablemongodbcomponent_MongodbReplicationSetName();
-
-	/**
-	 * Returns the meta object for class '{@link org.modmacao.mongodb.Configserverdependency <em>Configserverdependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Configserverdependency</em>'.
-	 * @see org.modmacao.mongodb.Configserverdependency
-	 * @generated
-	 */
-	EClass getConfigserverdependency();
-
-	/**
-	 * Returns the meta object for the '{@link org.modmacao.mongodb.Configserverdependency#TargetMustBeConfigServer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Target Must Be Config Server</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Target Must Be Config Server</em>' operation.
-	 * @see org.modmacao.mongodb.Configserverdependency#TargetMustBeConfigServer(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getConfigserverdependency__TargetMustBeConfigServer__DiagnosticChain_Map();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -819,30 +558,22 @@ public interface MongodbPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.modmacao.mongodb.impl.MongodbcomponentImpl <em>Mongodbcomponent</em>}' class.
+		 * The meta object literal for the '{@link org.modmacao.mongodb.impl.ComponentImpl <em>Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.modmacao.mongodb.impl.MongodbcomponentImpl
-		 * @see org.modmacao.mongodb.impl.MongodbPackageImpl#getMongodbcomponent()
+		 * @see org.modmacao.mongodb.impl.ComponentImpl
+		 * @see org.modmacao.mongodb.impl.MongodbPackageImpl#getComponent()
 		 * @generated
 		 */
-		EClass MONGODBCOMPONENT = eINSTANCE.getMongodbcomponent();
+		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
-		 * The meta object literal for the '<em><b>Mongodb Port</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Mongodb Replication Set Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MONGODBCOMPONENT__MONGODB_PORT = eINSTANCE.getMongodbcomponent_MongodbPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Mongodb Bindip</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MONGODBCOMPONENT__MONGODB_BINDIP = eINSTANCE.getMongodbcomponent_MongodbBindip();
+		EAttribute COMPONENT__MONGODB_REPLICATION_SET_NAME = eINSTANCE.getComponent_MongodbReplicationSetName();
 
 		/**
 		 * The meta object literal for the '{@link org.modmacao.mongodb.impl.ConfigserverImpl <em>Configserver</em>}' class.
@@ -907,42 +638,6 @@ public interface MongodbPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCluster__OneOrMoreShards__DiagnosticChain_Map();
-
-		/**
-		 * The meta object literal for the '{@link org.modmacao.mongodb.impl.ReplicablemongodbcomponentImpl <em>Replicablemongodbcomponent</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.modmacao.mongodb.impl.ReplicablemongodbcomponentImpl
-		 * @see org.modmacao.mongodb.impl.MongodbPackageImpl#getReplicablemongodbcomponent()
-		 * @generated
-		 */
-		EClass REPLICABLEMONGODBCOMPONENT = eINSTANCE.getReplicablemongodbcomponent();
-
-		/**
-		 * The meta object literal for the '<em><b>Mongodb Replication Set Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME = eINSTANCE.getReplicablemongodbcomponent_MongodbReplicationSetName();
-
-		/**
-		 * The meta object literal for the '{@link org.modmacao.mongodb.impl.ConfigserverdependencyImpl <em>Configserverdependency</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.modmacao.mongodb.impl.ConfigserverdependencyImpl
-		 * @see org.modmacao.mongodb.impl.MongodbPackageImpl#getConfigserverdependency()
-		 * @generated
-		 */
-		EClass CONFIGSERVERDEPENDENCY = eINSTANCE.getConfigserverdependency();
-
-		/**
-		 * The meta object literal for the '<em><b>Target Must Be Config Server</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CONFIGSERVERDEPENDENCY___TARGET_MUST_BE_CONFIG_SERVER__DIAGNOSTICCHAIN_MAP = eINSTANCE.getConfigserverdependency__TargetMustBeConfigServer__DiagnosticChain_Map();
 
 	}
 

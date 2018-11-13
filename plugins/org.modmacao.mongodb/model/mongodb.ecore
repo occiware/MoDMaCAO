@@ -7,35 +7,13 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
-    <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
-    <details key="modmacao" value="http://schemas.modmacao.org/modmacao/ecore"/>
+    <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
+    <details key="platform" value="platform:/resource/org.modmacao.occi.platform/model/platform.ecore#/"/>
+    <details key="placement" value="platform:/resource/org.modmacao.placement/model/placement.ecore#/"/>
+    <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
+    <details key="infrastructure" value="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Mongodbcomponent" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mongodbPort" eType="ecore:EDataType platform:/resource/org.modmacao.core/model/modmacao.ecore#//Port">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mongodbBindip" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value=""/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Configserver" eSuperTypes="#//Replicablemongodbcomponent platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Router" eSuperTypes="#//Mongodbcomponent platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Shard" eSuperTypes="#//Replicablemongodbcomponent platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Cluster platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="OneOrMoreRouters OneOrMoreShards OneOrMoreConfigServers"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="OneOrMoreRouters" value="true"/>
-      <details key="OneOrMoreShards" value="true"/>
-      <details key="OneOrMoreConfigServers" value="true"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Replicablemongodbcomponent" eSuperTypes="#//Mongodbcomponent platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mongodbReplicationSetName"
         lowerBound="1" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -43,12 +21,17 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Configserverdependency" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Executiondependency platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+  <eClassifiers xsi:type="ecore:EClass" name="Configserver" eSuperTypes="#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Router" eSuperTypes="#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Shard" eSuperTypes="#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Cluster platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="TargetMustBeConfigServer"/>
+      <details key="constraints" value="OneOrMoreRouters OneOrMoreShards OneOrMoreConfigServers"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="TargetMustBeConfigServer" value="true"/>
+      <details key="OneOrMoreRouters" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(mongodb::Router))->size()>=1"/>
+      <details key="OneOrMoreShards" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(mongodb::Shard))->size()>=1"/>
+      <details key="OneOrMoreConfigServers" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(mongodb::Configserver))->size()>=1"/>
     </eAnnotations>
   </eClassifiers>
 </ecore:EPackage>

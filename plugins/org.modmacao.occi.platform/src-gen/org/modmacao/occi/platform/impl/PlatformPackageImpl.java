@@ -143,7 +143,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link PlatformPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -157,7 +157,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		if (isInited) return (PlatformPackage)EPackage.Registry.INSTANCE.getEPackage(PlatformPackage.eNS_URI);
 
 		// Obtain or create and register package
-		PlatformPackageImpl thePlatformPackage = (PlatformPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PlatformPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PlatformPackageImpl());
+		Object registeredPlatformPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		PlatformPackageImpl thePlatformPackage = registeredPlatformPackage instanceof PlatformPackageImpl ? (PlatformPackageImpl)registeredPlatformPackage : new PlatformPackageImpl();
 
 		isInited = true;
 
@@ -172,7 +173,7 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
-			(thePlatformPackage, 
+			(thePlatformPackage,
 			 new EValidator.Descriptor() {
 				 public EValidator getEValidator() {
 					 return PlatformValidator.INSTANCE;
@@ -182,7 +183,6 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 		// Mark meta-data to indicate it can't be changed
 		thePlatformPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PlatformPackage.eNS_URI, thePlatformPackage);
 		return thePlatformPackage;
@@ -247,8 +247,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getApplication__Start() {
-		return applicationEClass.getEOperations().get(3);
+	public EOperation getApplication__Deploy() {
+		return applicationEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -256,8 +256,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getApplication__Stop() {
-		return applicationEClass.getEOperations().get(4);
+	public EOperation getApplication__Undeploy() {
+		return applicationEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -274,8 +274,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getApplication__Deploy() {
-		return applicationEClass.getEOperations().get(0);
+	public EOperation getApplication__Start() {
+		return applicationEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -283,8 +283,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getApplication__Undeploy() {
-		return applicationEClass.getEOperations().get(1);
+	public EOperation getApplication__Stop() {
+		return applicationEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -319,8 +319,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getComponent__Start() {
-		return componentEClass.getEOperations().get(3);
+	public EOperation getComponent__Deploy() {
+		return componentEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -328,8 +328,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getComponent__Stop() {
-		return componentEClass.getEOperations().get(4);
+	public EOperation getComponent__Undeploy() {
+		return componentEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -346,8 +346,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getComponent__Deploy() {
-		return componentEClass.getEOperations().get(0);
+	public EOperation getComponent__Start() {
+		return componentEClass.getEOperations().get(3);
 	}
 
 	/**
@@ -355,8 +355,8 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getComponent__Undeploy() {
-		return componentEClass.getEOperations().get(1);
+	public EOperation getComponent__Stop() {
+		return componentEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -745,41 +745,41 @@ public class PlatformPackageImpl extends EPackageImpl implements PlatformPackage
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
-		  (this, 
-		   source, 
+		  (this,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (componentlinkEClass, 
-		   source, 
+		  (componentlinkEClass,
+		   source,
 		   new String[] {
-			 "constraints", "targetConstraint"
-		   });	
+			   "constraints", "targetConstraint"
+		   });
 		addAnnotation
-		  (app_tplEClass, 
-		   source, 
+		  (app_tplEClass,
+		   source,
 		   new String[] {
-			 "constraints", "appliesConstraint"
-		   });	
+			   "constraints", "appliesConstraint"
+		   });
 		addAnnotation
-		  (res_tplEClass, 
-		   source, 
+		  (res_tplEClass,
+		   source,
 		   new String[] {
-			 "constraints", "appliesConstraint"
-		   });	
+			   "constraints", "appliesConstraint"
+		   });
 		addAnnotation
-		  (databaseEClass, 
-		   source, 
+		  (databaseEClass,
+		   source,
 		   new String[] {
-			 "constraints", "appliesConstraint"
-		   });	
+			   "constraints", "appliesConstraint"
+		   });
 		addAnnotation
-		  (databaselinkEClass, 
-		   source, 
+		  (databaselinkEClass,
+		   source,
 		   new String[] {
-			 "constraints", "appliesConstraint"
+			   "constraints", "appliesConstraint"
 		   });
 	}
 

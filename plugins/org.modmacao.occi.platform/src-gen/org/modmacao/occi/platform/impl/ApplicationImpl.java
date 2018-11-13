@@ -277,8 +277,8 @@ public class ApplicationImpl extends ResourceImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void start() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Application!start()
+	public void deploy() {
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Application!deploy()
 	}
 
 	/**
@@ -286,8 +286,8 @@ public class ApplicationImpl extends ResourceImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void stop() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Application!stop()
+	public void undeploy() {
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Application!undeploy()
 	}
 
 	/**
@@ -304,8 +304,8 @@ public class ApplicationImpl extends ResourceImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void deploy() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Application!deploy()
+	public void start() {
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Application!start()
 	}
 
 	/**
@@ -313,8 +313,8 @@ public class ApplicationImpl extends ResourceImpl implements Application {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void undeploy() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Application!undeploy()
+	public void stop() {
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Application!stop()
 	}
 
 	/**
@@ -451,7 +451,7 @@ public class ApplicationImpl extends ResourceImpl implements Application {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (occiAppName: ");
 		result.append(occiAppName);
 		result.append(", occiAppContext: ");

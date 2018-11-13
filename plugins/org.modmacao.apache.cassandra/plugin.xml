@@ -16,12 +16,12 @@
 
    <!-- Register the cassandra extension. -->
    <extension point="org.eclipse.cmf.occi.core.occie">
-      <occie scheme="http://schemas.modmacao.org/apache/cassandra#" file="model/cassandra.occie"/>
+      <occie scheme="http://schemas.modmacao.org/apache/cassandra#" file="model/apache_cassandra.occie"/>
    </extension>
 
    <!-- Define URI mapping. -->
    <extension point="org.eclipse.emf.ecore.uri_mapping">
-      <mapping source="http://schemas.modmacao.org/apache/cassandra" target="platform:/plugin/org.modmacao.apache.cassandra/model/cassandra.occie"/>
+      <mapping source="http://schemas.modmacao.org/apache/cassandra" target="platform:/plugin/org.modmacao.apache.cassandra/model/apache_cassandra.occie"/>
    </extension>
 
    <!-- Register the parser for .cassandra files. -->
@@ -50,4 +50,11 @@
          </action>
       </objectContribution>
    </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated apache_cassandra -->
+      <package
+            uri="http://schemas.modmacao.org/apache/cassandra/ecore"
+            class="apache_cassandra.Apache_cassandraPackage"/>
+   </extension>
+
 </plugin>

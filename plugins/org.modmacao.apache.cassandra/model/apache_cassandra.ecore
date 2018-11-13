@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="apache_cassandra" nsURI="http://schemas.modmacao.org/apache/cassandra/ecore"
+    nsPrefix="apache_cassandra">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
+    <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Cluster" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Cluster platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="OneOrMoreNodes OneOrMoreSeeds"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="OneOrMoreNodes" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(apache_cassandra::Node))->size()>=1"/>
+      <details key="OneOrMoreSeeds" value="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(apache_cassandra::Seed))->size()>=1"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Seed" eSuperTypes="#//Node platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase"/>
+</ecore:EPackage>

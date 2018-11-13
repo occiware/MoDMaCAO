@@ -3,18 +3,20 @@
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://schemas.modmacao.org/modmacao#/"/>
   <import href="http://schemas.modmacao.org/occi/platform#/"/>
+  <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
+  <import href="http://schemas.modmacao.org/placement#/"/>
   <mixins name="ClientServer" scheme="http://schemas.modmacao.org/client_server#">
-    <constraints name="OneOrMoreClients" body="true"/>
-    <constraints name="OnlyOneServer" body="true"/>
+    <constraints name="OneOrMoreClients" body="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(client_server::Client))->size()>=1"/>
+    <constraints name="OnlyOneServer" body="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(client_server::Server))->size()=1"/>
     <depends href="http://schemas.modmacao.org/modmacao#//@mixins[term='application']"/>
   </mixins>
   <mixins name="ServerDependency" scheme="http://schemas.modmacao.org/client_server#">
-    <constraints name="SourceMustBeClient" body="true"/>
-    <constraints name="TargetMustBeServer" body="true"/>
+    <constraints name="SourceMustBeClient" body="self.entity.oclAsType(occi::Link).source.oclAsType(occi::Resource).parts->exists(m|m.oclIsTypeOf(client_server::Client))"/>
+    <constraints name="TargetMustBeServer" body="self.entity.oclAsType(occi::Link).target.oclAsType(occi::Resource).parts->exists(m|m.oclIsTypeOf(client_server::Server))"/>
     <depends href="http://schemas.modmacao.org/modmacao#//@mixins[term='executiondependency']"/>
   </mixins>
   <mixins name="Client" scheme="http://schemas.modmacao.org/client_server#">
-    <constraints name="OneServerDependency" body="true"/>
+    <constraints name="OneServerDependency" body="self.entity.oclAsType(occi::Resource).links->select(l:occi::Link|l.oclIsTypeOf(platform::Componentlink))->collect(l:occi::Link|l.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(client_server::Serverdependency))->size()=1"/>
     <depends href="http://schemas.modmacao.org/modmacao#//@mixins[term='component']"/>
   </mixins>
   <mixins name="Server" scheme="http://schemas.modmacao.org/client_server#">

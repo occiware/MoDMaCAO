@@ -13,9 +13,6 @@
 package org.modmacao.mongodb.util;
 
 import modmacao.Application;
-import modmacao.Component;
-import modmacao.Dependency;
-import modmacao.Executiondependency;
 
 import org.eclipse.cmf.occi.core.MixinBase;
 
@@ -85,8 +82,8 @@ public class MongodbAdapterFactory extends AdapterFactoryImpl {
 	protected MongodbSwitch<Adapter> modelSwitch =
 		new MongodbSwitch<Adapter>() {
 			@Override
-			public Adapter caseMongodbcomponent(Mongodbcomponent object) {
-				return createMongodbcomponentAdapter();
+			public Adapter caseComponent(Component object) {
+				return createComponentAdapter();
 			}
 			@Override
 			public Adapter caseConfigserver(Configserver object) {
@@ -105,20 +102,12 @@ public class MongodbAdapterFactory extends AdapterFactoryImpl {
 				return createClusterAdapter();
 			}
 			@Override
-			public Adapter caseReplicablemongodbcomponent(Replicablemongodbcomponent object) {
-				return createReplicablemongodbcomponentAdapter();
-			}
-			@Override
-			public Adapter caseConfigserverdependency(Configserverdependency object) {
-				return createConfigserverdependencyAdapter();
-			}
-			@Override
 			public Adapter caseMixinBase(MixinBase object) {
 				return createMixinBaseAdapter();
 			}
 			@Override
-			public Adapter caseComponent(Component object) {
-				return createComponentAdapter();
+			public Adapter caseModmacao_Component(modmacao.Component object) {
+				return createModmacao_ComponentAdapter();
 			}
 			@Override
 			public Adapter caseApplication(Application object) {
@@ -127,14 +116,6 @@ public class MongodbAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseModmacao_Cluster(modmacao.Cluster object) {
 				return createModmacao_ClusterAdapter();
-			}
-			@Override
-			public Adapter caseDependency(Dependency object) {
-				return createDependencyAdapter();
-			}
-			@Override
-			public Adapter caseExecutiondependency(Executiondependency object) {
-				return createExecutiondependencyAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -157,16 +138,16 @@ public class MongodbAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.modmacao.mongodb.Mongodbcomponent <em>Mongodbcomponent</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.modmacao.mongodb.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.modmacao.mongodb.Mongodbcomponent
+	 * @see org.modmacao.mongodb.Component
 	 * @generated
 	 */
-	public Adapter createMongodbcomponentAdapter() {
+	public Adapter createComponentAdapter() {
 		return null;
 	}
 
@@ -227,34 +208,6 @@ public class MongodbAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.modmacao.mongodb.Replicablemongodbcomponent <em>Replicablemongodbcomponent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.modmacao.mongodb.Replicablemongodbcomponent
-	 * @generated
-	 */
-	public Adapter createReplicablemongodbcomponentAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.modmacao.mongodb.Configserverdependency <em>Configserverdependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.modmacao.mongodb.Configserverdependency
-	 * @generated
-	 */
-	public Adapter createConfigserverdependencyAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.MixinBase <em>Mixin Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -278,7 +231,7 @@ public class MongodbAdapterFactory extends AdapterFactoryImpl {
 	 * @see modmacao.Component
 	 * @generated
 	 */
-	public Adapter createComponentAdapter() {
+	public Adapter createModmacao_ComponentAdapter() {
 		return null;
 	}
 
@@ -307,34 +260,6 @@ public class MongodbAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createModmacao_ClusterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link modmacao.Dependency <em>Dependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see modmacao.Dependency
-	 * @generated
-	 */
-	public Adapter createDependencyAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link modmacao.Executiondependency <em>Executiondependency</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see modmacao.Executiondependency
-	 * @generated
-	 */
-	public Adapter createExecutiondependencyAdapter() {
 		return null;
 	}
 

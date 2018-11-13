@@ -13,9 +13,7 @@
 package org.modmacao.occi.platform;
 
 import java.util.Map;
-
 import org.eclipse.cmf.occi.core.Link;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
@@ -33,6 +31,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @generated
  */
 public interface Componentlink extends Link {
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -40,5 +39,4 @@ public interface Componentlink extends Link {
 	 * @generated
 	 */
 	boolean targetConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);
-
 } // Componentlink

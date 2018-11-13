@@ -1092,36 +1092,6 @@ public interface PlatformPackage extends EPackage {
 	EAttribute getApplication_OcciAppStateMessage();
 
 	/**
-	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Application#start() <em>Start</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Start</em>' operation.
-	 * @see org.modmacao.occi.platform.Application#start()
-	 * @generated
-	 */
-	EOperation getApplication__Start();
-
-	/**
-	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Application#stop() <em>Stop</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Stop</em>' operation.
-	 * @see org.modmacao.occi.platform.Application#stop()
-	 * @generated
-	 */
-	EOperation getApplication__Stop();
-
-	/**
-	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Application#configure() <em>Configure</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Configure</em>' operation.
-	 * @see org.modmacao.occi.platform.Application#configure()
-	 * @generated
-	 */
-	EOperation getApplication__Configure();
-
-	/**
 	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Application#deploy() <em>Deploy</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1140,6 +1110,36 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getApplication__Undeploy();
+
+	/**
+	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Application#configure() <em>Configure</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Configure</em>' operation.
+	 * @see org.modmacao.occi.platform.Application#configure()
+	 * @generated
+	 */
+	EOperation getApplication__Configure();
+
+	/**
+	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Application#start() <em>Start</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Start</em>' operation.
+	 * @see org.modmacao.occi.platform.Application#start()
+	 * @generated
+	 */
+	EOperation getApplication__Start();
+
+	/**
+	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Application#stop() <em>Stop</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Stop</em>' operation.
+	 * @see org.modmacao.occi.platform.Application#stop()
+	 * @generated
+	 */
+	EOperation getApplication__Stop();
 
 	/**
 	 * Returns the meta object for class '{@link org.modmacao.occi.platform.Component <em>Component</em>}'.
@@ -1174,36 +1174,6 @@ public interface PlatformPackage extends EPackage {
 	EAttribute getComponent_OcciComponentStateMessage();
 
 	/**
-	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Component#start() <em>Start</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Start</em>' operation.
-	 * @see org.modmacao.occi.platform.Component#start()
-	 * @generated
-	 */
-	EOperation getComponent__Start();
-
-	/**
-	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Component#stop() <em>Stop</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Stop</em>' operation.
-	 * @see org.modmacao.occi.platform.Component#stop()
-	 * @generated
-	 */
-	EOperation getComponent__Stop();
-
-	/**
-	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Component#configure() <em>Configure</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Configure</em>' operation.
-	 * @see org.modmacao.occi.platform.Component#configure()
-	 * @generated
-	 */
-	EOperation getComponent__Configure();
-
-	/**
 	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Component#deploy() <em>Deploy</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1222,6 +1192,36 @@ public interface PlatformPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getComponent__Undeploy();
+
+	/**
+	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Component#configure() <em>Configure</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Configure</em>' operation.
+	 * @see org.modmacao.occi.platform.Component#configure()
+	 * @generated
+	 */
+	EOperation getComponent__Configure();
+
+	/**
+	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Component#start() <em>Start</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Start</em>' operation.
+	 * @see org.modmacao.occi.platform.Component#start()
+	 * @generated
+	 */
+	EOperation getComponent__Start();
+
+	/**
+	 * Returns the meta object for the '{@link org.modmacao.occi.platform.Component#stop() <em>Stop</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Stop</em>' operation.
+	 * @see org.modmacao.occi.platform.Component#stop()
+	 * @generated
+	 */
+	EOperation getComponent__Stop();
 
 	/**
 	 * Returns the meta object for class '{@link org.modmacao.occi.platform.Componentlink <em>Componentlink</em>}'.
@@ -1473,30 +1473,6 @@ public interface PlatformPackage extends EPackage {
 		EAttribute APPLICATION__OCCI_APP_STATE_MESSAGE = eINSTANCE.getApplication_OcciAppStateMessage();
 
 		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation APPLICATION___START = eINSTANCE.getApplication__Start();
-
-		/**
-		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation APPLICATION___STOP = eINSTANCE.getApplication__Stop();
-
-		/**
-		 * The meta object literal for the '<em><b>Configure</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation APPLICATION___CONFIGURE = eINSTANCE.getApplication__Configure();
-
-		/**
 		 * The meta object literal for the '<em><b>Deploy</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1511,6 +1487,30 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation APPLICATION___UNDEPLOY = eINSTANCE.getApplication__Undeploy();
+
+		/**
+		 * The meta object literal for the '<em><b>Configure</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation APPLICATION___CONFIGURE = eINSTANCE.getApplication__Configure();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation APPLICATION___START = eINSTANCE.getApplication__Start();
+
+		/**
+		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation APPLICATION___STOP = eINSTANCE.getApplication__Stop();
 
 		/**
 		 * The meta object literal for the '{@link org.modmacao.occi.platform.impl.ComponentImpl <em>Component</em>}' class.
@@ -1539,30 +1539,6 @@ public interface PlatformPackage extends EPackage {
 		EAttribute COMPONENT__OCCI_COMPONENT_STATE_MESSAGE = eINSTANCE.getComponent_OcciComponentStateMessage();
 
 		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation COMPONENT___START = eINSTANCE.getComponent__Start();
-
-		/**
-		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation COMPONENT___STOP = eINSTANCE.getComponent__Stop();
-
-		/**
-		 * The meta object literal for the '<em><b>Configure</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation COMPONENT___CONFIGURE = eINSTANCE.getComponent__Configure();
-
-		/**
 		 * The meta object literal for the '<em><b>Deploy</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1577,6 +1553,30 @@ public interface PlatformPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation COMPONENT___UNDEPLOY = eINSTANCE.getComponent__Undeploy();
+
+		/**
+		 * The meta object literal for the '<em><b>Configure</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMPONENT___CONFIGURE = eINSTANCE.getComponent__Configure();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMPONENT___START = eINSTANCE.getComponent__Start();
+
+		/**
+		 * The meta object literal for the '<em><b>Stop</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation COMPONENT___STOP = eINSTANCE.getComponent__Stop();
 
 		/**
 		 * The meta object literal for the '{@link org.modmacao.occi.platform.impl.ComponentlinkImpl <em>Componentlink</em>}' class.

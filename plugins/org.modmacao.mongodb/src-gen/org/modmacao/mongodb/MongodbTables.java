@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 	
+ *
  * Contributors:
  * - William Piers <william.piers@obeo.fr>
  * - Philippe Merle <philippe.merle@inria.fr>
@@ -39,7 +39,6 @@ import org.modmacao.mongodb.MongodbTables;
  * In order to ensure correct static initialization, a top level class element must be accessed
  * before any nested class element. Therefore an access to PACKAGE.getClass() is recommended.
  */
-@SuppressWarnings("nls")
 public class MongodbTables
 {
 	static {
@@ -59,11 +58,27 @@ public class MongodbTables
 	/**
 	 *	Constants used by auto-generated code.
 	 */
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_modmacao_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/modmacao/ecore", null, modmacao.ModmacaoPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.RootPackageId PACKid_$metamodel$ = org.eclipse.ocl.pivot.ids.IdManager.getRootPackageId("$metamodel$");
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_modmacao_org_s_mongodb_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.modmacao.org/mongodb/ecore", null, org.modmacao.mongodb.MongodbPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.NsURIPackageId PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore = org.eclipse.ocl.pivot.ids.IdManager.getNsURIPackageId("http://schemas.ogf.org/occi/core/ecore", null, org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = org.modmacao.mongodb.MongodbTables.PACKid_$metamodel$.getClassId("Class", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Cluster = org.modmacao.mongodb.MongodbTables.PACKid_http_c_s_s_schemas_modmacao_org_s_mongodb_s_ecore.getClassId("Cluster", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Configserverdependency = org.modmacao.mongodb.MongodbTables.PACKid_http_c_s_s_schemas_modmacao_org_s_mongodb_s_ecore.getClassId("Configserverdependency", 0);
-	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.DataTypeId DATAid_Port = org.modmacao.mongodb.MongodbTables.PACKid_http_c_s_s_schemas_modmacao_org_s_modmacao_s_ecore.getDataTypeId("Port", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Configserver = org.modmacao.mongodb.MongodbTables.PACKid_http_c_s_s_schemas_modmacao_org_s_mongodb_s_ecore.getClassId("Configserver", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = org.modmacao.mongodb.MongodbTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Link = org.modmacao.mongodb.MongodbTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Link", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_MixinBase = org.modmacao.mongodb.MongodbTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("MixinBase", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Resource = org.modmacao.mongodb.MongodbTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Resource", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Router = org.modmacao.mongodb.MongodbTables.PACKid_http_c_s_s_schemas_modmacao_org_s_mongodb_s_ecore.getClassId("Router", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Shard = org.modmacao.mongodb.MongodbTables.PACKid_http_c_s_s_schemas_modmacao_org_s_mongodb_s_ecore.getClassId("Shard", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_1 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("1");
+	public static final /*@NonInvalid*/ java.lang.String STR_Cluster_c_c_OneOrMoreConfigServers = "Cluster::OneOrMoreConfigServers";
+	public static final /*@NonInvalid*/ java.lang.String STR_Cluster_c_c_OneOrMoreRouters = "Cluster::OneOrMoreRouters";
+	public static final /*@NonInvalid*/ java.lang.String STR_Cluster_c_c_OneOrMoreShards = "Cluster::OneOrMoreShards";
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_Link = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.modmacao.mongodb.MongodbTables.CLSSid_Link);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId ORD_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.ORDERED_SET.getSpecializedId(org.modmacao.mongodb.MongodbTables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_MixinBase = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.modmacao.mongodb.MongodbTables.CLSSid_MixinBase);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.CollectionTypeId SEQ_CLSSid_Resource = org.eclipse.ocl.pivot.ids.TypeId.SEQUENCE.getSpecializedId(org.modmacao.mongodb.MongodbTables.CLSSid_Resource);
 
 	/**
 	 *	The type parameters for templated types and operations.
@@ -94,19 +109,15 @@ public class MongodbTables
 		}
 
 		public static final /*@NonNull*/ EcoreExecutorType _Cluster = new EcoreExecutorType(MongodbPackage.Literals.CLUSTER, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Component = new EcoreExecutorType(MongodbPackage.Literals.COMPONENT, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Configserver = new EcoreExecutorType(MongodbPackage.Literals.CONFIGSERVER, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Configserverdependency = new EcoreExecutorType(MongodbPackage.Literals.CONFIGSERVERDEPENDENCY, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Mongodbcomponent = new EcoreExecutorType(MongodbPackage.Literals.MONGODBCOMPONENT, PACKAGE, 0);
-		public static final /*@NonNull*/ EcoreExecutorType _Replicablemongodbcomponent = new EcoreExecutorType(MongodbPackage.Literals.REPLICABLEMONGODBCOMPONENT, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Router = new EcoreExecutorType(MongodbPackage.Literals.ROUTER, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Shard = new EcoreExecutorType(MongodbPackage.Literals.SHARD, PACKAGE, 0);
 
 		private static final /*@NonNull*/ EcoreExecutorType /*@NonNull*/ [] types = {
 			_Cluster,
+			_Component,
 			_Configserver,
-			_Configserverdependency,
-			_Mongodbcomponent,
-			_Replicablemongodbcomponent,
 			_Router,
 			_Shard
 		};
@@ -135,53 +146,37 @@ public class MongodbTables
 		}
 
 		private static final /*@NonNull*/ ExecutorFragment _Cluster__Application = new ExecutorFragment(Types._Cluster, ModmacaoTables.Types._Application);
-		private static final /*@NonNull*/ ExecutorFragment _Cluster__Cluster = new ExecutorFragment(Types._Cluster, MongodbTables.Types._Cluster);
-		private static final /*@NonNull*/ ExecutorFragment _Cluster__Cluster_1 = new ExecutorFragment(Types._Cluster, ModmacaoTables.Types._Cluster);
+		private static final /*@NonNull*/ ExecutorFragment _Cluster__Cluster = new ExecutorFragment(Types._Cluster, ModmacaoTables.Types._Cluster);
+		private static final /*@NonNull*/ ExecutorFragment _Cluster__Cluster_1 = new ExecutorFragment(Types._Cluster, MongodbTables.Types._Cluster);
 		private static final /*@NonNull*/ ExecutorFragment _Cluster__MixinBase = new ExecutorFragment(Types._Cluster, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Cluster__OclAny = new ExecutorFragment(Types._Cluster, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Cluster__OclElement = new ExecutorFragment(Types._Cluster, OCLstdlibTables.Types._OclElement);
 
-		private static final /*@NonNull*/ ExecutorFragment _Configserver__Component = new ExecutorFragment(Types._Configserver, ModmacaoTables.Types._Component);
+		private static final /*@NonNull*/ ExecutorFragment _Component__Component = new ExecutorFragment(Types._Component, MongodbTables.Types._Component);
+		private static final /*@NonNull*/ ExecutorFragment _Component__Component_1 = new ExecutorFragment(Types._Component, ModmacaoTables.Types._Component);
+		private static final /*@NonNull*/ ExecutorFragment _Component__MixinBase = new ExecutorFragment(Types._Component, OCCITables.Types._MixinBase);
+		private static final /*@NonNull*/ ExecutorFragment _Component__OclAny = new ExecutorFragment(Types._Component, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Component__OclElement = new ExecutorFragment(Types._Component, OCLstdlibTables.Types._OclElement);
+
+		private static final /*@NonNull*/ ExecutorFragment _Configserver__Component = new ExecutorFragment(Types._Configserver, MongodbTables.Types._Component);
+		private static final /*@NonNull*/ ExecutorFragment _Configserver__Component_1 = new ExecutorFragment(Types._Configserver, ModmacaoTables.Types._Component);
 		private static final /*@NonNull*/ ExecutorFragment _Configserver__Configserver = new ExecutorFragment(Types._Configserver, MongodbTables.Types._Configserver);
 		private static final /*@NonNull*/ ExecutorFragment _Configserver__MixinBase = new ExecutorFragment(Types._Configserver, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Configserver__Mongodbcomponent = new ExecutorFragment(Types._Configserver, MongodbTables.Types._Mongodbcomponent);
 		private static final /*@NonNull*/ ExecutorFragment _Configserver__OclAny = new ExecutorFragment(Types._Configserver, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Configserver__OclElement = new ExecutorFragment(Types._Configserver, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Configserver__Replicablemongodbcomponent = new ExecutorFragment(Types._Configserver, MongodbTables.Types._Replicablemongodbcomponent);
 
-		private static final /*@NonNull*/ ExecutorFragment _Configserverdependency__Configserverdependency = new ExecutorFragment(Types._Configserverdependency, MongodbTables.Types._Configserverdependency);
-		private static final /*@NonNull*/ ExecutorFragment _Configserverdependency__Dependency = new ExecutorFragment(Types._Configserverdependency, ModmacaoTables.Types._Dependency);
-		private static final /*@NonNull*/ ExecutorFragment _Configserverdependency__Executiondependency = new ExecutorFragment(Types._Configserverdependency, ModmacaoTables.Types._Executiondependency);
-		private static final /*@NonNull*/ ExecutorFragment _Configserverdependency__MixinBase = new ExecutorFragment(Types._Configserverdependency, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Configserverdependency__OclAny = new ExecutorFragment(Types._Configserverdependency, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Configserverdependency__OclElement = new ExecutorFragment(Types._Configserverdependency, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Mongodbcomponent__Component = new ExecutorFragment(Types._Mongodbcomponent, ModmacaoTables.Types._Component);
-		private static final /*@NonNull*/ ExecutorFragment _Mongodbcomponent__MixinBase = new ExecutorFragment(Types._Mongodbcomponent, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Mongodbcomponent__Mongodbcomponent = new ExecutorFragment(Types._Mongodbcomponent, MongodbTables.Types._Mongodbcomponent);
-		private static final /*@NonNull*/ ExecutorFragment _Mongodbcomponent__OclAny = new ExecutorFragment(Types._Mongodbcomponent, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Mongodbcomponent__OclElement = new ExecutorFragment(Types._Mongodbcomponent, OCLstdlibTables.Types._OclElement);
-
-		private static final /*@NonNull*/ ExecutorFragment _Replicablemongodbcomponent__Component = new ExecutorFragment(Types._Replicablemongodbcomponent, ModmacaoTables.Types._Component);
-		private static final /*@NonNull*/ ExecutorFragment _Replicablemongodbcomponent__MixinBase = new ExecutorFragment(Types._Replicablemongodbcomponent, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Replicablemongodbcomponent__Mongodbcomponent = new ExecutorFragment(Types._Replicablemongodbcomponent, MongodbTables.Types._Mongodbcomponent);
-		private static final /*@NonNull*/ ExecutorFragment _Replicablemongodbcomponent__OclAny = new ExecutorFragment(Types._Replicablemongodbcomponent, OCLstdlibTables.Types._OclAny);
-		private static final /*@NonNull*/ ExecutorFragment _Replicablemongodbcomponent__OclElement = new ExecutorFragment(Types._Replicablemongodbcomponent, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Replicablemongodbcomponent__Replicablemongodbcomponent = new ExecutorFragment(Types._Replicablemongodbcomponent, MongodbTables.Types._Replicablemongodbcomponent);
-
-		private static final /*@NonNull*/ ExecutorFragment _Router__Component = new ExecutorFragment(Types._Router, ModmacaoTables.Types._Component);
+		private static final /*@NonNull*/ ExecutorFragment _Router__Component = new ExecutorFragment(Types._Router, MongodbTables.Types._Component);
+		private static final /*@NonNull*/ ExecutorFragment _Router__Component_1 = new ExecutorFragment(Types._Router, ModmacaoTables.Types._Component);
 		private static final /*@NonNull*/ ExecutorFragment _Router__MixinBase = new ExecutorFragment(Types._Router, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Router__Mongodbcomponent = new ExecutorFragment(Types._Router, MongodbTables.Types._Mongodbcomponent);
 		private static final /*@NonNull*/ ExecutorFragment _Router__OclAny = new ExecutorFragment(Types._Router, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Router__OclElement = new ExecutorFragment(Types._Router, OCLstdlibTables.Types._OclElement);
 		private static final /*@NonNull*/ ExecutorFragment _Router__Router = new ExecutorFragment(Types._Router, MongodbTables.Types._Router);
 
-		private static final /*@NonNull*/ ExecutorFragment _Shard__Component = new ExecutorFragment(Types._Shard, ModmacaoTables.Types._Component);
+		private static final /*@NonNull*/ ExecutorFragment _Shard__Component = new ExecutorFragment(Types._Shard, MongodbTables.Types._Component);
+		private static final /*@NonNull*/ ExecutorFragment _Shard__Component_1 = new ExecutorFragment(Types._Shard, ModmacaoTables.Types._Component);
 		private static final /*@NonNull*/ ExecutorFragment _Shard__MixinBase = new ExecutorFragment(Types._Shard, OCCITables.Types._MixinBase);
-		private static final /*@NonNull*/ ExecutorFragment _Shard__Mongodbcomponent = new ExecutorFragment(Types._Shard, MongodbTables.Types._Mongodbcomponent);
 		private static final /*@NonNull*/ ExecutorFragment _Shard__OclAny = new ExecutorFragment(Types._Shard, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Shard__OclElement = new ExecutorFragment(Types._Shard, OCLstdlibTables.Types._OclElement);
-		private static final /*@NonNull*/ ExecutorFragment _Shard__Replicablemongodbcomponent = new ExecutorFragment(Types._Shard, MongodbTables.Types._Replicablemongodbcomponent);
 		private static final /*@NonNull*/ ExecutorFragment _Shard__Shard = new ExecutorFragment(Types._Shard, MongodbTables.Types._Shard);
 
 		static {
@@ -255,10 +250,7 @@ public class MongodbTables
 		}
 
 
-		public static final /*@NonNull*/ ExecutorProperty _Mongodbcomponent__mongodbBindip = new EcoreExecutorProperty(MongodbPackage.Literals.MONGODBCOMPONENT__MONGODB_BINDIP, Types._Mongodbcomponent, 0);
-		public static final /*@NonNull*/ ExecutorProperty _Mongodbcomponent__mongodbPort = new EcoreExecutorProperty(MongodbPackage.Literals.MONGODBCOMPONENT__MONGODB_PORT, Types._Mongodbcomponent, 1);
-
-		public static final /*@NonNull*/ ExecutorProperty _Replicablemongodbcomponent__mongodbReplicationSetName = new EcoreExecutorProperty(MongodbPackage.Literals.REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME, Types._Replicablemongodbcomponent, 0);
+		public static final /*@NonNull*/ ExecutorProperty _Component__mongodbReplicationSetName = new EcoreExecutorProperty(MongodbPackage.Literals.COMPONENT__MONGODB_REPLICATION_SET_NAME, Types._Component, 0);
 		static {
 			Init.initEnd();
 		}
@@ -279,92 +271,66 @@ public class MongodbTables
 		}
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Cluster =
-		{
-			Fragments._Cluster__OclAny /* 0 */,
-			Fragments._Cluster__OclElement /* 1 */,
-			Fragments._Cluster__MixinBase /* 2 */,
-			Fragments._Cluster__Application /* 3 */,
-			Fragments._Cluster__Cluster_1 /* 4 */,
-			Fragments._Cluster__Cluster /* 5 */
-		};
+			{
+				Fragments._Cluster__OclAny /* 0 */,
+				Fragments._Cluster__OclElement /* 1 */,
+				Fragments._Cluster__MixinBase /* 2 */,
+				Fragments._Cluster__Application /* 3 */,
+				Fragments._Cluster__Cluster /* 4 */,
+				Fragments._Cluster__Cluster_1 /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Cluster = { 1,1,1,1,1,1 };
 
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Component =
+			{
+				Fragments._Component__OclAny /* 0 */,
+				Fragments._Component__OclElement /* 1 */,
+				Fragments._Component__MixinBase /* 2 */,
+				Fragments._Component__Component_1 /* 3 */,
+				Fragments._Component__Component /* 4 */
+			};
+		private static final int /*@NonNull*/ [] __Component = { 1,1,1,1,1 };
+
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Configserver =
-		{
-			Fragments._Configserver__OclAny /* 0 */,
-			Fragments._Configserver__OclElement /* 1 */,
-			Fragments._Configserver__MixinBase /* 2 */,
-			Fragments._Configserver__Component /* 3 */,
-			Fragments._Configserver__Mongodbcomponent /* 4 */,
-			Fragments._Configserver__Replicablemongodbcomponent /* 5 */,
-			Fragments._Configserver__Configserver /* 6 */
-		};
-		private static final int /*@NonNull*/ [] __Configserver = { 1,1,1,1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Configserverdependency =
-		{
-			Fragments._Configserverdependency__OclAny /* 0 */,
-			Fragments._Configserverdependency__OclElement /* 1 */,
-			Fragments._Configserverdependency__MixinBase /* 2 */,
-			Fragments._Configserverdependency__Dependency /* 3 */,
-			Fragments._Configserverdependency__Executiondependency /* 4 */,
-			Fragments._Configserverdependency__Configserverdependency /* 5 */
-		};
-		private static final int /*@NonNull*/ [] __Configserverdependency = { 1,1,1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Mongodbcomponent =
-		{
-			Fragments._Mongodbcomponent__OclAny /* 0 */,
-			Fragments._Mongodbcomponent__OclElement /* 1 */,
-			Fragments._Mongodbcomponent__MixinBase /* 2 */,
-			Fragments._Mongodbcomponent__Component /* 3 */,
-			Fragments._Mongodbcomponent__Mongodbcomponent /* 4 */
-		};
-		private static final int /*@NonNull*/ [] __Mongodbcomponent = { 1,1,1,1,1 };
-
-		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Replicablemongodbcomponent =
-		{
-			Fragments._Replicablemongodbcomponent__OclAny /* 0 */,
-			Fragments._Replicablemongodbcomponent__OclElement /* 1 */,
-			Fragments._Replicablemongodbcomponent__MixinBase /* 2 */,
-			Fragments._Replicablemongodbcomponent__Component /* 3 */,
-			Fragments._Replicablemongodbcomponent__Mongodbcomponent /* 4 */,
-			Fragments._Replicablemongodbcomponent__Replicablemongodbcomponent /* 5 */
-		};
-		private static final int /*@NonNull*/ [] __Replicablemongodbcomponent = { 1,1,1,1,1,1 };
+			{
+				Fragments._Configserver__OclAny /* 0 */,
+				Fragments._Configserver__OclElement /* 1 */,
+				Fragments._Configserver__MixinBase /* 2 */,
+				Fragments._Configserver__Component_1 /* 3 */,
+				Fragments._Configserver__Component /* 4 */,
+				Fragments._Configserver__Configserver /* 5 */
+			};
+		private static final int /*@NonNull*/ [] __Configserver = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Router =
-		{
-			Fragments._Router__OclAny /* 0 */,
-			Fragments._Router__OclElement /* 1 */,
-			Fragments._Router__MixinBase /* 2 */,
-			Fragments._Router__Component /* 3 */,
-			Fragments._Router__Mongodbcomponent /* 4 */,
-			Fragments._Router__Router /* 5 */
-		};
+			{
+				Fragments._Router__OclAny /* 0 */,
+				Fragments._Router__OclElement /* 1 */,
+				Fragments._Router__MixinBase /* 2 */,
+				Fragments._Router__Component_1 /* 3 */,
+				Fragments._Router__Component /* 4 */,
+				Fragments._Router__Router /* 5 */
+			};
 		private static final int /*@NonNull*/ [] __Router = { 1,1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Shard =
-		{
-			Fragments._Shard__OclAny /* 0 */,
-			Fragments._Shard__OclElement /* 1 */,
-			Fragments._Shard__MixinBase /* 2 */,
-			Fragments._Shard__Component /* 3 */,
-			Fragments._Shard__Mongodbcomponent /* 4 */,
-			Fragments._Shard__Replicablemongodbcomponent /* 5 */,
-			Fragments._Shard__Shard /* 6 */
-		};
-		private static final int /*@NonNull*/ [] __Shard = { 1,1,1,1,1,1,1 };
+			{
+				Fragments._Shard__OclAny /* 0 */,
+				Fragments._Shard__OclElement /* 1 */,
+				Fragments._Shard__MixinBase /* 2 */,
+				Fragments._Shard__Component_1 /* 3 */,
+				Fragments._Shard__Component /* 4 */,
+				Fragments._Shard__Shard /* 5 */
+			};
+		private static final int /*@NonNull*/ [] __Shard = { 1,1,1,1,1,1 };
 
 		/**
 		 *	Install the fragment descriptors in the class descriptors.
 		 */
 		static {
 			Types._Cluster.initFragments(_Cluster, __Cluster);
+			Types._Component.initFragments(_Component, __Component);
 			Types._Configserver.initFragments(_Configserver, __Configserver);
-			Types._Configserverdependency.initFragments(_Configserverdependency, __Configserverdependency);
-			Types._Mongodbcomponent.initFragments(_Mongodbcomponent, __Mongodbcomponent);
-			Types._Replicablemongodbcomponent.initFragments(_Replicablemongodbcomponent, __Replicablemongodbcomponent);
 			Types._Router.initFragments(_Router, __Router);
 			Types._Shard.initFragments(_Shard, __Shard);
 
@@ -386,9 +352,9 @@ public class MongodbTables
 			TypeFragments.init();
 		}
 
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__Cluster = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__Application = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__Cluster_1 = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__Application = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__Cluster = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__MixinBase = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Cluster__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
@@ -417,10 +383,40 @@ public class MongodbTables
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
 
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Component__Component = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Component__Component_1 = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Component__MixinBase = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Component__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Component__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserver__Configserver = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserver__Component = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserver__Component_1 = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserver__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserver__Mongodbcomponent = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserver__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -447,104 +443,11 @@ public class MongodbTables
 			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserver__Replicablemongodbcomponent = {};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserverdependency__Configserverdependency = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserverdependency__Dependency = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserverdependency__Executiondependency = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserverdependency__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserverdependency__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Configserverdependency__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Mongodbcomponent__Mongodbcomponent = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Mongodbcomponent__Component = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Mongodbcomponent__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Mongodbcomponent__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Mongodbcomponent__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
-
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Replicablemongodbcomponent__Replicablemongodbcomponent = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Replicablemongodbcomponent__Component = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Replicablemongodbcomponent__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Replicablemongodbcomponent__Mongodbcomponent = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Replicablemongodbcomponent__OclAny = {
-			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
-			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
-			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
-			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
-			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
-			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
-			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
-			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
-			OCLstdlibTables.Operations._OclAny__toString /* toString() */
-		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Replicablemongodbcomponent__OclElement = {
-			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
-			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
-			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
-			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
-			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
-			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
-		};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Router__Router = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Router__Component = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Router__Component_1 = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Router__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Router__Mongodbcomponent = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Router__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -574,8 +477,8 @@ public class MongodbTables
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Shard__Shard = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Shard__Component = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Shard__Component_1 = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Shard__MixinBase = {};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Shard__Mongodbcomponent = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Shard__OclAny = {
 			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
 			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
@@ -602,7 +505,6 @@ public class MongodbTables
 			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
-		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Shard__Replicablemongodbcomponent = {};
 
 		/*
 		 *	Install the operation descriptors in the fragment descriptors.
@@ -615,47 +517,31 @@ public class MongodbTables
 			Fragments._Cluster__OclAny.initOperations(_Cluster__OclAny);
 			Fragments._Cluster__OclElement.initOperations(_Cluster__OclElement);
 
+			Fragments._Component__Component.initOperations(_Component__Component);
+			Fragments._Component__Component_1.initOperations(_Component__Component_1);
+			Fragments._Component__MixinBase.initOperations(_Component__MixinBase);
+			Fragments._Component__OclAny.initOperations(_Component__OclAny);
+			Fragments._Component__OclElement.initOperations(_Component__OclElement);
+
 			Fragments._Configserver__Component.initOperations(_Configserver__Component);
+			Fragments._Configserver__Component_1.initOperations(_Configserver__Component_1);
 			Fragments._Configserver__Configserver.initOperations(_Configserver__Configserver);
 			Fragments._Configserver__MixinBase.initOperations(_Configserver__MixinBase);
-			Fragments._Configserver__Mongodbcomponent.initOperations(_Configserver__Mongodbcomponent);
 			Fragments._Configserver__OclAny.initOperations(_Configserver__OclAny);
 			Fragments._Configserver__OclElement.initOperations(_Configserver__OclElement);
-			Fragments._Configserver__Replicablemongodbcomponent.initOperations(_Configserver__Replicablemongodbcomponent);
-
-			Fragments._Configserverdependency__Configserverdependency.initOperations(_Configserverdependency__Configserverdependency);
-			Fragments._Configserverdependency__Dependency.initOperations(_Configserverdependency__Dependency);
-			Fragments._Configserverdependency__Executiondependency.initOperations(_Configserverdependency__Executiondependency);
-			Fragments._Configserverdependency__MixinBase.initOperations(_Configserverdependency__MixinBase);
-			Fragments._Configserverdependency__OclAny.initOperations(_Configserverdependency__OclAny);
-			Fragments._Configserverdependency__OclElement.initOperations(_Configserverdependency__OclElement);
-
-			Fragments._Mongodbcomponent__Component.initOperations(_Mongodbcomponent__Component);
-			Fragments._Mongodbcomponent__MixinBase.initOperations(_Mongodbcomponent__MixinBase);
-			Fragments._Mongodbcomponent__Mongodbcomponent.initOperations(_Mongodbcomponent__Mongodbcomponent);
-			Fragments._Mongodbcomponent__OclAny.initOperations(_Mongodbcomponent__OclAny);
-			Fragments._Mongodbcomponent__OclElement.initOperations(_Mongodbcomponent__OclElement);
-
-			Fragments._Replicablemongodbcomponent__Component.initOperations(_Replicablemongodbcomponent__Component);
-			Fragments._Replicablemongodbcomponent__MixinBase.initOperations(_Replicablemongodbcomponent__MixinBase);
-			Fragments._Replicablemongodbcomponent__Mongodbcomponent.initOperations(_Replicablemongodbcomponent__Mongodbcomponent);
-			Fragments._Replicablemongodbcomponent__OclAny.initOperations(_Replicablemongodbcomponent__OclAny);
-			Fragments._Replicablemongodbcomponent__OclElement.initOperations(_Replicablemongodbcomponent__OclElement);
-			Fragments._Replicablemongodbcomponent__Replicablemongodbcomponent.initOperations(_Replicablemongodbcomponent__Replicablemongodbcomponent);
 
 			Fragments._Router__Component.initOperations(_Router__Component);
+			Fragments._Router__Component_1.initOperations(_Router__Component_1);
 			Fragments._Router__MixinBase.initOperations(_Router__MixinBase);
-			Fragments._Router__Mongodbcomponent.initOperations(_Router__Mongodbcomponent);
 			Fragments._Router__OclAny.initOperations(_Router__OclAny);
 			Fragments._Router__OclElement.initOperations(_Router__OclElement);
 			Fragments._Router__Router.initOperations(_Router__Router);
 
 			Fragments._Shard__Component.initOperations(_Shard__Component);
+			Fragments._Shard__Component_1.initOperations(_Shard__Component_1);
 			Fragments._Shard__MixinBase.initOperations(_Shard__MixinBase);
-			Fragments._Shard__Mongodbcomponent.initOperations(_Shard__Mongodbcomponent);
 			Fragments._Shard__OclAny.initOperations(_Shard__OclAny);
 			Fragments._Shard__OclElement.initOperations(_Shard__OclElement);
-			Fragments._Shard__Replicablemongodbcomponent.initOperations(_Shard__Replicablemongodbcomponent);
 			Fragments._Shard__Shard.initOperations(_Shard__Shard);
 
 			Init.initEnd();
@@ -678,45 +564,33 @@ public class MongodbTables
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Cluster = {};
 
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Component = {
+			ModmacaoTables.Properties._Component__modmacaoComponentVersion,
+			MongodbTables.Properties._Component__mongodbReplicationSetName
+		};
+
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Configserver = {
-			MongodbTables.Properties._Mongodbcomponent__mongodbBindip,
-			MongodbTables.Properties._Mongodbcomponent__mongodbPort,
-			MongodbTables.Properties._Replicablemongodbcomponent__mongodbReplicationSetName
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Configserverdependency = {};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Mongodbcomponent = {
-			MongodbTables.Properties._Mongodbcomponent__mongodbBindip,
-			MongodbTables.Properties._Mongodbcomponent__mongodbPort
-		};
-
-		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Replicablemongodbcomponent = {
-			MongodbTables.Properties._Mongodbcomponent__mongodbBindip,
-			MongodbTables.Properties._Mongodbcomponent__mongodbPort,
-			MongodbTables.Properties._Replicablemongodbcomponent__mongodbReplicationSetName
+			ModmacaoTables.Properties._Component__modmacaoComponentVersion,
+			MongodbTables.Properties._Component__mongodbReplicationSetName
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Router = {
-			MongodbTables.Properties._Mongodbcomponent__mongodbBindip,
-			MongodbTables.Properties._Mongodbcomponent__mongodbPort
+			ModmacaoTables.Properties._Component__modmacaoComponentVersion,
+			MongodbTables.Properties._Component__mongodbReplicationSetName
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Shard = {
-			MongodbTables.Properties._Mongodbcomponent__mongodbBindip,
-			MongodbTables.Properties._Mongodbcomponent__mongodbPort,
-			MongodbTables.Properties._Replicablemongodbcomponent__mongodbReplicationSetName
+			ModmacaoTables.Properties._Component__modmacaoComponentVersion,
+			MongodbTables.Properties._Component__mongodbReplicationSetName
 		};
 
 		/**
 		 *	Install the property descriptors in the fragment descriptors.
 		 */
 		static {
-			Fragments._Cluster__Cluster.initProperties(_Cluster);
+			Fragments._Cluster__Cluster_1.initProperties(_Cluster);
+			Fragments._Component__Component.initProperties(_Component);
 			Fragments._Configserver__Configserver.initProperties(_Configserver);
-			Fragments._Configserverdependency__Configserverdependency.initProperties(_Configserverdependency);
-			Fragments._Mongodbcomponent__Mongodbcomponent.initProperties(_Mongodbcomponent);
-			Fragments._Replicablemongodbcomponent__Replicablemongodbcomponent.initProperties(_Replicablemongodbcomponent);
 			Fragments._Router__Router.initProperties(_Router);
 			Fragments._Shard__Shard.initProperties(_Shard);
 

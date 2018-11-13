@@ -13,42 +13,42 @@
 package modmacao.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
-
 import modmacao.Component;
 import modmacao.ModmacaoPackage;
+
 import modmacao.ModmacaoTables;
-
+import modmacao.util.ModmacaoValidator;
 import org.eclipse.cmf.occi.core.Entity;
-
+import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.ocl.pivot.evaluation.Executor;
-
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
-
 import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
-
+import org.eclipse.ocl.pivot.library.collection.CollectionSizeOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsTypeOfOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
-
 import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
-
+import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
 import org.eclipse.ocl.pivot.values.IntegerValue;
+import org.eclipse.ocl.pivot.values.OrderedSetValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -153,9 +153,9 @@ public class ComponentImpl extends MixinBaseImpl implements Component {
 			symbol_0 = ValueUtil.TRUE_VALUE;
 		}
 		else {
-			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_platform_c_c_Component = idResolver.getClass(ModmacaoTables.CLSSid_Component_0, null);
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_platform_c_c_Component_0 = idResolver.getClass(ModmacaoTables.CLSSid_Component, null);
 			final /*@NonInvalid*/ Entity entity = this.getEntity();
-			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_platform_c_c_Component).booleanValue();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_platform_c_c_Component_0).booleanValue();
 			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, ModmacaoTables.STR_Component_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, ModmacaoTables.INT_0).booleanValue();
 			symbol_0 = logDiagnostic;
 		}
@@ -169,9 +169,68 @@ public class ComponentImpl extends MixinBaseImpl implements Component {
 	 */
 	public boolean OnlyOnePlacementLink(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * inv OnlyOnePlacementLink: true
+		 *
+		 * inv OnlyOnePlacementLink:
+		 *   let severity : Integer[1] = 'Component::OnlyOnePlacementLink'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : occi::Boolean[1] = self.entity.oclAsType(occi::Resource)
+		 *         .links->select(l |
+		 *           l.oclIsTypeOf(placement::Placementlink))
+		 *         ->size() = 1
+		 *       in
+		 *         'Component::OnlyOnePlacementLink'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
 		 */
-		return ValueUtil.TRUE_VALUE;
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, ModmacaoTables.STR_Component_c_c_OnlyOnePlacementLink);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, ModmacaoTables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+			symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Resource_0 = idResolver.getClass(ModmacaoTables.CLSSid_Resource, null);
+				final /*@NonInvalid*/ Entity entity = this.getEntity();
+				final /*@Thrown*/ Resource oclAsType = ClassUtil.nonNullState((Resource)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, entity, TYP_occi_c_c_Resource_0));
+				final /*@Thrown*/ List<Link> links = oclAsType.getLinks();
+				final /*@Thrown*/ OrderedSetValue BOXED_links = idResolver.createOrderedSetOfAll(ModmacaoTables.ORD_CLSSid_Link, links);
+				/*@Thrown*/ OrderedSetValue.Accumulator accumulator = ValueUtil.createOrderedSetAccumulatorValue(ModmacaoTables.ORD_CLSSid_Link);
+				/*@NonNull*/ Iterator<Object> ITERATOR_l = BOXED_links.iterator();
+				/*@Thrown*/ OrderedSetValue select;
+				while (true) {
+					if (!ITERATOR_l.hasNext()) {
+						select = accumulator;
+						break;
+					}
+					/*@NonInvalid*/ Link l = (Link)ITERATOR_l.next();
+					/**
+					 * l.oclIsTypeOf(placement::Placementlink)
+					 */
+					final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_placement_c_c_Placementlink = idResolver.getClass(ModmacaoTables.CLSSid_Placementlink, null);
+					final /*@NonInvalid*/ boolean oclIsTypeOf = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, l, TYP_placement_c_c_Placementlink).booleanValue();
+					//
+					if (oclIsTypeOf == ValueUtil.TRUE_VALUE) {
+						accumulator.add(l);
+					}
+				}
+				final /*@Thrown*/ IntegerValue size = CollectionSizeOperation.INSTANCE.evaluate(select);
+				final /*@Thrown*/ boolean result = size.equals(ModmacaoTables.INT_1);
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, ModmacaoTables.STR_Component_c_c_OnlyOnePlacementLink, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, ModmacaoTables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
 	}
 
 	/**
@@ -258,7 +317,7 @@ public class ComponentImpl extends MixinBaseImpl implements Component {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (modmacaoComponentVersion: ");
 		result.append(modmacaoComponentVersion);
 		result.append(')');

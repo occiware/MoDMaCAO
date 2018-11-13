@@ -21,7 +21,7 @@
 
    <!-- Define URI mapping. -->
    <extension point="org.eclipse.emf.ecore.uri_mapping">
-      <mapping source="http://schemas.modmacao.org/all" target="platform:/plugin/org.modcacao.all.extensions/model/all.occie"/>
+      <mapping source="http://schemas.modmacao.org/all" target="platform:/plugin/org.modmacao.all.extensions/model/all.occie"/>
    </extension>
 
    <!-- Register the parser for .all files. -->

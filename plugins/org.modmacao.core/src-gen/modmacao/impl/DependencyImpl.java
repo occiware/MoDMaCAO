@@ -13,37 +13,33 @@
 package modmacao.impl;
 
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Map;
-
 import modmacao.Dependency;
 import modmacao.ModmacaoPackage;
+
 import modmacao.ModmacaoTables;
-
+import modmacao.util.ModmacaoValidator;
 import org.eclipse.cmf.occi.core.Entity;
-
+import org.eclipse.cmf.occi.core.Link;
+import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.ocl.pivot.evaluation.Executor;
-
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
-
 import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
-
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsTypeOfOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
-
 import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
-
+import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
-
 import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
@@ -118,9 +114,47 @@ public class DependencyImpl extends MixinBaseImpl implements Dependency {
 	 */
 	public boolean TargetMustBeComponent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * inv TargetMustBeComponent: true
+		 *
+		 * inv TargetMustBeComponent:
+		 *   let
+		 *     severity : Integer[1] = 'Dependency::TargetMustBeComponent'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : occi::Boolean[1] = self.entity.oclAsType(occi::Link)
+		 *         .target.oclIsTypeOf(platform::Component)
+		 *       in
+		 *         'Dependency::TargetMustBeComponent'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
 		 */
-		return ValueUtil.TRUE_VALUE;
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, ModmacaoTables.STR_Dependency_c_c_TargetMustBeComponent);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, ModmacaoTables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+			symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Link_0 = idResolver.getClass(ModmacaoTables.CLSSid_Link, null);
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_platform_c_c_Component_0 = idResolver.getClass(ModmacaoTables.CLSSid_Component, null);
+				final /*@NonInvalid*/ Entity entity = this.getEntity();
+				final /*@Thrown*/ Link oclAsType = ClassUtil.nonNullState((Link)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, entity, TYP_occi_c_c_Link_0));
+				final /*@Thrown*/ Resource target = oclAsType.getTarget();
+				final /*@Thrown*/ boolean result = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, target, TYP_platform_c_c_Component_0).booleanValue();
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, ModmacaoTables.STR_Dependency_c_c_TargetMustBeComponent, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, ModmacaoTables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
 	}
 
 	/**
@@ -130,9 +164,47 @@ public class DependencyImpl extends MixinBaseImpl implements Dependency {
 	 */
 	public boolean SourceMustBeComponent(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
 		/**
-		 * inv SourceMustBeComponent: true
+		 *
+		 * inv SourceMustBeComponent:
+		 *   let
+		 *     severity : Integer[1] = 'Dependency::SourceMustBeComponent'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : occi::Boolean[1] = self.entity.oclAsType(occi::Link)
+		 *         .source.oclIsTypeOf(platform::Component)
+		 *       in
+		 *         'Dependency::SourceMustBeComponent'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
 		 */
-		return ValueUtil.TRUE_VALUE;
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, ModmacaoTables.STR_Dependency_c_c_SourceMustBeComponent);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, ModmacaoTables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+			symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			/*@Caught*/ /*@NonNull*/ Object CAUGHT_result;
+			try {
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_occi_c_c_Link = idResolver.getClass(ModmacaoTables.CLSSid_Link, null);
+				final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_platform_c_c_Component_0 = idResolver.getClass(ModmacaoTables.CLSSid_Component, null);
+				final /*@NonInvalid*/ Entity entity = this.getEntity();
+				final /*@Thrown*/ Link oclAsType = ClassUtil.nonNullState((Link)OclAnyOclAsTypeOperation.INSTANCE.evaluate(executor, entity, TYP_occi_c_c_Link));
+				final /*@Thrown*/ Resource source = oclAsType.getSource();
+				final /*@Thrown*/ boolean result = OclAnyOclIsTypeOfOperation.INSTANCE.evaluate(executor, source, TYP_platform_c_c_Component_0).booleanValue();
+				CAUGHT_result = result;
+			}
+			catch (Exception e) {
+				CAUGHT_result = ValueUtil.createInvalidValue(e);
+			}
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, ModmacaoTables.STR_Dependency_c_c_SourceMustBeComponent, this, (Object)null, diagnostics, context, (Object)null, severity_0, CAUGHT_result, ModmacaoTables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
 	}
 
 	/**

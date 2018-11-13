@@ -7,12 +7,9 @@
   <genPackages prefix="Mongodb" basePackage="org.modmacao" disposableProviderFactory="true">
     <ecorePackage href="mongodb.ecore#/"/>
     <genClasses>
-      <ecoreClass href="mongodb.ecore#//Mongodbcomponent"/>
+      <ecoreClass href="mongodb.ecore#//Component"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="mongodb.ecore#//Mongodbcomponent/mongodbPort"/>
-      </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="mongodb.ecore#//Mongodbcomponent/mongodbBindip"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="mongodb.ecore#//Component/mongodbReplicationSetName"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -27,16 +24,10 @@
     <genClasses>
       <ecoreClass href="mongodb.ecore#//Cluster"/>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="mongodb.ecore#//Replicablemongodbcomponent"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="mongodb.ecore#//Replicablemongodbcomponent/mongodbReplicationSetName"/>
-      </genFeatures>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="mongodb.ecore#//Configserverdependency"/>
-    </genClasses>
   </genPackages>
+  <usedGenPackages href="platform:/resource/org.modmacao.occi.platform/model/platform.genmodel#//platform"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.placement/model/placement.genmodel#//placement"/>
   <usedGenPackages href="platform:/resource/org.modmacao.core/model/modmacao.genmodel#//modmacao"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
 </genmodel:GenModel>

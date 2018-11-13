@@ -1,32 +1,23 @@
 <?xml version="1.0" encoding="ASCII"?>
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="mongodb" scheme="http://schemas.modmacao.org/mongodb#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
+  <import href="http://schemas.modmacao.org/occi/platform#/"/>
+  <import href="http://schemas.modmacao.org/placement#/"/>
   <import href="http://schemas.modmacao.org/modmacao#/"/>
-  <mixins name="MongoDBComponent" scheme="http://schemas.modmacao.org/mongodb#">
-    <attributes name="mongodb.port" mutable="true">
-      <type xsi:type="occi:NumericType" href="http://schemas.modmacao.org/modmacao#//@types.1"/>
-    </attributes>
-    <attributes name="mongodb.bindip" mutable="true">
+  <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
+  <mixins name="Component" scheme="http://schemas.modmacao.org/mongodb#">
+    <attributes name="mongodb.replication.set.name" mutable="false" required="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <depends href="http://schemas.modmacao.org/modmacao#//@mixins[term='component']"/>
   </mixins>
-  <mixins name="ConfigServer" scheme="http://schemas.modmacao.org/mongodb#" depends="//@mixins[term='replicablemongodbcomponent']"/>
-  <mixins name="Router" scheme="http://schemas.modmacao.org/mongodb#" depends="//@mixins[term='mongodbcomponent']"/>
-  <mixins name="Shard" scheme="http://schemas.modmacao.org/mongodb#" depends="//@mixins[term='replicablemongodbcomponent']"/>
+  <mixins name="ConfigServer" scheme="http://schemas.modmacao.org/mongodb#" depends="//@mixins[term='component']"/>
+  <mixins name="Router" scheme="http://schemas.modmacao.org/mongodb#" depends="//@mixins[term='component']"/>
+  <mixins name="Shard" scheme="http://schemas.modmacao.org/mongodb#" depends="//@mixins[term='component']"/>
   <mixins name="Cluster" scheme="http://schemas.modmacao.org/mongodb#">
-    <constraints name="OneOrMoreRouters" body="true"/>
-    <constraints name="OneOrMoreShards" body="true"/>
-    <constraints name="OneOrMoreConfigServers" body="true"/>
+    <constraints name="OneOrMoreRouters" body="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(mongodb::Router))->size()>=1"/>
+    <constraints name="OneOrMoreShards" body="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(mongodb::Shard))->size()>=1"/>
+    <constraints name="OneOrMoreConfigServers" body="self.entity.oclAsType(occi::Resource).links->collect(l:occi::Link|l.target)->collect(c:occi::Resource|c.parts)->select(mb:occi::MixinBase|mb.oclIsTypeOf(mongodb::Configserver))->size()>=1"/>
     <depends href="http://schemas.modmacao.org/modmacao#//@mixins[term='cluster']"/>
-  </mixins>
-  <mixins name="ReplicableMongoDBComponent" scheme="http://schemas.modmacao.org/mongodb#" title="" depends="//@mixins[term='mongodbcomponent']">
-    <attributes name="mongodb.replication.set.name" mutable="true" required="true">
-      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
-    </attributes>
-  </mixins>
-  <mixins name="ConfigServerDependency" scheme="http://schemas.modmacao.org/mongodb#">
-    <constraints name="TargetMustBeConfigServer"/>
-    <depends href="http://schemas.modmacao.org/modmacao#//@mixins[term='executiondependency']"/>
   </mixins>
 </occi:Extension>

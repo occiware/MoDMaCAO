@@ -16,6 +16,7 @@ import java.util.Map;
 
 import org.eclipse.cmf.occi.core.util.OCCIValidator;
 
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -157,16 +158,6 @@ public class PlacementValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the targetConstraint constraint of '<em>Placementlink</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validatePlacementlink_targetConstraint(Placementlink placementlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return placementlink.targetConstraint(diagnostics, context);
-	}
-
-	/**
 	 * Validates the sourceConstraint constraint of '<em>Placementlink</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,6 +165,16 @@ public class PlacementValidator extends EObjectValidator {
 	 */
 	public boolean validatePlacementlink_sourceConstraint(Placementlink placementlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return placementlink.sourceConstraint(diagnostics, context);
+	}
+
+	/**
+	 * Validates the targetConstraint constraint of '<em>Placementlink</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePlacementlink_targetConstraint(Placementlink placementlink, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return placementlink.targetConstraint(diagnostics, context);
 	}
 
 	/**

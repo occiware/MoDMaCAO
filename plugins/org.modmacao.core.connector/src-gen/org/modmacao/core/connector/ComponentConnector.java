@@ -121,6 +121,7 @@ public class ComponentConnector extends org.modmacao.occi.platform.impl.Componen
 	@Override
 	public void undeploy()
 	{
+		// TODO Implement status update check
 		LOGGER.debug("Action undeploy() called on " + this);
 
 		// Component State Machine.

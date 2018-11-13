@@ -4,7 +4,7 @@
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
  * http://www.eclipse.org/legal/epl-v10.html
- * 	
+ *
  * Contributors:
  * - William Piers <william.piers@obeo.fr>
  * - Philippe Merle <philippe.merle@inria.fr>
@@ -37,7 +37,6 @@ import org.modmacao.placement.PlacementTables;
  * In order to ensure correct static initialization, a top level class element must be accessed
  * before any nested class element. Therefore an access to PACKAGE.getClass() is recommended.
  */
-@SuppressWarnings("nls")
 public class PlacementTables
 {
 	static {
@@ -224,13 +223,13 @@ public class PlacementTables
 		}
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Placementlink =
-		{
-			Fragments._Placementlink__OclAny /* 0 */,
-			Fragments._Placementlink__OclElement /* 1 */,
-			Fragments._Placementlink__Entity /* 2 */,
-			Fragments._Placementlink__Link /* 3 */,
-			Fragments._Placementlink__Placementlink /* 4 */
-		};
+			{
+				Fragments._Placementlink__OclAny /* 0 */,
+				Fragments._Placementlink__OclElement /* 1 */,
+				Fragments._Placementlink__Entity /* 2 */,
+				Fragments._Placementlink__Link /* 3 */,
+				Fragments._Placementlink__Placementlink /* 4 */
+			};
 		private static final int /*@NonNull*/ [] __Placementlink = { 1,1,1,1,1 };
 
 		/**

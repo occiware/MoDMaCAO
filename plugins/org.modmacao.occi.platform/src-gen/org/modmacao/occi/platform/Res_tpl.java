@@ -13,9 +13,7 @@
 package org.modmacao.occi.platform;
 
 import java.util.Map;
-
 import org.eclipse.cmf.occi.core.MixinBase;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
@@ -29,6 +27,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @generated
  */
 public interface Res_tpl extends MixinBase {
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,5 +35,4 @@ public interface Res_tpl extends MixinBase {
 	 * @generated
 	 */
 	boolean appliesConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);
-
 } // Res_tpl

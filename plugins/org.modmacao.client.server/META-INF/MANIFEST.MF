@@ -1,13 +1,25 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.modmacao.client.server
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.modmacao.client.server;singleton:=true
+Automatic-Module-Name: org.modmacao.client.server
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: OCCIware
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: client_server,
+ client_server.impl,
+ client_server.util
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport,
+ org.eclipse.ocl.examples.codegen;visibility:=reexport,
+ org.modmacao.core;visibility:=reexport,
+ org.modmacao.occi.platform;visibility:=reexport,
+ org.eclipse.cmf.occi.infrastructure;visibility:=reexport,
+ org.modmacao.placement;visibility:=reexport,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.cmf.occi.core.ui,
  org.eclipse.cmf.occi.core.gen.emf.ui

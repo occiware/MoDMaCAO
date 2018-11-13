@@ -32,13 +32,13 @@ public interface MongodbFactory extends EFactory {
 	MongodbFactory eINSTANCE = org.modmacao.mongodb.impl.MongodbFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Mongodbcomponent</em>'.
+	 * Returns a new object of class '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mongodbcomponent</em>'.
+	 * @return a new object of class '<em>Component</em>'.
 	 * @generated
 	 */
-	Mongodbcomponent createMongodbcomponent();
+	Component createComponent();
 
 	/**
 	 * Returns a new object of class '<em>Configserver</em>'.
@@ -75,24 +75,6 @@ public interface MongodbFactory extends EFactory {
 	 * @generated
 	 */
 	Cluster createCluster();
-
-	/**
-	 * Returns a new object of class '<em>Replicablemongodbcomponent</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Replicablemongodbcomponent</em>'.
-	 * @generated
-	 */
-	Replicablemongodbcomponent createReplicablemongodbcomponent();
-
-	/**
-	 * Returns a new object of class '<em>Configserverdependency</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Configserverdependency</em>'.
-	 * @generated
-	 */
-	Configserverdependency createConfigserverdependency();
 
 	/**
 	 * Returns the package supported by this factory.

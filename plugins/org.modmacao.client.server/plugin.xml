@@ -50,4 +50,11 @@
          </action>
       </objectContribution>
    </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated client_server -->
+      <package
+            uri="http://schemas.modmacao.org/client_server/ecore"
+            class="client_server.Client_serverPackage"/>
+   </extension>
+
 </plugin>

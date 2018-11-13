@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.modmacao.occi.platform;singleton:=true
+Export-Package: org.modmacao.occi.platform,org.modmacao.occi.platform.
+ impl,org.modmacao.occi.platform.util
+Bundle-Name: org.modmacao.occi.platform
+Bundle-Version: 1.0.0.201808310927
+Bundle-ClassPath: .
+Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,org.eclipse
+ .cmf.occi.core;visibility:=reexport,org.eclipse.cmf.occi.core.ui,org.
+ eclipse.cmf.occi.core.gen.emf.ui
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: OCCIware
+

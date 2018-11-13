@@ -723,7 +723,7 @@ public interface ModmacaoPackage extends EPackage {
 	 * @return the meta object for data type '<em>Port</em>'.
 	 * @see java.lang.Integer
 	 * @model instanceClass="java.lang.Integer"
-	 *        extendedMetaData="MinInclusive='0' MaxInclusive='65535'"
+	 *        extendedMetaData="minInclusive='0' maxInclusive='65535'"
 	 * @generated
 	 */
 	EDataType getPort();

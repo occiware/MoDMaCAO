@@ -74,7 +74,7 @@ public class PlacementPackageImpl extends EPackageImpl implements PlacementPacka
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link PlacementPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -88,7 +88,8 @@ public class PlacementPackageImpl extends EPackageImpl implements PlacementPacka
 		if (isInited) return (PlacementPackage)EPackage.Registry.INSTANCE.getEPackage(PlacementPackage.eNS_URI);
 
 		// Obtain or create and register package
-		PlacementPackageImpl thePlacementPackage = (PlacementPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof PlacementPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new PlacementPackageImpl());
+		Object registeredPlacementPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		PlacementPackageImpl thePlacementPackage = registeredPlacementPackage instanceof PlacementPackageImpl ? (PlacementPackageImpl)registeredPlacementPackage : new PlacementPackageImpl();
 
 		isInited = true;
 
@@ -105,7 +106,7 @@ public class PlacementPackageImpl extends EPackageImpl implements PlacementPacka
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
-			(thePlacementPackage, 
+			(thePlacementPackage,
 			 new EValidator.Descriptor() {
 				 public EValidator getEValidator() {
 					 return PlacementValidator.INSTANCE;
@@ -115,7 +116,6 @@ public class PlacementPackageImpl extends EPackageImpl implements PlacementPacka
 		// Mark meta-data to indicate it can't be changed
 		thePlacementPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(PlacementPackage.eNS_URI, thePlacementPackage);
 		return thePlacementPackage;
@@ -250,17 +250,17 @@ public class PlacementPackageImpl extends EPackageImpl implements PlacementPacka
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
-		  (this, 
-		   source, 
+		  (this,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (placementlinkEClass, 
-		   source, 
+		  (placementlinkEClass,
+		   source,
 		   new String[] {
-			 "constraints", "targetConstraint"
+			   "constraints", "targetConstraint"
 		   });
 	}
 

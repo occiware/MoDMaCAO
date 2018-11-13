@@ -8,7 +8,7 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
-    <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
+    <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EDataType" name="URL" instanceClassName="java.net.URL"/>
   <eClassifiers xsi:type="ecore:EDataType" name="URI" instanceClassName="java.net.URI"/>

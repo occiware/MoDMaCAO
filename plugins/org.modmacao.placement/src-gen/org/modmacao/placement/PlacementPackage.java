@@ -311,7 +311,6 @@ public interface PlacementPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PLACEMENTLINK = eINSTANCE.getPlacementlink();
-
 		/**
 		 * The meta object literal for the '<em><b>Source Constraint</b></em>' operation.
 		 * <!-- begin-user-doc -->
@@ -319,7 +318,6 @@ public interface PlacementPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation PLACEMENTLINK___SOURCE_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getPlacementlink__SourceConstraint__DiagnosticChain_Map();
-
 		/**
 		 * The meta object literal for the '<em><b>Target Constraint</b></em>' operation.
 		 * <!-- begin-user-doc -->

@@ -149,8 +149,8 @@ public class ComponentImpl extends ResourceImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void start() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Component!start()
+	public void deploy() {
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Component!deploy()
 	}
 
 	/**
@@ -158,8 +158,8 @@ public class ComponentImpl extends ResourceImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void stop() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Component!stop()
+	public void undeploy() {
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Component!undeploy()
 	}
 
 	/**
@@ -176,8 +176,8 @@ public class ComponentImpl extends ResourceImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void deploy() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Component!deploy()
+	public void start() {
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Component!start()
 	}
 
 	/**
@@ -185,8 +185,8 @@ public class ComponentImpl extends ResourceImpl implements Component {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void undeploy() {
-		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Component!undeploy()
+	public void stop() {
+		throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/occi/platform/ecore!Component!stop()
 	}
 
 	/**
@@ -293,7 +293,7 @@ public class ComponentImpl extends ResourceImpl implements Component {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (occiComponentState: ");
 		result.append(occiComponentState);
 		result.append(", occiComponentStateMessage: ");

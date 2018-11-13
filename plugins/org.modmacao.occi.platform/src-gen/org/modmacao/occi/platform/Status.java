@@ -46,7 +46,9 @@ public enum Status implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DEPLOYED(1, "deployed", "deployed"), /**
+	DEPLOYED(1, "deployed", "deployed"),
+
+	/**
 	 * The '<em><b>Active</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -54,7 +56,9 @@ public enum Status implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ACTIVE(2, "active", "active"), /**
+	ACTIVE(2, "active", "active"),
+
+	/**
 	 * The '<em><b>Inactive</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,7 +66,9 @@ public enum Status implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INACTIVE(3, "inactive", "inactive"), /**
+	INACTIVE(3, "inactive", "inactive"),
+
+	/**
 	 * The '<em><b>Error</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

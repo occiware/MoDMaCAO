@@ -13,9 +13,7 @@
 package org.modmacao.placement;
 
 import java.util.Map;
-
 import org.eclipse.cmf.occi.core.Link;
-
 import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
@@ -33,6 +31,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @generated
  */
 public interface Placementlink extends Link {
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -48,5 +47,4 @@ public interface Placementlink extends Link {
 	 * @generated
 	 */
 	boolean targetConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);
-
 } // Placementlink
