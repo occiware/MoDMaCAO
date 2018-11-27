@@ -34,9 +34,9 @@ public class Generate extends AbstractAcceleoGenerator {
     /**
      * The name of the module.
      *
-     * @generated
+     * @generated NOT
      */
-    public static final String MODULE_FILE_NAME = "/org/modmacao/cm/ansible/generate";
+    public static final String MODULE_FILE_NAME = "/bin/org/modmacao/cm/ansible/generate";
     
     /**
      * The name of the templates that are to be generated.
@@ -383,7 +383,7 @@ public class Generate extends AbstractAcceleoGenerator {
      * 
      * @param resourceSet
      *            The resource set which registry has to be updated.
-     * @generated
+     * @generated NOT
      */
     @Override
     public void registerResourceFactories(ResourceSet resourceSet) {
@@ -404,7 +404,7 @@ public class Generate extends AbstractAcceleoGenerator {
          * To learn more about the registration of Resource Factories, have a look at the Acceleo documentation (Help -> Help Contents). 
          */ 
         
-        // resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(UMLResource.FILE_EXTENSION, UMLResource.Factory.INSTANCE);
+        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("occie", new OCCIResourceFactoryImpl());
     }
     
 }

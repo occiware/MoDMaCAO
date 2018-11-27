@@ -2,7 +2,7 @@
 [module generate('http://schemas.ogf.org/occi/core/ecore')]
 
 
-[template public generateElement(aMixin : Mixin)]
+[template public generateElement(aMixin : occi::Mixin)]
 [comment @main/]
 [file (aMixin.name.toLowerCase() + '/tasks/main.yml', false, 'UTF-8')]
 - name: Deploy [aMixin.name/]
