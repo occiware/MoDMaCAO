@@ -4,7 +4,7 @@
 
 [template public generateElement(aMixin : Mixin)]
 [comment @main/]
-[file (aMixin.name + '/tasks/main.yml', false, 'UTF-8')]
+[file (aMixin.name.toLowerCase() + '/tasks/main.yml', false, 'UTF-8')]
 - name: Deploy [aMixin.name/]
   block:	
    - debug: msg="Operation deploy not implemented."
