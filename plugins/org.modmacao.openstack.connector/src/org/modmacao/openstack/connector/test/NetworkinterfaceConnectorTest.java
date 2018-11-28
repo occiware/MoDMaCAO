@@ -11,11 +11,7 @@ import org.modmacao.openstack.connector.ComputeConnector;
 import org.modmacao.openstack.connector.ConnectorFactory;
 import org.modmacao.openstack.connector.NetworkinterfaceConnector;
 
-import com.sun.xml.internal.ws.wsdl.parser.RuntimeWSDLParser;
-
 import openstackruntime.OpenstackruntimePackage;
-import openstackruntime.Runtimeid;
-import ossweruntime.OssweruntimePackage;
 
 public class NetworkinterfaceConnectorTest {
 	private NetworkinterfaceConnector niut = null;	
