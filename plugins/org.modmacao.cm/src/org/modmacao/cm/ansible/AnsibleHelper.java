@@ -12,7 +12,17 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
+import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
+import org.eclipse.cmf.occi.core.OCCIFactory;
+import org.eclipse.cmf.occi.core.Resource;
+import org.eclipse.cmf.occi.infrastructure.Compute;
+import org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface;
+import org.eclipse.cmf.occi.infrastructure.Networkinterface;
+import org.eclipse.emf.common.util.EList;
+import org.modmacao.ansibleconfiguration.Ansibleendpoint;
+import org.modmacao.occi.platform.Component;
+import org.modmacao.placement.Placementlink;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
@@ -186,6 +196,30 @@ public final class AnsibleHelper {
 			attributes.addAll(base.getAttributes());
 		}
 		
+		// If the entity is a Resource, collect all attribute states of the connected Resources
+		if (entity instanceof Resource) {
+			Resource resource = (Resource) entity;
+			for (Link link: resource.getLinks()) {
+				Resource target = link.getTarget();
+				List<AttributeState> collectedAttributes  = new LinkedList<AttributeState>();
+				collectedAttributes.addAll(target.getAttributes());
+				for (MixinBase base: target.getParts()) {
+					collectedAttributes.addAll(base.getAttributes());
+				}
+				for (AttributeState attribute: collectedAttributes) {
+					AttributeState modifiedAttribute = OCCIFactory.eINSTANCE.createAttributeState();
+					modifiedAttribute.setName(getTitle(target).replace(' ', '_') + '_' + attribute.getName());
+					modifiedAttribute.setValue(attribute.getValue());
+					attributes.add(modifiedAttribute);
+				}
+				if (target instanceof Component) {
+					AttributeState modifiedAttribute = OCCIFactory.eINSTANCE.createAttributeState();
+					modifiedAttribute.setName(getTitle(target).replace(' ', '_') + '_' + "IPAddress");
+					modifiedAttribute.setValue(getIPAddress(target));
+				}
+			}
+		}
+		
 		for (AttributeState attribute: attributes) {
 			//  Ansible does not allow variable names with points, so we replace them with underscores
 			String name = attribute.getName().replace('.', '_');
@@ -199,4 +233,91 @@ public final class AnsibleHelper {
 		
 		return variablefile;
 	}
+
+
+	public String getTitle(Resource resource) {
+		if (resource.getTitle() != null)
+			return resource.getTitle();
+			
+		for (AttributeState attribute: resource.getAttributes()) {
+			if (attribute.getName().equals("occi.core.title"));
+				return attribute.getValue();
+		}
+		
+		return null;
+	}
+
+
+	public String getIPAddress(Resource resource) {
+			EList<Link> links = resource.getLinks();
+			Networkinterface networklink = null;
+			Placementlink hosting = null;
+			String ipaddress = null;
+	
+			for (Link link:links) {
+				if (link instanceof Placementlink) {
+					AnsibleCMTool.LOGGER.info("Found placementlink for " + getTitle(resource));
+					hosting = (Placementlink) link;
+					break;
+				}	
+			}
+			if (hosting == null) {
+				AnsibleCMTool.LOGGER.warn("No hosting found for component " + getTitle(resource) + ". Falling back to localhost.");
+				ipaddress = "127.0.0.1";
+				return ipaddress;					
+			} else {
+				Compute target = (Compute) hosting.getTarget();
+				links = target.getLinks();
+	
+				List<Link> endpointCandidates = new LinkedList<Link>();
+				
+				for (Link link:links) {
+					if (link instanceof Networkinterface) {
+						AnsibleCMTool.LOGGER.info("Found network interface for " + target);
+						endpointCandidates.add(link);
+						for (MixinBase mixin: link.getParts()) {
+							if (mixin instanceof Ansibleendpoint) {
+								AnsibleCMTool.LOGGER.info("Found explicitly specified Ansible endpoint for " + target);
+								networklink = (Networkinterface) link;
+								endpointCandidates.clear();
+								break;
+							}
+						}
+					}
+					if (networklink != null) {
+						break;
+					}
+				}
+				
+				if (endpointCandidates.size() > 0) {
+					networklink = (Networkinterface) endpointCandidates.get(0);
+				}
+				
+				if (networklink == null) {
+					AnsibleCMTool.LOGGER.error("No network interface found for " + target);	
+				} else {
+					// Retrieving object to ensure ip address is correct
+					networklink.occiRetrieve();
+					List<AttributeState> attributes  = new LinkedList<AttributeState>();
+					attributes.addAll(networklink.getAttributes());
+					for (MixinBase base: networklink.getParts()) {
+						if (base instanceof Ipnetworkinterface) {
+							ipaddress = ((Ipnetworkinterface) base).getOcciNetworkinterfaceAddress();
+						}
+					}
+					
+	//				for (AttributeState attribute: attributes ) {
+	//					LOGGER.debug(attribute.getName() + ":" + attribute.getValue());
+	//					if (attribute.getName().equals("occi.networkinterface.address")) {
+	//						LOGGER.info("Found IP address for " + networklink);
+	//						ipaddress = attribute.getValue();
+	//						LOGGER.info("IP address is " + ipaddress);
+	//						break;
+	//					}
+	//				}
+				}
+			}
+	
+			return ipaddress;
+		}
 }

@@ -3,27 +3,18 @@ package org.modmacao.cm.ansible;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
-import org.eclipse.cmf.occi.core.AttributeState;
-import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
-import org.eclipse.cmf.occi.infrastructure.Compute;
-import org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface;
-import org.eclipse.cmf.occi.infrastructure.Networkinterface;
-import org.eclipse.emf.common.util.EList;
-import org.modmacao.ansibleconfiguration.Ansibleendpoint;
 import org.modmacao.cm.ConfigurationManagementTool;
 import org.modmacao.occi.platform.Application;
 import org.modmacao.occi.platform.Component;
-import org.modmacao.placement.Placementlink;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class AnsibleCMTool implements ConfigurationManagementTool {
-	private static Logger LOGGER = LoggerFactory.getLogger(AnsibleCMTool.class);
+	static Logger LOGGER = LoggerFactory.getLogger(AnsibleCMTool.class);
 
 	@Override
 	public int deploy(Application app) {
@@ -185,81 +176,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		return roles;
 	}
 	
-	private String getIPAddress(Resource resource) {
-		EList<Link> links = resource.getLinks();
-		Networkinterface networklink = null;
-		Placementlink hosting = null;
-		String ipaddress = null;
-
-		for (Link link:links) {
-			if (link instanceof Placementlink) {
-				LOGGER.info("Found placementlink for " + resource.getTitle());
-				hosting = (Placementlink) link;
-				break;
-			}	
-		}
-		if (hosting == null) {
-			LOGGER.warn("No hosting found for component " + resource.getTitle() + ". Falling back to localhost.");
-			ipaddress = "127.0.0.1";
-			return ipaddress;					
-		} else {
-			Compute target = (Compute) hosting.getTarget();
-			links = target.getLinks();
-
-			List<Link> endpointCandidates = new LinkedList<Link>();
-			
-			for (Link link:links) {
-				if (link instanceof Networkinterface) {
-					LOGGER.info("Found network interface for " + target);
-					endpointCandidates.add(link);
-					for (MixinBase mixin: link.getParts()) {
-						if (mixin instanceof Ansibleendpoint) {
-							LOGGER.info("Found explicitly specified Ansible endpoint for " + target);
-							networklink = (Networkinterface) link;
-							endpointCandidates.clear();
-							break;
-						}
-					}
-				}
-				if (networklink != null) {
-					break;
-				}
-			}
-			
-			if (endpointCandidates.size() > 0) {
-				networklink = (Networkinterface) endpointCandidates.get(0);
-			}
-			
-			if (networklink == null) {
-				LOGGER.error("No network interface found for " + target);	
-			} else {
-				// Retrieving object to ensure ip address is correct
-				networklink.occiRetrieve();
-				List<AttributeState> attributes  = new LinkedList<AttributeState>();
-				attributes.addAll(networklink.getAttributes());
-				for (MixinBase base: networklink.getParts()) {
-					if (base instanceof Ipnetworkinterface) {
-						ipaddress = ((Ipnetworkinterface) base).getOcciNetworkinterfaceAddress();
-					}
-				}
-				
-//				for (AttributeState attribute: attributes ) {
-//					LOGGER.debug(attribute.getName() + ":" + attribute.getValue());
-//					if (attribute.getName().equals("occi.networkinterface.address")) {
-//						LOGGER.info("Found IP address for " + networklink);
-//						ipaddress = attribute.getValue();
-//						LOGGER.info("IP address is " + ipaddress);
-//						break;
-//					}
-//				}
-			}
-		}
-
-		return ipaddress;
-	}
-	
 	private int executeRoles(Resource resource, List<String> roles, String task) throws Exception{
-		String ipaddress = getIPAddress(resource);
+		AnsibleHelper helper = new AnsibleHelper();
+		String ipaddress = helper.getIPAddress(resource);
 		String user = this.getUser();
 		String options = null;
 		
@@ -267,9 +186,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 			options = "--connection=local";
 		}
 		
-		String basedir = "/tmp/" + resource.getTitle() + "_ansible_" + System.currentTimeMillis();
+		String basedir = "/tmp/" + helper.getTitle(resource).replace(' ', '_') + "_ansible_" + System.currentTimeMillis();
 		
-		AnsibleHelper helper = new AnsibleHelper();
+		
 		
 		helper.createConfiguration(Paths.get("ansible.cfg"), 
 				Paths.get(helper.getProperties().getProperty("private_key_path")));
