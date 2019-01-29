@@ -195,6 +195,12 @@ public final class AnsibleHelper {
 		for (MixinBase base: entity.getParts()) {
 			attributes.addAll(base.getAttributes());
 		}
+		if (entity instanceof Component) {
+			AttributeState modifiedAttribute = OCCIFactory.eINSTANCE.createAttributeState();
+			modifiedAttribute.setName("ip_address");
+			modifiedAttribute.setValue(getIPAddress((Resource) entity));
+			attributes.add(modifiedAttribute);
+		}
 		
 		// If the entity is a Resource, collect all attribute states of the connected Resources
 		if (entity instanceof Resource) {
@@ -214,8 +220,9 @@ public final class AnsibleHelper {
 				}
 				if (target instanceof Component) {
 					AttributeState modifiedAttribute = OCCIFactory.eINSTANCE.createAttributeState();
-					modifiedAttribute.setName(getTitle(target).replace(' ', '_') + '_' + "IPAddress");
+					modifiedAttribute.setName(getTitle(target).replace(' ', '_') + '_' + "ip_address");
 					modifiedAttribute.setValue(getIPAddress(target));
+					attributes.add(modifiedAttribute);
 				}
 			}
 		}
