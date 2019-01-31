@@ -214,13 +214,13 @@ public final class AnsibleHelper {
 				}
 				for (AttributeState attribute: collectedAttributes) {
 					AttributeState modifiedAttribute = OCCIFactory.eINSTANCE.createAttributeState();
-					modifiedAttribute.setName(getTitle(target).replace(' ', '_') + '_' + attribute.getName());
+					modifiedAttribute.setName("id" + getTitle(target).replaceAll("[- ]","_") +  '_' + attribute.getName());
 					modifiedAttribute.setValue(attribute.getValue());
 					attributes.add(modifiedAttribute);
 				}
 				if (target instanceof Component) {
 					AttributeState modifiedAttribute = OCCIFactory.eINSTANCE.createAttributeState();
-					modifiedAttribute.setName(getTitle(target).replace(' ', '_') + '_' + "ip_address");
+					modifiedAttribute.setName("id" + getTitle(target).replaceAll("[- ]","_") + '_' + "ip_address");
 					modifiedAttribute.setValue(getIPAddress(target));
 					attributes.add(modifiedAttribute);
 				}
