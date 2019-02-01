@@ -14,10 +14,14 @@
  */
 package org.modmacao.openstack.connector;
 
+import org.eclipse.cmf.occi.infrastructure.StorageLinkStatus;
+import org.openstack4j.api.OSClient.OSClientV2;
+import org.openstack4j.model.compute.Server;
+import org.openstack4j.model.compute.VolumeAttachment;
+import org.openstack4j.model.storage.block.Volume;
+import org.openstack4j.model.storage.block.Volume.Status;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import org.eclipse.cmf.occi.infrastructure.StorageLinkStatus;
 
 
 /**
@@ -28,6 +32,7 @@ import org.eclipse.cmf.occi.infrastructure.StorageLinkStatus;
  */
 public class StoragelinkConnector extends org.eclipse.cmf.occi.infrastructure.impl.StoragelinkImpl
 {
+	private OSClientV2 os = null;
 	/**
 	 * Initialize the logger.
 	 */
@@ -55,7 +60,52 @@ public class StoragelinkConnector extends org.eclipse.cmf.occi.infrastructure.im
 	public void occiCreate()
 	{
 		LOGGER.debug("occiCreate() called on " + this);
-		// TODO: Implement this callback or remove this method.
+				
+		os = OpenStackHelper.getInstance().getOSClient();
+		
+		String serverID = OpenStackHelper.getInstance().getRuntimeID(this.getSource());
+		if (serverID == null) {
+			LOGGER.error("Unable to retrieve server id.");
+			this.setOcciStoragelinkState(StorageLinkStatus.ERROR);
+			this.setOcciStoragelinkStateMessage("Unale to retrieve server id.");
+			return;
+		}
+		
+		Server server = os.compute().servers().get(serverID);
+		
+		if (server == null) {
+			LOGGER.error("Source server not found.");
+			this.setOcciStoragelinkState(StorageLinkStatus.ERROR);
+			this.setOcciStoragelinkStateMessage("Source server not found.");
+			return;
+		}
+		
+		String volumeID = OpenStackHelper.getInstance().getRuntimeID(this.getTarget());
+		Volume volume = os.blockStorage().volumes().get(volumeID);
+		
+		if (volume == null) {
+			LOGGER.error("Target volume not found.");
+			this.setOcciStoragelinkState(StorageLinkStatus.ERROR);
+			this.setOcciStoragelinkStateMessage("Target volume not found.");
+			return;
+		}
+		
+		if (volume.getStatus() == Status.AVAILABLE) {
+			VolumeAttachment attachment = os.compute().servers().attachVolume(serverID, volumeID, null);
+		
+			if (attachment == null) {
+				LOGGER.error("Error attaching volume.");
+				this.setOcciStoragelinkState(StorageLinkStatus.ERROR);
+				this.setOcciStoragelinkStateMessage("Error attaching volume.");
+				return;	
+			}
+		}
+		else {
+			LOGGER.info("Volume is currently not available. Try again later.");
+			this.setOcciStoragelinkState(StorageLinkStatus.ERROR);
+			this.setOcciStoragelinkStateMessage("Volume was not available during attachment. Try again later.");	
+			return;
+		}
 	}
 	// End of user code
 
@@ -91,7 +141,31 @@ public class StoragelinkConnector extends org.eclipse.cmf.occi.infrastructure.im
 	public void occiDelete()
 	{
 		LOGGER.debug("occiDelete() called on " + this);
-		// TODO: Implement this callback or remove this method.
+		
+		os = OpenStackHelper.getInstance().getOSClient();
+		
+		String serverID = OpenStackHelper.getInstance().getRuntimeID(this.getSource());
+		Server server = os.compute().servers().get(serverID);
+		
+		if (server == null) {
+			LOGGER.error("Source server not found.");
+			this.setOcciStoragelinkState(StorageLinkStatus.ERROR);
+			this.setOcciStoragelinkStateMessage("Source server not found.");
+			return;
+		}
+		
+		String volumeID = OpenStackHelper.getInstance().getRuntimeID(this.getTarget());
+		Volume volume = os.blockStorage().volumes().get(volumeID);
+		
+		if (volume == null) {
+			LOGGER.error("Target volume not found.");
+			this.setOcciStoragelinkState(StorageLinkStatus.ERROR);
+			this.setOcciStoragelinkStateMessage("Target volume not found.");
+			return;
+		}
+		
+		os.compute().servers().detachVolume(serverID, volumeID);
+		
 	}
 	// End of user code
 

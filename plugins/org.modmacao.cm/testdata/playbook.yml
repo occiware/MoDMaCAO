@@ -1,0 +1,8 @@
+---
+- hosts: 127.0.0.1
+  remote_user: testuser
+  become: yes
+  vars_files: 
+    - /home/fglaser/MoDMaCAO/plugins/org.modmacao.cm/testdata/variable.yaml
+  roles:
+    - testrole

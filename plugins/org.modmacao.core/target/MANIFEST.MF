@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: org.modmacao.core;singleton:=true
+Export-Package: modmacao,modmacao.impl,modmacao.util
+Bundle-Name: %pluginName
+Bundle-Version: 1.0.0.201808310927
+Bundle-ClassPath: .
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.core.runtime,org.eclipse.emf.ecore;visibil
+ ity:=reexport,org.eclipse.ocl.pivot;visibility:=reexport,org.eclipse.
+ ocl.examples.codegen;visibility:=reexport,org.modmacao.occi.platform;
+ visibility:=reexport,org.eclipse.cmf.occi.infrastructure;visibility:=
+ reexport,org.eclipse.cmf.occi.core;bundle-version="1.0.0";visibility:
+ =reexport,org.eclipse.cmf.occi.core.ui,org.eclipse.cmf.occi.core.gen.
+ emf.ui
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: %providerName
+

@@ -11,6 +11,8 @@ import org.modmacao.openstack.connector.ComputeConnector;
 import org.modmacao.openstack.connector.ConnectorFactory;
 import org.modmacao.openstack.connector.NetworkinterfaceConnector;
 
+import openstackruntime.OpenstackruntimePackage;
+
 public class NetworkinterfaceConnectorTest {
 	private NetworkinterfaceConnector niut = null;	
 	private ComputeConnector cut = null;
@@ -18,10 +20,9 @@ public class NetworkinterfaceConnectorTest {
 	public void setUp() throws Exception {
 		InfrastructurePackage.eINSTANCE.eClass();
 		OcciRegistry.getInstance().registerExtension("http://schemas.ogf.org/occi/infrastructure#", 
-				"jar:file:////home/fglaser/occiware_current_03012017/plugins/org.eclipse.cmf.occi."
-				+ "infrastructure_1.0.0.201801031230.jar!/model/infrastructure.occie");
+				InfrastructurePackage.class.getClassLoader().getResource("model/Infrastructure.occie").toString());
 		OcciRegistry.getInstance().registerExtension("http://schemas.modmacao.org/openstack/runtime#", 
-				"file:////home/fglaser/occiware_current/workspace/org.modmacao.openstack.runtime/model/openstackruntime.occie");
+				OpenstackruntimePackage.class.getClassLoader().getResource("model/openstackruntime.occie").toString());
 		
 		
 		ConnectorFactory factory = new ConnectorFactory();
@@ -49,6 +50,7 @@ public class NetworkinterfaceConnectorTest {
 		
 		//niut.getParts().add(ipmixin);
 		Network publicnet = factory.createNetwork();
+		//TODO: Fix test to use runtime id mixin
 		
 		publicnet.setId("29d78078-fb4c-47aa-a9af-b8aaf3339590");
 		

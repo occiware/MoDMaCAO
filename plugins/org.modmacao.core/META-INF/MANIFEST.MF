@@ -19,6 +19,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.modmacao.occi.platform;visibility:=reexport,
  org.modmacao.placement;visibility:=reexport,
  org.eclipse.cmf.occi.infrastructure;visibility:=reexport,
- org.eclipse.cmf.occi.core;visibility:=reexport,
+ org.eclipse.cmf.occi.core;bundle-version="1.0.0";visibility:=reexport,
  org.eclipse.cmf.occi.core.ui,
  org.eclipse.cmf.occi.core.gen.emf.ui

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2018 University of Goettingen
+  
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+ 
+ Contributors:
+ - Fabian Korte  <fabian.korte@cs.uni-goettingen.de>
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.modmacao</groupId>
+  <artifactId>org.modmacao.parent</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <!-- OCCI Core -->
+    <module>plugins/org.modmacao.core.connector</module>
+    <module>plugins/org.modmacao.occi.platform</module>
+    <module>plugins/org.modmacao.placement</module>
+    <module>plugins/org.modmacao.core</module>
+    <module>plugins/org.modmacao.cm</module>
+    <module>plugins/org.modmacao.ansible</module>
+    <module>plugins/org.modmacao.mongodb</module>
+  </modules>
+
+  <properties>
+    <tycho-version>1.0.0</tycho-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <repositories>
+    <!-- configure p2 repository to resolve against -->
+	<repository>
+      <id>oxygen</id>
+      <layout>p2</layout>
+      <url>http://download.eclipse.org/releases/oxygen</url>
+    </repository>
+ 
+    <repository>
+      <id>mvnrepository</id>
+      <url>http://repo1.maven.org/maven2</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+    
+    <repository>
+    <id>epsilonrepository</id>  
+     <url>http://download.eclipse.org/epsilon/updates/</url> 
+     <layout>p2</layout>
+    </repository>
+     <repository>
+            <id>OCCI-Studio</id>
+            <url>http://c109-125.cloud.gwdg.de/</url>
+            <layout>p2</layout>
+</repository>
+
+        <repository>
+            <id>oss.sonatype.oss.sonatype.org-snapshots</id>
+            <name>oss-sonatype</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+  </repositories>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- enable tycho build extension -->
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <environments>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

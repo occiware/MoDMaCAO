@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.modmacao.core.connector.ApplicationConnector;
+import org.modmacao.occi.platform.PlatformPackage;
 import org.modmacao.occi.platform.Status;
 
 
@@ -31,7 +32,7 @@ public class ApplicationConnectorTest {
 		//org.apache.log4j.BasicConfigurator.configure();
 		Logger.getRootLogger().setLevel(Level.DEBUG);
 		
-		org.eclipse.cmf.occi.platform.PlatformPackage.eINSTANCE.eClass();
+		PlatformPackage.eINSTANCE.eClass();
 //		ModmacaoPackage.eINSTANCE.eClass();
 //		PlatformPackage.eINSTANCE.eClass();
 //		MongodbPackage.eINSTANCE.eClass();
