@@ -35,8 +35,7 @@ Compute resource (i.e., OnlyOnePlacementLink constraint).  Then, modeling specif
 define new mixin types  inheriting  from Component, e.g., Client and Server
 types.  These new component types can  define  their  own  attributes  and  constraints.
 For instance,  a server component has a network port  on  which  to  listen  to  client  requests  (i.e., server.port
-immutable  attribute)  and  a  client component  must  be  connected  to  a  server  com-
-ponent (i.e., OneServerDependency constraint).
+immutable  attribute)  and  a  client component  must  be  connected  to  a  server  component (i.e., OneServerDependency constraint).
 
 * The Version data type defines the valid string pattern for version values, i.e., <major>.<minor>.
 
@@ -155,6 +154,6 @@ An overview of a sample Apache Cassandra configuration using the defined Apache 
 An overview of the Apache Spark extension is shown below:
 ![Apache Spark extension](/doc/apache-spark-extension.jpg "Apache Spark extension")
 
-An overview of a sample Apache Spark configuration using the defined extension is shown belwo:
+An overview of a sample Apache Spark configuration using the defined extension is shown below:
 ![Sample Apache Spark configuration](/doc/apache-spark-cluster.jpg "Sample Apache Spark configuration")
 
