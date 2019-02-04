@@ -1,0 +1,41 @@
+- name: Deploy MySQL
+  block:
+  - copy: src=install.sh dest=~/install.sh mode=700
+  - yum: 
+     name: https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm 
+     state: present 
+  - yum: name=mysql-server state=present update_cache=true
+  - shell: ~/install.sh      
+  - file: path=/var/lib/mysql owner=mysql group=mysql recurse=yes 
+  when: task == "DEPLOY"
+  become: yes
+  
+- name: Configure MySQL  
+  block:
+  - copy: src=configure.sh dest=~/configure.sh mode=700
+  - shell: export RootPassword="G*Ce*6ZVNF4LEywk" && ~/configure.sh
+  when: task == "CONFIGURE"
+  become: yes
+  
+- name: Start MySQL  
+  block:
+  - copy: src=start.sh dest=~/start.sh mode=700
+  - shell: ~/start.sh
+  when: task == "START"
+  become: yes
+  
+- name: Stop MySQL
+  block:
+  - copy: src=stop.sh dest=~/stop.sh mode=700
+  - shell: ~/stop.sh
+  when: task == "STOP"
+  become: yes
+
+- name: Undeploy MySQL
+  block:
+  - yum:
+     name: https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
+     state: absent
+  - yum: name=mysql-server state=absent
+  when: task == "UNDEPLOY"
+  become: yes
