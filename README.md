@@ -4,8 +4,10 @@ of Cloud Applications with OCCI (MoDMaCAO) framework and the models for several 
 
 ## Overall Architecture
 The overall architecture is shown below:
-![Overall Architecture](/doc/overall-architecture.png "Overall Architecture")
 
+<p align="center">
+  <img src="/doc/overall-architecture.png" alt="Overall Architecture" width="600"/>
+</p>
 
 ## The MoDMaCAO Modeling Framework
 The MoDMaCAO modeling framework is
@@ -16,6 +18,7 @@ based on OCCIware and allows cloud architects to:
 
 An overview of the MoDMaCAO modeling framework is shown below:
 ![MoDMaCAO modeling framework](/doc/modmacao-modeling-framework.jpg "MoDMaCAO modeling framework")
+
 
 * The Application mixin  type  abstracts  the  notion  of  cloud  application. This  mixin  applies
 to  OCCI  Platform Application resources. A cloud  application  is  composed  of  one  or  more
@@ -35,8 +38,7 @@ Compute resource (i.e., OnlyOnePlacementLink constraint).  Then, modeling specif
 define new mixin types  inheriting  from Component, e.g., Client and Server
 types.  These new component types can  define  their  own  attributes  and  constraints.
 For instance,  a server component has a network port  on  which  to  listen  to  client  requests  (i.e., server.port
-immutable  attribute)  and  a  client component  must  be  connected  to  a  server  com-
-ponent (i.e., OneServerDependency constraint).
+immutable  attribute)  and  a  client component  must  be  connected  to  a  server  component (i.e., OneServerDependency constraint).
 
 * The Version data type defines the valid string pattern for version values, i.e., <major>.<minor>.
 
@@ -139,14 +141,18 @@ PlacementLinks, which are connected to a network using NetworkInterfaces.
 
 ### LAMP
 An overview of the LAMP specific extension is shown below:
-![LAMP extension](/doc/lamp-extension.jpg "LAMP extension")
+<p align="center">
+  <img src="/doc/lamp-extension.jpg" alt="LAMP Extension" width="600"/>
+</p>
 
 An overview of a LAMP configuration using the defined LAMP extension is shown below:
 ![Sample LAMP configuration](/doc/lamp-cluster.jpg "Sample LAMP configuration")
 
 ### Apache Cassandra
 An overview of the Apache Cassandra extension is shown below:
-![Apache Cassandra extension](/doc/apache-cassandra-extension.jpg "Apache Cassandra extension")
+<p align="center">
+  <img src="/doc/apache-cassandra-extension.jpg" alt="Apache Cassandra Extension" width="400"/>
+</p>
 
 An overview of a sample Apache Cassandra configuration using the defined Apache Cassandra extension is shown below:
 ![Sample Cassandra configuration](/doc/apache-cassandra-cluster.jpg "Sample Apache Cassandra configuration")
@@ -155,6 +161,6 @@ An overview of a sample Apache Cassandra configuration using the defined Apache 
 An overview of the Apache Spark extension is shown below:
 ![Apache Spark extension](/doc/apache-spark-extension.jpg "Apache Spark extension")
 
-An overview of a sample Apache Spark configuration using the defined extension is shown belwo:
+An overview of a sample Apache Spark configuration using the defined extension is shown below:
 ![Sample Apache Spark configuration](/doc/apache-spark-cluster.jpg "Sample Apache Spark configuration")
 
