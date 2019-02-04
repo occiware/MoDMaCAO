@@ -1,27 +1,48 @@
 - name: Deploy Tomcat
-  block:	
-   - debug: msg="Operation deploy not implemented."
+  block:
+   - yum: name=java-1.8.0-openjdk-devel state=present
+   - unarchive: 
+       src: https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.14/bin/apache-tomcat-9.0.14.tar.gz
+       dest: /tmp
+       remote_src: yes
+   - file:
+      path: /opt/tomcat/
+      state: directory
+   - shell: cp -r /tmp/apache-tomcat-9.0.14/* /opt/tomcat/
   when: task == "DEPLOY"
-  become_user: root
+  become: yes
   
 - name: Configure Tomcat  
   block:
-  - debug: msg="Operation configure not implemented."
+  - user:
+     name: tomcat
+     shell: /bin/false
+     home: /opt/tomcat
+  - file:
+     path: /opt/tomcat/
+     owner: tomcat
+     recurse: yes
+  - copy:
+     src: tomcat.service
+     dest: /etc/systemd/system/tomcat.service
   when: task == "CONFIGURE"
-  become_user: root
+  become: yes
   
 - name: Start Tomcat  
   block:
-  - debug: msg="Operation start not implemented."
+  - service:
+     name: tomcat
+     state: started 
   when: task == "START"
-  become_user: root
+  become: yes
   
 - name: Stop Tomcat
   block:
-  - debug: msg="Operation stop not implemented."
-
+  - service: 
+     name: tomcat
+     state: stopped
   when: task == "STOP"
-  become_user: root
+  become: yes
 
 - name: Undeploy Tomcat
   block:
