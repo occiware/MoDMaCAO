@@ -404,7 +404,7 @@ public class VariablesGenerator extends AbstractAcceleoGenerator {
          * To learn more about the registration of Resource Factories, have a look at the Acceleo documentation (Help -> Help Contents). 
          */ 
         
-        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("occie", new OCCIResourceFactoryImpl());
+        resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("occic", new OCCIResourceFactoryImpl());
     }
     
 }

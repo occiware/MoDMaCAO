@@ -2,9 +2,39 @@
 [module VariablesGenerator('http://schemas.ogf.org/occi/core/ecore')]
 
 
-[template public generateElement(anEntity : occi::Entity)]
+[template public generateElement(aResource : occi::Resource)]
 [comment @main/]
 [file ('vars2.yml', false, 'UTF-8')]
-	test = [anEntity.title/]
+[if (aResource.attributes->size() > 0)]
+attributes:
+[for (as : AttributeState | aResource.attributes)]
+  [as.name/]: [as.value/]
+[/for]
+[/if]
+
+[if (aResource.links->size() > 0)]
+links:
+[for (link : Link | aResource.links)]
+  - id: [link.id/]
+    kind: [link.kind.term/]
+  [if (link.title <> null)]
+    title: [link.title/]
+  [/if]
+  [if (link.parts->size() > 0)]
+    mixins:
+    [for (part : MixinBase | link.parts)]
+      - [part.mixin.name/]
+    [/for]
+  [/if]
+  [if (link.target <> null)]
+    target: 
+      id: [link.target.id/]
+      kind: [link.target.kind.term/]
+      [if (link.target.title <> null)]
+      title: [link.target.title/]
+      [/if]
+  [/if]
+[/for]
+[/if]
 [/file]
 [/template]

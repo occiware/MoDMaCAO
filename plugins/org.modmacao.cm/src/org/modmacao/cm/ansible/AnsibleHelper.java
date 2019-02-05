@@ -189,7 +189,7 @@ public final class AnsibleHelper {
 	 */
 	public Path createVariableFile(Path variablefile, Entity entity) throws IOException{
 		
-		VariablesGenerator gen = new VariablesGenerator(entity.eResource().getURI(), 
+		VariablesGenerator gen = new VariablesGenerator(entity, 
 				variablefile.getParent().toFile(), new ArrayList<String>());
 		gen.doGenerate(null);
 		
