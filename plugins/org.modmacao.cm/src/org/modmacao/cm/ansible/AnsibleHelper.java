@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
@@ -19,6 +20,7 @@ import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface;
 import org.eclipse.cmf.occi.infrastructure.Networkinterface;
+import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.modmacao.ansibleconfiguration.Ansibleendpoint;
 import org.modmacao.occi.platform.Component;
@@ -186,6 +188,12 @@ public final class AnsibleHelper {
 	 * @throws IOException
 	 */
 	public Path createVariableFile(Path variablefile, Entity entity) throws IOException{
+		
+		VariablesGenerator gen = new VariablesGenerator(entity, 
+				variablefile.getParent().toFile(), new ArrayList<String>());
+		gen.doGenerate(null);
+		
+		
 		String lb = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder();
 		List<AttributeState> attributes  = new LinkedList<AttributeState>();
