@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
+import org.eclipse.emf.common.util.BasicMonitor;
 import org.modmacao.cm.ConfigurationManagementTool;
 import org.modmacao.occi.platform.Application;
 import org.modmacao.occi.platform.Component;
@@ -187,7 +188,6 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		}
 		
 		String basedir = "/tmp/" + helper.getTitle(resource).replace(' ', '_') + "_ansible_" + System.currentTimeMillis();
-		
 		
 		
 		helper.createConfiguration(Paths.get("ansible.cfg"), 
