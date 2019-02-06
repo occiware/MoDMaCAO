@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -107,12 +108,12 @@ public final class AnsibleHelper {
 	 * @param ipaddress The ipaddres of the host on which this playbook shoule be executed.
 	 * @param roles The roles that should be executed on the host.
 	 * @param user The user that is used to connect to the host.
-	 * @param variables A path to the variables file that should be used. 
+	 * @param variables A list of paths to the variables file that should be used. 
 	 * @param path The path where this playbook should be created.
 	 * @return The path where this playbook was created.
 	 * @throws IOException
 	 */
-	public Path createPlaybook(String ipaddress, List<String> roles, String user, Path variables,
+	public Path createPlaybook(String ipaddress, List<String> roles, String user, List<Path> variables,
 			Path path) throws IOException {
 		String lb = System.getProperty("line.separator");
 		String offset = "  ";
@@ -122,7 +123,9 @@ public final class AnsibleHelper {
 		sb.append(offset).append("remote_user: ").append(user).append(lb);
 		sb.append(offset).append("become: yes").append(lb);
 		sb.append(offset).append("vars_files: ").append(lb);
-		sb.append(offset).append(offset).append("- ").append(variables.toAbsolutePath().toString()).append(lb);
+		for (Path variablepath: variables) {
+			sb.append(offset).append(offset).append("- ").append(variablepath.toAbsolutePath().toString()).append(lb);
+		}
 		sb.append(offset).append("roles:").append(lb);
 		
 		for (String role: roles) {
@@ -187,13 +190,7 @@ public final class AnsibleHelper {
 	 * @return The path where this variable file was created.
 	 * @throws IOException
 	 */
-	public Path createVariableFile(Path variablefile, Entity entity) throws IOException{
-		
-		VariablesGenerator gen = new VariablesGenerator(entity, 
-				variablefile.getParent().toFile(), new ArrayList<String>());
-		gen.doGenerate(null);
-		
-		
+	public Path createVariableFile(Path variablefile, Entity entity) throws IOException{		
 		String lb = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder();
 		List<AttributeState> attributes  = new LinkedList<AttributeState>();
@@ -248,6 +245,23 @@ public final class AnsibleHelper {
 		
 		return variablefile;
 	}
+	
+	/**
+	 * Creates an extended Ansible variables file with Acceleo.
+	 * @param variablepath The Path where this variable file should be created.
+	 * @param entity The entity for whichs AttributeStates the variable file should be created.
+	 * @return The path where this variable file was created.
+	 * @throws IOException
+	 */
+	public Path createExtendedVariableFile(Path variablepath, Entity entity) throws IOException{
+		
+		VariablesGenerator gen = new VariablesGenerator(entity, 
+				variablepath.toFile(), new ArrayList<String>());
+		gen.doGenerate(null);
+		
+		return Paths.get(variablepath.toString(), "vars2.yaml"); 
+	}
+
 
 
 	public String getTitle(Resource resource) {
