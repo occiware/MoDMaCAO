@@ -192,9 +192,12 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		
 		helper.createConfiguration(Paths.get("ansible.cfg"), 
 				Paths.get(helper.getProperties().getProperty("private_key_path")));
-		Path variablefile = helper.createVariableFile(Paths.get(basedir, "vars.yaml"), resource);
+		List <Path> variablefiles = new ArrayList<Path>();
+		
+		variablefiles.add(helper.createVariableFile(Paths.get(basedir, "vars.yaml"), resource));
+		variablefiles.add(helper.createExtendedVariableFile(Paths.get(basedir), resource));
 			
-		Path playbook = helper.createPlaybook(ipaddress, roles, user, variablefile, 
+		Path playbook = helper.createPlaybook(ipaddress, roles, user, variablefiles, 
 				Paths.get(basedir, "playbook.yml"));
 			
 		Path inventory = helper.createInventory(ipaddress, Paths.get(basedir, "inventory"));

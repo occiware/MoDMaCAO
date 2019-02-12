@@ -1,10 +1,8 @@
 package org.modmacao.openstack.connector.test;
 
-import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 import org.eclipse.cmf.occi.infrastructure.Os_tpl;
 import org.eclipse.cmf.occi.infrastructure.Resource_tpl;
 import org.eclipse.cmf.occi.infrastructure.Ssh_key;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.junit.Before;
 import org.junit.Test;
 import org.modmacao.openstack.connector.ComputeConnector;
@@ -15,24 +13,12 @@ import org.openstack4j.model.compute.Server.Status;
 
 import openstackruntime.Floatingip;
 import openstackruntime.OpenstackruntimeFactory;
-import ossweruntime.OssweruntimeFactory;
 
 public class ComputeConnectorTest {
 	private ComputeConnector cut = null;
 	
 	@Before
 	public void setUp() {	
-//		InfrastructurePackage.eINSTANCE.eClass();
-//		OcciRegistry.getInstance().registerExtension("http://schemas.ogf.org/occi/infrastructure#", 
-//				"jar:file:////home/fglaser/occiware_current_03012017/plugins/org.eclipse.cmf.occi."
-//				+ "infrastructure_1.0.0.201801031230.jar!/model/infrastructure.occie");
-//				
-//		OcciRegistry.getInstance().registerExtension("http://schemas.modmacao.org/openstack/runtime#", 
-//				"file:////home/fglaser/occiware_current/workspace/org.modmacao.openstack.runtime/model/openstackruntime.occie");
-//		
-//		OcciRegistry.getInstance().registerExtension("http://schemas.modmacao.org/openstack/swe#", 
-//				"file:////home/fglaser/occiware_current/workspace/org.modmacao.openstack.swe.runtime/model/ossweruntime.occie");
-//		
 		ConnectorFactory factory = new ConnectorFactory();
 		cut = (ComputeConnector) factory.createCompute();
 		
@@ -45,13 +31,6 @@ public class ComputeConnectorTest {
 				+ "+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeO"
 				+ "ukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV");
 		cut.getParts().add(key);
-		
-		OssweruntimeFactory swefactory = OssweruntimeFactory.eINSTANCE;
-		Os_tpl image = swefactory.createUbuntu_trustytahr();
-		cut.getParts().add(image);
-		
-		Resource_tpl template = (Resource_tpl) swefactory.createSwe_large();
-		cut.getParts().add(template);
 		
 		Floatingip ip = OpenstackruntimeFactory.eINSTANCE.createFloatingip();
 		ip.setOpenstackFloatingipPool("provider");

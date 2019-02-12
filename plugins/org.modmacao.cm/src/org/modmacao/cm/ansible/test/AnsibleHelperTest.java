@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 import org.eclipse.cmf.occi.core.AttributeState;
@@ -57,9 +58,10 @@ public class AnsibleHelperTest {
 		try {
 			ArrayList<String> roles = new ArrayList<String>();		
 			roles.add("testrole");
-			Path variablefile = Paths.get("testdata/variable.yaml");
+			List<Path> variablefiles = new ArrayList<Path>();
+			variablefiles.add(Paths.get("testdata/variable.yaml"));
 			helper.createPlaybook("127.0.0.1", roles,
-					"testuser", variablefile, Paths.get("testdata/playbook.yml"));
+					"testuser", variablefiles, Paths.get("testdata/playbook.yml"));
 		} catch(IOException e) {
 			fail("Should not throw exception.");
 		}
@@ -96,10 +98,11 @@ public class AnsibleHelperTest {
 			entity.getAttributes().add(state2);
 			
 			helper.createVariableFile(Paths.get("testdata/variable.yaml"), entity);
-			Path variablefile = Paths.get("testdata/variable.yaml");
+			List<Path> variablefiles = new ArrayList<Path>();
+			variablefiles.add(Paths.get("testdata/variable.yaml"));
 			
 			Path playbook = helper.createPlaybook("127.0.0.1", roles, 
-					"ubuntu", variablefile, Paths.get("testdata/playbook.yml"));
+					"ubuntu", variablefiles, Paths.get("testdata/playbook.yml"));
 			
 			Path inventory = helper.createInventory("127.0.0.1", 
 					Paths.get("testdata/inventory"));

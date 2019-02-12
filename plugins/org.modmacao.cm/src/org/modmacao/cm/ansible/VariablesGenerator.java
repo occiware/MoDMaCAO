@@ -344,6 +344,9 @@ public class VariablesGenerator extends AbstractAcceleoGenerator {
         if (!isInWorkspace(org.eclipse.cmf.occi.core.OCCIPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE.getNsURI(), org.eclipse.cmf.occi.core.OCCIPackage.eINSTANCE);
         }
+        if (!isInWorkspace(org.eclipse.cmf.occi.infrastructure.InfrastructurePackage.class)) {
+            resourceSet.getPackageRegistry().put(org.eclipse.cmf.occi.infrastructure.InfrastructurePackage.eINSTANCE.getNsURI(), org.eclipse.cmf.occi.infrastructure.InfrastructurePackage.eINSTANCE);
+        }
         
         /*
          * If you want to change the content of this method, do NOT forget to change the "@generated"
