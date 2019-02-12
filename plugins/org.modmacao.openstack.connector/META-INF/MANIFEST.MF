@@ -11,6 +11,8 @@ Bundle-ActivationPolicy: lazy
 Require-Bundle: org.slf4j.api,
  org.junit,
  org.eclipse.osgi,
- org.modmacao.openstack.swe.runtime
+ org.modmacao.openstack.runtime;bundle-version="1.0.0",
+ org.eclipse.cmf.occi.core.connector.jocci;bundle-version="1.0.0",
+ org.eclipse.cmf.occi.infrastructure;bundle-version="1.0.0"
 Export-Package: org.modmacao.openstack.connector
 Import-Package: org.apache.log4j
