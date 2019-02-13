@@ -20,6 +20,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	@Override
 	public int deploy(Application app) {
 		List<String> roles = getRoles(app);
+		if (roles.isEmpty())
+			return 0;
+		
 		int status = -1;
 		
 		try {
@@ -34,6 +37,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	@Override
 	public int configure(Application app) {
 		List<String> roles = getRoles(app);
+		if (roles.isEmpty())
+			return 0;
+		
 		int status = -1;
 		
 		try {
@@ -49,6 +55,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	@Override
 	public int start(Application app) {
 		List<String> roles = getRoles(app);
+		if (roles.isEmpty())
+			return 0;
+		
 		int status = -1;
 		
 		try {
@@ -63,6 +72,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	@Override
 	public int stop(Application app) {
 		List<String> roles = getRoles(app);
+		if (roles.isEmpty())
+			return 0;
+		
 		int status = -1;
 		
 		try {
@@ -79,6 +91,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	@Override
 	public int undeploy(Application app) {
 		List<String> roles = getRoles(app);
+		if (roles.isEmpty())
+			return 0;
+		
 		int status = -1;
 		
 		try {
@@ -94,6 +109,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	@Override
 	public int deploy(Component comp) {
 		List<String> roles = getRoles(comp);
+		if (roles.isEmpty())
+			return 0;
+		
 		int status = -1;
 		
 		try {
@@ -108,6 +126,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	@Override
 	public int configure(Component comp) {
 		List<String> roles = getRoles(comp);
+		if (roles.isEmpty())
+			return 0;
+		
 		int status = -1;
 		
 		try {
@@ -122,6 +143,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	@Override
 	public int start(Component comp) {
 		List<String> roles = getRoles(comp);
+		if (roles.isEmpty())
+			return 0;
+		
 		int status = -1;
 		
 		try {
@@ -136,6 +160,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	@Override
 	public int stop(Component comp) {
 		List<String> roles = getRoles(comp);
+		if (roles.isEmpty())
+			return 0;
+		
 		int status = -1;
 		
 		try {
@@ -150,6 +177,9 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 	@Override
 	public int undeploy(Component comp) {
 		List<String> roles = getRoles(comp);
+		if (roles.isEmpty())
+			return 0;
+		
 		int status = -1;
 		
 		try {
