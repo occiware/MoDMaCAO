@@ -8,31 +8,16 @@
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
     <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
-    <details key="mongodb" value="platform:/resource/org.modmacao.mongodb/model/mongodb.ecore#/"/>
-    <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
+    <details key="mongodb" value="platform:/plugin/org.modmacao.mongodb/model/mongodb.ecore#/"/>
+    <details key="modmacao" value="platform:/plugin/org.modmacao.core/model/modmacao.ecore#/"/>
     <details key="apache_spark" value="platform:/resource/org.modmacao.apache.spark/model/apache_spark.ecore#/"/>
-    <details key="platform" value="platform:/resource/org.modmacao.occi.platform/model/platform.ecore#/"/>
+    <details key="platform" value="platform:/plugin/org.modmacao.occi.platform/model/platform.ecore#/"/>
     <details key="client_server" value="platform:/resource/org.modmacao.client.server/model/client_server.ecore#/"/>
-    <details key="placement" value="platform:/resource/org.modmacao.placement/model/placement.ecore#/"/>
+    <details key="placement" value="platform:/plugin/org.modmacao.placement/model/placement.ecore#/"/>
     <details key="lamp" value="platform:/resource/org.modmacao.lamp/model/lamp.ecore#/"/>
     <details key="infrastructure" value="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
     <details key="apache_cassandra" value="platform:/resource/org.modmacao.apache.cassandra/model/apache_cassandra.ecore#/"/>
-  </eAnnotations>
-  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-  </eAnnotations>
-  <eAnnotations source="http://www.eclipse.org/OCL/Import">
-    <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
-    <details key="mongodb" value="platform:/resource/org.modmacao.mongodb/model/mongodb.ecore#/"/>
-    <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
-    <details key="apache_spark" value="platform:/resource/org.modmacao.apache.spark/model/apache_spark.ecore#/"/>
-    <details key="platform" value="platform:/resource/org.modmacao.occi.platform/model/platform.ecore#/"/>
-    <details key="client_server" value="platform:/resource/org.modmacao.client.server/model/client_server.ecore#/"/>
-    <details key="placement" value="platform:/resource/org.modmacao.placement/model/placement.ecore#/"/>
-    <details key="lamp" value="platform:/resource/org.modmacao.lamp/model/lamp.ecore#/"/>
-    <details key="infrastructure" value="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
-    <details key="apache_cassandra" value="platform:/resource/org.modmacao.apache.cassandra/model/apache_cassandra.ecore#/"/>
+    <details key="openstackruntime" value="platform:/plugin/org.modmacao.openstack.runtime/model/openstackruntime.ecore#/"/>
+    <details key="ansibleconfiguration" value="platform:/plugin/org.modmacao.ansible/model/ansibleconfiguration.ecore#/"/>
   </eAnnotations>
 </ecore:EPackage>

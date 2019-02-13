@@ -10,4 +10,6 @@
   <import href="http://schemas.modmacao.org/lamp#/"/>
   <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <import href="http://schemas.modmacao.org/apache/cassandra#/"/>
+  <import href="http://schemas.modmacao.org/openstack/runtime#/"/>
+  <import href="http://schemas.modmacao.org/occi/ansible#/"/>
 </occi:Extension>

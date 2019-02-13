@@ -7,14 +7,16 @@
   <genPackages prefix="All" disposableProviderFactory="true">
     <ecorePackage href="all.ecore#/"/>
   </genPackages>
-  <usedGenPackages href="platform:/resource/org.modmacao.mongodb/model/mongodb.genmodel#//mongodb"/>
-  <usedGenPackages href="platform:/resource/org.modmacao.core/model/modmacao.genmodel#//modmacao"/>
+  <usedGenPackages href="platform:/plugin/org.modmacao.mongodb/model/mongodb.genmodel#//mongodb"/>
+  <usedGenPackages href="platform:/plugin/org.modmacao.core/model/modmacao.genmodel#//modmacao"/>
   <usedGenPackages href="platform:/resource/org.modmacao.apache.spark/model/apache_spark.genmodel#//apache_spark"/>
-  <usedGenPackages href="platform:/resource/org.modmacao.occi.platform/model/platform.genmodel#//platform"/>
+  <usedGenPackages href="platform:/plugin/org.modmacao.occi.platform/model/platform.genmodel#//platform"/>
   <usedGenPackages href="platform:/resource/org.modmacao.client.server/model/client_server.genmodel#//client_server"/>
-  <usedGenPackages href="platform:/resource/org.modmacao.placement/model/placement.genmodel#//placement"/>
+  <usedGenPackages href="platform:/plugin/org.modmacao.placement/model/placement.genmodel#//placement"/>
   <usedGenPackages href="platform:/resource/org.modmacao.lamp/model/lamp.genmodel#//lamp"/>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
   <usedGenPackages href="platform:/resource/org.modmacao.apache.cassandra/model/apache_cassandra.genmodel#//apache_cassandra"/>
+  <usedGenPackages href="platform:/plugin/org.modmacao.openstack.runtime/model/openstackruntime.genmodel#//openstackruntime"/>
+  <usedGenPackages href="platform:/plugin/org.modmacao.ansible/model/ansibleconfiguration.genmodel#//ansibleconfiguration"/>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
 </genmodel:GenModel>
