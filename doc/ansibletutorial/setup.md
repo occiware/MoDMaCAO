@@ -28,15 +28,15 @@ to the *dummy-roles* folder inside the project *org.modmacao.all.extensions.exam
 
 
 5. Locate the project *org.modmacao.all.extensions.design.extended*.
-6. Right-Click->Run As->Run Configurations... You are now prompted to create a new run configuration for 
-the project. Choose *Eclipse Application*, select Lauch with "plug-ins selected below only" and make sure
+6. Right-Click->Run As->Run Configurations... Double-Click *Eclipse Application* to create a new configuration. 
+7. Select Launch with "plug-ins selected below only" and make sure 
 that *org.modmacao.openstack.connector* is deselected (see screenshot below):
 
 <p align="center">
   <img src="create-run-configuration.png" alt="Run Configuration Creation" width="600"/>
 </p>
 
-7. Press Run. A new Eclipse instance will be started, configured with the plugins from your workspace. Go to its
+8. Press Run. A new Eclipse instance will be started, configured with the plugins from your workspace. Go to its
 workspace and import the project *org.modmacao.all.extensions.example* from MoDMaCAO. You should end up with a 
 workspace as shown below:
 
