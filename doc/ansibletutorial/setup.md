@@ -27,3 +27,5 @@ workspace as shown below:
 <p align="center">
   <img src="setup-example-project.png" alt="Setup example project" width="600"/>
 </p>
+
+Continue with [first steps](firststeps.md).
