@@ -9,7 +9,7 @@ far. To understand this tutorial, you should have a basic knowledge on how to wo
 - Ansible >= 2.7.6
 - A fresh version of [OCCI-Studio](https://github.com/occiware/OCCI-Studio/releases)
 
-Continue to [Overview](doc/ansibletutorlal/overview.md)
+Continue to [Overview](ansibletutorlal/overview.md)
 
 
 
