@@ -1,11 +1,12 @@
-DISCLAIMER: MoDMaCAO has currently the status of a research prototype, functionality might change or be extended without 
-further notice.
 
 # MoDMaCAO with Ansible from inside OCCI-Studio
 The framework is currently developed and tested on Linux (Ubuntu) and has not been tested on other systems so
 far. To understand this tutorial, you should have a basic knowledge on how to work with Eclipse and Eclipse plugins.
 
 ## Requirements
+DISCLAIMER: MoDMaCAO has currently the status of a research prototype, functionality might change or be extended without 
+further notice.
+
 - Ansible >= 2.7.6
 - A fresh version of [OCCI-Studio](https://github.com/occiware/OCCI-Studio/releases)
 
@@ -16,6 +17,7 @@ the Ansible configurations, which has
 - with a private key you have access to,
 - and python installed (requirement for using Ansible).
 
+The following section will give an overview over the involved projects. [NOT INTERESTED, continue with setup]{setup.md}
 ## Overview
 Each of the projects from this repository is implemented as an Eclipse-plugin.
 The following projects are important for this tutorial:
