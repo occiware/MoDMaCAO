@@ -6,16 +6,17 @@
   <img src="test-ansible-representation.png" alt="Ansible Test Representation" width="600"/>
 </p>
 
-2. Locate the compute element and set the IP address to the address of the machine you would like to
-configure:
+2. Locate the NetworkInterface element and set the IP address to the address of the machine you would like to
+configure (you might need to open the view *Properties* from the Menu Window->Views->Properties to be able to change
+the attribute):
 
 <p align="center">
   <img src="ansible-adjust-ip.png" alt="Andjust IP Address" width="600"/>
 </p>
 
 ## Trigger your first action ## 
-3. Now we trigger our first Ansible Action on the Application: Right Click on the Application->Deploy. This will run Ansible
-in the background to execute the roles for the Mixin *ApacheWebServer* and *MySQL* on the machine with the
+3. Now we trigger our first Ansible Action on the Application: Right Click on the Application->Deploy. 
+This will run Ansible in the background to execute the roles for the Mixin *ApacheWebServer* and *MySQL* on the machine with the
 configured IP address. 
 Since we use the dummy roles in the tutorial, nothing will be changed on the machine, since
 the corresponding tasks are not implememented. 
