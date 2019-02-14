@@ -17,7 +17,7 @@ the Ansible configurations, which has
 - with a private key you have access to,
 - and python installed (requirement for using Ansible).
 
-The following section will give an overview over the involved projects. [NOT INTERESTED, continue with setup]{setup.md}
+The following section will give an overview over the involved projects. [NOT INTERESTED, continue with setup directly](setup.md)
 ## Overview
 Each of the projects from this repository is implemented as an Eclipse-plugin.
 The following projects are important for this tutorial:
