@@ -1,3 +1,14 @@
+DISCLAIMER: MoDMaCAO has currently the status of a research prototype, functionality might change or be extended without 
+further notice.
+
+# MoDMaCAO with Ansible from inside OCCI-Studio
+The framework is currently developed and tested on Linux (Ubuntu) and has not been tested on other systems so
+far. To understand this tutorial, you should have a basic knowledge on how to work with Eclipse and Eclipse plugins.
+
+## Requirements
+- Ansible >= 2.7.6
+- A fresh version of [OCCI-Studio](https://github.com/occiware/OCCI-Studio/releases)
+
 ## Overview
 Each of the projects from this repository is implemented as an Eclipse-plugin.
 The following projects are important for this tutorial:
@@ -26,4 +37,4 @@ to store runtime ids (the ones provided by OpenStack) in the modell.
 This is a connector for the OCCI Infrastructure extension, that connects to an OpenStack cloud. It can be used to manage virtual
 machines, networks, network interfaces and block storage.
 
-Continue with [set]
+Continue with [setup](setup.md)
