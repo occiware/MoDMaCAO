@@ -20,8 +20,7 @@ You should end up with an OCCI-Studio that looks similar to the one below:
 You need to adjust the properties to your environment. The following properties can
 be set:
 - **ansible_rolespath**: The path to the location where the Ansible roles are stored on your file system. Set it
-to the *dummy-roles* foles inside the project *org.modmacao.all.extensions.design.extended* (Depends on the location
-where you clone MoDMaCAO to).
+to the *dummy-roles* folder inside the project *org.modmacao.all.extensions.example* (Depends on the location where you cloned MoDMaCAO to).
 - **ansible_bin**: The path to the *ansible-playbook* binary on your system. 
 - **ssh_timeout**: The timeout that is used by Ansible for ssh connections.
 - **ansible_user**: The user that Ansible used to connect to your hosts via ssh.
