@@ -17,12 +17,17 @@ import openstackruntime.OpenstackruntimeFactory;
 import openstackruntime.OpenstackruntimePackage;
 import openstackruntime.Runtimeid;
 
+import openstackruntime.util.OpenstackruntimeValidator;
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
+import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -74,7 +79,7 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link OpenstackruntimePackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -88,11 +93,13 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		if (isInited) return (OpenstackruntimePackage)EPackage.Registry.INSTANCE.getEPackage(OpenstackruntimePackage.eNS_URI);
 
 		// Obtain or create and register package
-		OpenstackruntimePackageImpl theOpenstackruntimePackage = (OpenstackruntimePackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof OpenstackruntimePackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new OpenstackruntimePackageImpl());
+		Object registeredOpenstackruntimePackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		OpenstackruntimePackageImpl theOpenstackruntimePackage = registeredOpenstackruntimePackage instanceof OpenstackruntimePackageImpl ? (OpenstackruntimePackageImpl)registeredOpenstackruntimePackage : new OpenstackruntimePackageImpl();
 
 		isInited = true;
 
 		// Initialize simple dependencies
+		InfrastructurePackage.eINSTANCE.eClass();
 		OCCIPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -101,10 +108,18 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		// Initialize created meta-data
 		theOpenstackruntimePackage.initializePackageContents();
 
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theOpenstackruntimePackage,
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return OpenstackruntimeValidator.INSTANCE;
+				 }
+			 });
+
 		// Mark meta-data to indicate it can't be changed
 		theOpenstackruntimePackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(OpenstackruntimePackage.eNS_URI, theOpenstackruntimePackage);
 		return theOpenstackruntimePackage;
@@ -126,6 +141,15 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 	 */
 	public EAttribute getRuntimeid_OpenstackRuntimeId() {
 		return (EAttribute)runtimeidEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getRuntimeid__AppliesConstraint__DiagnosticChain_Map() {
+		return runtimeidEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -160,6 +184,15 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getFloatingip__AppliesConstraint__DiagnosticChain_Map() {
+		return floatingipEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public OpenstackruntimeFactory getOpenstackruntimeFactory() {
 		return (OpenstackruntimeFactory)getEFactoryInstance();
 	}
@@ -185,10 +218,12 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		// Create classes and their features
 		runtimeidEClass = createEClass(RUNTIMEID);
 		createEAttribute(runtimeidEClass, RUNTIMEID__OPENSTACK_RUNTIME_ID);
+		createEOperation(runtimeidEClass, RUNTIMEID___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		floatingipEClass = createEClass(FLOATINGIP);
 		createEAttribute(floatingipEClass, FLOATINGIP__OPENSTACK_FLOATINGIP_ADDRESS);
 		createEAttribute(floatingipEClass, FLOATINGIP__OPENSTACK_FLOATINGIP_POOL);
+		createEOperation(floatingipEClass, FLOATINGIP___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 	}
 
 	/**
@@ -227,11 +262,29 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(runtimeidEClass, Runtimeid.class, "Runtimeid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRuntimeid_OpenstackRuntimeId(), theOCCIPackage.getString(), "openstackRuntimeId", null, 0, 1, Runtimeid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRuntimeid_OpenstackRuntimeId(), ecorePackage.getEString(), "openstackRuntimeId", null, 0, 1, Runtimeid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		EOperation op = initEOperation(getRuntimeid__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(floatingipEClass, Floatingip.class, "Floatingip", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFloatingip_OpenstackFloatingipAddress(), theOCCIPackage.getString(), "openstackFloatingipAddress", null, 0, 1, Floatingip.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFloatingip_OpenstackFloatingipPool(), theOCCIPackage.getString(), "openstackFloatingipPool", null, 0, 1, Floatingip.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFloatingip_OpenstackFloatingipAddress(), ecorePackage.getEString(), "openstackFloatingipAddress", null, 0, 1, Floatingip.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFloatingip_OpenstackFloatingipPool(), ecorePackage.getEString(), "openstackFloatingipPool", null, 0, 1, Floatingip.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getFloatingip__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -239,8 +292,6 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/OCL/Import
-		createImportAnnotations();
 	}
 
 	/**
@@ -250,30 +301,23 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
-		  (this, 
-		   source, 
+		  (this,
+		   source,
 		   new String[] {
-			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createImportAnnotations() {
-		String source = "http://www.eclipse.org/OCL/Import";	
 		addAnnotation
-		  (this, 
-		   source, 
+		  (runtimeidEClass,
+		   source,
 		   new String[] {
-			 "occi", "http://schemas.ogf.org/occi/core/ecore"
+			   "constraints", "appliesConstraint"
+		   });
+		addAnnotation
+		  (floatingipEClass,
+		   source,
+		   new String[] {
+			   "constraints", "appliesConstraint"
 		   });
 	}
 

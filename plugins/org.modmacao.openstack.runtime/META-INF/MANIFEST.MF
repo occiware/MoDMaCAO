@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.modmacao.openstack.runtime;singleton:=true
+Automatic-Module-Name: org.modmacao.openstack.runtime
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -13,7 +14,9 @@ Export-Package: openstackruntime,
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.pivot;visibility:=reexport,
+ org.eclipse.ocl.examples.codegen;visibility:=reexport,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.cmf.occi.core.ui,
  org.eclipse.cmf.occi.core.gen.emf.ui,
- org.eclipse.cmf.occi.infrastructure
+ org.eclipse.cmf.occi.infrastructure;visibility:=reexport

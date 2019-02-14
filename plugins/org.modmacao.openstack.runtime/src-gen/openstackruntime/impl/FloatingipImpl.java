@@ -12,14 +12,30 @@
  */
 package openstackruntime.impl;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 import openstackruntime.Floatingip;
 import openstackruntime.OpenstackruntimePackage;
 
+import openstackruntime.OpenstackruntimeTables;
+import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.ocl.pivot.evaluation.Executor;
+import org.eclipse.ocl.pivot.ids.IdResolver;
+import org.eclipse.ocl.pivot.ids.TypeId;
+import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation;
+import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
+import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+import org.eclipse.ocl.pivot.utilities.ValueUtil;
+import org.eclipse.ocl.pivot.values.IntegerValue;
 
 /**
  * <!-- begin-user-doc -->
@@ -140,6 +156,44 @@ public class FloatingipImpl extends MixinBaseImpl implements Floatingip {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean appliesConstraint(final DiagnosticChain diagnostics, final Map<Object, Object> context) {
+		/**
+		 *
+		 * inv appliesConstraint:
+		 *   let severity : Integer[1] = 'Floatingip::appliesConstraint'.getSeverity()
+		 *   in
+		 *     if severity <= 0
+		 *     then true
+		 *     else
+		 *       let
+		 *         result : occi::Boolean[1] = self.entity.oclIsKindOf(infrastructure::Compute)
+		 *       in
+		 *         'Floatingip::appliesConstraint'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)
+		 *     endif
+		 */
+		final /*@NonInvalid*/ Executor executor = PivotUtilInternal.getExecutor(this);
+		final /*@NonInvalid*/ IdResolver idResolver = executor.getIdResolver();
+		final /*@NonInvalid*/ IntegerValue severity_0 = CGStringGetSeverityOperation.INSTANCE.evaluate(executor, OpenstackruntimeTables.STR_Floatingip_c_c_appliesConstraint);
+		final /*@NonInvalid*/ boolean le = OclComparableLessThanEqualOperation.INSTANCE.evaluate(executor, severity_0, OpenstackruntimeTables.INT_0).booleanValue();
+		/*@NonInvalid*/ boolean symbol_0;
+		if (le) {
+			symbol_0 = ValueUtil.TRUE_VALUE;
+		}
+		else {
+			final /*@NonInvalid*/ org.eclipse.ocl.pivot.Class TYP_infrastructure_c_c_Compute_0 = idResolver.getClass(OpenstackruntimeTables.CLSSid_Compute, null);
+			final /*@NonInvalid*/ Entity entity = this.getEntity();
+			final /*@NonInvalid*/ boolean result = OclAnyOclIsKindOfOperation.INSTANCE.evaluate(executor, entity, TYP_infrastructure_c_c_Compute_0).booleanValue();
+			final /*@NonInvalid*/ boolean logDiagnostic = CGStringLogDiagnosticOperation.INSTANCE.evaluate(executor, TypeId.BOOLEAN, OpenstackruntimeTables.STR_Floatingip_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, OpenstackruntimeTables.INT_0).booleanValue();
+			symbol_0 = logDiagnostic;
+		}
+		return Boolean.TRUE == symbol_0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -209,10 +263,25 @@ public class FloatingipImpl extends MixinBaseImpl implements Floatingip {
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case OpenstackruntimePackage.FLOATINGIP___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP:
+				return appliesConstraint((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (openstackFloatingipAddress: ");
 		result.append(openstackFloatingipAddress);
 		result.append(", openstackFloatingipPool: ");

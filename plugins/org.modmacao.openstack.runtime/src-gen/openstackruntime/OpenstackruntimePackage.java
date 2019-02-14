@@ -16,6 +16,7 @@ import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -32,8 +33,6 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see openstackruntime.OpenstackruntimeFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
- *        annotation="http://www.eclipse.org/OCL/Import occi='http://schemas.ogf.org/occi/core/ecore'"
  * @generated
  */
 public interface OpenstackruntimePackage extends EPackage {
@@ -125,13 +124,22 @@ public interface OpenstackruntimePackage extends EPackage {
 	int RUNTIMEID_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RUNTIMEID___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Runtimeid</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RUNTIMEID_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int RUNTIMEID_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link openstackruntime.impl.FloatingipImpl <em>Floatingip</em>}' class.
@@ -198,13 +206,22 @@ public interface OpenstackruntimePackage extends EPackage {
 	int FLOATINGIP_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOATINGIP___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Floatingip</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOATINGIP_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
+	int FLOATINGIP_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
 
 
 	/**
@@ -227,6 +244,16 @@ public interface OpenstackruntimePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRuntimeid_OpenstackRuntimeId();
+
+	/**
+	 * Returns the meta object for the '{@link openstackruntime.Runtimeid#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see openstackruntime.Runtimeid#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getRuntimeid__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link openstackruntime.Floatingip <em>Floatingip</em>}'.
@@ -259,6 +286,16 @@ public interface OpenstackruntimePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFloatingip_OpenstackFloatingipPool();
+
+	/**
+	 * Returns the meta object for the '{@link openstackruntime.Floatingip#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see openstackruntime.Floatingip#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getFloatingip__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -302,6 +339,14 @@ public interface OpenstackruntimePackage extends EPackage {
 		EAttribute RUNTIMEID__OPENSTACK_RUNTIME_ID = eINSTANCE.getRuntimeid_OpenstackRuntimeId();
 
 		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation RUNTIMEID___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getRuntimeid__AppliesConstraint__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '{@link openstackruntime.impl.FloatingipImpl <em>Floatingip</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -326,6 +371,14 @@ public interface OpenstackruntimePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FLOATINGIP__OPENSTACK_FLOATINGIP_POOL = eINSTANCE.getFloatingip_OpenstackFloatingipPool();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FLOATINGIP___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getFloatingip__AppliesConstraint__DiagnosticChain_Map();
 
 	}
 

@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
 <occi:Extension xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" name="openstackruntime" scheme="http://schemas.modmacao.org/openstack/runtime#">
   <import href="http://schemas.ogf.org/occi/core#/"/>
+  <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <mixins name="RuntimeID" scheme="http://schemas.modmacao.org/openstack/runtime#">
     <attributes name="openstack.runtime.id" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
+    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='network']"/>
+    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storage']"/>
+    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='storagelink']"/>
+    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
   </mixins>
   <mixins name="FloatingIP" scheme="http://schemas.modmacao.org/openstack/runtime#">
     <attributes name="openstack.floatingip.address" mutable="true">
@@ -13,5 +19,6 @@
     <attributes name="openstack.floatingip.pool" mutable="true">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
+    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </mixins>
 </occi:Extension>
