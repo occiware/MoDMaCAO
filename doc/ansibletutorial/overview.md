@@ -9,6 +9,13 @@ far. To understand this tutorial, you should have a basic knowledge on how to wo
 - Ansible >= 2.7.6
 - A fresh version of [OCCI-Studio](https://github.com/occiware/OCCI-Studio/releases)
 
+Additionally you need access to a virtual or physical machine that you can use as the target for 
+the Ansible configurations, which has
+- access via SSH,
+- with a user with sudo privileges,
+- with a private key you have access to,
+- and python installed (requirement for using Ansible).
+
 ## Overview
 Each of the projects from this repository is implemented as an Eclipse-plugin.
 The following projects are important for this tutorial:
@@ -28,13 +35,19 @@ and Ansible variables files which are used to pass the attributes from the OCCI 
 Contains a very small Ansible-specific OCCI extension, that allows for tagging NetworkLinks to be used as Ansible endpoints.
 
 <pre>org.modmacao.all.extensions.design.extended</pre>
+Contains a graphical editor generated with OCCI-Studio, which we will use in this tutorial.
+
+<pre>org.modmacao.all.extensions.example</pre>
+Contains an example OCCI configuration, which we will use in this tutoral.
 
 <pre>org.modmacao.openstack.runtime</pre>
+(Only relevant for extended tutorial) 
 Contains a very small OpenStack-specific OCCI extension, that allows to attach public IP addresses to compute instances and
 to store runtime ids (the ones provided by OpenStack) in the modell.
 
 <pre>org.modmacao.openstack.connector</pre>
+(Only relevant for extended tutorial)
 This is a connector for the OCCI Infrastructure extension, that connects to an OpenStack cloud. It can be used to manage virtual
 machines, networks, network interfaces and block storage.
 
-Continue with [setup](setup.md)
+Continue with [setup](setup.md).
