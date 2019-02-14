@@ -1,4 +1,4 @@
-#First Steps with Ansible#
+# First Steps with Ansible #
 
 1. Open *test-ansible* in the *representation.aird* file:
 
