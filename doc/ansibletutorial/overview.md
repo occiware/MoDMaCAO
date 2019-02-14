@@ -38,7 +38,7 @@ Contains a very small Ansible-specific OCCI extension, that allows for tagging N
 Contains a graphical editor generated with OCCI-Studio, which we will use in this tutorial.
 
 <pre>org.modmacao.all.extensions.example</pre>
-Contains an example OCCI configuration, which we will use in this tutoral.
+Contains an example OCCI configuration, which we will use in this tutorial.
 
 <pre>org.modmacao.openstack.runtime</pre>
 (Only relevant for extended tutorial) 
