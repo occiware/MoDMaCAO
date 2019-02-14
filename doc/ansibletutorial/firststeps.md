@@ -13,6 +13,7 @@ configure:
   <img src="ansible-adjust-ip.png" alt="Andjust IP Address" width="600"/>
 </p>
 
+## Trigger your first action ## 
 3. Now we trigger our first Ansible Action on the Application: Right Click on the Application->Deploy. This will run Ansible
 in the background to execute the roles for the Mixin *ApacheWebServer* and *MySQL* on the machine with the
 configured IP address. 
@@ -29,6 +30,7 @@ of the Application and the connected Component will change to *deployed*.
 
 4. Trigger the Action *Undeploy* on the Application to reset it to its original state.
 
+## Extend the provided Configuration ##
 5. Add a second Component with the Mixin Tomcat, a ComponentLink from the Application to the new Component, and
 a PlacementLink from the new Component to the Compute Ressource. You will end up with a topology similar to the
 one shown below:
