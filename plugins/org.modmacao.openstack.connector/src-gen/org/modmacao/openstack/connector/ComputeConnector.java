@@ -42,7 +42,9 @@ import org.openstack4j.model.compute.builder.ServerCreateBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import openstackruntime.Flavor;
 import openstackruntime.Floatingip;
+import openstackruntime.Image;
 import openstackruntime.OpenstackruntimeFactory;
 import openstackruntime.Runtimeid; 
 
@@ -141,20 +143,30 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 			
 			if (mixin instanceof Resource_tpl) {
 				LOGGER.info("Found resource template in " + this);
-				for (Attribute attribute: mixin.getMixin().getAttributes()) {
-					if (attribute.getName().equals("openstack.runtime.id")) {
-						flavorID = attribute.getDefault();
-						break;
+				if (mixin instanceof Flavor) {
+					flavorID = ((Flavor) (mixin)).getOpenstackRuntimeId();
+				}
+				else {
+					for (Attribute attribute: mixin.getMixin().getAttributes()) {
+						if (attribute.getName().equals("openstack.runtime.id")) {
+							flavorID = attribute.getDefault();
+							break;
+						}
 					}
 				}
 			}
 	
 			if (mixin instanceof Os_tpl) {
 				LOGGER.info("Found os template in " + this);
-				for (Attribute attribute: mixin.getMixin().getAttributes()) {
-					if (attribute.getName().equals("openstack.runtime.id")) {
-						imageID = attribute.getDefault();
-						break;
+				if (mixin instanceof Image) {
+					imageID = ((Image) (mixin)).getOpenstackRuntimeId();
+				}
+				else {
+					for (Attribute attribute: mixin.getMixin().getAttributes()) {
+						if (attribute.getName().equals("openstack.runtime.id")) {
+							imageID = attribute.getDefault();
+							break;
+						}
 					}
 				}
 			}
