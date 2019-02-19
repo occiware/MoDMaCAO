@@ -2,20 +2,6 @@
 This repository contains the prototypical implementation of the Model-Driven Configuration Management
 of Cloud Applications with OCCI (MoDMaCAO) framework and the models for several example use cases.
 
-In the current version of the [OCCI specifications](http://occi-wg.org/about/specification/) there is a semantic gap
-between the modelling of IaaS and PaaS ressources. Furthermore, the current specification for platforms is
-not sufficient to capture the full life-cycle management of applications and application components and
-it is not clear how the configuration of the managed applications and components should be achieved.
-
-MoDMaCAO addresses these issues by providing:
-- A Placement Extension for OCCI that allows to place components on virtual machines,
-- An extended OCCI Platform model that captures the full life-cycle of components and applications,
-- A mechanism to integrate configuration management tools to manage OCCI resources
-
-Additionally, example use cases for the validation of the framework are provided.
-
-If you are interested in the full story, [read the paper](https://doi.org/10.5220/0006693001000111).
-
 ## The MoDMaCAO Modeling Framework
 The MoDMaCAO modeling framework is
 based on OCCIware and allows cloud architects to: 
@@ -102,5 +88,6 @@ tba
 - [Using MoDMaCAO with Ansible](doc/ansibletutorial/overview.md)
 - [Using the OpenStack Connector of MoDMaCAO](doc/openstacktutorial/overview.md)
 
+If you are interested in the full story, [read the paper](https://doi.org/10.5220/0006693001000111).
 
 
