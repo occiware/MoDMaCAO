@@ -14,6 +14,7 @@ package openstackruntime;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
+import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -225,6 +226,153 @@ public interface OpenstackruntimePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link openstackruntime.impl.ImageImpl <em>Image</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see openstackruntime.impl.ImageImpl
+	 * @see openstackruntime.impl.OpenstackruntimePackageImpl#getImage()
+	 * @generated
+	 */
+	int IMAGE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__MIXIN = InfrastructurePackage.OS_TPL__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__ENTITY = InfrastructurePackage.OS_TPL__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__ATTRIBUTES = InfrastructurePackage.OS_TPL__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Openstack Image Runtime Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__OPENSTACK_IMAGE_RUNTIME_ID = InfrastructurePackage.OS_TPL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_FEATURE_COUNT = InfrastructurePackage.OS_TPL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = InfrastructurePackage.OS_TPL_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_OPERATION_COUNT = InfrastructurePackage.OS_TPL_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link openstackruntime.impl.FlavorImpl <em>Flavor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see openstackruntime.impl.FlavorImpl
+	 * @see openstackruntime.impl.OpenstackruntimePackageImpl#getFlavor()
+	 * @generated
+	 */
+	int FLAVOR = 3;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR__MIXIN = InfrastructurePackage.RESOURCE_TPL__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR__ENTITY = InfrastructurePackage.RESOURCE_TPL__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR__ATTRIBUTES = InfrastructurePackage.RESOURCE_TPL__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Openstack Flavor Runtime Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID = InfrastructurePackage.RESOURCE_TPL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Flavor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR_FEATURE_COUNT = InfrastructurePackage.RESOURCE_TPL_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Applies Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = InfrastructurePackage.RESOURCE_TPL_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Flavor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR_OPERATION_COUNT = InfrastructurePackage.RESOURCE_TPL_OPERATION_COUNT + 1;
+
+
+	/**
 	 * Returns the meta object for class '{@link openstackruntime.Runtimeid <em>Runtimeid</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,6 +444,68 @@ public interface OpenstackruntimePackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getFloatingip__AppliesConstraint__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for class '{@link openstackruntime.Image <em>Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Image</em>'.
+	 * @see openstackruntime.Image
+	 * @generated
+	 */
+	EClass getImage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link openstackruntime.Image#getOpenstackImageRuntimeId <em>Openstack Image Runtime Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Openstack Image Runtime Id</em>'.
+	 * @see openstackruntime.Image#getOpenstackImageRuntimeId()
+	 * @see #getImage()
+	 * @generated
+	 */
+	EAttribute getImage_OpenstackImageRuntimeId();
+
+	/**
+	 * Returns the meta object for the '{@link openstackruntime.Image#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see openstackruntime.Image#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getImage__AppliesConstraint__DiagnosticChain_Map();
+
+	/**
+	 * Returns the meta object for class '{@link openstackruntime.Flavor <em>Flavor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Flavor</em>'.
+	 * @see openstackruntime.Flavor
+	 * @generated
+	 */
+	EClass getFlavor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link openstackruntime.Flavor#getOpenstackFlavorRuntimeId <em>Openstack Flavor Runtime Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Openstack Flavor Runtime Id</em>'.
+	 * @see openstackruntime.Flavor#getOpenstackFlavorRuntimeId()
+	 * @see #getFlavor()
+	 * @generated
+	 */
+	EAttribute getFlavor_OpenstackFlavorRuntimeId();
+
+	/**
+	 * Returns the meta object for the '{@link openstackruntime.Flavor#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
+	 * @see openstackruntime.Flavor#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getFlavor__AppliesConstraint__DiagnosticChain_Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -379,6 +589,58 @@ public interface OpenstackruntimePackage extends EPackage {
 		 * @generated
 		 */
 		EOperation FLOATINGIP___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getFloatingip__AppliesConstraint__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '{@link openstackruntime.impl.ImageImpl <em>Image</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see openstackruntime.impl.ImageImpl
+		 * @see openstackruntime.impl.OpenstackruntimePackageImpl#getImage()
+		 * @generated
+		 */
+		EClass IMAGE = eINSTANCE.getImage();
+
+		/**
+		 * The meta object literal for the '<em><b>Openstack Image Runtime Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE__OPENSTACK_IMAGE_RUNTIME_ID = eINSTANCE.getImage_OpenstackImageRuntimeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IMAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getImage__AppliesConstraint__DiagnosticChain_Map();
+
+		/**
+		 * The meta object literal for the '{@link openstackruntime.impl.FlavorImpl <em>Flavor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see openstackruntime.impl.FlavorImpl
+		 * @see openstackruntime.impl.OpenstackruntimePackageImpl#getFlavor()
+		 * @generated
+		 */
+		EClass FLAVOR = eINSTANCE.getFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Openstack Flavor Runtime Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID = eINSTANCE.getFlavor_OpenstackFlavorRuntimeId();
+
+		/**
+		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation FLAVOR___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getFlavor__AppliesConstraint__DiagnosticChain_Map();
 
 	}
 

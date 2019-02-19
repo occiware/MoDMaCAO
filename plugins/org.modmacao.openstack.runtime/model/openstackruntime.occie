@@ -21,4 +21,18 @@
     </attributes>
     <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </mixins>
+  <mixins name="Image" scheme="http://schemas.modmacao.org/openstack/runtime#">
+    <attributes name="openstack.image.runtime.id" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <depends href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='os_tpl']"/>
+    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+  </mixins>
+  <mixins name="Flavor" scheme="http://schemas.modmacao.org/openstack/runtime#">
+    <attributes name="openstack.flavor.runtime.id" mutable="true">
+      <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
+    </attributes>
+    <depends href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='resource_tpl']"/>
+    <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+  </mixins>
 </occi:Extension>

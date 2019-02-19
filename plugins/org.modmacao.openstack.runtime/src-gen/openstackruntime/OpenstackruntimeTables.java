@@ -23,6 +23,7 @@ package openstackruntime;
 
 import openstackruntime.OpenstackruntimeTables;
 import org.eclipse.cmf.occi.core.OCCITables;
+import org.eclipse.cmf.occi.infrastructure.InfrastructureTables;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorPackage;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorProperty;
 import org.eclipse.ocl.pivot.internal.library.ecore.EcoreExecutorType;
@@ -64,14 +65,18 @@ public class OpenstackruntimeTables
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Class = openstackruntime.OpenstackruntimeTables.PACKid_$metamodel$.getClassId("Class", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Compute = openstackruntime.OpenstackruntimeTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Compute", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Entity = openstackruntime.OpenstackruntimeTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_core_s_ecore.getClassId("Entity", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Flavor = openstackruntime.OpenstackruntimeTables.PACKid_http_c_s_s_schemas_modmacao_org_s_openstack_s_runtime_s_ecore.getClassId("Flavor", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Floatingip = openstackruntime.OpenstackruntimeTables.PACKid_http_c_s_s_schemas_modmacao_org_s_openstack_s_runtime_s_ecore.getClassId("Floatingip", 0);
+	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Image = openstackruntime.OpenstackruntimeTables.PACKid_http_c_s_s_schemas_modmacao_org_s_openstack_s_runtime_s_ecore.getClassId("Image", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Network = openstackruntime.OpenstackruntimeTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Network", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Networkinterface = openstackruntime.OpenstackruntimeTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Networkinterface", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Runtimeid = openstackruntime.OpenstackruntimeTables.PACKid_http_c_s_s_schemas_modmacao_org_s_openstack_s_runtime_s_ecore.getClassId("Runtimeid", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Storage = openstackruntime.OpenstackruntimeTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Storage", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.ids.ClassId CLSSid_Storagelink = openstackruntime.OpenstackruntimeTables.PACKid_http_c_s_s_schemas_ogf_org_s_occi_s_infrastructure_s_ecore.getClassId("Storagelink", 0);
 	public static final /*@NonInvalid*/ org.eclipse.ocl.pivot.values.IntegerValue INT_0 = org.eclipse.ocl.pivot.utilities.ValueUtil.integerValueOf("0");
+	public static final /*@NonInvalid*/ java.lang.String STR_Flavor_c_c_appliesConstraint = "Flavor::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Floatingip_c_c_appliesConstraint = "Floatingip::appliesConstraint";
+	public static final /*@NonInvalid*/ java.lang.String STR_Image_c_c_appliesConstraint = "Image::appliesConstraint";
 	public static final /*@NonInvalid*/ java.lang.String STR_Runtimeid_c_c_appliesConstraint = "Runtimeid::appliesConstraint";
 
 	/**
@@ -102,11 +107,15 @@ public class OpenstackruntimeTables
 			TypeParameters.init();
 		}
 
+		public static final /*@NonNull*/ EcoreExecutorType _Flavor = new EcoreExecutorType(OpenstackruntimePackage.Literals.FLAVOR, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Floatingip = new EcoreExecutorType(OpenstackruntimePackage.Literals.FLOATINGIP, PACKAGE, 0);
+		public static final /*@NonNull*/ EcoreExecutorType _Image = new EcoreExecutorType(OpenstackruntimePackage.Literals.IMAGE, PACKAGE, 0);
 		public static final /*@NonNull*/ EcoreExecutorType _Runtimeid = new EcoreExecutorType(OpenstackruntimePackage.Literals.RUNTIMEID, PACKAGE, 0);
 
 		private static final /*@NonNull*/ EcoreExecutorType /*@NonNull*/ [] types = {
+			_Flavor,
 			_Floatingip,
+			_Image,
 			_Runtimeid
 		};
 
@@ -133,10 +142,22 @@ public class OpenstackruntimeTables
 			Types.init();
 		}
 
+		private static final /*@NonNull*/ ExecutorFragment _Flavor__Flavor = new ExecutorFragment(Types._Flavor, OpenstackruntimeTables.Types._Flavor);
+		private static final /*@NonNull*/ ExecutorFragment _Flavor__MixinBase = new ExecutorFragment(Types._Flavor, OCCITables.Types._MixinBase);
+		private static final /*@NonNull*/ ExecutorFragment _Flavor__OclAny = new ExecutorFragment(Types._Flavor, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Flavor__OclElement = new ExecutorFragment(Types._Flavor, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Flavor__Resource_tpl = new ExecutorFragment(Types._Flavor, InfrastructureTables.Types._Resource_tpl);
+
 		private static final /*@NonNull*/ ExecutorFragment _Floatingip__Floatingip = new ExecutorFragment(Types._Floatingip, OpenstackruntimeTables.Types._Floatingip);
 		private static final /*@NonNull*/ ExecutorFragment _Floatingip__MixinBase = new ExecutorFragment(Types._Floatingip, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Floatingip__OclAny = new ExecutorFragment(Types._Floatingip, OCLstdlibTables.Types._OclAny);
 		private static final /*@NonNull*/ ExecutorFragment _Floatingip__OclElement = new ExecutorFragment(Types._Floatingip, OCLstdlibTables.Types._OclElement);
+
+		private static final /*@NonNull*/ ExecutorFragment _Image__Image = new ExecutorFragment(Types._Image, OpenstackruntimeTables.Types._Image);
+		private static final /*@NonNull*/ ExecutorFragment _Image__MixinBase = new ExecutorFragment(Types._Image, OCCITables.Types._MixinBase);
+		private static final /*@NonNull*/ ExecutorFragment _Image__OclAny = new ExecutorFragment(Types._Image, OCLstdlibTables.Types._OclAny);
+		private static final /*@NonNull*/ ExecutorFragment _Image__OclElement = new ExecutorFragment(Types._Image, OCLstdlibTables.Types._OclElement);
+		private static final /*@NonNull*/ ExecutorFragment _Image__Os_tpl = new ExecutorFragment(Types._Image, InfrastructureTables.Types._Os_tpl);
 
 		private static final /*@NonNull*/ ExecutorFragment _Runtimeid__MixinBase = new ExecutorFragment(Types._Runtimeid, OCCITables.Types._MixinBase);
 		private static final /*@NonNull*/ ExecutorFragment _Runtimeid__OclAny = new ExecutorFragment(Types._Runtimeid, OCLstdlibTables.Types._OclAny);
@@ -213,8 +234,12 @@ public class OpenstackruntimeTables
 			Operations.init();
 		}
 
+		public static final /*@NonNull*/ ExecutorProperty _Flavor__openstackFlavorRuntimeId = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID, Types._Flavor, 0);
+
 		public static final /*@NonNull*/ ExecutorProperty _Floatingip__openstackFloatingipAddress = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.FLOATINGIP__OPENSTACK_FLOATINGIP_ADDRESS, Types._Floatingip, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Floatingip__openstackFloatingipPool = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.FLOATINGIP__OPENSTACK_FLOATINGIP_POOL, Types._Floatingip, 1);
+
+		public static final /*@NonNull*/ ExecutorProperty _Image__openstackImageRuntimeId = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.IMAGE__OPENSTACK_IMAGE_RUNTIME_ID, Types._Image, 0);
 
 		public static final /*@NonNull*/ ExecutorProperty _Runtimeid__openstackRuntimeId = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.RUNTIMEID__OPENSTACK_RUNTIME_ID, Types._Runtimeid, 0);
 		static {
@@ -236,6 +261,16 @@ public class OpenstackruntimeTables
 			Properties.init();
 		}
 
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Flavor =
+			{
+				Fragments._Flavor__OclAny /* 0 */,
+				Fragments._Flavor__OclElement /* 1 */,
+				Fragments._Flavor__MixinBase /* 2 */,
+				Fragments._Flavor__Resource_tpl /* 3 */,
+				Fragments._Flavor__Flavor /* 4 */
+			};
+		private static final int /*@NonNull*/ [] __Flavor = { 1,1,1,1,1 };
+
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Floatingip =
 			{
 				Fragments._Floatingip__OclAny /* 0 */,
@@ -244,6 +279,16 @@ public class OpenstackruntimeTables
 				Fragments._Floatingip__Floatingip /* 3 */
 			};
 		private static final int /*@NonNull*/ [] __Floatingip = { 1,1,1,1 };
+
+		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Image =
+			{
+				Fragments._Image__OclAny /* 0 */,
+				Fragments._Image__OclElement /* 1 */,
+				Fragments._Image__MixinBase /* 2 */,
+				Fragments._Image__Os_tpl /* 3 */,
+				Fragments._Image__Image /* 4 */
+			};
+		private static final int /*@NonNull*/ [] __Image = { 1,1,1,1,1 };
 
 		private static final /*@NonNull*/ ExecutorFragment /*@NonNull*/ [] _Runtimeid =
 			{
@@ -258,7 +303,9 @@ public class OpenstackruntimeTables
 		 *	Install the fragment descriptors in the class descriptors.
 		 */
 		static {
+			Types._Flavor.initFragments(_Flavor, __Flavor);
 			Types._Floatingip.initFragments(_Floatingip, __Floatingip);
+			Types._Image.initFragments(_Image, __Image);
 			Types._Runtimeid.initFragments(_Runtimeid, __Runtimeid);
 
 			Init.initEnd();
@@ -278,6 +325,36 @@ public class OpenstackruntimeTables
 			Init.initStart();
 			TypeFragments.init();
 		}
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Flavor__Flavor = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Flavor__MixinBase = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Flavor__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Flavor__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Flavor__Resource_tpl = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Floatingip__Floatingip = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Floatingip__MixinBase = {};
@@ -307,6 +384,36 @@ public class OpenstackruntimeTables
 			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
 			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
 		};
+
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Image__Image = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Image__MixinBase = {};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Image__OclAny = {
+			OCLstdlibTables.Operations._OclAny___lt__gt_ /* _'<>'(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny___eq_ /* _'='(OclSelf[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclAsSet /* oclAsSet() */,
+			OCLstdlibTables.Operations._OclAny__oclAsType /* oclAsType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInState /* oclIsInState(OclState[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsInvalid /* oclIsInvalid() */,
+			OCLstdlibTables.Operations._OclAny__oclIsKindOf /* oclIsKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsNew /* oclIsNew() */,
+			OCLstdlibTables.Operations._OclAny__oclIsTypeOf /* oclIsTypeOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclIsUndefined /* oclIsUndefined() */,
+			OCLstdlibTables.Operations._OclAny__0_oclLog /* oclLog() */,
+			OCLstdlibTables.Operations._OclAny__1_oclLog /* oclLog(String[?]) */,
+			OCLstdlibTables.Operations._OclAny__oclType /* oclType() */,
+			OCLstdlibTables.Operations._OclAny__oclTypes /* oclTypes() */,
+			OCLstdlibTables.Operations._OclAny__toString /* toString() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Image__OclElement = {
+			OCLstdlibTables.Operations._OclElement__allInstances /* allInstances() */,
+			OCLstdlibTables.Operations._OclElement__oclAsModelType /* oclAsModelType(TT)(TT[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclContainer /* oclContainer() */,
+			OCLstdlibTables.Operations._OclElement__oclContents /* oclContents() */,
+			OCLstdlibTables.Operations._OclElement__oclIsModelKindOf /* oclIsModelKindOf(OclType[?]) */,
+			OCLstdlibTables.Operations._OclElement__oclModelType /* oclModelType() */,
+			OCLstdlibTables.Operations._OclElement__oclModelTypes /* oclModelTypes() */
+		};
+		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Image__Os_tpl = {};
 
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Runtimeid__Runtimeid = {};
 		private static final /*@NonNull*/ ExecutorOperation /*@NonNull*/ [] _Runtimeid__MixinBase = {};
@@ -341,10 +448,22 @@ public class OpenstackruntimeTables
 		 *	Install the operation descriptors in the fragment descriptors.
 		 */
 		static {
+			Fragments._Flavor__Flavor.initOperations(_Flavor__Flavor);
+			Fragments._Flavor__MixinBase.initOperations(_Flavor__MixinBase);
+			Fragments._Flavor__OclAny.initOperations(_Flavor__OclAny);
+			Fragments._Flavor__OclElement.initOperations(_Flavor__OclElement);
+			Fragments._Flavor__Resource_tpl.initOperations(_Flavor__Resource_tpl);
+
 			Fragments._Floatingip__Floatingip.initOperations(_Floatingip__Floatingip);
 			Fragments._Floatingip__MixinBase.initOperations(_Floatingip__MixinBase);
 			Fragments._Floatingip__OclAny.initOperations(_Floatingip__OclAny);
 			Fragments._Floatingip__OclElement.initOperations(_Floatingip__OclElement);
+
+			Fragments._Image__Image.initOperations(_Image__Image);
+			Fragments._Image__MixinBase.initOperations(_Image__MixinBase);
+			Fragments._Image__OclAny.initOperations(_Image__OclAny);
+			Fragments._Image__OclElement.initOperations(_Image__OclElement);
+			Fragments._Image__Os_tpl.initOperations(_Image__Os_tpl);
 
 			Fragments._Runtimeid__MixinBase.initOperations(_Runtimeid__MixinBase);
 			Fragments._Runtimeid__OclAny.initOperations(_Runtimeid__OclAny);
@@ -369,9 +488,17 @@ public class OpenstackruntimeTables
 			FragmentOperations.init();
 		}
 
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Flavor = {
+			OpenstackruntimeTables.Properties._Flavor__openstackFlavorRuntimeId
+		};
+
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Floatingip = {
 			OpenstackruntimeTables.Properties._Floatingip__openstackFloatingipAddress,
 			OpenstackruntimeTables.Properties._Floatingip__openstackFloatingipPool
+		};
+
+		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Image = {
+			OpenstackruntimeTables.Properties._Image__openstackImageRuntimeId
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Runtimeid = {
@@ -382,7 +509,9 @@ public class OpenstackruntimeTables
 		 *	Install the property descriptors in the fragment descriptors.
 		 */
 		static {
+			Fragments._Flavor__Flavor.initProperties(_Flavor);
 			Fragments._Floatingip__Floatingip.initProperties(_Floatingip);
+			Fragments._Image__Image.initProperties(_Image);
 			Fragments._Runtimeid__Runtimeid.initProperties(_Runtimeid);
 
 			Init.initEnd();

@@ -12,7 +12,9 @@
  */
 package openstackruntime.impl;
 
+import openstackruntime.Flavor;
 import openstackruntime.Floatingip;
+import openstackruntime.Image;
 import openstackruntime.OpenstackruntimeFactory;
 import openstackruntime.OpenstackruntimePackage;
 import openstackruntime.Runtimeid;
@@ -50,6 +52,20 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 	 * @generated
 	 */
 	private EClass floatingipEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass imageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass flavorEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -193,6 +209,60 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getImage() {
+		return imageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImage_OpenstackImageRuntimeId() {
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getImage__AppliesConstraint__DiagnosticChain_Map() {
+		return imageEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFlavor() {
+		return flavorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFlavor_OpenstackFlavorRuntimeId() {
+		return (EAttribute)flavorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getFlavor__AppliesConstraint__DiagnosticChain_Map() {
+		return flavorEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public OpenstackruntimeFactory getOpenstackruntimeFactory() {
 		return (OpenstackruntimeFactory)getEFactoryInstance();
 	}
@@ -224,6 +294,14 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		createEAttribute(floatingipEClass, FLOATINGIP__OPENSTACK_FLOATINGIP_ADDRESS);
 		createEAttribute(floatingipEClass, FLOATINGIP__OPENSTACK_FLOATINGIP_POOL);
 		createEOperation(floatingipEClass, FLOATINGIP___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
+		imageEClass = createEClass(IMAGE);
+		createEAttribute(imageEClass, IMAGE__OPENSTACK_IMAGE_RUNTIME_ID);
+		createEOperation(imageEClass, IMAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
+
+		flavorEClass = createEClass(FLAVOR);
+		createEAttribute(flavorEClass, FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID);
+		createEOperation(flavorEClass, FLAVOR___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 	}
 
 	/**
@@ -251,6 +329,7 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 
 		// Obtain other dependent packages
 		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
+		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -259,6 +338,10 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		// Add supertypes to classes
 		runtimeidEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		floatingipEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		imageEClass.getESuperTypes().add(theInfrastructurePackage.getOs_tpl());
+		imageEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		flavorEClass.getESuperTypes().add(theInfrastructurePackage.getResource_tpl());
+		flavorEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(runtimeidEClass, Runtimeid.class, "Runtimeid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -278,6 +361,30 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		initEAttribute(getFloatingip_OpenstackFloatingipPool(), ecorePackage.getEString(), "openstackFloatingipPool", null, 0, 1, Floatingip.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getFloatingip__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getImage_OpenstackImageRuntimeId(), ecorePackage.getEString(), "openstackImageRuntimeId", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getImage__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(ecorePackage.getEJavaObject());
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(flavorEClass, Flavor.class, "Flavor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFlavor_OpenstackFlavorRuntimeId(), ecorePackage.getEString(), "openstackFlavorRuntimeId", null, 0, 1, Flavor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		op = initEOperation(getFlavor__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -315,6 +422,18 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		   });
 		addAnnotation
 		  (floatingipEClass,
+		   source,
+		   new String[] {
+			   "constraints", "appliesConstraint"
+		   });
+		addAnnotation
+		  (imageEClass,
+		   source,
+		   new String[] {
+			   "constraints", "appliesConstraint"
+		   });
+		addAnnotation
+		  (flavorEClass,
 		   source,
 		   new String[] {
 			   "constraints", "appliesConstraint"
