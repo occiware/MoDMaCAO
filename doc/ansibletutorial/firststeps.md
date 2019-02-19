@@ -47,4 +47,9 @@ with a topology state similar to the one shown below:
   <img src="final-result.png" alt="Final result." width="600"/>
 </p>
 
-Congratulations you finished your first steps with Ansible Configuration management based on MoDMaCAO.
+Congratulations you finished your first steps with Ansible Configuration management based on MoDMaCAO. In this
+tutorial, you learned how to
+- Start an Eclipse Eclipse Instance with the MoDMaCAO plugins,
+- Use the model-editor to execute life-cylce Actions for OCCI Components and Applications,
+- Use the model-editor to define new Components and associated Mixins.
+
