@@ -42,14 +42,4 @@ Contains a graphical editor generated with OCCI-Studio, which we will use in thi
 <pre>org.modmacao.all.extensions.example</pre>
 Contains an example OCCI configuration, which we will use in this tutorial.
 
-<pre>org.modmacao.openstack.runtime</pre>
-(Only relevant for extended tutorial) 
-Contains a very small OpenStack-specific OCCI extension, that allows to attach public IP addresses to compute instances and
-to store runtime ids (the ones provided by OpenStack) in the modell.
-
-<pre>org.modmacao.openstack.connector</pre>
-(Only relevant for extended tutorial)
-This is a connector for the OCCI Infrastructure extension, that connects to an OpenStack cloud. It can be used to manage virtual
-machines, networks, network interfaces and block storage.
-
 Continue with [setup](setup.md).
