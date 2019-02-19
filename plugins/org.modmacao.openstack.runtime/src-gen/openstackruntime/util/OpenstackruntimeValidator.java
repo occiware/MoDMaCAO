@@ -16,6 +16,7 @@ import java.util.Map;
 
 import openstackruntime.*;
 
+import org.eclipse.cmf.occi.infrastructure.util.InfrastructureValidator;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -66,12 +67,28 @@ public class OpenstackruntimeValidator extends EObjectValidator {
 	public static final int FLOATINGIP__APPLIES_CONSTRAINT = 2;
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Image'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int IMAGE__APPLIES_CONSTRAINT = 3;
+
+	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Flavor'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int FLAVOR__APPLIES_CONSTRAINT = 4;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 2;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -82,6 +99,14 @@ public class OpenstackruntimeValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
+	 * The cached base package validator.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InfrastructureValidator infrastructureValidator;
+
+	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -89,6 +114,7 @@ public class OpenstackruntimeValidator extends EObjectValidator {
 	 */
 	public OpenstackruntimeValidator() {
 		super();
+		infrastructureValidator = InfrastructureValidator.INSTANCE;
 	}
 
 	/**
@@ -115,6 +141,10 @@ public class OpenstackruntimeValidator extends EObjectValidator {
 				return validateRuntimeid((Runtimeid)value, diagnostics, context);
 			case OpenstackruntimePackage.FLOATINGIP:
 				return validateFloatingip((Floatingip)value, diagnostics, context);
+			case OpenstackruntimePackage.IMAGE:
+				return validateImage((Image)value, diagnostics, context);
+			case OpenstackruntimePackage.FLAVOR:
+				return validateFlavor((Flavor)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -176,6 +206,64 @@ public class OpenstackruntimeValidator extends EObjectValidator {
 	 */
 	public boolean validateFloatingip_appliesConstraint(Floatingip floatingip, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return floatingip.appliesConstraint(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateImage(Image image, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(image, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(image, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(image, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(image, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(image, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(image, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(image, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(image, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(image, diagnostics, context);
+		if (result || diagnostics != null) result &= validateImage_appliesConstraint(image, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Image</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateImage_appliesConstraint(Image image, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return image.appliesConstraint(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFlavor(Flavor flavor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(flavor, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(flavor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(flavor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(flavor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(flavor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(flavor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(flavor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(flavor, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(flavor, diagnostics, context);
+		if (result || diagnostics != null) result &= validateFlavor_appliesConstraint(flavor, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * Validates the appliesConstraint constraint of '<em>Flavor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFlavor_appliesConstraint(Flavor flavor, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return flavor.appliesConstraint(diagnostics, context);
 	}
 
 	/**

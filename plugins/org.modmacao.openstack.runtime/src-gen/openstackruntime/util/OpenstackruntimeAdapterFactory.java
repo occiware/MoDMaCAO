@@ -16,6 +16,8 @@ import openstackruntime.*;
 
 import org.eclipse.cmf.occi.core.MixinBase;
 
+import org.eclipse.cmf.occi.infrastructure.Os_tpl;
+import org.eclipse.cmf.occi.infrastructure.Resource_tpl;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -88,8 +90,24 @@ public class OpenstackruntimeAdapterFactory extends AdapterFactoryImpl {
 				return createFloatingipAdapter();
 			}
 			@Override
+			public Adapter caseImage(Image object) {
+				return createImageAdapter();
+			}
+			@Override
+			public Adapter caseFlavor(Flavor object) {
+				return createFlavorAdapter();
+			}
+			@Override
 			public Adapter caseMixinBase(MixinBase object) {
 				return createMixinBaseAdapter();
+			}
+			@Override
+			public Adapter caseOs_tpl(Os_tpl object) {
+				return createOs_tplAdapter();
+			}
+			@Override
+			public Adapter caseResource_tpl(Resource_tpl object) {
+				return createResource_tplAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -140,6 +158,34 @@ public class OpenstackruntimeAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link openstackruntime.Image <em>Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see openstackruntime.Image
+	 * @generated
+	 */
+	public Adapter createImageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link openstackruntime.Flavor <em>Flavor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see openstackruntime.Flavor
+	 * @generated
+	 */
+	public Adapter createFlavorAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.core.MixinBase <em>Mixin Base</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -150,6 +196,34 @@ public class OpenstackruntimeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createMixinBaseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Os_tpl <em>Os tpl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.infrastructure.Os_tpl
+	 * @generated
+	 */
+	public Adapter createOs_tplAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.cmf.occi.infrastructure.Resource_tpl <em>Resource tpl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.cmf.occi.infrastructure.Resource_tpl
+	 * @generated
+	 */
+	public Adapter createResource_tplAdapter() {
 		return null;
 	}
 
