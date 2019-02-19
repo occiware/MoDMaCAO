@@ -14,7 +14,7 @@ MoDMaCAO addresses these issues by providing:
 
 Additionally, example use cases for the validation of the framework are provided.
 
-If you are interested in the full story [read the paper](https://doi.org/10.5220/0006693001000111).
+If you are interested in the full story, [read the paper](https://doi.org/10.5220/0006693001000111).
 
 ## The MoDMaCAO Modeling Framework
 The MoDMaCAO modeling framework is
