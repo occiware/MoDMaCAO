@@ -58,31 +58,30 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link openstackruntime.impl.FlavorImpl#getOpenstackFlavorRuntimeId <em>Openstack Flavor Runtime Id</em>}</li>
+ *   <li>{@link openstackruntime.impl.FlavorImpl#getOpenstackRuntimeId <em>Openstack Runtime Id</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FlavorImpl extends Resource_tplImpl implements Flavor {
 	/**
-	 * The default value of the '{@link #getOpenstackFlavorRuntimeId() <em>Openstack Flavor Runtime Id</em>}' attribute.
+	 * The default value of the '{@link #getOpenstackRuntimeId() <em>Openstack Runtime Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOpenstackFlavorRuntimeId()
+	 * @see #getOpenstackRuntimeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OPENSTACK_FLAVOR_RUNTIME_ID_EDEFAULT = null;
+	protected static final String OPENSTACK_RUNTIME_ID_EDEFAULT = null;
 	/**
-	 * The cached value of the '{@link #getOpenstackFlavorRuntimeId() <em>Openstack Flavor Runtime Id</em>}' attribute.
+	 * The cached value of the '{@link #getOpenstackRuntimeId() <em>Openstack Runtime Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOpenstackFlavorRuntimeId()
+	 * @see #getOpenstackRuntimeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String openstackFlavorRuntimeId = OPENSTACK_FLAVOR_RUNTIME_ID_EDEFAULT;
-
+	protected String openstackRuntimeId = OPENSTACK_RUNTIME_ID_EDEFAULT;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -107,8 +106,8 @@ public class FlavorImpl extends Resource_tplImpl implements Flavor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getOpenstackFlavorRuntimeId() {
-		return openstackFlavorRuntimeId;
+	public String getOpenstackRuntimeId() {
+		return openstackRuntimeId;
 	}
 
 	/**
@@ -116,11 +115,11 @@ public class FlavorImpl extends Resource_tplImpl implements Flavor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOpenstackFlavorRuntimeId(String newOpenstackFlavorRuntimeId) {
-		String oldOpenstackFlavorRuntimeId = openstackFlavorRuntimeId;
-		openstackFlavorRuntimeId = newOpenstackFlavorRuntimeId;
+	public void setOpenstackRuntimeId(String newOpenstackRuntimeId) {
+		String oldOpenstackRuntimeId = openstackRuntimeId;
+		openstackRuntimeId = newOpenstackRuntimeId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpenstackruntimePackage.FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID, oldOpenstackFlavorRuntimeId, openstackFlavorRuntimeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, OpenstackruntimePackage.FLAVOR__OPENSTACK_RUNTIME_ID, oldOpenstackRuntimeId, openstackRuntimeId));
 	}
 
 	/**
@@ -169,8 +168,8 @@ public class FlavorImpl extends Resource_tplImpl implements Flavor {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OpenstackruntimePackage.FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID:
-				return getOpenstackFlavorRuntimeId();
+			case OpenstackruntimePackage.FLAVOR__OPENSTACK_RUNTIME_ID:
+				return getOpenstackRuntimeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,8 +182,8 @@ public class FlavorImpl extends Resource_tplImpl implements Flavor {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OpenstackruntimePackage.FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID:
-				setOpenstackFlavorRuntimeId((String)newValue);
+			case OpenstackruntimePackage.FLAVOR__OPENSTACK_RUNTIME_ID:
+				setOpenstackRuntimeId((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -198,8 +197,8 @@ public class FlavorImpl extends Resource_tplImpl implements Flavor {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OpenstackruntimePackage.FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID:
-				setOpenstackFlavorRuntimeId(OPENSTACK_FLAVOR_RUNTIME_ID_EDEFAULT);
+			case OpenstackruntimePackage.FLAVOR__OPENSTACK_RUNTIME_ID:
+				setOpenstackRuntimeId(OPENSTACK_RUNTIME_ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -213,8 +212,8 @@ public class FlavorImpl extends Resource_tplImpl implements Flavor {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OpenstackruntimePackage.FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID:
-				return OPENSTACK_FLAVOR_RUNTIME_ID_EDEFAULT == null ? openstackFlavorRuntimeId != null : !OPENSTACK_FLAVOR_RUNTIME_ID_EDEFAULT.equals(openstackFlavorRuntimeId);
+			case OpenstackruntimePackage.FLAVOR__OPENSTACK_RUNTIME_ID:
+				return OPENSTACK_RUNTIME_ID_EDEFAULT == null ? openstackRuntimeId != null : !OPENSTACK_RUNTIME_ID_EDEFAULT.equals(openstackRuntimeId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -244,8 +243,8 @@ public class FlavorImpl extends Resource_tplImpl implements Flavor {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (openstackFlavorRuntimeId: ");
-		result.append(openstackFlavorRuntimeId);
+		result.append(" (openstackRuntimeId: ");
+		result.append(openstackRuntimeId);
 		result.append(')');
 		return result.toString();
 	}

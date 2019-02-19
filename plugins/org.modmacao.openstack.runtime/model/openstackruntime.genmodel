@@ -24,13 +24,13 @@
     <genClasses>
       <ecoreClass href="openstackruntime.ecore#//Image"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="openstackruntime.ecore#//Image/openstackImageRuntimeId"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="openstackruntime.ecore#//Image/openstackRuntimeId"/>
       </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="openstackruntime.ecore#//Flavor"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="openstackruntime.ecore#//Flavor/openstackFlavorRuntimeId"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="openstackruntime.ecore#//Flavor/openstackRuntimeId"/>
       </genFeatures>
     </genClasses>
   </genPackages>

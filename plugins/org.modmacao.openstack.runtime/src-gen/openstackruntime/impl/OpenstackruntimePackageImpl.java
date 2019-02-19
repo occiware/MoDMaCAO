@@ -218,7 +218,7 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImage_OpenstackImageRuntimeId() {
+	public EAttribute getImage_OpenstackRuntimeId() {
 		return (EAttribute)imageEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -245,7 +245,7 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFlavor_OpenstackFlavorRuntimeId() {
+	public EAttribute getFlavor_OpenstackRuntimeId() {
 		return (EAttribute)flavorEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -296,11 +296,11 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		createEOperation(floatingipEClass, FLOATINGIP___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		imageEClass = createEClass(IMAGE);
-		createEAttribute(imageEClass, IMAGE__OPENSTACK_IMAGE_RUNTIME_ID);
+		createEAttribute(imageEClass, IMAGE__OPENSTACK_RUNTIME_ID);
 		createEOperation(imageEClass, IMAGE___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 
 		flavorEClass = createEClass(FLAVOR);
-		createEAttribute(flavorEClass, FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID);
+		createEAttribute(flavorEClass, FLAVOR__OPENSTACK_RUNTIME_ID);
 		createEOperation(flavorEClass, FLAVOR___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
 	}
 
@@ -370,7 +370,7 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getImage_OpenstackImageRuntimeId(), ecorePackage.getEString(), "openstackImageRuntimeId", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImage_OpenstackRuntimeId(), ecorePackage.getEString(), "openstackRuntimeId", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getImage__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -382,7 +382,7 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(flavorEClass, Flavor.class, "Flavor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFlavor_OpenstackFlavorRuntimeId(), ecorePackage.getEString(), "openstackFlavorRuntimeId", null, 0, 1, Flavor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFlavor_OpenstackRuntimeId(), ecorePackage.getEString(), "openstackRuntimeId", null, 0, 1, Flavor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		op = initEOperation(getFlavor__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);

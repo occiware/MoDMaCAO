@@ -128,6 +128,52 @@ public class OpenstackruntimeItemProviderAdapterFactory extends Openstackruntime
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link openstackruntime.Image} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ImageItemProvider imageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link openstackruntime.Image}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createImageAdapter() {
+		if (imageItemProvider == null) {
+			imageItemProvider = new ImageItemProvider(this);
+		}
+
+		return imageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link openstackruntime.Flavor} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FlavorItemProvider flavorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link openstackruntime.Flavor}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFlavorAdapter() {
+		if (flavorItemProvider == null) {
+			flavorItemProvider = new FlavorItemProvider(this);
+		}
+
+		return flavorItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -228,6 +274,8 @@ public class OpenstackruntimeItemProviderAdapterFactory extends Openstackruntime
 	public void dispose() {
 		if (runtimeidItemProvider != null) runtimeidItemProvider.dispose();
 		if (floatingipItemProvider != null) floatingipItemProvider.dispose();
+		if (imageItemProvider != null) imageItemProvider.dispose();
+		if (flavorItemProvider != null) flavorItemProvider.dispose();
 	}
 
 }

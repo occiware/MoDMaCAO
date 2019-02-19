@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link openstackruntime.Image#getOpenstackImageRuntimeId <em>Openstack Image Runtime Id</em>}</li>
+ *   <li>{@link openstackruntime.Image#getOpenstackRuntimeId <em>Openstack Runtime Id</em>}</li>
  * </ul>
  *
  * @see openstackruntime.OpenstackruntimePackage#getImage()
@@ -38,29 +38,29 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  */
 public interface Image extends Os_tpl, MixinBase {
 	/**
-	 * Returns the value of the '<em><b>Openstack Image Runtime Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Openstack Runtime Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Openstack Image Runtime Id</em>' attribute.
-	 * @see #setOpenstackImageRuntimeId(String)
-	 * @see openstackruntime.OpenstackruntimePackage#getImage_OpenstackImageRuntimeId()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/openstack/runtime/ecore!Image!openstackImageRuntimeId'"
+	 * @return the value of the '<em>Openstack Runtime Id</em>' attribute.
+	 * @see #setOpenstackRuntimeId(String)
+	 * @see openstackruntime.OpenstackruntimePackage#getImage_OpenstackRuntimeId()
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/openstack/runtime/ecore!Image!openstackRuntimeId'"
 	 * @generated
 	 */
-	String getOpenstackImageRuntimeId();
+	String getOpenstackRuntimeId();
 
 	/**
-	 * Sets the value of the '{@link openstackruntime.Image#getOpenstackImageRuntimeId <em>Openstack Image Runtime Id</em>}' attribute.
+	 * Sets the value of the '{@link openstackruntime.Image#getOpenstackRuntimeId <em>Openstack Runtime Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Openstack Image Runtime Id</em>' attribute.
-	 * @see #getOpenstackImageRuntimeId()
+	 * @param value the new value of the '<em>Openstack Runtime Id</em>' attribute.
+	 * @see #getOpenstackRuntimeId()
 	 * @generated
 	 */
-	void setOpenstackImageRuntimeId(String value);
+	void setOpenstackRuntimeId(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

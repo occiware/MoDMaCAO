@@ -29,7 +29,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link openstackruntime.Flavor#getOpenstackFlavorRuntimeId <em>Openstack Flavor Runtime Id</em>}</li>
+ *   <li>{@link openstackruntime.Flavor#getOpenstackRuntimeId <em>Openstack Runtime Id</em>}</li>
  * </ul>
  *
  * @see openstackruntime.OpenstackruntimePackage#getFlavor()
@@ -38,29 +38,29 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  */
 public interface Flavor extends Resource_tpl, MixinBase {
 	/**
-	 * Returns the value of the '<em><b>Openstack Flavor Runtime Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Openstack Runtime Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Openstack Flavor Runtime Id</em>' attribute.
-	 * @see #setOpenstackFlavorRuntimeId(String)
-	 * @see openstackruntime.OpenstackruntimePackage#getFlavor_OpenstackFlavorRuntimeId()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/openstack/runtime/ecore!Flavor!openstackFlavorRuntimeId'"
+	 * @return the value of the '<em>Openstack Runtime Id</em>' attribute.
+	 * @see #setOpenstackRuntimeId(String)
+	 * @see openstackruntime.OpenstackruntimePackage#getFlavor_OpenstackRuntimeId()
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/openstack/runtime/ecore!Flavor!openstackRuntimeId'"
 	 * @generated
 	 */
-	String getOpenstackFlavorRuntimeId();
+	String getOpenstackRuntimeId();
 
 	/**
-	 * Sets the value of the '{@link openstackruntime.Flavor#getOpenstackFlavorRuntimeId <em>Openstack Flavor Runtime Id</em>}' attribute.
+	 * Sets the value of the '{@link openstackruntime.Flavor#getOpenstackRuntimeId <em>Openstack Runtime Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Openstack Flavor Runtime Id</em>' attribute.
-	 * @see #getOpenstackFlavorRuntimeId()
+	 * @param value the new value of the '<em>Openstack Runtime Id</em>' attribute.
+	 * @see #getOpenstackRuntimeId()
 	 * @generated
 	 */
-	void setOpenstackFlavorRuntimeId(String value);
+	void setOpenstackRuntimeId(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

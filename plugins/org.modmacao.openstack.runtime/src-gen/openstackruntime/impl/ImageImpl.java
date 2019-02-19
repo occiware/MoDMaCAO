@@ -59,31 +59,31 @@ import org.eclipse.ocl.pivot.values.IntegerValue;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link openstackruntime.impl.ImageImpl#getOpenstackImageRuntimeId <em>Openstack Image Runtime Id</em>}</li>
+ *   <li>{@link openstackruntime.impl.ImageImpl#getOpenstackRuntimeId <em>Openstack Runtime Id</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ImageImpl extends Os_tplImpl implements Image {
 	/**
-	 * The default value of the '{@link #getOpenstackImageRuntimeId() <em>Openstack Image Runtime Id</em>}' attribute.
+	 * The default value of the '{@link #getOpenstackRuntimeId() <em>Openstack Runtime Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOpenstackImageRuntimeId()
+	 * @see #getOpenstackRuntimeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String OPENSTACK_IMAGE_RUNTIME_ID_EDEFAULT = null;
+	protected static final String OPENSTACK_RUNTIME_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getOpenstackImageRuntimeId() <em>Openstack Image Runtime Id</em>}' attribute.
+	 * The cached value of the '{@link #getOpenstackRuntimeId() <em>Openstack Runtime Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOpenstackImageRuntimeId()
+	 * @see #getOpenstackRuntimeId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String openstackImageRuntimeId = OPENSTACK_IMAGE_RUNTIME_ID_EDEFAULT;
+	protected String openstackRuntimeId = OPENSTACK_RUNTIME_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -109,8 +109,8 @@ public class ImageImpl extends Os_tplImpl implements Image {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getOpenstackImageRuntimeId() {
-		return openstackImageRuntimeId;
+	public String getOpenstackRuntimeId() {
+		return openstackRuntimeId;
 	}
 
 	/**
@@ -118,11 +118,11 @@ public class ImageImpl extends Os_tplImpl implements Image {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOpenstackImageRuntimeId(String newOpenstackImageRuntimeId) {
-		String oldOpenstackImageRuntimeId = openstackImageRuntimeId;
-		openstackImageRuntimeId = newOpenstackImageRuntimeId;
+	public void setOpenstackRuntimeId(String newOpenstackRuntimeId) {
+		String oldOpenstackRuntimeId = openstackRuntimeId;
+		openstackRuntimeId = newOpenstackRuntimeId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, OpenstackruntimePackage.IMAGE__OPENSTACK_IMAGE_RUNTIME_ID, oldOpenstackImageRuntimeId, openstackImageRuntimeId));
+			eNotify(new ENotificationImpl(this, Notification.SET, OpenstackruntimePackage.IMAGE__OPENSTACK_RUNTIME_ID, oldOpenstackRuntimeId, openstackRuntimeId));
 	}
 
 	/**
@@ -171,8 +171,8 @@ public class ImageImpl extends Os_tplImpl implements Image {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case OpenstackruntimePackage.IMAGE__OPENSTACK_IMAGE_RUNTIME_ID:
-				return getOpenstackImageRuntimeId();
+			case OpenstackruntimePackage.IMAGE__OPENSTACK_RUNTIME_ID:
+				return getOpenstackRuntimeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -185,8 +185,8 @@ public class ImageImpl extends Os_tplImpl implements Image {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case OpenstackruntimePackage.IMAGE__OPENSTACK_IMAGE_RUNTIME_ID:
-				setOpenstackImageRuntimeId((String)newValue);
+			case OpenstackruntimePackage.IMAGE__OPENSTACK_RUNTIME_ID:
+				setOpenstackRuntimeId((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -200,8 +200,8 @@ public class ImageImpl extends Os_tplImpl implements Image {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case OpenstackruntimePackage.IMAGE__OPENSTACK_IMAGE_RUNTIME_ID:
-				setOpenstackImageRuntimeId(OPENSTACK_IMAGE_RUNTIME_ID_EDEFAULT);
+			case OpenstackruntimePackage.IMAGE__OPENSTACK_RUNTIME_ID:
+				setOpenstackRuntimeId(OPENSTACK_RUNTIME_ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -215,8 +215,8 @@ public class ImageImpl extends Os_tplImpl implements Image {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case OpenstackruntimePackage.IMAGE__OPENSTACK_IMAGE_RUNTIME_ID:
-				return OPENSTACK_IMAGE_RUNTIME_ID_EDEFAULT == null ? openstackImageRuntimeId != null : !OPENSTACK_IMAGE_RUNTIME_ID_EDEFAULT.equals(openstackImageRuntimeId);
+			case OpenstackruntimePackage.IMAGE__OPENSTACK_RUNTIME_ID:
+				return OPENSTACK_RUNTIME_ID_EDEFAULT == null ? openstackRuntimeId != null : !OPENSTACK_RUNTIME_ID_EDEFAULT.equals(openstackRuntimeId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -246,8 +246,8 @@ public class ImageImpl extends Os_tplImpl implements Image {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (openstackImageRuntimeId: ");
-		result.append(openstackImageRuntimeId);
+		result.append(" (openstackRuntimeId: ");
+		result.append(openstackRuntimeId);
 		result.append(')');
 		return result.toString();
 	}

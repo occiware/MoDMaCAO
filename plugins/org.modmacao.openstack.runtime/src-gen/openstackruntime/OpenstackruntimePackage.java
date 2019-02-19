@@ -263,13 +263,13 @@ public interface OpenstackruntimePackage extends EPackage {
 	int IMAGE__ATTRIBUTES = InfrastructurePackage.OS_TPL__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Openstack Image Runtime Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Openstack Runtime Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__OPENSTACK_IMAGE_RUNTIME_ID = InfrastructurePackage.OS_TPL_FEATURE_COUNT + 0;
+	int IMAGE__OPENSTACK_RUNTIME_ID = InfrastructurePackage.OS_TPL_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Image</em>' class.
@@ -336,13 +336,13 @@ public interface OpenstackruntimePackage extends EPackage {
 	int FLAVOR__ATTRIBUTES = InfrastructurePackage.RESOURCE_TPL__ATTRIBUTES;
 
 	/**
-	 * The feature id for the '<em><b>Openstack Flavor Runtime Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Openstack Runtime Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID = InfrastructurePackage.RESOURCE_TPL_FEATURE_COUNT + 0;
+	int FLAVOR__OPENSTACK_RUNTIME_ID = InfrastructurePackage.RESOURCE_TPL_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Flavor</em>' class.
@@ -456,15 +456,15 @@ public interface OpenstackruntimePackage extends EPackage {
 	EClass getImage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link openstackruntime.Image#getOpenstackImageRuntimeId <em>Openstack Image Runtime Id</em>}'.
+	 * Returns the meta object for the attribute '{@link openstackruntime.Image#getOpenstackRuntimeId <em>Openstack Runtime Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Openstack Image Runtime Id</em>'.
-	 * @see openstackruntime.Image#getOpenstackImageRuntimeId()
+	 * @return the meta object for the attribute '<em>Openstack Runtime Id</em>'.
+	 * @see openstackruntime.Image#getOpenstackRuntimeId()
 	 * @see #getImage()
 	 * @generated
 	 */
-	EAttribute getImage_OpenstackImageRuntimeId();
+	EAttribute getImage_OpenstackRuntimeId();
 
 	/**
 	 * Returns the meta object for the '{@link openstackruntime.Image#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
@@ -487,15 +487,15 @@ public interface OpenstackruntimePackage extends EPackage {
 	EClass getFlavor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link openstackruntime.Flavor#getOpenstackFlavorRuntimeId <em>Openstack Flavor Runtime Id</em>}'.
+	 * Returns the meta object for the attribute '{@link openstackruntime.Flavor#getOpenstackRuntimeId <em>Openstack Runtime Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Openstack Flavor Runtime Id</em>'.
-	 * @see openstackruntime.Flavor#getOpenstackFlavorRuntimeId()
+	 * @return the meta object for the attribute '<em>Openstack Runtime Id</em>'.
+	 * @see openstackruntime.Flavor#getOpenstackRuntimeId()
 	 * @see #getFlavor()
 	 * @generated
 	 */
-	EAttribute getFlavor_OpenstackFlavorRuntimeId();
+	EAttribute getFlavor_OpenstackRuntimeId();
 
 	/**
 	 * Returns the meta object for the '{@link openstackruntime.Flavor#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
@@ -601,12 +601,12 @@ public interface OpenstackruntimePackage extends EPackage {
 		EClass IMAGE = eINSTANCE.getImage();
 
 		/**
-		 * The meta object literal for the '<em><b>Openstack Image Runtime Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Openstack Runtime Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IMAGE__OPENSTACK_IMAGE_RUNTIME_ID = eINSTANCE.getImage_OpenstackImageRuntimeId();
+		EAttribute IMAGE__OPENSTACK_RUNTIME_ID = eINSTANCE.getImage_OpenstackRuntimeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
@@ -627,12 +627,12 @@ public interface OpenstackruntimePackage extends EPackage {
 		EClass FLAVOR = eINSTANCE.getFlavor();
 
 		/**
-		 * The meta object literal for the '<em><b>Openstack Flavor Runtime Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Openstack Runtime Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FLAVOR__OPENSTACK_FLAVOR_RUNTIME_ID = eINSTANCE.getFlavor_OpenstackFlavorRuntimeId();
+		EAttribute FLAVOR__OPENSTACK_RUNTIME_ID = eINSTANCE.getFlavor_OpenstackRuntimeId();
 
 		/**
 		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
