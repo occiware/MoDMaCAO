@@ -27,7 +27,7 @@ created
   <img src="openstack-vm-provisioning.png" alt="OpenStack VM Provisioning" width="600"/>
 </p>
 
-## Add a second VM with a specified flavor##
+## Add a second VM with a specified flavor ##
 tbd
 
 ## Use an allready existing ressource ##
