@@ -19,7 +19,7 @@ will be added. The RuntimeID Mixin contains the OpenStack id of the running netw
 3. Provision the VM: Right-Click on the Compute Resource->CRUD Operations->Create
 This will provision a VM with the default flavor,image and key set in your configuration file.
 The VM will change its color to light green, when it becomes active and a new Mixin "RuntimeID"
-will be added. The RuntimeID Mixin contains the OpenStack id of the running vm. Note that also
+will be added. The RuntimeID Mixin contains the OpenStack id of the running VM. Note that also
 the NetworkInterface will become active, since it will be created by default, when the VM gets
 created
 
