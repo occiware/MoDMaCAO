@@ -13,7 +13,7 @@ You should end up with an OCCI-Studio that looks similar to the one below:
 4. Locate the project *org.modmacao.openstack.connector* and open the file *openstack.properties*:
 
 <p align="center">
-  <img src="openstack-connector-settings.png" alt="OpenStack Connector Settings." width="600"/>
+  <img src="openstack-plugin-settings.png" alt="OpenStack Plugin Settings." width="600"/>
 </p>
 
 You need to adjust the properties to your environment. The following properties can
@@ -25,6 +25,7 @@ be set:
 - **openstack_default_network**: The ID of a network a launched VM is connected to in case no network is specified in the model
 - **openstack_default_image**: The ID of a default image to use when launching a VM in case no image is specified in the model
 - **openstack_default_flavor**: The ID of a default flavor to use when launching a VM in case no flavor is specified in the model
+- **openstack_default_key**: A default public key, you can use to connect to the provisioned VMs
 
 
 5. Locate the project *org.modmacao.all.extensions.design.extended*.
