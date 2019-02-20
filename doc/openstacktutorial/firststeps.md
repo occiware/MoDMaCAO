@@ -33,6 +33,7 @@ tbd
 ## Use an allready existing ressource ##
 tbd
 
+Make sure that you call OCCI Delete (Right-Click->CRUD Operations->Delete) on all elements to deprovision the resources when you done with the tutorial.
 
 
 
