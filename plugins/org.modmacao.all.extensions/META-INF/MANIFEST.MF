@@ -1,13 +1,27 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: org.modcacao.all.extensions
+Bundle-Name: %pluginName
 Bundle-SymbolicName: org.modmacao.all.extensions;singleton:=true
+Automatic-Module-Name: org.modmacao.all.extensions
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: OCCIware
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Require-Bundle: org.eclipse.emf.ecore;visibility:=reexport,
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.modmacao.mongodb;visibility:=reexport,
+ org.modmacao.core;visibility:=reexport,
+ org.modmacao.apache.spark;visibility:=reexport,
+ org.modmacao.occi.platform;visibility:=reexport,
+ org.modmacao.client.server;visibility:=reexport,
+ org.modmacao.placement;visibility:=reexport,
+ org.modmacao.lamp;visibility:=reexport,
+ org.eclipse.cmf.occi.infrastructure;visibility:=reexport,
+ org.modmacao.apache.cassandra;visibility:=reexport,
+ org.modmacao.openstack.runtime;visibility:=reexport,
+ org.modmacao.ansible;visibility:=reexport,
  org.eclipse.cmf.occi.core;visibility:=reexport,
  org.eclipse.cmf.occi.core.ui,
  org.eclipse.cmf.occi.core.gen.emf.ui
