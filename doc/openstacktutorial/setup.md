@@ -13,7 +13,7 @@ You should end up with an OCCI-Studio that looks similar to the one below:
 4. Locate the project *org.modmacao.openstack.connector* and open the file *openstack.properties*:
 
 <p align="center">
-  <img src="openstack-plugin-settings.png" alt="OpenStack Plugin Settings." width="600"/>
+  <img src="openstack-plugin-properties.png" alt="OpenStack Plugin Settings." width="600"/>
 </p>
 
 You need to adjust the properties to your environment. The following properties can
