@@ -15,11 +15,16 @@
     <semanticResources>http://schemas.modmacao.org/apache/cassandra</semanticResources>
     <semanticResources>http://schemas.modmacao.org/openstack/runtime</semanticResources>
     <semanticResources>http://schemas.modmacao.org/occi/ansible</semanticResources>
+    <semanticResources>test-openstack.all</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_a5OkgC-oEemI4t-0Ickcnw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_a_HKEC-oEemI4t-0Ickcnw" name="test-ansible" repPath="#_a6nEkC-oEemI4t-0Ickcnw">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']"/>
         <target xmi:type="occi:Configuration" href="test-ansible.all#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_09MLUDT7EemftsmVAKiTwQ" name="test-openstack" repPath="#_0340kDT7EemftsmVAKiTwQ">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']"/>
+        <target xmi:type="occi:Configuration" href="test-openstack.all#/"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
@@ -196,7 +201,7 @@
                 <styles xmi:type="notation:DrawerStyle" xmi:id="_V6akUy-sEemwruGO_ZsRXw" collapsed="true"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_V6WS4S-sEemwruGO_ZsRXw" fontName="Ubuntu" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V6WS4i-sEemwruGO_ZsRXw" y="126"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_V6WS4i-sEemwruGO_ZsRXw" y="166"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_Zka7cC-tEemzH9Va2y6Ojg" type="3009" element="_ZcQd8C-tEemzH9Va2y6Ojg">
               <children xmi:type="notation:Node" xmi:id="_ZkfM4C-tEemzH9Va2y6Ojg" type="5004"/>
@@ -210,7 +215,7 @@
                 <styles xmi:type="notation:DrawerStyle" xmi:id="_Zkfz8C-tEemzH9Va2y6Ojg" collapsed="true"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_Zka7cS-tEemzH9Va2y6Ojg" fontName="Ubuntu" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Zka7ci-tEemzH9Va2y6Ojg" y="173"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Zka7ci-tEemzH9Va2y6Ojg" y="126"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_ey8oES-oEemI4t-0Ickcnw"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_ey8oEi-oEemI4t-0Ickcnw"/>
@@ -727,7 +732,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_dAfZsC-tEemzH9Va2y6Ojg" labelSize="12" borderSize="1" borderSizeComputationExpression="1" foregroundColor="204,242,166">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_dAfZsC-tEemzH9Va2y6Ojg" labelSize="12" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,255,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComponentContainer']/@conditionnalStyles.0/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComponentContainer']"/>
@@ -1031,7 +1036,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_dAZTEC-tEemzH9Va2y6Ojg" labelSize="12" borderSize="1" borderSizeComputationExpression="1" foregroundColor="204,242,166">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_dAZTEC-tEemzH9Va2y6Ojg" labelSize="12" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,255,255">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ApplicationContainer']/@conditionnalStyles.0/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ApplicationContainer']"/>
@@ -1191,5 +1196,646 @@
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_a_EGxC-oEemI4t-0Ickcnw"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer"/>
     <target xmi:type="occi:Configuration" href="test-ansible.all#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram xmi:id="_09K9MDT7EemftsmVAKiTwQ" name="test-openstack" uid="_0340kDT7EemftsmVAKiTwQ">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_09K9MTT7EemftsmVAKiTwQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_09K9MjT7EemftsmVAKiTwQ"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_09cqADT7EemftsmVAKiTwQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_09cqATT7EemftsmVAKiTwQ" type="Sirius" element="_09K9MDT7EemftsmVAKiTwQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_5Ms4sDT7EemftsmVAKiTwQ" type="2002" element="_5D468DT7EemftsmVAKiTwQ">
+          <children xmi:type="notation:Node" xmi:id="_5MvU8DT7EemftsmVAKiTwQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_5Mv8ADT7EemftsmVAKiTwQ" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_5MwjEDT7EemftsmVAKiTwQ" type="3009" element="_5MWTYDT7EemftsmVAKiTwQ">
+              <children xmi:type="notation:Node" xmi:id="_5MxKIDT7EemftsmVAKiTwQ" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_5MxxMDT7EemftsmVAKiTwQ" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_5MyYQDT7EemftsmVAKiTwQ" type="3010" element="_5MYIkDT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5MyYQTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5MyYQjT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5My_UDT7EemftsmVAKiTwQ" type="3010" element="_5MZWsDT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5My_UTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5My_UjT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5My_UzT7EemftsmVAKiTwQ" type="3010" element="_5MZ9wjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5My_VDT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5My_VTT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5MzmYDT7EemftsmVAKiTwQ" type="3010" element="_5Mak0jT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5MzmYTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5MzmYjT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5MzmYzT7EemftsmVAKiTwQ" type="3010" element="_5McaADT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5MzmZDT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5MzmZTT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5M0NcDT7EemftsmVAKiTwQ" type="3010" element="_5MdBEjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5M0NcTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5M0NcjT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5M0NczT7EemftsmVAKiTwQ" type="3010" element="_5MdoIjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5M0NdDT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5M0NdTT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5M0NdjT7EemftsmVAKiTwQ" type="3010" element="_5MePMjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5M0NdzT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5M0NeDT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5M00gDT7EemftsmVAKiTwQ" type="3010" element="_5Me2QjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5M00gTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5M00gjT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5M00gzT7EemftsmVAKiTwQ" type="3010" element="_5MfdUjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5M00hDT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5M00hTT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5M1bkDT7EemftsmVAKiTwQ" type="3010" element="_5MgEYjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5M1bkTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5M1bkjT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_5M2CoDT7EemftsmVAKiTwQ" type="3010" element="_5MgrcjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_5M2CoTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_5M2CojT7EemftsmVAKiTwQ"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_5MxxMTT7EemftsmVAKiTwQ"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_5MxxMjT7EemftsmVAKiTwQ"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_5MxxMzT7EemftsmVAKiTwQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_5MwjETT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5MwjEjT7EemftsmVAKiTwQ" width="370" height="222"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_5Mv8ATT7EemftsmVAKiTwQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_5Mv8AjT7EemftsmVAKiTwQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_5Ms4sTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Ms4sjT7EemftsmVAKiTwQ" x="205" y="-312"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_9Ks_UDT7EemftsmVAKiTwQ" type="2002" element="_9CllIDT7EemftsmVAKiTwQ">
+          <children xmi:type="notation:Node" xmi:id="_9KtmYDT7EemftsmVAKiTwQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_9KtmYTT7EemftsmVAKiTwQ" type="7001">
+            <children xmi:type="notation:Node" xmi:id="_9KuNcDT7EemftsmVAKiTwQ" type="3009" element="_9KFUQDT7EemftsmVAKiTwQ">
+              <children xmi:type="notation:Node" xmi:id="_9KuNczT7EemftsmVAKiTwQ" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_9KuNdDT7EemftsmVAKiTwQ" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_9Ku0gDT7EemftsmVAKiTwQ" type="3010" element="_9KGiYDT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_9Ku0gTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_9Ku0gjT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_9Ku0gzT7EemftsmVAKiTwQ" type="3010" element="_9KHJcjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_9Ku0hDT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_9Ku0hTT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_9KvbkDT7EemftsmVAKiTwQ" type="3010" element="_9KHwgjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_9KvbkTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_9KvbkjT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_9KvbkzT7EemftsmVAKiTwQ" type="3010" element="_9KIXkjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_9KvblDT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_9KvblTT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_9KvbljT7EemftsmVAKiTwQ" type="3010" element="_9KI-ojT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_9KvblzT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_9KvbmDT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_9KwCoDT7EemftsmVAKiTwQ" type="3010" element="_9KJlsTT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_9KwCoTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_9KwCojT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_9KwCozT7EemftsmVAKiTwQ" type="3010" element="_9KKMwDT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_9KwCpDT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_9KwCpTT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_9KwCpjT7EemftsmVAKiTwQ" type="3010" element="_9KKz0DT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_9KwCpzT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_9KwCqDT7EemftsmVAKiTwQ"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_9KuNdTT7EemftsmVAKiTwQ"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_9KuNdjT7EemftsmVAKiTwQ"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_9KuNdzT7EemftsmVAKiTwQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_9KuNcTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9KuNcjT7EemftsmVAKiTwQ" width="359" height="158"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_G6SqEDT8EemftsmVAKiTwQ" type="3009" element="_GzWUkDT8EemftsmVAKiTwQ">
+              <children xmi:type="notation:Node" xmi:id="_G6TRIDT8EemftsmVAKiTwQ" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_G6TRITT8EemftsmVAKiTwQ" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_G6TRJTT8EemftsmVAKiTwQ" type="3010" element="_G5uCUDT8EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_G6TRJjT8EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_G6TRJzT8EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_G6T4MDT8EemftsmVAKiTwQ" type="3010" element="_G5yTwTT8EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_G6T4MTT8EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_G6T4MjT8EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_G6T4MzT8EemftsmVAKiTwQ" type="3010" element="_G51-IjT8EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_G6T4NDT8EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_G6T4NTT8EemftsmVAKiTwQ"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_G6TRIjT8EemftsmVAKiTwQ"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_G6TRIzT8EemftsmVAKiTwQ"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_G6TRJDT8EemftsmVAKiTwQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_G6SqETT8EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G6SqEjT8EemftsmVAKiTwQ" y="158" width="359" height="79"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_9KtmYjT7EemftsmVAKiTwQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_9KtmYzT7EemftsmVAKiTwQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_9Ks_UTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9Ks_UjT7EemftsmVAKiTwQ" x="192" y="468"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="__YGrADT7EemftsmVAKiTwQ" type="2002" element="__X4BgDT7EemftsmVAKiTwQ">
+          <children xmi:type="notation:Node" xmi:id="__YGrAzT7EemftsmVAKiTwQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="__YGrBDT7EemftsmVAKiTwQ" type="7001">
+            <children xmi:type="notation:Node" xmi:id="__YHSEDT7EemftsmVAKiTwQ" type="3009" element="__X4okDT7EemftsmVAKiTwQ">
+              <children xmi:type="notation:Node" xmi:id="__YHSEzT7EemftsmVAKiTwQ" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="__YHSFDT7EemftsmVAKiTwQ" type="7003">
+                <children xmi:type="notation:Node" xmi:id="__YH5IDT7EemftsmVAKiTwQ" type="3010" element="__X52sDT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="__YH5ITT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="__YH5IjT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="__YH5IzT7EemftsmVAKiTwQ" type="3010" element="__X6dwDT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="__YH5JDT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="__YH5JTT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="__YH5JjT7EemftsmVAKiTwQ" type="3010" element="__X7E0DT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="__YH5JzT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="__YH5KDT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="__YIgMDT7EemftsmVAKiTwQ" type="3010" element="__X7r4DT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="__YIgMTT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="__YIgMjT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="__YIgMzT7EemftsmVAKiTwQ" type="3010" element="__X8S8DT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="__YIgNDT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="__YIgNTT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="__YIgNjT7EemftsmVAKiTwQ" type="3010" element="__X8S8zT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="__YIgNzT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="__YIgODT7EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="__YIgOTT7EemftsmVAKiTwQ" type="3010" element="__X86AjT7EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="__YIgOjT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="__YIgOzT7EemftsmVAKiTwQ"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="__YHSFTT7EemftsmVAKiTwQ"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="__YHSFjT7EemftsmVAKiTwQ"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="__YHSFzT7EemftsmVAKiTwQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="__YHSETT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YHSEjT7EemftsmVAKiTwQ" width="435" height="142"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_DtjBQDT8EemftsmVAKiTwQ" type="3009" element="_Dmf-EDT8EemftsmVAKiTwQ">
+              <children xmi:type="notation:Node" xmi:id="_DtjoUDT8EemftsmVAKiTwQ" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_DtjoUTT8EemftsmVAKiTwQ" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_DtjoVTT8EemftsmVAKiTwQ" type="3010" element="_DtaeYDT8EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_DtjoVjT8EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_DtjoVzT8EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_DtkPYDT8EemftsmVAKiTwQ" type="3010" element="_DtbFcjT8EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_DtkPYTT8EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_DtkPYjT8EemftsmVAKiTwQ"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_DtkPYzT8EemftsmVAKiTwQ" type="3010" element="_DtbsgjT8EemftsmVAKiTwQ">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_DtkPZDT8EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="10"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_DtkPZTT8EemftsmVAKiTwQ"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_DtjoUjT8EemftsmVAKiTwQ"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_DtjoUzT8EemftsmVAKiTwQ"/>
+                <styles xmi:type="notation:DrawerStyle" xmi:id="_DtjoVDT8EemftsmVAKiTwQ"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_DtjBQTT8EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DtjBQjT8EemftsmVAKiTwQ" y="142" width="435" height="79"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="__YGrBTT7EemftsmVAKiTwQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="__YGrBjT7EemftsmVAKiTwQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="__YGrATT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="__YGrAjT7EemftsmVAKiTwQ" x="204" y="84"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_09cqAjT7EemftsmVAKiTwQ"/>
+        <edges xmi:type="notation:Edge" xmi:id="__YJuUDT7EemftsmVAKiTwQ" type="4001" element="__X-IIDT7EemftsmVAKiTwQ" source="_5Ms4sDT7EemftsmVAKiTwQ" target="__YGrADT7EemftsmVAKiTwQ">
+          <children xmi:type="notation:Node" xmi:id="__YK8cDT7EemftsmVAKiTwQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uVfpIDT8EemftsmVAKiTwQ" x="-37" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__YK8cjT7EemftsmVAKiTwQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uVfpITT8EemftsmVAKiTwQ" x="-5" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__YLjgDT7EemftsmVAKiTwQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uVfpIjT8EemftsmVAKiTwQ" y="3"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="__YJuUTT7EemftsmVAKiTwQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="__YJuUjT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__YJuUzT7EemftsmVAKiTwQ" points="[0, 0, 2, -145]$[-2, 143, 0, -2]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__YNYsDT7EemftsmVAKiTwQ" id="(0.5190296211655092,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__YNYsTT7EemftsmVAKiTwQ" id="(0.5133815029732945,0.00980392156862745)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="__YNYsjT7EemftsmVAKiTwQ" type="4001" element="__X_9UDT7EemftsmVAKiTwQ" source="__YGrADT7EemftsmVAKiTwQ" target="_9Ks_UDT7EemftsmVAKiTwQ">
+          <children xmi:type="notation:Node" xmi:id="__YN_wDT7EemftsmVAKiTwQ" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xAFAEDT8EemftsmVAKiTwQ" x="-27" y="9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__YN_wjT7EemftsmVAKiTwQ" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xAFAETT8EemftsmVAKiTwQ" y="7"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__YN_xDT7EemftsmVAKiTwQ" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xAFAEjT8EemftsmVAKiTwQ" x="-6" y="8"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="__YNYszT7EemftsmVAKiTwQ"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="__YNYtDT7EemftsmVAKiTwQ" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__YNYtTT7EemftsmVAKiTwQ" points="[-1, 3, 2, -89]$[-3, 88, 0, -4]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__YN_xjT7EemftsmVAKiTwQ" id="(0.5133815029732945,0.9901960784313726)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__YN_xzT7EemftsmVAKiTwQ" id="(0.54704472594852,0.014925373134328358)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_5D468DT7EemftsmVAKiTwQ" name="compute1: Compute" outgoingEdges="__X-IIDT7EemftsmVAKiTwQ" childrenPresentation="VerticalStack">
+      <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+      <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_mA9ZkDUcEembVqmRZCcOwg" labelSize="12" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@conditionnalStyles.1/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_5MWTYDT7EemftsmVAKiTwQ" name="Compute">
+        <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+        <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_5MW6cDT7EemftsmVAKiTwQ" labelSize="12" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5MYIkDT7EemftsmVAKiTwQ" name="id = urn:uuid:be421818-aeda-4158-906f-1bbfdcdb89a0">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5MYvoDT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5MYIkTT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeId']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeId']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5MZWsDT7EemftsmVAKiTwQ" name="title = compute1">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5MZ9wTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5MZ9wDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeTitle']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeTitle']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5MZ9wjT7EemftsmVAKiTwQ" name="location = null">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5Mak0TT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5Mak0DT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeLocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeLocation']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5Mak0jT7EemftsmVAKiTwQ" name="summary = null">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5MbL4TT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5MbL4DT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeSummary']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeSummary']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5McaADT7EemftsmVAKiTwQ" name="occiComputeArchitecture = x86">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5MdBETT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5MdBEDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeArchitecture']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeArchitecture']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5MdBEjT7EemftsmVAKiTwQ" name="occiComputeCores = 2">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5MdoITT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5MdoIDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeCores']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeCores']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5MdoIjT7EemftsmVAKiTwQ" name="occiComputeHostname = compute1">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5MePMTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5MePMDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeHostname']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeHostname']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5MePMjT7EemftsmVAKiTwQ" name="occiComputeShare = null">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5Me2QTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5Me2QDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeShare']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeShare']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5Me2QjT7EemftsmVAKiTwQ" name="occiComputeSpeed = null">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5MfdUTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5MfdUDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeSpeed']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeSpeed']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5MfdUjT7EemftsmVAKiTwQ" name="occiComputeMemory = 4096.0">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5MgEYTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5MgEYDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeMemory']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeMemory']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5MgEYjT7EemftsmVAKiTwQ" name="occiComputeState = inactive">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5MgrcTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5MgrcDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeState']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeState']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_5MgrcjT7EemftsmVAKiTwQ" name="occiComputeStateMessage = DELETED">
+          <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <semanticElements xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_5MhSgTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_5MhSgDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeStateMessage']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='ComputeContainer']/@subContainerMappings[name='SubComputeContainer']/@subNodeMappings[name='ComputeOcciComputeStateMessage']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_9CllIDT7EemftsmVAKiTwQ" name="network2: Network" incomingEdges="__X_9UDT7EemftsmVAKiTwQ" childrenPresentation="VerticalStack">
+      <target xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+      <semanticElements xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_nfbisDUcEembVqmRZCcOwg" labelSize="12" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@conditionnalStyles.1/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_9KFUQDT7EemftsmVAKiTwQ" name="Network">
+        <target xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+        <semanticElements xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_9KF7UDT7EemftsmVAKiTwQ" labelSize="12" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9KGiYDT7EemftsmVAKiTwQ" name="id = urn:uuid:508a92d9-8076-44a1-b4b4-61bd143d850c">
+          <target xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_9KHJcTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9KHJcDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkId']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkId']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9KHJcjT7EemftsmVAKiTwQ" name="title = network2">
+          <target xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_9KHwgTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9KHwgDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkTitle']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkTitle']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9KHwgjT7EemftsmVAKiTwQ" name="location = null">
+          <target xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_9KIXkTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9KIXkDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkLocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkLocation']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9KIXkjT7EemftsmVAKiTwQ" name="summary = null">
+          <target xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_9KI-oTT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9KI-oDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkSummary']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkSummary']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9KI-ojT7EemftsmVAKiTwQ" name="occiNetworkVlan = null">
+          <target xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_9KJlsDT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9KI-ozT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkVlan']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkVlan']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9KJlsTT7EemftsmVAKiTwQ" name="occiNetworkLabel = null">
+          <target xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_9KJlszT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9KJlsjT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkLabel']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkLabel']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9KKMwDT7EemftsmVAKiTwQ" name="occiNetworkState = inactive">
+          <target xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_9KKMwjT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9KKMwTT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkState']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkState']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_9KKz0DT7EemftsmVAKiTwQ" name="occiNetworkStateMessage = DELETED">
+          <target xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <semanticElements xmi:type="infrastructure:Network" href="test-openstack.all#//@resources.1"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_9KKz0jT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_9KKz0TT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkStateMessage']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='SubNetworkContainer']/@subNodeMappings[name='NetworkOcciNetworkStateMessage']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_GzWUkDT8EemftsmVAKiTwQ" name="IpNetwork">
+        <target xmi:type="infrastructure:Ipnetwork" href="test-openstack.all#//@resources.1/@parts.0"/>
+        <semanticElements xmi:type="infrastructure:Ipnetwork" href="test-openstack.all#//@resources.1/@parts.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Gzb0IDT8EemftsmVAKiTwQ" labelSize="12" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_G5uCUDT8EemftsmVAKiTwQ" name="occiNetworkAddress = 192.168.101.0/24">
+          <target xmi:type="infrastructure:Ipnetwork" href="test-openstack.all#//@resources.1/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetwork" href="test-openstack.all#//@resources.1/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_G5yTwDT8EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_G5xssDT8EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkAddress']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkAddress']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_G5yTwTT8EemftsmVAKiTwQ" name="occiNetworkGateway = 192.168.101.1">
+          <target xmi:type="infrastructure:Ipnetwork" href="test-openstack.all#//@resources.1/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetwork" href="test-openstack.all#//@resources.1/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_G51-ITT8EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_G51-IDT8EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkGateway']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkGateway']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_G51-IjT8EemftsmVAKiTwQ" name="occiNetworkAllocation = dynamic">
+          <target xmi:type="infrastructure:Ipnetwork" href="test-openstack.all#//@resources.1/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetwork" href="test-openstack.all#//@resources.1/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_G56PkDT8EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_G55ogDT8EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkAllocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkContainer']/@subContainerMappings[name='IpNetworkMixin']/@subNodeMappings[name='IpnetworkocciNetworkAllocation']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="__X4BgDT7EemftsmVAKiTwQ" name=": NetworkInterface" outgoingEdges="__X_9UDT7EemftsmVAKiTwQ" incomingEdges="__X-IIDT7EemftsmVAKiTwQ" childrenPresentation="VerticalStack">
+      <target xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+      <semanticElements xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_mBBrADUcEembVqmRZCcOwg" labelSize="12" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,245,181">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@conditionnalStyles.1/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="__X4okDT7EemftsmVAKiTwQ" name="NetworkInterface">
+        <target xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+        <semanticElements xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="__X4okTT7EemftsmVAKiTwQ" labelSize="12" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__X52sDT7EemftsmVAKiTwQ" name="id = urn:uuid:b50fa00c-0ac1-4f09-bbbf-5658e73cb4a5">
+          <target xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="__X52sjT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="__X52sTT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceId']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceId']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__X6dwDT7EemftsmVAKiTwQ" name="title = null">
+          <target xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="__X6dwjT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="__X6dwTT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceTitle']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceTitle']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__X7E0DT7EemftsmVAKiTwQ" name="location = null">
+          <target xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="__X7E0jT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="__X7E0TT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceLocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceLocation']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__X7r4DT7EemftsmVAKiTwQ" name="occiNetworkinterfaceInterface = null">
+          <target xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="__X7r4jT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="__X7r4TT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceOcciNetworkinterfaceInterface']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceOcciNetworkinterfaceInterface']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__X8S8DT7EemftsmVAKiTwQ" name="occiNetworkinterfaceMac = null">
+          <target xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="__X8S8jT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="__X8S8TT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceOcciNetworkinterfaceMac']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceOcciNetworkinterfaceMac']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__X8S8zT7EemftsmVAKiTwQ" name="occiNetworkinterfaceState = inactive">
+          <target xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="__X86ATT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="__X86ADT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceOcciNetworkinterfaceState']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceOcciNetworkinterfaceState']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__X86AjT7EemftsmVAKiTwQ" name="occiNetworkinterfaceStateMessage = DELETED">
+          <target xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <semanticElements xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="__X9hETT7EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="__X9hEDT7EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceOcciNetworkinterfaceStateMessage']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='SubNetworkInterfaceContainer']/@subNodeMappings[name='NetworkInterfaceOcciNetworkinterfaceStateMessage']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_Dmf-EDT8EemftsmVAKiTwQ" name="IpNetworkInterface">
+        <target xmi:type="infrastructure:Ipnetworkinterface" href="test-openstack.all#//@resources.0/@links.0/@parts.0"/>
+        <semanticElements xmi:type="infrastructure:Ipnetworkinterface" href="test-openstack.all#//@resources.0/@links.0/@parts.0"/>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Dmk2kDT8EemftsmVAKiTwQ" labelSize="12" borderSize="1" borderSizeComputationExpression="1">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_DtaeYDT8EemftsmVAKiTwQ" name="occiNetworkinterfaceAddress = 192.168.101.7">
+          <target xmi:type="infrastructure:Ipnetworkinterface" href="test-openstack.all#//@resources.0/@links.0/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetworkinterface" href="test-openstack.all#//@resources.0/@links.0/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_DtbFcTT8EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_DtbFcDT8EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceAddress']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceAddress']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_DtbFcjT8EemftsmVAKiTwQ" name="occiNetworkinterfaceGateway = null">
+          <target xmi:type="infrastructure:Ipnetworkinterface" href="test-openstack.all#//@resources.0/@links.0/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetworkinterface" href="test-openstack.all#//@resources.0/@links.0/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_DtbsgTT8EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_DtbsgDT8EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceGateway']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceGateway']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_DtbsgjT8EemftsmVAKiTwQ" name="occiNetworkinterfaceAllocation = dynamic">
+          <target xmi:type="infrastructure:Ipnetworkinterface" href="test-openstack.all#//@resources.0/@links.0/@parts.0"/>
+          <semanticElements xmi:type="infrastructure:Ipnetworkinterface" href="test-openstack.all#//@resources.0/@links.0/@parts.0"/>
+          <graphicalFilters xmi:type="diagram:HideLabelFilter" xmi:id="_DtcTkTT8EemftsmVAKiTwQ"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_DtcTkDT8EemftsmVAKiTwQ" labelSize="10" labelAlignment="LEFT" hideLabelByDefault="true" color="255,255,255">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceAllocation']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@containerMappings[name='NetworkInterfaceContainer']/@subContainerMappings[name='IpNetworkInterfaceMixin']/@subNodeMappings[name='IpnetworkinterfaceocciNetworkinterfaceAllocation']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="__X-IIDT7EemftsmVAKiTwQ" sourceNode="_5D468DT7EemftsmVAKiTwQ" targetNode="__X4BgDT7EemftsmVAKiTwQ">
+      <target xmi:type="infrastructure:Compute" href="test-openstack.all#//@resources.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="__X-vMDT7EemftsmVAKiTwQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='ComputeLinksEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="__X-vMTT7EemftsmVAKiTwQ"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='ComputeLinksEdge']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="__X_9UDT7EemftsmVAKiTwQ" sourceNode="__X4BgDT7EemftsmVAKiTwQ" targetNode="_9CllIDT7EemftsmVAKiTwQ">
+      <target xmi:type="infrastructure:Networkinterface" href="test-openstack.all#//@resources.0/@links.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="__X_9UTT7EemftsmVAKiTwQ" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='NetworkInterfaceTargetEdge']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="__X_9UjT7EemftsmVAKiTwQ"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer/@edgeMappings[name='NetworkInterfaceTargetEdge']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_09K9NDT7EemftsmVAKiTwQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.modmacao.all.extensions.design.extended/description/all.odesign#//@ownedViewpoints[name='AllConfiguration']/@ownedRepresentations[name='AllConfiguration%20Diagram']/@defaultLayer"/>
+    <target xmi:type="occi:Configuration" href="test-openstack.all#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

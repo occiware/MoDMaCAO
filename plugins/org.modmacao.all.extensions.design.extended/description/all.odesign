@@ -271,7 +271,7 @@
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[occiNetworkState = NetworkStatus::error/]">
@@ -279,7 +279,7 @@
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
             </style>
           </conditionnalStyles>
         </containerMappings>
@@ -392,8 +392,8 @@
             </style>
           </subContainerMappings>
           <subContainerMappings name="ImageMixin" preconditionExpression="[self.oclIsTypeOf(openstackruntime::Image)/]" semanticCandidatesExpression="feature:parts" domainClass="openstackruntime::Image" childrenPresentation="List">
-            <subNodeMappings name="ImageopenstackImageRuntimeId" semanticCandidatesExpression="[self/]" domainClass="openstackruntime::Image">
-              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['openstackImageRuntimeId = ' + self.openstackImageRuntimeId.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+            <subNodeMappings name="ImageopenstackRuntimeId" semanticCandidatesExpression="[self/]" domainClass="openstackruntime::Image">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['openstackRuntimeId = ' + self.openstackRuntimeId.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -475,8 +475,8 @@
             </style>
           </subContainerMappings>
           <subContainerMappings name="FlavorMixin" preconditionExpression="[self.oclIsTypeOf(openstackruntime::Flavor)/]" semanticCandidatesExpression="feature:parts" domainClass="openstackruntime::Flavor" childrenPresentation="List">
-            <subNodeMappings name="FlavoropenstackFlavorRuntimeId" semanticCandidatesExpression="[self/]" domainClass="openstackruntime::Flavor">
-              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['openstackFlavorRuntimeId = ' + self.openstackFlavorRuntimeId.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
+            <subNodeMappings name="FlavoropenstackRuntimeId" semanticCandidatesExpression="[self/]" domainClass="openstackruntime::Flavor">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="['openstackRuntimeId = ' + self.openstackRuntimeId.toString()/]" labelAlignment="LEFT" hideLabelByDefault="true" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -508,7 +508,7 @@
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[occiComputeState = ComputeStatus::suspended/]">
@@ -516,7 +516,7 @@
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[occiComputeState = ComputeStatus::error/]">
@@ -524,7 +524,7 @@
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
             </style>
           </conditionnalStyles>
         </containerMappings>
@@ -888,7 +888,7 @@
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="[occiNetworkinterfaceState = NetworkInterfaceStatus::error/]">
@@ -896,7 +896,7 @@
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
             </style>
           </conditionnalStyles>
         </containerMappings>

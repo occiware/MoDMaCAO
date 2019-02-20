@@ -171,5 +171,9 @@ public final class OpenStackHelper {
 		// Get the attribute.
 		return mixinBase.eGet(eStructuralFeature).toString();
 	}
+
+	public String getDefaultPublicKey() {
+		return this.getProperties().getProperty("openstack_default_key");
+	}
 	
 }
