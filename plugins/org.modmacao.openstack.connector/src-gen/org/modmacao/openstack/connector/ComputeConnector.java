@@ -41,6 +41,7 @@ import org.openstack4j.model.compute.Server;
 import org.openstack4j.model.compute.Server.Status;
 import org.openstack4j.model.compute.ServerCreate;
 import org.openstack4j.model.compute.builder.ServerCreateBuilder;
+import org.openstack4j.model.network.Port;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -88,9 +89,11 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 	{
 		LOGGER.debug("occiCreate() called on " + this);
 		List<String> networkList = new ArrayList<String>();
+		List<Port> portList = new ArrayList<Port>();
 		String flavorID = null;
 		String imageID = null;
 		String publickey = null;
+		List<Link> linksToBeProvisioned = new ArrayList<Link>();
 		ServerCreateBuilder builder = Builders.server();
 		
 		os = OpenStackHelper.getInstance().getOSClient();
@@ -122,18 +125,23 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 			if (link instanceof Networkinterface) {
 				String networkID = OpenStackHelper.getInstance().getRuntimeID(link.getTarget());
 				if (networkID  != null) {
-					networkList.add(networkID);
+					link.occiCreate();
+					portList.add(((NetworkinterfaceConnector)(link)).getRuntimeObject());
 				}
 			}	
 		}
 		
 		// add default network, since OpenStack
 		// does not allow the creation of vms without network connection
-		if (networkList.size() == 0) {
+		if (portList.size() == 0) {
 			networkList.add(OpenStackHelper.getInstance().getDefaultNetwork());
+			builder.networks(networkList);
+		} else {
+			for (Port port: portList) {
+				builder.addNetworkPort(port.getId());
+			}
 		}
 		
-		builder.networks(networkList);	
 		
 		for (MixinBase mixin: this.getParts()) {
 			if (mixin instanceof Ssh_key) {
@@ -225,8 +233,14 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 					}				
 				}
 			}
+			// Make sure all Network Links are correctly created.
+			for (Link link: linksToBeProvisioned) {
+				link.occiCreate();
+			}
+			
 			// Added for automatic model update
 			this.occiRetrieve();
+			
 		} catch (Exception e) {
 			LOGGER.debug("Problem while creating VM: " + e.getMessage());
 			os.compute().keypairs().delete(this.getTitle() + "_keypair");
@@ -330,6 +344,7 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		OpenStackHelper.getInstance().removeRuntimeID(this);
 		
 		this.setOcciComputeState(ComputeStatus.INACTIVE);
+		this.setOcciComputeStateMessage("DELETED");
 	}
 	// End of user code
 

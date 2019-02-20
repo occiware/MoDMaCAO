@@ -23,7 +23,6 @@ import org.openstack4j.api.Builders;
 import org.openstack4j.api.OSClient.OSClientV2;
 import org.openstack4j.model.network.IPVersionType;
 import org.openstack4j.model.network.Network;
-import org.openstack4j.model.network.State;
 import org.openstack4j.model.network.builder.NetworkBuilder;
 import org.openstack4j.model.network.builder.SubnetBuilder;
 import org.slf4j.Logger;
@@ -122,7 +121,7 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 				LOGGER.debug("Problems creating network: " + e.getMessage());
 			}
 		}
-		
+		this.occiRetrieve();
 	}
 	// End of user code
 
@@ -142,9 +141,11 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 			this.setOcciNetworkState(NetworkStatus.ERROR);
 			this.setOcciNetworkStateMessage("Unable to retrieve runtime object");
 			return;
-		} else {
-			setNetworkStatus();
 		}
+		
+		setNetworkStatus();
+		
+		this.setOcciNetworkStateMessage("OpenStack Network State: " + network.getStatus());
 	}
 	// End of user code
 
@@ -180,6 +181,7 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 		OpenStackHelper.getInstance().removeRuntimeID(this);
 		
 		this.setOcciNetworkState(NetworkStatus.INACTIVE);
+		this.setOcciNetworkStateMessage("DELETED");
 	}
 	// End of user code
 
@@ -233,7 +235,7 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 
 		// Network State Machine.
 		switch(getOcciNetworkState().getValue()) {
-
+		
 		case NetworkStatus.ACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=active, action=\"down\")...");
 			// TODO Implement transition(state=active, action="down")
@@ -252,17 +254,25 @@ public class NetworkConnector extends org.eclipse.cmf.occi.infrastructure.impl.N
 	}
 	
 	private void setNetworkStatus() {
-		Network network = getRuntimeObject();
-		State state = network.getStatus();
-		if (state == State.ACTIVE) {
-			this.setOcciNetworkState(NetworkStatus.ACTIVE);
-		}
-		else if (state == State.ERROR ) {
+		Network network = getRuntimeObject();		
+		switch(network.getStatus()){
+		case ERROR:
 			this.setOcciNetworkState(NetworkStatus.ERROR);
-		}
-		else {
+			break;
+		case ACTIVE:
+			this.setOcciNetworkState(NetworkStatus.ACTIVE);
+			break;
+		case BUILD:
+		case DOWN:
+		case PENDING_CREATE:
+		case PENDING_DELETE:
+		case PENDING_UPDATE:
+		case UNRECOGNIZED:
+		default:
 			this.setOcciNetworkState(NetworkStatus.INACTIVE);
+		
 		}
+		
 	}
 	
 	private Network getRuntimeObject() {
