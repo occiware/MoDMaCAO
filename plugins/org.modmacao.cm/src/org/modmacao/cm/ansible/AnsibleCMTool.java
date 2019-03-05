@@ -199,7 +199,7 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		List<String> roles = new ArrayList<String>();
 		for (MixinBase mixin : resource.getParts()) {
 			LOGGER.debug("Mixin has schema: " + mixin.getMixin().getScheme());
-			if (mixin.getMixin().getScheme().matches(".*(schemas\\.modmacao\\.org).*")){
+			if (mixin.getMixin().getScheme().matches(".*(schemas\\.modmacao\\.org).*") || mixin instanceof modmacao.Component){
 				LOGGER.info("Found mixin " + mixin.getMixin().getName());
 				roles.add(mixin.getMixin().getName().toLowerCase());
 			}
