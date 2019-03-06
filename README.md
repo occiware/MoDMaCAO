@@ -2,6 +2,8 @@
 This repository contains the prototypical implementation of the Model-Driven Configuration Management
 of Cloud Applications with OCCI (MoDMaCAO) framework and the models for several example use cases.
 
+MoDMaCAO is based on ![OCCI-Studio](https://github.com/occiware/OCCI-Studio).
+
 ## The MoDMaCAO Modeling Framework
 The MoDMaCAO modeling framework is
 based on OCCIware and allows cloud architects to: 
