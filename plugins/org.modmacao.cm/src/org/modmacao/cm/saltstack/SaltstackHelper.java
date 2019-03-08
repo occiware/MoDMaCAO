@@ -7,11 +7,13 @@ import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Link;
@@ -73,6 +75,7 @@ public final class SaltstackHelper {
     			input = this.getClass().getClassLoader().getResourceAsStream(filename);	
     		}
     		
+    		System.out.println(input);
     		props.load(input);
     		
     	} catch (IOException ex) {
@@ -88,28 +91,15 @@ public final class SaltstackHelper {
         }		
 	}
 	
-	
-	/**
-	 * Creates an Ansible inventory file at the given path with the given IP address.
-	 * @param ipaddress The IP address that should be added to the inventory.
-	 * @param path The path where the inventory file should be created.
-	 * @return The path where the inventory was created.
-	 * @throws IOException
-	 */
-	public Path createInventory(String ipaddress, Path path) throws IOException {
-		FileUtils.writeStringToFile(path.toFile(), ipaddress, (Charset) null);
-		return path;
-	}
-	
 	public Path createRoster(String ipaddress, Path roster) throws IOException{
 		String lb = System.getProperty("line.separator");
 		String offset = "  ";
-		StringBuilder sb = new StringBuilder(ipaddress).append(lb);
+		StringBuilder sb = new StringBuilder(ipaddress).append(":").append(lb);
 		sb.append(offset).append("host: ").append(ipaddress).append(lb);
 		sb.append(offset).append("user: ").append(this.getProperties().getProperty("saltstack_user")).append(lb);
 		sb.append(offset).append("priv: ").append(this.getProperties().getProperty("private_key_path")).append(lb);
 		sb.append(offset).append("sudo: True").append(lb);
-		sb.append(offset).append("priv: ").append(this.getProperties().getProperty("ssh_timeout")).append(lb);
+		sb.append(offset).append("timeout: ").append(this.getProperties().getProperty("ssh_timeout")).append(lb);
 		FileUtils.writeStringToFile(roster.toFile(), sb.toString(), (Charset) null);
 		return roster;
 	}
@@ -120,24 +110,44 @@ public final class SaltstackHelper {
 	 * the remote user, given by user, a link to a variable file, given by variables
 	 * at path path.
 	 * @param ipaddress The ipaddres of the host on which this playbook shoule be executed.
-	 * @param roles The roles that should be executed on the host.
+	 * @param states The roles that should be executed on the host.
+	 * @param task 
 	 * @param user The user that is used to connect to the host.
-	 * @param variables A list of paths to the variables file that should be used. 
 	 * @param path The path where this playbook should be created.
 	 * @return The path where this playbook was created.
 	 * @throws IOException
 	 */
-	public Path createTopfile(String ipaddress, List<String> roles, String user, List<Path> variables,
+	public Path createTopfile(String ipaddress, List<String> states, String task, Path path) throws IOException {
+		String lb = System.getProperty("line.separator");
+		String offset = "  ";
+		StringBuilder sb = new StringBuilder("");
+		sb.append("base: ").append(lb);
+		sb.append(offset).append(ipaddress).append(":").append(lb);
+		
+		for (String state: states) {
+			sb.append(offset).append(offset).append("- ").append(state).append("."+task).append(lb);
+		}
+		
+		FileUtils.writeStringToFile(path.toFile(), sb.toString(), (Charset) null);
+		return path;
+	}
+	
+	public Path createPillarTopfile(String ipaddress, List<String> states, List<Path> variables,
 			Path path) throws IOException {
 		String lb = System.getProperty("line.separator");
 		String offset = "  ";
 		StringBuilder sb = new StringBuilder("");
-		sb.append(lb);
-		sb.append("states: ").append(lb);
-		sb.append(offset).append(ipaddress).append(lb);
+		sb.append("base: ").append(lb);
+		sb.append(offset).append(ipaddress).append(":").append(lb);
 		
-		for (String role: roles) {
-			sb.append(offset).append(offset).append("- ").append(role).append(lb);
+		
+		for (Path variable: variables) {
+			String varfile = FilenameUtils.removeExtension(variable.getFileName().toString());
+			sb.append(offset).append(offset).append("- ").append(varfile).append(lb);
+		}
+		
+		for(String state: states) {
+			sb.append(offset).append(offset).append("- ").append(state).append(".pillar.*").append(lb);
 		}
 		
 		FileUtils.writeStringToFile(path.toFile(), sb.toString(), (Charset) null);
@@ -149,54 +159,52 @@ public final class SaltstackHelper {
 		String lb = System.getProperty("line.separator");
 		String offset = "  ";
 		StringBuilder sb = new StringBuilder("file_roots:").append(lb);
-		sb.append(offset).append("states:").append(lb);
-		sb.append(offset).append(offset).append("- ").append(this.getProperties().getProperty("saltstack_statespath")).append(lb);
 		sb.append(offset).append("base:").append(lb);
+		sb.append(offset).append(offset).append("- ").append(this.getProperties().getProperty("saltstack_statespath")).append(lb);
 		sb.append(offset).append(offset).append("- ").append(basedir).append(lb);
+		
+		sb.append("pillar_roots:").append(lb);
+		sb.append(offset).append("base:").append(lb);
+		sb.append(offset).append(offset).append("- ").append(this.getProperties().getProperty("saltstack_statespath")).append(lb);
+		sb.append(offset).append(offset).append("- ").append(basedir).append("/pillar").append(lb);
 		FileUtils.writeStringToFile(configuration.toFile(), sb.toString(), (Charset) null);
 		return configuration;
 	}
 	
 	
-	/**
-	 * Executes an Ansible playbook.
-	 * @param playbook The path to the Ansible playbook.
-	 * @param task The task that should be executed (used to select block in Ansible playbook)
-	 * @param inventory The inventory that should be used.
-	 * @param options Additional options that should be handed over to the call of the Ansible binary. 
-	 * @return The return code of the external Ansible binary.
-	 * @throws IOException
-	 * @throws InterruptedException
-	 */
-	public int executePlaybook(Path playbook, String task, Path inventory, String options) throws IOException, 
-		InterruptedException {
-		String command = this.getProperties().getProperty("ansible_bin");
-		Process process = null;
-		if (options == null) {
-			process = new ProcessBuilder(command, "--inventory", inventory.toString(),
-				"-e", "task=" + task, 
-				playbook.toString()).inheritIO().start();
-		}
-		else {
-			process = new ProcessBuilder(command, "--inventory", inventory.toString(),
-					"-e", "task=" + task, 
-					playbook.toString(), options).inheritIO().start();
-		}
-		process.waitFor();
-		return process.exitValue();
-	}
-	
-	public int executeSaltstack(String basedir, String task, Path roster, String options) throws IOException, 
+	public int executeSaltstack(String basedir, List<String> states, String task, Path roster, String ipaddress, String options) throws IOException, 
 	InterruptedException {
 	String command = this.getProperties().getProperty("saltstack_bin");
 	Process process = null;
 	
+	//Exeuction without topfile
+	/*
+	for(String state: states) {
+		SaltstackCMTool.LOGGER.info("sudo " + command +  " -i -c " + basedir + " --roster-file " + roster.toString() + " " + ipaddress + " state.sls_id " + task + " " + state + ".*");
+		
+		if (options == null) {
+			process = new ProcessBuilder("sudo", command, "-i", "-c", basedir, "--roster-file", roster.toString(), ipaddress, "state.sls_id", task, state+".*").inheritIO().start();
+			SaltstackCMTool.LOGGER.info(process.toString());
+		}
+		else {
+			process = new ProcessBuilder("sudo", command, "-i", "-c", basedir, "--roster-file", roster.toString(), ipaddress,"state.sls_id", task, state+".*", options).inheritIO().start();
+			SaltstackCMTool.LOGGER.info(process.toString());
+		}
+	}*/
+	
+	//Execution with topfile
+	
+	SaltstackCMTool.LOGGER.info("sudo " + command +  " -i -c " + basedir + " --roster-file " + roster.toString() + " " + ipaddress + " state.apply");
+	
 	if (options == null) {
-		process = new ProcessBuilder(command, "-i", "-c" + basedir, "--roster-file" + roster.toString(), "'*'", "state.apply").inheritIO().start();
+		process = new ProcessBuilder("sudo", command, "-i", "-c", basedir, "--roster-file", roster.toString(), ipaddress, "state.apply").inheritIO().start();
+		SaltstackCMTool.LOGGER.info(process.toString());
 	}
 	else {
-		process = new ProcessBuilder(command, "-i", "-c" + basedir, "--roster-file" + roster.toString(), "'*'", "state.apply", options).inheritIO().start();
+		process = new ProcessBuilder("sudo", command, "-i", "-c", basedir, "--roster-file", roster.toString(), ipaddress, "state.apply", options).inheritIO().start();
+		SaltstackCMTool.LOGGER.info(process.toString());
 	}
+	
 	process.waitFor();
 	return process.exitValue();
 }
@@ -335,22 +343,22 @@ public final class SaltstackHelper {
 							ipaddress = ((Ipnetworkinterface) base).getOcciNetworkinterfaceAddress();
 						}
 					}
+					if(ipaddress == null) {
 					
-	//				for (AttributeState attribute: attributes ) {
-	//					LOGGER.debug(attribute.getName() + ":" + attribute.getValue());
-	//					if (attribute.getName().equals("occi.networkinterface.address")) {
-	//						LOGGER.info("Found IP address for " + networklink);
-	//						ipaddress = attribute.getValue();
-	//						LOGGER.info("IP address is " + ipaddress);
-	//						break;
-	//					}
-	//				}
+					for (AttributeState attribute: attributes ) {
+						SaltstackCMTool.LOGGER.debug(attribute.getName() + ":" + attribute.getValue());
+						if (attribute.getName().equals("occi.networkinterface.address")) {
+							SaltstackCMTool.LOGGER.info("Found IP address for " + networklink);
+							ipaddress = attribute.getValue();
+							SaltstackCMTool.LOGGER.info("IP address is " + ipaddress);
+							break;
+						}
+					}
+					}
 				}
 			}
 	
 			return ipaddress;
 		}
-
-
 
 }
