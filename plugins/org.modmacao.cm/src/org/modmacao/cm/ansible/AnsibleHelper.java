@@ -190,9 +190,6 @@ public final class AnsibleHelper {
 		
 		process.waitFor();
 				
-		buffer.append(new BufferedReader(new InputStreamReader(process.getInputStream()))
-				  .lines().collect(Collectors.joining(System.lineSeparator())));
-		
 		message = buffer.toString();
 		
 		return new AnsibleReturnState(process.exitValue(), message);
