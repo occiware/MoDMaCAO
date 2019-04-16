@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
-import org.eclipse.emf.common.util.BasicMonitor;
+import org.modmacao.ansibleconfiguration.Ansibleconfiguration;
 import org.modmacao.cm.ConfigurationManagementTool;
 import org.modmacao.occi.platform.Application;
 import org.modmacao.occi.platform.Component;
@@ -212,6 +212,7 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		String ipaddress = helper.getIPAddress(resource);
 		String user = this.getUser();
 		String options = null;
+		String keypath = helper.getProperties().getProperty("private_key_path");
 		
 		if (ipaddress.equals("127.0.0.1")) {
 			options = "--connection=local";
@@ -219,9 +220,24 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		
 		String basedir = "/tmp/" + helper.getTitle(resource).replace(' ', '_') + "_ansible_" + System.currentTimeMillis();
 		
+//		for (MixinBase base: resource.getParts()) {
+//			if (base instanceof Ansibleconfiguration) {
+//				Ansibleconfiguration configuration = (Ansibleconfiguration) base;
+//				String remoteuser = configuration.getAnsibleRemoteuser();
+//				String privatekey = configuration.getAnsiblePrivatekey();
+//				if (remoteuser != null && !remoteuser.equals("")) {
+//					user = remoteuser;
+//				}
+//				if (privatekey != null && !privatekey.equals("")) {
+//					keypath = privatekey;
+//				}
+//				break;
+//			}
+//		}
+		
 		
 		helper.createConfiguration(Paths.get("ansible.cfg"), 
-				Paths.get(helper.getProperties().getProperty("private_key_path")));
+				Paths.get(keypath));
 		List <Path> variablefiles = new ArrayList<Path>();
 		
 		variablefiles.add(helper.createVariableFile(Paths.get(basedir, "vars.yaml"), resource));
@@ -232,10 +248,21 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 			
 		Path inventory = helper.createInventory(ipaddress, Paths.get(basedir, "inventory"));
 			
-		LOGGER.info("Executing role " + roles + " on host " + ipaddress + " with user " + user + ".");	
-		int status = helper.executePlaybook(playbook, task, inventory, options);	
+		LOGGER.info("Executing role " + roles + " with task " + task + " on host " + ipaddress + " with user " + user + ".");
 		
-		return status;
+		AnsibleReturnState state = helper.executePlaybook(playbook, task, inventory, options);	
+		
+		if (state.getStateMessage() != null) {
+			LOGGER.info("Received state message.");
+			LOGGER.info(state.getStateMessage());
+			if (resource instanceof Component) {
+				((Component) resource).setOcciComponentStateMessage(state.getStateMessage());
+			} else if (resource instanceof Application) {
+				((Application) resource).setOcciAppStateMessage(state.getStateMessage());	
+			}
+		}
+		
+		return state.getExitValue();
 	}
 
 }

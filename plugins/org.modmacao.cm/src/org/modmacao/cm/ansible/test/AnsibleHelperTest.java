@@ -109,7 +109,7 @@ public class AnsibleHelperTest {
 			
 			String options = "--connection=local";
 			
-			int status = helper.executePlaybook(playbook, "TEST", inventory, options);
+			int status = helper.executePlaybook(playbook, "TEST", inventory, options).getExitValue();
 			
 			assertEquals(0, status);
 			

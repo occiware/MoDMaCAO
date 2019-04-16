@@ -1,7 +1,9 @@
 package org.modmacao.cm.ansible;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.file.Path;
@@ -10,6 +12,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import org.apache.commons.io.FileUtils;
 import org.eclipse.cmf.occi.core.AttributeState;
@@ -21,7 +24,6 @@ import org.eclipse.cmf.occi.core.Resource;
 import org.eclipse.cmf.occi.infrastructure.Compute;
 import org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface;
 import org.eclipse.cmf.occi.infrastructure.Networkinterface;
-import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.EList;
 import org.modmacao.ansibleconfiguration.Ansibleendpoint;
 import org.modmacao.occi.platform.Component;
@@ -165,22 +167,35 @@ public final class AnsibleHelper {
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	public int executePlaybook(Path playbook, String task, Path inventory, String options) throws IOException, 
+	public AnsibleReturnState executePlaybook(Path playbook, String task, Path inventory, String options) throws IOException, 
 		InterruptedException {
 		String command = this.getProperties().getProperty("ansible_bin");
 		Process process = null;
+		String message = null;
+		
 		if (options == null) {
 			process = new ProcessBuilder(command, "--inventory", inventory.toString(),
 				"-e", "task=" + task, 
-				playbook.toString()).inheritIO().start();
+				playbook.toString()).start();
 		}
 		else {
 			process = new ProcessBuilder(command, "--inventory", inventory.toString(),
 					"-e", "task=" + task, 
-					playbook.toString(), options).inheritIO().start();
+					playbook.toString(), options).start();
 		}
+		
+		StringBuffer buffer = new StringBuffer();
+		buffer.append(new BufferedReader(new InputStreamReader(process.getInputStream()))
+					  .lines().collect(Collectors.joining(System.lineSeparator())));
+		
 		process.waitFor();
-		return process.exitValue();
+				
+		buffer.append(new BufferedReader(new InputStreamReader(process.getInputStream()))
+				  .lines().collect(Collectors.joining(System.lineSeparator())));
+		
+		message = buffer.toString();
+		
+		return new AnsibleReturnState(process.exitValue(), message);
 	}
 	
 	/**
