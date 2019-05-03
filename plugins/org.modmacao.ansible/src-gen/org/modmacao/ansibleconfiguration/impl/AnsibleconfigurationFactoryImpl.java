@@ -67,7 +67,6 @@ public class AnsibleconfigurationFactoryImpl extends EFactoryImpl implements Ans
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case AnsibleconfigurationPackage.ANSIBLEENDPOINT: return createAnsibleendpoint();
-			case AnsibleconfigurationPackage.ANSIBLECONFIGURATION: return createAnsibleconfiguration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,16 +80,6 @@ public class AnsibleconfigurationFactoryImpl extends EFactoryImpl implements Ans
 	public Ansibleendpoint createAnsibleendpoint() {
 		AnsibleendpointImpl ansibleendpoint = new AnsibleendpointImpl();
 		return ansibleendpoint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Ansibleconfiguration createAnsibleconfiguration() {
-		AnsibleconfigurationImpl ansibleconfiguration = new AnsibleconfigurationImpl();
-		return ansibleconfiguration;
 	}
 
 	/**

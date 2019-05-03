@@ -12,29 +12,75 @@
  */
 package org.modmacao.ansibleconfiguration;
 
-import java.util.Map;
 import org.eclipse.cmf.occi.core.MixinBase;
-
-import org.eclipse.cmf.occi.infrastructure.Ipnetworkinterface;
-import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Ansibleendpoint</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.modmacao.ansibleconfiguration.Ansibleendpoint#getAnsibleRemoteuser <em>Ansible Remoteuser</em>}</li>
+ *   <li>{@link org.modmacao.ansibleconfiguration.Ansibleendpoint#getAnsiblePrivatekey <em>Ansible Privatekey</em>}</li>
+ * </ul>
  *
  * @see org.modmacao.ansibleconfiguration.AnsibleconfigurationPackage#getAnsibleendpoint()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(infrastructure::Networkinterface)'"
  * @generated
  */
 public interface Ansibleendpoint extends MixinBase {
-
 	/**
+	 * Returns the value of the '<em><b>Ansible Remoteuser</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv appliesConstraint:\n *   let\n *     severity : Integer[1] = \'Ansibleendpoint::appliesConstraint\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : occi::Boolean[1] = self.entity.oclIsKindOf(infrastructure::Networkinterface)\n *       in\n *         \'Ansibleendpoint::appliesConstraint\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.ids.IdResolver%&gt; idResolver = executor.getIdResolver();\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.modmacao.ansibleconfiguration.AnsibleconfigurationTables%&gt;.STR_Ansibleendpoint_c_c_appliesConstraint);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%org.modmacao.ansibleconfiguration.AnsibleconfigurationTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ boolean symbol_0;\nif (le) {\n\tsymbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.Class%&gt; TYP_infrastructure_c_c_Networkinterface = idResolver.getClass(&lt;%org.modmacao.ansibleconfiguration.AnsibleconfigurationTables%&gt;.CLSSid_Networkinterface, null);\n\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.cmf.occi.core.Entity%&gt; entity = this.getEntity();\n\tfinal /*@NonInvalid\052/ boolean result = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation%&gt;.INSTANCE.evaluate(executor, entity, TYP_infrastructure_c_c_Networkinterface).booleanValue();\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%org.modmacao.ansibleconfiguration.AnsibleconfigurationTables%&gt;.STR_Ansibleendpoint_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, &lt;%org.modmacao.ansibleconfiguration.AnsibleconfigurationTables%&gt;.INT_0).booleanValue();\n\tsymbol_0 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_0;'"
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Ansible Remoteuser</em>' attribute.
+	 * @see #setAnsibleRemoteuser(String)
+	 * @see org.modmacao.ansibleconfiguration.AnsibleconfigurationPackage#getAnsibleendpoint_AnsibleRemoteuser()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
 	 * @generated
 	 */
-	boolean appliesConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);
+	String getAnsibleRemoteuser();
+
+	/**
+	 * Sets the value of the '{@link org.modmacao.ansibleconfiguration.Ansibleendpoint#getAnsibleRemoteuser <em>Ansible Remoteuser</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ansible Remoteuser</em>' attribute.
+	 * @see #getAnsibleRemoteuser()
+	 * @generated
+	 */
+	void setAnsibleRemoteuser(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Ansible Privatekey</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * 
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Ansible Privatekey</em>' attribute.
+	 * @see #setAnsiblePrivatekey(String)
+	 * @see org.modmacao.ansibleconfiguration.AnsibleconfigurationPackage#getAnsibleendpoint_AnsiblePrivatekey()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
+	 * @generated
+	 */
+	String getAnsiblePrivatekey();
+
+	/**
+	 * Sets the value of the '{@link org.modmacao.ansibleconfiguration.Ansibleendpoint#getAnsiblePrivatekey <em>Ansible Privatekey</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ansible Privatekey</em>' attribute.
+	 * @see #getAnsiblePrivatekey()
+	 * @generated
+	 */
+	void setAnsiblePrivatekey(String value);
+
 } // Ansibleendpoint

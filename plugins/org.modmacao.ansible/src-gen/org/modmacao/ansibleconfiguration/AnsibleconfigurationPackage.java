@@ -12,14 +12,10 @@
  */
 package org.modmacao.ansibleconfiguration;
 
-import modmacao.ModmacaoPackage;
-
 import org.eclipse.cmf.occi.core.OCCIPackage;
-import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -36,6 +32,8 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see org.modmacao.ansibleconfiguration.AnsibleconfigurationFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
+ *        annotation="http://www.eclipse.org/OCL/Import occi='http://schemas.ogf.org/occi/core/ecore' infrastructure='http://schemas.ogf.org/occi/infrastructure/ecore'"
  * @generated
  */
 public interface AnsibleconfigurationPackage extends EPackage {
@@ -109,77 +107,13 @@ public interface AnsibleconfigurationPackage extends EPackage {
 	int ANSIBLEENDPOINT__ATTRIBUTES = OCCIPackage.MIXIN_BASE__ATTRIBUTES;
 
 	/**
-	 * The number of structural features of the '<em>Ansibleendpoint</em>' class.
+	 * The feature id for the '<em><b>Ansible Remoteuser</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANSIBLEENDPOINT_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Applies Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANSIBLEENDPOINT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Ansibleendpoint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANSIBLEENDPOINT_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link org.modmacao.ansibleconfiguration.impl.AnsibleconfigurationImpl <em>Ansibleconfiguration</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.modmacao.ansibleconfiguration.impl.AnsibleconfigurationImpl
-	 * @see org.modmacao.ansibleconfiguration.impl.AnsibleconfigurationPackageImpl#getAnsibleconfiguration()
-	 * @generated
-	 */
-	int ANSIBLECONFIGURATION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Mixin</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANSIBLECONFIGURATION__MIXIN = ModmacaoPackage.COMPONENT__MIXIN;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANSIBLECONFIGURATION__ENTITY = ModmacaoPackage.COMPONENT__ENTITY;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANSIBLECONFIGURATION__ATTRIBUTES = ModmacaoPackage.COMPONENT__ATTRIBUTES;
-
-	/**
-	 * The feature id for the '<em><b>Modmacao Component Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANSIBLECONFIGURATION__MODMACAO_COMPONENT_VERSION = ModmacaoPackage.COMPONENT__MODMACAO_COMPONENT_VERSION;
+	int ANSIBLEENDPOINT__ANSIBLE_REMOTEUSER = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Ansible Privatekey</b></em>' attribute.
@@ -188,34 +122,25 @@ public interface AnsibleconfigurationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ANSIBLECONFIGURATION__ANSIBLE_PRIVATEKEY = ModmacaoPackage.COMPONENT_FEATURE_COUNT + 0;
+	int ANSIBLEENDPOINT__ANSIBLE_PRIVATEKEY = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Ansible Remoteuser</b></em>' attribute.
+	 * The number of structural features of the '<em>Ansibleendpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANSIBLECONFIGURATION__ANSIBLE_REMOTEUSER = ModmacaoPackage.COMPONENT_FEATURE_COUNT + 1;
+	int ANSIBLEENDPOINT_FEATURE_COUNT = OCCIPackage.MIXIN_BASE_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Ansibleconfiguration</em>' class.
+	 * The number of operations of the '<em>Ansibleendpoint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ANSIBLECONFIGURATION_FEATURE_COUNT = ModmacaoPackage.COMPONENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Ansibleconfiguration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ANSIBLECONFIGURATION_OPERATION_COUNT = ModmacaoPackage.COMPONENT_OPERATION_COUNT + 0;
+	int ANSIBLEENDPOINT_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
 
 	/**
@@ -229,46 +154,26 @@ public interface AnsibleconfigurationPackage extends EPackage {
 	EClass getAnsibleendpoint();
 
 	/**
-	 * Returns the meta object for the '{@link org.modmacao.ansibleconfiguration.Ansibleendpoint#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Applies Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Applies Constraint</em>' operation.
-	 * @see org.modmacao.ansibleconfiguration.Ansibleendpoint#appliesConstraint(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
-	 * @generated
-	 */
-	EOperation getAnsibleendpoint__AppliesConstraint__DiagnosticChain_Map();
-
-	/**
-	 * Returns the meta object for class '{@link org.modmacao.ansibleconfiguration.Ansibleconfiguration <em>Ansibleconfiguration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ansibleconfiguration</em>'.
-	 * @see org.modmacao.ansibleconfiguration.Ansibleconfiguration
-	 * @generated
-	 */
-	EClass getAnsibleconfiguration();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.modmacao.ansibleconfiguration.Ansibleconfiguration#getAnsiblePrivatekey <em>Ansible Privatekey</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ansible Privatekey</em>'.
-	 * @see org.modmacao.ansibleconfiguration.Ansibleconfiguration#getAnsiblePrivatekey()
-	 * @see #getAnsibleconfiguration()
-	 * @generated
-	 */
-	EAttribute getAnsibleconfiguration_AnsiblePrivatekey();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.modmacao.ansibleconfiguration.Ansibleconfiguration#getAnsibleRemoteuser <em>Ansible Remoteuser</em>}'.
+	 * Returns the meta object for the attribute '{@link org.modmacao.ansibleconfiguration.Ansibleendpoint#getAnsibleRemoteuser <em>Ansible Remoteuser</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Ansible Remoteuser</em>'.
-	 * @see org.modmacao.ansibleconfiguration.Ansibleconfiguration#getAnsibleRemoteuser()
-	 * @see #getAnsibleconfiguration()
+	 * @see org.modmacao.ansibleconfiguration.Ansibleendpoint#getAnsibleRemoteuser()
+	 * @see #getAnsibleendpoint()
 	 * @generated
 	 */
-	EAttribute getAnsibleconfiguration_AnsibleRemoteuser();
+	EAttribute getAnsibleendpoint_AnsibleRemoteuser();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.modmacao.ansibleconfiguration.Ansibleendpoint#getAnsiblePrivatekey <em>Ansible Privatekey</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ansible Privatekey</em>'.
+	 * @see org.modmacao.ansibleconfiguration.Ansibleendpoint#getAnsiblePrivatekey()
+	 * @see #getAnsibleendpoint()
+	 * @generated
+	 */
+	EAttribute getAnsibleendpoint_AnsiblePrivatekey();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -304,22 +209,12 @@ public interface AnsibleconfigurationPackage extends EPackage {
 		EClass ANSIBLEENDPOINT = eINSTANCE.getAnsibleendpoint();
 
 		/**
-		 * The meta object literal for the '<em><b>Applies Constraint</b></em>' operation.
+		 * The meta object literal for the '<em><b>Ansible Remoteuser</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ANSIBLEENDPOINT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP = eINSTANCE.getAnsibleendpoint__AppliesConstraint__DiagnosticChain_Map();
-
-		/**
-		 * The meta object literal for the '{@link org.modmacao.ansibleconfiguration.impl.AnsibleconfigurationImpl <em>Ansibleconfiguration</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.modmacao.ansibleconfiguration.impl.AnsibleconfigurationImpl
-		 * @see org.modmacao.ansibleconfiguration.impl.AnsibleconfigurationPackageImpl#getAnsibleconfiguration()
-		 * @generated
-		 */
-		EClass ANSIBLECONFIGURATION = eINSTANCE.getAnsibleconfiguration();
+		EAttribute ANSIBLEENDPOINT__ANSIBLE_REMOTEUSER = eINSTANCE.getAnsibleendpoint_AnsibleRemoteuser();
 
 		/**
 		 * The meta object literal for the '<em><b>Ansible Privatekey</b></em>' attribute feature.
@@ -327,15 +222,7 @@ public interface AnsibleconfigurationPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ANSIBLECONFIGURATION__ANSIBLE_PRIVATEKEY = eINSTANCE.getAnsibleconfiguration_AnsiblePrivatekey();
-
-		/**
-		 * The meta object literal for the '<em><b>Ansible Remoteuser</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ANSIBLECONFIGURATION__ANSIBLE_REMOTEUSER = eINSTANCE.getAnsibleconfiguration_AnsibleRemoteuser();
+		EAttribute ANSIBLEENDPOINT__ANSIBLE_PRIVATEKEY = eINSTANCE.getAnsibleendpoint_AnsiblePrivatekey();
 
 	}
 

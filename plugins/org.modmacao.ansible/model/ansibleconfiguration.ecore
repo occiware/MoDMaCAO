@@ -8,9 +8,8 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
-    <details key="occi" value="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#/"/>
-    <details key="infrastructure" value="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore#/"/>
-    <details key="modmacao" value="platform:/resource/org.modmacao.core/model/modmacao.ecore#/"/>
+    <details key="occi" value="http://schemas.ogf.org/occi/core/ecore"/>
+    <details key="infrastructure" value="http://schemas.ogf.org/occi/infrastructure/ecore"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Ansibleendpoint" eSuperTypes="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -19,14 +18,12 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="appliesConstraint" value="self.entity.oclIsKindOf(infrastructure::Networkinterface)"/>
     </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Ansibleconfiguration" eSuperTypes="platform:/resource/org.modmacao.core/model/modmacao.ecore#//Component platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//MixinBase">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ansiblePrivatekey" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ansibleRemoteuser" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ansibleRemoteuser" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ansiblePrivatekey" eType="ecore:EDataType platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.ecore#//String">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value=""/>
       </eAnnotations>
