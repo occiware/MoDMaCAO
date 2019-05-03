@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
-import org.modmacao.ansibleconfiguration.Ansibleconfiguration;
+import org.modmacao.ansibleconfiguration.Ansibleendpoint;
 import org.modmacao.cm.ConfigurationManagementTool;
 import org.modmacao.occi.platform.Application;
 import org.modmacao.occi.platform.Component;
@@ -220,20 +220,18 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		
 		String basedir = "/tmp/" + helper.getTitle(resource).replace(' ', '_') + "_ansible_" + System.currentTimeMillis();
 		
-//		for (MixinBase base: resource.getParts()) {
-//			if (base instanceof Ansibleconfiguration) {
-//				Ansibleconfiguration configuration = (Ansibleconfiguration) base;
-//				String remoteuser = configuration.getAnsibleRemoteuser();
-//				String privatekey = configuration.getAnsiblePrivatekey();
-//				if (remoteuser != null && !remoteuser.equals("")) {
-//					user = remoteuser;
-//				}
-//				if (privatekey != null && !privatekey.equals("")) {
-//					keypath = privatekey;
-//				}
-//				break;
-//			}
-//		}
+		Ansibleendpoint endpoint = helper.getAnsibleEndboint(resource);
+		
+		if (endpoint != null) {
+			String remoteuser = endpoint.getAnsibleRemoteuser();
+			String privatekey = endpoint.getAnsiblePrivatekey();
+			if (remoteuser != null && !remoteuser.equals("")) {
+				user = remoteuser;
+			}
+			if (privatekey != null && !privatekey.equals("")) {
+					keypath = privatekey;
+			}
+		}
 		
 		
 		helper.createConfiguration(Paths.get("ansible.cfg"), 

@@ -287,6 +287,44 @@ public final class AnsibleHelper {
 		
 		return null;
 	}
+	
+	public Ansibleendpoint getAnsibleEndboint(Resource resource) {
+		EList<Link> links = resource.getLinks();
+		Networkinterface networklink = null;
+		Placementlink hosting = null;
+
+		for (Link link:links) {
+			if (link instanceof Placementlink) {
+				AnsibleCMTool.LOGGER.info("Found placementlink for " + getTitle(resource));
+				hosting = (Placementlink) link;
+				break;
+			}	
+		}
+		if (hosting == null) {
+			AnsibleCMTool.LOGGER.warn("No hosting found for component " + getTitle(resource) + ". Falling back to localhost.");
+			return null;					
+		} else {
+			Compute target = (Compute) hosting.getTarget();
+			links = target.getLinks();
+
+			List<Link> endpointCandidates = new LinkedList<Link>();
+			
+			for (Link link:links) {
+				if (link instanceof Networkinterface) {
+					AnsibleCMTool.LOGGER.info("Found network interface for " + target);
+					endpointCandidates.add(link);
+					for (MixinBase mixin: link.getParts()) {
+						if (mixin instanceof Ansibleendpoint) {
+							AnsibleCMTool.LOGGER.info("Found explicitly specified Ansible endpoint for " + target);
+							return (Ansibleendpoint) mixin;
+						}
+					}
+				}
+			}
+		}
+		
+		return null;
+	}
 
 
 	public String getIPAddress(Resource resource) {
