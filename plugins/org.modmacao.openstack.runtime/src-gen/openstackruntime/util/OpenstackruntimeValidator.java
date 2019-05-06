@@ -17,6 +17,8 @@ import java.util.Map;
 import openstackruntime.*;
 
 import org.eclipse.cmf.occi.infrastructure.util.InfrastructureValidator;
+
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -51,44 +53,12 @@ public class OpenstackruntimeValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "openstackruntime";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Runtimeid'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int RUNTIMEID__APPLIES_CONSTRAINT = 1;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Floatingip'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int FLOATINGIP__APPLIES_CONSTRAINT = 2;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Image'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int IMAGE__APPLIES_CONSTRAINT = 3;
-
-	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Flavor'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int FLAVOR__APPLIES_CONSTRAINT = 4;
-
-	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 4;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -170,13 +140,32 @@ public class OpenstackruntimeValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Runtimeid</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String RUNTIMEID__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(infrastructure::Network) or self.entity.oclIsKindOf(infrastructure::Compute) or self.entity.oclIsKindOf(infrastructure::Storage) or self.entity.oclIsKindOf(infrastructure::Storagelink) or self.entity.oclIsKindOf(infrastructure::Networkinterface)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Runtimeid</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateRuntimeid_appliesConstraint(Runtimeid runtimeid, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return runtimeid.appliesConstraint(diagnostics, context);
+		return
+			validate
+				(OpenstackruntimePackage.Literals.RUNTIMEID,
+				 runtimeid,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 RUNTIMEID__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -199,13 +188,32 @@ public class OpenstackruntimeValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Floatingip</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String FLOATINGIP__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(infrastructure::Compute)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Floatingip</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateFloatingip_appliesConstraint(Floatingip floatingip, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return floatingip.appliesConstraint(diagnostics, context);
+		return
+			validate
+				(OpenstackruntimePackage.Literals.FLOATINGIP,
+				 floatingip,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 FLOATINGIP__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -228,13 +236,40 @@ public class OpenstackruntimeValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Image</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String IMAGE__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(infrastructure::Compute)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Image</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateImage_appliesConstraint(Image image, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return image.appliesConstraint(diagnostics, context);
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(image, context) },
+						 new Object[] { image },
+						 context));
+			}
+			return false;
+		}
+		return infrastructureValidator.validateOs_tpl_appliesConstraint(image, diagnostics, context);
 	}
 
 	/**
@@ -257,13 +292,40 @@ public class OpenstackruntimeValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Flavor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String FLAVOR__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(infrastructure::Compute)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Flavor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateFlavor_appliesConstraint(Flavor flavor, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return flavor.appliesConstraint(diagnostics, context);
+		// TODO override the constraint, if desired
+		// -> uncomment the scaffolding
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "appliesConstraint", getObjectLabel(flavor, context) },
+						 new Object[] { flavor },
+						 context));
+			}
+			return false;
+		}
+		return infrastructureValidator.validateResource_tpl_appliesConstraint(flavor, diagnostics, context);
 	}
 
 	/**

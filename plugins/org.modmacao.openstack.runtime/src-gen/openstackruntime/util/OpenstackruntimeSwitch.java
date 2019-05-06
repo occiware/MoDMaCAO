@@ -18,6 +18,7 @@ import org.eclipse.cmf.occi.core.MixinBase;
 
 import org.eclipse.cmf.occi.infrastructure.Os_tpl;
 import org.eclipse.cmf.occi.infrastructure.Resource_tpl;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 

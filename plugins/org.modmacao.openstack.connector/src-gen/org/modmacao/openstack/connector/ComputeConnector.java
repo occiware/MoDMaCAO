@@ -151,7 +151,7 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 			if (mixin instanceof Resource_tpl) {
 				LOGGER.info("Found resource template in " + this);
 				if (mixin instanceof Flavor) {
-					flavorID = ((Flavor) (mixin)).getOpenstackRuntimeId();
+					flavorID = ((Flavor) (mixin)).getOpenstackFlavorId();
 				}
 				else {
 					for (Attribute attribute: mixin.getMixin().getAttributes()) {
@@ -166,7 +166,7 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 			if (mixin instanceof Os_tpl) {
 				LOGGER.info("Found os template in " + this);
 				if (mixin instanceof Image) {
-					imageID = ((Image) (mixin)).getOpenstackRuntimeId();
+					imageID = ((Image) (mixin)).getOpenstackImageId();
 				}
 				else {
 					for (Attribute attribute: mixin.getMixin().getAttributes()) {

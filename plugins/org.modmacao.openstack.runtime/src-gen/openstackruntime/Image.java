@@ -12,13 +12,9 @@
  */
 package openstackruntime;
 
-import java.util.Map;
-
 import org.eclipse.cmf.occi.core.MixinBase;
 
 import org.eclipse.cmf.occi.infrastructure.Os_tpl;
-
-import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,45 +25,38 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link openstackruntime.Image#getOpenstackRuntimeId <em>Openstack Runtime Id</em>}</li>
+ *   <li>{@link openstackruntime.Image#getOpenstackImageId <em>Openstack Image Id</em>}</li>
  * </ul>
  *
  * @see openstackruntime.OpenstackruntimePackage#getImage()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(infrastructure::Compute)'"
  * @generated
  */
 public interface Image extends Os_tpl, MixinBase {
 	/**
-	 * Returns the value of the '<em><b>Openstack Runtime Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Openstack Image Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * 
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Openstack Runtime Id</em>' attribute.
-	 * @see #setOpenstackRuntimeId(String)
-	 * @see openstackruntime.OpenstackruntimePackage#getImage_OpenstackRuntimeId()
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel get='throw new UnsupportedOperationException();  // FIXME Unimplemented http://schemas.modmacao.org/openstack/runtime/ecore!Image!openstackRuntimeId'"
+	 * @return the value of the '<em>Openstack Image Id</em>' attribute.
+	 * @see #setOpenstackImageId(String)
+	 * @see openstackruntime.OpenstackruntimePackage#getImage_OpenstackImageId()
+	 * @model dataType="org.eclipse.cmf.occi.core.String"
 	 * @generated
 	 */
-	String getOpenstackRuntimeId();
+	String getOpenstackImageId();
 
 	/**
-	 * Sets the value of the '{@link openstackruntime.Image#getOpenstackRuntimeId <em>Openstack Runtime Id</em>}' attribute.
+	 * Sets the value of the '{@link openstackruntime.Image#getOpenstackImageId <em>Openstack Image Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Openstack Runtime Id</em>' attribute.
-	 * @see #getOpenstackRuntimeId()
+	 * @param value the new value of the '<em>Openstack Image Id</em>' attribute.
+	 * @see #getOpenstackImageId()
 	 * @generated
 	 */
-	void setOpenstackRuntimeId(String value);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='/**\n *\n * inv appliesConstraint:\n *   let severity : Integer[1] = \'Image::appliesConstraint\'.getSeverity()\n *   in\n *     if severity &lt;= 0\n *     then true\n *     else\n *       let\n *         result : occi::Boolean[1] = self.entity.oclIsKindOf(infrastructure::Compute)\n *       in\n *         \'Image::appliesConstraint\'.logDiagnostic(self, null, diagnostics, context, null, severity, result, 0)\n *     endif\n \052/\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.evaluation.Executor%&gt; executor = &lt;%org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal%&gt;.getExecutor(this);\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.ids.IdResolver%&gt; idResolver = executor.getIdResolver();\nfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.values.IntegerValue%&gt; severity_0 = &lt;%org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation%&gt;.INSTANCE.evaluate(executor, &lt;%openstackruntime.OpenstackruntimeTables%&gt;.STR_Image_c_c_appliesConstraint);\nfinal /*@NonInvalid\052/ boolean le = &lt;%org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation%&gt;.INSTANCE.evaluate(executor, severity_0, &lt;%openstackruntime.OpenstackruntimeTables%&gt;.INT_0).booleanValue();\n/*@NonInvalid\052/ boolean symbol_0;\nif (le) {\n\tsymbol_0 = &lt;%org.eclipse.ocl.pivot.utilities.ValueUtil%&gt;.TRUE_VALUE;\n}\nelse {\n\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.ocl.pivot.Class%&gt; TYP_infrastructure_c_c_Compute_0 = idResolver.getClass(&lt;%openstackruntime.OpenstackruntimeTables%&gt;.CLSSid_Compute, null);\n\tfinal /*@NonInvalid\052/ &lt;%org.eclipse.cmf.occi.core.Entity%&gt; entity = this.getEntity();\n\tfinal /*@NonInvalid\052/ boolean result = &lt;%org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsKindOfOperation%&gt;.INSTANCE.evaluate(executor, entity, TYP_infrastructure_c_c_Compute_0).booleanValue();\n\tfinal /*@NonInvalid\052/ boolean logDiagnostic = &lt;%org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation%&gt;.INSTANCE.evaluate(executor, &lt;%org.eclipse.ocl.pivot.ids.TypeId%&gt;.BOOLEAN, &lt;%openstackruntime.OpenstackruntimeTables%&gt;.STR_Image_c_c_appliesConstraint, this, (Object)null, diagnostics, context, (Object)null, severity_0, result, &lt;%openstackruntime.OpenstackruntimeTables%&gt;.INT_0).booleanValue();\n\tsymbol_0 = logDiagnostic;\n}\nreturn Boolean.TRUE == symbol_0;'"
-	 * @generated
-	 */
-	boolean appliesConstraint(DiagnosticChain diagnostics, Map<Object, Object> context);
+	void setOpenstackImageId(String value);
 
 } // Image

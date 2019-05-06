@@ -3,7 +3,7 @@
   <import href="http://schemas.ogf.org/occi/core#/"/>
   <import href="http://schemas.ogf.org/occi/infrastructure#/"/>
   <mixins name="RuntimeID" scheme="http://schemas.modmacao.org/openstack/runtime#">
-    <attributes name="openstack.runtime.id" mutable="true">
+    <attributes name="openstack.runtime.id">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='network']"/>
@@ -13,23 +13,23 @@
     <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
   </mixins>
   <mixins name="FloatingIP" scheme="http://schemas.modmacao.org/openstack/runtime#">
-    <attributes name="openstack.floatingip.address" mutable="true">
+    <attributes name="openstack.floatingip.address">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
-    <attributes name="openstack.floatingip.pool" mutable="true">
+    <attributes name="openstack.floatingip.pool">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </mixins>
   <mixins name="Image" scheme="http://schemas.modmacao.org/openstack/runtime#">
-    <attributes name="openstack.runtime.id" mutable="true">
+    <attributes name="openstack.image.id">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <depends href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='os_tpl']"/>
     <applies href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
   </mixins>
   <mixins name="Flavor" scheme="http://schemas.modmacao.org/openstack/runtime#">
-    <attributes name="openstack.runtime.id" mutable="true">
+    <attributes name="openstack.flavor.id">
       <type xsi:type="occi:StringType" href="http://schemas.ogf.org/occi/core#//@types.0"/>
     </attributes>
     <depends href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='resource_tpl']"/>
