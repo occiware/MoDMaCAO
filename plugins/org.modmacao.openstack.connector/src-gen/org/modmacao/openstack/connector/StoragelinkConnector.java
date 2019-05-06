@@ -145,6 +145,13 @@ public class StoragelinkConnector extends org.eclipse.cmf.occi.infrastructure.im
 		os = OpenStackHelper.getInstance().getOSClient();
 		
 		String serverID = OpenStackHelper.getInstance().getRuntimeID(this.getSource());
+		if (serverID == null) {
+			LOGGER.error("Server runtime id is not set.");
+			this.setOcciStoragelinkState(StorageLinkStatus.ERROR);
+			this.setOcciStoragelinkStateMessage("Server runtime id not set.");
+			return;
+		}
+		
 		Server server = os.compute().servers().get(serverID);
 		
 		if (server == null) {
