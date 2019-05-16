@@ -19,5 +19,6 @@ Require-Bundle: org.slf4j.api,
  org.modmacao.ansible;bundle-version="1.0.0",
  org.eclipse.acceleo.engine
 Export-Package: org.modmacao.cm,
- org.modmacao.cm.ansible
+ org.modmacao.cm.ansible,
+ org.modmacao.cm.saltstack
 Import-Package: org.eclipse.cmf.occi.infrastructure
