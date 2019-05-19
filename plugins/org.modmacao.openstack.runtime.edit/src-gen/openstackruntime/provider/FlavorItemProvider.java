@@ -59,25 +59,25 @@ public class FlavorItemProvider extends Resource_tplItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOpenstackRuntimeIdPropertyDescriptor(object);
+			addOpenstackFlavorIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Openstack Runtime Id feature.
+	 * This adds a property descriptor for the Openstack Flavor Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOpenstackRuntimeIdPropertyDescriptor(Object object) {
+	protected void addOpenstackFlavorIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Flavor_openstackRuntimeId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Flavor_openstackRuntimeId_feature", "_UI_Flavor_type"),
-				 OpenstackruntimePackage.Literals.FLAVOR__OPENSTACK_RUNTIME_ID,
+				 getString("_UI_Flavor_openstackFlavorId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Flavor_openstackFlavorId_feature", "_UI_Flavor_type"),
+				 OpenstackruntimePackage.Literals.FLAVOR__OPENSTACK_FLAVOR_ID,
 				 true,
 				 false,
 				 false,
@@ -105,7 +105,7 @@ public class FlavorItemProvider extends Resource_tplItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Flavor)object).getOpenstackRuntimeId();
+		String label = ((Flavor)object).getOpenstackFlavorId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Flavor_type") :
 			getString("_UI_Flavor_type") + " " + label;
@@ -124,7 +124,7 @@ public class FlavorItemProvider extends Resource_tplItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Flavor.class)) {
-			case OpenstackruntimePackage.FLAVOR__OPENSTACK_RUNTIME_ID:
+			case OpenstackruntimePackage.FLAVOR__OPENSTACK_FLAVOR_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

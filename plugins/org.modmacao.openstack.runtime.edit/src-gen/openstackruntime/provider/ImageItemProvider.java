@@ -59,25 +59,25 @@ public class ImageItemProvider extends Os_tplItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addOpenstackRuntimeIdPropertyDescriptor(object);
+			addOpenstackImageIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Openstack Runtime Id feature.
+	 * This adds a property descriptor for the Openstack Image Id feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOpenstackRuntimeIdPropertyDescriptor(Object object) {
+	protected void addOpenstackImageIdPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Image_openstackRuntimeId_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Image_openstackRuntimeId_feature", "_UI_Image_type"),
-				 OpenstackruntimePackage.Literals.IMAGE__OPENSTACK_RUNTIME_ID,
+				 getString("_UI_Image_openstackImageId_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Image_openstackImageId_feature", "_UI_Image_type"),
+				 OpenstackruntimePackage.Literals.IMAGE__OPENSTACK_IMAGE_ID,
 				 true,
 				 false,
 				 false,
@@ -105,7 +105,7 @@ public class ImageItemProvider extends Os_tplItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Image)object).getOpenstackRuntimeId();
+		String label = ((Image)object).getOpenstackImageId();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Image_type") :
 			getString("_UI_Image_type") + " " + label;
@@ -124,7 +124,7 @@ public class ImageItemProvider extends Os_tplItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Image.class)) {
-			case OpenstackruntimePackage.IMAGE__OPENSTACK_RUNTIME_ID:
+			case OpenstackruntimePackage.IMAGE__OPENSTACK_IMAGE_ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
