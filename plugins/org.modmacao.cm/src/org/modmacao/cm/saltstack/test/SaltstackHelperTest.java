@@ -13,10 +13,7 @@ import java.util.Properties;
 import org.eclipse.cmf.occi.core.AttributeState;
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.OCCIFactory;
-import org.eclipse.cmf.occi.infrastructure.Compute;
-import org.eclipse.cmf.occi.infrastructure.InfrastructureFactory;
 import org.junit.Test;
-import org.modmacao.cm.ansible.AnsibleHelper;
 import org.modmacao.cm.saltstack.SaltstackHelper;
 
 
