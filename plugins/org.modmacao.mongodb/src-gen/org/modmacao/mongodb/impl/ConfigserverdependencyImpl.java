@@ -12,25 +12,27 @@
  */
 package org.modmacao.mongodb.impl;
 
+import modmacao.impl.ExecutiondependencyImpl;
+
 import org.eclipse.emf.ecore.EClass;
 
+import org.modmacao.mongodb.Configserverdependency;
 import org.modmacao.mongodb.MongodbPackage;
-import org.modmacao.mongodb.Router;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Router</b></em>'.
+ * An implementation of the model object '<em><b>Configserverdependency</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class RouterImpl extends MongodbcomponentImpl implements Router {
+public class ConfigserverdependencyImpl extends ExecutiondependencyImpl implements Configserverdependency {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RouterImpl() {
+	protected ConfigserverdependencyImpl() {
 		super();
 	}
 
@@ -41,7 +43,7 @@ public class RouterImpl extends MongodbcomponentImpl implements Router {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MongodbPackage.Literals.ROUTER;
+		return MongodbPackage.Literals.CONFIGSERVERDEPENDENCY;
 	}
 
-} //RouterImpl
+} //ConfigserverdependencyImpl

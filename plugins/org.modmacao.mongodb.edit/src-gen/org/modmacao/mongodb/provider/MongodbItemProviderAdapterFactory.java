@@ -82,26 +82,26 @@ public class MongodbItemProviderAdapterFactory extends MongodbAdapterFactory imp
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.modmacao.mongodb.Component} instances.
+	 * This keeps track of the one adapter used for all {@link org.modmacao.mongodb.Mongodbcomponent} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentItemProvider componentItemProvider;
+	protected MongodbcomponentItemProvider mongodbcomponentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.modmacao.mongodb.Component}.
+	 * This creates an adapter for a {@link org.modmacao.mongodb.Mongodbcomponent}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createComponentAdapter() {
-		if (componentItemProvider == null) {
-			componentItemProvider = new ComponentItemProvider(this);
+	public Adapter createMongodbcomponentAdapter() {
+		if (mongodbcomponentItemProvider == null) {
+			mongodbcomponentItemProvider = new MongodbcomponentItemProvider(this);
 		}
 
-		return componentItemProvider;
+		return mongodbcomponentItemProvider;
 	}
 
 	/**
@@ -194,6 +194,52 @@ public class MongodbItemProviderAdapterFactory extends MongodbAdapterFactory imp
 		}
 
 		return clusterItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.modmacao.mongodb.Configserverdependency} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConfigserverdependencyItemProvider configserverdependencyItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.modmacao.mongodb.Configserverdependency}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConfigserverdependencyAdapter() {
+		if (configserverdependencyItemProvider == null) {
+			configserverdependencyItemProvider = new ConfigserverdependencyItemProvider(this);
+		}
+
+		return configserverdependencyItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link org.modmacao.mongodb.Replicablemongodbcomponent} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ReplicablemongodbcomponentItemProvider replicablemongodbcomponentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.modmacao.mongodb.Replicablemongodbcomponent}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createReplicablemongodbcomponentAdapter() {
+		if (replicablemongodbcomponentItemProvider == null) {
+			replicablemongodbcomponentItemProvider = new ReplicablemongodbcomponentItemProvider(this);
+		}
+
+		return replicablemongodbcomponentItemProvider;
 	}
 
 	/**
@@ -295,11 +341,13 @@ public class MongodbItemProviderAdapterFactory extends MongodbAdapterFactory imp
 	 * @generated
 	 */
 	public void dispose() {
-		if (componentItemProvider != null) componentItemProvider.dispose();
+		if (mongodbcomponentItemProvider != null) mongodbcomponentItemProvider.dispose();
 		if (configserverItemProvider != null) configserverItemProvider.dispose();
 		if (routerItemProvider != null) routerItemProvider.dispose();
 		if (shardItemProvider != null) shardItemProvider.dispose();
 		if (clusterItemProvider != null) clusterItemProvider.dispose();
+		if (configserverdependencyItemProvider != null) configserverdependencyItemProvider.dispose();
+		if (replicablemongodbcomponentItemProvider != null) replicablemongodbcomponentItemProvider.dispose();
 	}
 
 }

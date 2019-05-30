@@ -12,17 +12,19 @@
  */
 package org.modmacao.mongodb;
 
+import modmacao.Executiondependency;
+
 import org.eclipse.cmf.occi.core.MixinBase;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Configserver</b></em>'.
+ * A representation of the model object '<em><b>Configserverdependency</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see org.modmacao.mongodb.MongodbPackage#getConfigserver()
+ * @see org.modmacao.mongodb.MongodbPackage#getConfigserverdependency()
  * @model
  * @generated
  */
-public interface Configserver extends Replicablemongodbcomponent, MixinBase {
-} // Configserver
+public interface Configserverdependency extends Executiondependency, MixinBase {
+} // Configserverdependency

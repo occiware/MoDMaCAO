@@ -24,5 +24,5 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Router extends Component, MixinBase {
+public interface Router extends Mongodbcomponent, MixinBase {
 } // Router

@@ -16,27 +16,29 @@ package org.modmacao.mongodb.provider;
 import java.util.Collection;
 import java.util.List;
 
+import modmacao.provider.ExecutiondependencyItemProvider;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import org.modmacao.mongodb.Router;
-
 /**
- * This is the item provider adapter for a {@link org.modmacao.mongodb.Router} object.
+ * This is the item provider adapter for a {@link org.modmacao.mongodb.Configserverdependency} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RouterItemProvider extends MongodbcomponentItemProvider {
+public class ConfigserverdependencyItemProvider extends ExecutiondependencyItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RouterItemProvider(AdapterFactory adapterFactory) {
+	public ConfigserverdependencyItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -56,14 +58,14 @@ public class RouterItemProvider extends MongodbcomponentItemProvider {
 	}
 
 	/**
-	 * This returns Router.gif.
+	 * This returns Configserverdependency.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Router"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Configserverdependency"));
 	}
 
 	/**
@@ -74,10 +76,7 @@ public class RouterItemProvider extends MongodbcomponentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Router)object).getModmacaoComponentVersion();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Router_type") :
-			getString("_UI_Router_type") + " " + label;
+		return getString("_UI_Configserverdependency_type");
 	}
 
 
@@ -104,6 +103,17 @@ public class RouterItemProvider extends MongodbcomponentItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return MongodbEditPlugin.INSTANCE;
 	}
 
 }

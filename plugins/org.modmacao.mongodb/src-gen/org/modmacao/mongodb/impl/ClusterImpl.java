@@ -13,33 +13,45 @@
 package org.modmacao.mongodb.impl;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.Link;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.Resource;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.ocl.pivot.evaluation.Executor;
+
 import org.eclipse.ocl.pivot.ids.IdResolver;
 import org.eclipse.ocl.pivot.ids.TypeId;
+
 import org.eclipse.ocl.pivot.internal.utilities.PivotUtilInternal;
+
 import org.eclipse.ocl.pivot.library.collection.CollectionSizeOperation;
+
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclAsTypeOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclAnyOclIsTypeOfOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableGreaterThanEqualOperation;
 import org.eclipse.ocl.pivot.library.oclany.OclComparableLessThanEqualOperation;
+
 import org.eclipse.ocl.pivot.library.string.CGStringGetSeverityOperation;
 import org.eclipse.ocl.pivot.library.string.CGStringLogDiagnosticOperation;
+
 import org.eclipse.ocl.pivot.utilities.ClassUtil;
 import org.eclipse.ocl.pivot.utilities.ValueUtil;
+
 import org.eclipse.ocl.pivot.values.IntegerValue;
 import org.eclipse.ocl.pivot.values.OrderedSetValue;
 import org.eclipse.ocl.pivot.values.SequenceValue;
+
 import org.modmacao.mongodb.Cluster;
 import org.modmacao.mongodb.MongodbPackage;
 import org.modmacao.mongodb.MongodbTables;
@@ -401,11 +413,11 @@ public class ClusterImpl extends modmacao.impl.ClusterImpl implements Cluster {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case MongodbPackage.CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP:
+			case MongodbPackage.CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP_1:
 				return OneOrMoreConfigServers((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case MongodbPackage.CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP:
+			case MongodbPackage.CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP_1:
 				return OneOrMoreRouters((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case MongodbPackage.CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP:
+			case MongodbPackage.CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP_1:
 				return OneOrMoreShards((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
