@@ -1,0 +1,56 @@
+- name: Deploy ConfigServer
+  block:	
+  - apt_key:
+      keyserver: hkp://keyserver.ubuntu.com:80
+      id: 9DA31620334BD75D9DCB49F368818C72E52529D4
+      state: present
+  - apt_repository:
+      repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse
+      state: present
+  - apt:
+      name: mongodb-org
+      update_cache: yes
+      state: present
+  when: task == "DEPLOY"
+  become: yes
+  
+- name: Configure ConfigServer  
+  block:
+  - name: Copy configuration file template
+    template: src=mongod.conf.j2 dest=/etc/mongod.conf
+  when: task == "CONFIGURE"
+  become: yes
+  
+- name: Start ConfigServer  
+  block:
+  - name: Start mongod 
+    service: 
+      name: mongod
+      state: restarted
+  when: task == "START"
+  become: yes
+  
+- name: Stop ConfigServer
+  block:
+  - name: Stop mongod 
+    service: 
+      name: mongod
+      state: stopped
+  when: task == "STOP"
+  become: yes
+
+- name: Undeploy ConfigServer
+  block:
+  - apt_key:
+      keyserver: hkp://keyserver.ubuntu.com:80
+      id: 9DA31620334BD75D9DCB49F368818C72E52529D4
+      state: absent
+  - apt_repository:
+      repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse
+      state: absent
+  - apt:
+      name: mongodb-org
+      update_cache: yes
+      state: absent
+  when: task == "UNDEPLOY"
+  become: yes
