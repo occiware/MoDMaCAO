@@ -60,7 +60,6 @@
     <attributes name="occi.core.summary" value="MongoDB cluster router"/>
     <parts>
       <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='router']"/>
-      <attributes name="mongodb.replication.set.name" value="router"/>
     </parts>
     <links id="urn:uuid:82d8693c-fdd9-45ef-b9d5-22c786a9a2b0" title="" location="/placementlink/urn:uuid:82d8693c-fdd9-45ef-b9d5-22c786a9a2b0" target="//@resources.5">
       <kind href="http://schemas.modmacao.org/placement#//@kinds[term='placementlink']"/>
@@ -165,7 +164,7 @@
     </parts>
     <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
-      <attributes name="occi.compute.userdata" value=""/>
+      <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
     </parts>
     <links id="urn:uuid:c6eaacbd-244b-406a-b09c-dd2c2a776863" title="vm1 -> Management Network" location="/networkinterface/urn:uuid:c6eaacbd-244b-406a-b09c-dd2c2a776863" target="//@resources.11">
       <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
@@ -214,7 +213,7 @@
     </parts>
     <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
-      <attributes name="occi.compute.userdata" value=""/>
+      <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
     </parts>
     <links id="urn:uuid:f646f7c1-1abc-4078-8b51-fa863a8d2194" title="vm2 -> Management Network" location="/networkinterface/urn:uuid:f646f7c1-1abc-4078-8b51-fa863a8d2194" target="//@resources.11">
       <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
@@ -246,7 +245,7 @@
     </parts>
     <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
-      <attributes name="occi.compute.userdata" value=""/>
+      <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
     </parts>
     <links id="urn:uuid:4b53f60f-0063-41e5-805d-eb897cea4bf1" title="vm3 -> Management Network" location="/networkinterface/urn:uuid:4b53f60f-0063-41e5-805d-eb897cea4bf1" target="//@resources.11">
       <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
@@ -278,7 +277,7 @@
     </parts>
     <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
-      <attributes name="occi.compute.userdata" value=""/>
+      <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
     </parts>
     <links id="urn:uuid:1f1ab353-58e4-41fe-a4a3-18e2b757e7c7" title="vm4 -> Management Network" location="/networkinterface/urn:uuid:1f1ab353-58e4-41fe-a4a3-18e2b757e7c7" target="//@resources.11">
       <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
@@ -310,7 +309,7 @@
     </parts>
     <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
-      <attributes name="occi.compute.userdata" value=""/>
+      <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
     </parts>
     <links id="urn:uuid:85210abc-f04b-4b3d-aa0f-c9fc6fceba12" title="vm5 -> Management Network" location="/networkinterface/urn:uuid:85210abc-f04b-4b3d-aa0f-c9fc6fceba12" target="//@resources.11">
       <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
