@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:occi="http://schemas.ogf.org/occi/core/ecore">
+  <use href="http://schemas.modmacao.org/placement#/"/>
+  <use href="http://schemas.ogf.org/occi/infrastructure#/"/>
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <use href="http://schemas.modmacao.org/occi/platform#/"/>
+  <use href="http://schemas.modmacao.org/mongodb#/"/>
+  <use href="http://schemas.modmacao.org/openstack/runtime#/"/>
+  <use href="http://schemas.modmacao.org/occi/ansible#/"/>
+  <use href="http://schemas.modmacao.org/openstack/swe#/"/>
+  <resources id="urn:uuid:ed0973fb-f6f2-4f76-84b1-2dccfbb0abf7" title="mongodb-cluster" location="/application/urn:uuid:ed0973fb-f6f2-4f76-84b1-2dccfbb0abf7" summary="MongoDB Cluster">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='application']"/>
+    <attributes name="occi.core.id" value="urn:uuid:ed0973fb-f6f2-4f76-84b1-2dccfbb0abf7"/>
+    <attributes name="occi.core.title" value="mongodb-cluster"/>
+    <attributes name="occi.core.summary" value="MongoDB Cluster"/>
+    <attributes name="occi.app.name" value="My Cluster"/>
+    <parts>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='cluster']"/>
+    </parts>
+    <links id="urn:uuid:700cc548-7091-45a2-8976-7ecc2f5c4d05" title="" location="/componentlink/urn:uuid:700cc548-7091-45a2-8976-7ecc2f5c4d05" target="//@resources.1">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:700cc548-7091-45a2-8976-7ecc2f5c4d05"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/application/urn:uuid:ed0973fb-f6f2-4f76-84b1-2dccfbb0abf7"/>
+      <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13675"/>
+    </links>
+    <links id="urn:uuid:652e6b10-d0c5-4f17-ab5d-33132670f336" title="" location="/componentlink/urn:uuid:652e6b10-d0c5-4f17-ab5d-33132670f336" target="//@resources.4">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:652e6b10-d0c5-4f17-ab5d-33132670f336"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/application/urn:uuid:ed0973fb-f6f2-4f76-84b1-2dccfbb0abf7"/>
+      <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676"/>
+    </links>
+    <links id="urn:uuid:530b9cfe-36c3-4352-8e94-3bb545263195" title="" location="/componentlink/urn:uuid:530b9cfe-36c3-4352-8e94-3bb545263195" target="//@resources.3">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:530b9cfe-36c3-4352-8e94-3bb545263195"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/application/urn:uuid:ed0973fb-f6f2-4f76-84b1-2dccfbb0abf7"/>
+      <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677"/>
+    </links>
+    <links id="urn:uuid:81382124-af2e-499b-aa7d-309595e2bb1b" title="" location="/componentlink/urn:uuid:81382124-af2e-499b-aa7d-309595e2bb1b" target="//@resources.2">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:81382124-af2e-499b-aa7d-309595e2bb1b"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/application/urn:uuid:ed0973fb-f6f2-4f76-84b1-2dccfbb0abf7"/>
+      <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678"/>
+    </links>
+    <links id="urn:uuid:6c5450f2-f504-4609-a834-dbb78d6ecae8" title="" location="/componentlink/urn:uuid:6c5450f2-f504-4609-a834-dbb78d6ecae8" target="//@resources.6">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:6c5450f2-f504-4609-a834-dbb78d6ecae8"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/application/urn:uuid:ed0973fb-f6f2-4f76-84b1-2dccfbb0abf7"/>
+      <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+    </links>
+  </resources>
+  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13675" title="router" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13675" summary="MongoDB cluster router" rlinks="//@resources.0/@links.0">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
+    <attributes name="occi.core.id" value="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13675"/>
+    <attributes name="occi.core.title" value="router"/>
+    <attributes name="occi.core.summary" value="MongoDB cluster router"/>
+    <parts>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='router']"/>
+    </parts>
+    <links id="urn:uuid:82d8693c-fdd9-45ef-b9d5-22c786a9a2b0" title="" location="/placementlink/urn:uuid:82d8693c-fdd9-45ef-b9d5-22c786a9a2b0" target="//@resources.5">
+      <kind href="http://schemas.modmacao.org/placement#//@kinds[term='placementlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:82d8693c-fdd9-45ef-b9d5-22c786a9a2b0"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13675"/>
+      <attributes name="occi.core.target" value="/compute/urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2592"/>
+    </links>
+    <links id="urn:uuid:4b9a6567-7cc8-4643-98a6-533068062b55" title="" location="/componentlink/urn:uuid:4b9a6567-7cc8-4643-98a6-533068062b55" target="//@resources.6">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:4b9a6567-7cc8-4643-98a6-533068062b55"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13675"/>
+      <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+    </links>
+  </resources>
+  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678" title="shard3" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678" summary="3rd MongoDB cluster shard" rlinks="//@resources.0/@links.3">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
+    <attributes name="occi.core.id" value="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678"/>
+    <attributes name="occi.core.title" value="shard3"/>
+    <attributes name="occi.core.summary" value="3rd MongoDB cluster shard"/>
+    <parts>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='shard']"/>
+      <attributes name="mongodb.replication.set.name" value="shard3"/>
+    </parts>
+    <links id="urn:uuid:f170b1e6-1962-4946-8f86-d9f0a0ae15cb" title="" location="/placementlink/urn:uuid:f170b1e6-1962-4946-8f86-d9f0a0ae15cb" target="//@resources.9">
+      <kind href="http://schemas.modmacao.org/placement#//@kinds[term='placementlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:f170b1e6-1962-4946-8f86-d9f0a0ae15cb"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678"/>
+      <attributes name="occi.core.target" value="/compute/urn:uuid:e991175d-d19c-4fb6-a9dc-4106312b32b2"/>
+    </links>
+    <links id="urn:uuid:014801d3-adff-460d-ba77-47e9c1e45aca" title="" location="/componentlink/urn:uuid:014801d3-adff-460d-ba77-47e9c1e45aca" target="//@resources.6">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:014801d3-adff-460d-ba77-47e9c1e45aca"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678"/>
+      <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+    </links>
+  </resources>
+  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677" title="shard2" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677" summary="2nd MongoDB cluster shard" rlinks="//@resources.0/@links.2">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
+    <attributes name="occi.core.id" value="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677"/>
+    <attributes name="occi.core.title" value="shard2"/>
+    <attributes name="occi.core.summary" value="2nd MongoDB cluster shard"/>
+    <parts>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='shard']"/>
+      <attributes name="mongodb.replication.set.name" value="shard2"/>
+    </parts>
+    <links id="urn:uuid:dd97e5f2-7f97-4037-b668-cfc2d856eee1" title="" location="/placementlink/urn:uuid:dd97e5f2-7f97-4037-b668-cfc2d856eee1" target="//@resources.8">
+      <kind href="http://schemas.modmacao.org/placement#//@kinds[term='placementlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:dd97e5f2-7f97-4037-b668-cfc2d856eee1"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677"/>
+      <attributes name="occi.core.target" value="/compute/urn:uuid:24706888-533b-460c-9177-daafcf44d6e6"/>
+    </links>
+    <links id="urn:uuid:4ac35332-79f5-4363-969e-65e0462ea8eb" title="" location="/componentlink/urn:uuid:4ac35332-79f5-4363-969e-65e0462ea8eb" target="//@resources.6">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:4ac35332-79f5-4363-969e-65e0462ea8eb"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677"/>
+      <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+    </links>
+  </resources>
+  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676" title="shard1" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676" summary="1st MongoDB shard" rlinks="//@resources.0/@links.1">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
+    <attributes name="occi.core.id" value="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676"/>
+    <attributes name="occi.core.title" value="shard1"/>
+    <attributes name="occi.core.summary" value="1st MongoDB shard"/>
+    <parts>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='shard']"/>
+      <attributes name="mongodb.replication.set.name" value="shard1"/>
+    </parts>
+    <links id="urn:uuid:c423c383-2adf-49df-8c3e-725e564c1b4e" title="" location="/placementlink/urn:uuid:c423c383-2adf-49df-8c3e-725e564c1b4e" target="//@resources.7">
+      <kind href="http://schemas.modmacao.org/placement#//@kinds[term='placementlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:c423c383-2adf-49df-8c3e-725e564c1b4e"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676"/>
+      <attributes name="occi.core.target" value="/compute/urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2593"/>
+    </links>
+    <links id="urn:uuid:ec281cd1-1657-43f8-b897-4228209b7461" title="" location="/componentlink/urn:uuid:ec281cd1-1657-43f8-b897-4228209b7461" target="//@resources.6">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:ec281cd1-1657-43f8-b897-4228209b7461"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676"/>
+      <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+    </links>
+  </resources>
+  <resources id="urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2592" title="vm1" location="/compute/urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2592" rlinks="//@resources.1/@links.0">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <attributes name="occi.core.id" value="urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2592"/>
+    <attributes name="occi.core.title" value="vm1"/>
+    <attributes name="occi.core.summary" value="1st virtual machine"/>
+    <attributes name="occi.compute.architecture" value="x64"/>
+    <attributes name="occi.compute.cores" value="1"/>
+    <attributes name="occi.compute.hostname" value="host1"/>
+    <attributes name="occi.compute.speed" value="1"/>
+    <attributes name="occi.compute.memory" value="1"/>
+    <parts>
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
+      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
+    </parts>
+    <parts>
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
+      <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
+    </parts>
+    <links id="urn:uuid:c6eaacbd-244b-406a-b09c-dd2c2a776863" title="vm1 -> Management Network" location="/networkinterface/urn:uuid:c6eaacbd-244b-406a-b09c-dd2c2a776863" target="//@resources.11">
+      <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+      <attributes name="occi.core.id" value="urn:uuid:c6eaacbd-244b-406a-b09c-dd2c2a776863"/>
+      <attributes name="occi.core.title" value="vm1 -> Management Network"/>
+      <attributes name="occi.core.source" value="/compute/urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2592"/>
+      <attributes name="occi.core.target" value="/network/urn:uuid:29d78078-fb4c-47aa-a9af-b8aaf3339590"/>
+      <parts>
+        <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ipnetworkinterface']"/>
+      </parts>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/occi/ansible#//@mixins[term='ansibleendpoint']"/>
+      </parts>
+    </links>
+  </resources>
+  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679" title="configserver" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679" rlinks="//@resources.0/@links.4 //@resources.1/@links.1 //@resources.4/@links.1 //@resources.3/@links.1 //@resources.2/@links.1">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
+    <attributes name="occi.core.id" value="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+    <attributes name="occi.core.title" value="configserver"/>
+    <attributes name="occi.core.summary" value="MongoDB config server"/>
+    <parts>
+      <mixin href="http://schemas.modmacao.org/mongodb#//@mixins[term='configserver']"/>
+      <attributes name="mongodb.replication.set.name" value="config"/>
+    </parts>
+    <links id="urn:uuid:e5cf79ab-9763-4ebb-b047-448574e33dc4" title="" location="/placementlink/urn:uuid:e5cf79ab-9763-4ebb-b047-448574e33dc4" target="//@resources.10">
+      <kind href="http://schemas.modmacao.org/placement#//@kinds[term='placementlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:e5cf79ab-9763-4ebb-b047-448574e33dc4"/>
+      <attributes name="occi.core.title" value=""/>
+      <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+      <attributes name="occi.core.target" value="/compute/urn:uuid:29713f47-76b0-464b-9c0f-a02c4197b9e2"/>
+    </links>
+  </resources>
+  <resources id="urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2593" title="vm2" location="/compute/urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2593" summary="2nd virtual machine" rlinks="//@resources.4/@links.0">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <attributes name="occi.core.title" value="vm2"/>
+    <attributes name="occi.core.id" value="urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2593"/>
+    <attributes name="occi.core.summary" value="2nd virtual machine"/>
+    <attributes name="occi.compute.architecture" value="x64"/>
+    <attributes name="occi.compute.cores" value="1"/>
+    <attributes name="occi.compute.hostname" value="host2"/>
+    <attributes name="occi.compute.speed" value="1"/>
+    <attributes name="occi.compute.memory" value="1"/>
+    <parts>
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
+      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
+    </parts>
+    <parts>
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
+      <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
+    </parts>
+    <links id="urn:uuid:f646f7c1-1abc-4078-8b51-fa863a8d2194" title="vm2 -> Management Network" location="/networkinterface/urn:uuid:f646f7c1-1abc-4078-8b51-fa863a8d2194" target="//@resources.11">
+      <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+      <attributes name="occi.core.id" value="urn:uuid:f646f7c1-1abc-4078-8b51-fa863a8d2194"/>
+      <attributes name="occi.core.title" value="vm2 -> Management Network"/>
+      <attributes name="occi.core.source" value="/compute/urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2593"/>
+      <attributes name="occi.core.target" value="/network/urn:uuid:29d78078-fb4c-47aa-a9af-b8aaf3339590"/>
+      <parts>
+        <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ipnetworkinterface']"/>
+      </parts>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/occi/ansible#//@mixins[term='ansibleendpoint']"/>
+      </parts>
+    </links>
+  </resources>
+  <resources id="urn:uuid:24706888-533b-460c-9177-daafcf44d6e6" title="vm3" location="/compute/urn:uuid:24706888-533b-460c-9177-daafcf44d6e6" rlinks="//@resources.3/@links.0">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <attributes name="occi.core.id" value="urn:uuid:24706888-533b-460c-9177-daafcf44d6e6"/>
+    <attributes name="occi.core.title" value="vm3"/>
+    <attributes name="occi.core.summary" value="3rd virtual machine"/>
+    <attributes name="occi.compute.architecture" value="x64"/>
+    <attributes name="occi.compute.cores" value="1"/>
+    <attributes name="occi.compute.hostname" value="host3"/>
+    <attributes name="occi.compute.speed" value="1"/>
+    <attributes name="occi.compute.memory" value="1"/>
+    <parts>
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
+      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
+    </parts>
+    <parts>
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
+      <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
+    </parts>
+    <links id="urn:uuid:4b53f60f-0063-41e5-805d-eb897cea4bf1" title="vm3 -> Management Network" location="/networkinterface/urn:uuid:4b53f60f-0063-41e5-805d-eb897cea4bf1" target="//@resources.11">
+      <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+      <attributes name="occi.core.id" value="urn:uuid:4b53f60f-0063-41e5-805d-eb897cea4bf1"/>
+      <attributes name="occi.core.title" value="vm3 -> Management Network"/>
+      <attributes name="occi.core.source" value="/compute/urn:uuid:24706888-533b-460c-9177-daafcf44d6e6"/>
+      <attributes name="occi.core.target" value="/network/urn:uuid:29d78078-fb4c-47aa-a9af-b8aaf3339590"/>
+      <parts>
+        <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ipnetworkinterface']"/>
+      </parts>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/occi/ansible#//@mixins[term='ansibleendpoint']"/>
+      </parts>
+    </links>
+  </resources>
+  <resources id="urn:uuid:e991175d-d19c-4fb6-a9dc-4106312b32b2" title="vm4" location="/compute/urn:uuid:e991175d-d19c-4fb6-a9dc-4106312b32b2" summary="4th virtual machine" rlinks="//@resources.2/@links.0">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <attributes name="occi.core.id" value="urn:uuid:e991175d-d19c-4fb6-a9dc-4106312b32b2"/>
+    <attributes name="occi.core.title" value="vm4"/>
+    <attributes name="occi.core.summary" value="4th virtual machine"/>
+    <attributes name="occi.compute.architecture" value="x64"/>
+    <attributes name="occi.compute.cores" value="1"/>
+    <attributes name="occi.compute.hostname" value="host4"/>
+    <attributes name="occi.compute.speed" value="1"/>
+    <attributes name="occi.compute.memory" value="1"/>
+    <parts>
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
+      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
+    </parts>
+    <parts>
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
+      <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
+    </parts>
+    <links id="urn:uuid:1f1ab353-58e4-41fe-a4a3-18e2b757e7c7" title="vm4 -> Management Network" location="/networkinterface/urn:uuid:1f1ab353-58e4-41fe-a4a3-18e2b757e7c7" target="//@resources.11">
+      <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+      <attributes name="occi.core.id" value="urn:uuid:1f1ab353-58e4-41fe-a4a3-18e2b757e7c7"/>
+      <attributes name="occi.core.title" value="vm4 -> Management Network"/>
+      <attributes name="occi.core.source" value="/compute/urn:uuid:e991175d-d19c-4fb6-a9dc-4106312b32b2"/>
+      <attributes name="occi.core.target" value="/network/urn:uuid:29d78078-fb4c-47aa-a9af-b8aaf3339590"/>
+      <parts>
+        <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ipnetworkinterface']"/>
+      </parts>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/occi/ansible#//@mixins[term='ansibleendpoint']"/>
+      </parts>
+    </links>
+  </resources>
+  <resources id="urn:uuid:29713f47-76b0-464b-9c0f-a02c4197b9e2" title="vm5" location="/compute/urn:uuid:29713f47-76b0-464b-9c0f-a02c4197b9e2" rlinks="//@resources.6/@links.0">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <attributes name="occi.core.id" value="urn:uuid:29713f47-76b0-464b-9c0f-a02c4197b9e2"/>
+    <attributes name="occi.core.title" value="vm5"/>
+    <attributes name="occi.core.summary" value="5th virtual machine"/>
+    <attributes name="occi.compute.architecture" value="x64"/>
+    <attributes name="occi.compute.cores" value="1"/>
+    <attributes name="occi.compute.hostname" value="host5"/>
+    <attributes name="occi.compute.speed" value="1"/>
+    <attributes name="occi.compute.memory" value="1"/>
+    <parts>
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
+      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
+    </parts>
+    <parts>
+      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
+      <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
+    </parts>
+    <links id="urn:uuid:85210abc-f04b-4b3d-aa0f-c9fc6fceba12" title="vm5 -> Management Network" location="/networkinterface/urn:uuid:85210abc-f04b-4b3d-aa0f-c9fc6fceba12" target="//@resources.11">
+      <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+      <attributes name="occi.core.id" value="urn:uuid:85210abc-f04b-4b3d-aa0f-c9fc6fceba12"/>
+      <attributes name="occi.core.title" value="vm5 -> Management Network"/>
+      <attributes name="occi.core.source" value="/compute/urn:uuid:29713f47-76b0-464b-9c0f-a02c4197b9e2"/>
+      <attributes name="occi.core.target" value="/network/urn:uuid:29d78078-fb4c-47aa-a9af-b8aaf3339590"/>
+      <parts>
+        <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ipnetworkinterface']"/>
+      </parts>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/occi/ansible#//@mixins[term='ansibleendpoint']"/>
+      </parts>
+    </links>
+  </resources>
+  <resources id="urn:uuid:29d78078-fb4c-47aa-a9af-b8aaf3339590" title="Management Network" location="/network/urn:uuid:29d78078-fb4c-47aa-a9af-b8aaf3339590" rlinks="//@resources.5/@links.0 //@resources.7/@links.0 //@resources.8/@links.0 //@resources.9/@links.0 //@resources.10/@links.0">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='network']"/>
+    <attributes name="occi.core.id" value="urn:uuid:29d78078-fb4c-47aa-a9af-b8aaf3339590"/>
+    <attributes name="occi.core.title" value="Management Network"/>
+    <parts>
+      <mixin href="http://schemas.modmacao.org/openstack/runtime#//@mixins[term='runtimeid']"/>
+      <attributes name="openstack.runtime.id" value="29d78078-fb4c-47aa-a9af-b8aaf3339590"/>
+    </parts>
+  </resources>
+</occi:Configuration>

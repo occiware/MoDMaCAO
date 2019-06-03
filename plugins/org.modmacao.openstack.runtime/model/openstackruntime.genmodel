@@ -18,6 +18,19 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="openstackruntime.ecore#//Floatingip/openstackFloatingipPool"/>
       </genFeatures>
     </genClasses>
+    <genClasses>
+      <ecoreClass href="openstackruntime.ecore#//Image"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="openstackruntime.ecore#//Image/openstackImageId"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="openstackruntime.ecore#//Flavor"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="openstackruntime.ecore#//Flavor/openstackFlavorId"/>
+      </genFeatures>
+    </genClasses>
   </genPackages>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
   <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
 </genmodel:GenModel>

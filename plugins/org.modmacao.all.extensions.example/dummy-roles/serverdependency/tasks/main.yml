@@ -1,0 +1,30 @@
+- name: Deploy ServerDependency
+  block:
+   - debug: msg="Operation deploy not implemented."
+  when: task == "DEPLOY"
+  become_user: root
+  
+- name: Configure ServerDependency  
+  block:
+  - debug: msg="Operation configure not implemented."
+  when: task == "CONFIGURE"
+  become_user: root
+  
+- name: Start ServerDependency  
+  block:
+  - debug: msg="Operation start not implemented."
+  when: task == "START"
+  become_user: root
+  
+- name: Stop ServerDependency
+  block:
+  - debug: msg="Operation stop not implemented."
+
+  when: task == "STOP"
+  become_user: root
+
+- name: Undeploy ServerDependency
+  block:
+  - debug: msg="Operation undeploy not implemented."
+  when: task == "UNDEPLOY"
+  become_user: root

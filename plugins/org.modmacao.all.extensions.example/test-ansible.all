@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<occi:Configuration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:infrastructure="http://schemas.ogf.org/occi/infrastructure/ecore" xmlns:lamp="http://schemas.modmacao.org/lamp/ecore" xmlns:occi="http://schemas.ogf.org/occi/core/ecore" xmlns:placement="http://schemas.modmacao.org/placement/ecore" xmlns:platform="http://schemas.modmacao.org/occi/platform/ecore">
+  <use href="http://schemas.ogf.org/occi/core#/"/>
+  <use href="http://schemas.modmacao.org/all#/"/>
+  <resources xsi:type="infrastructure:Compute" id="urn:uuid:f70f7c0b-eccb-4d0e-b0f8-820e0b3195a0" title="compute1" rlinks="//@resources.2/@links.0" occiComputeState="active">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='compute']"/>
+    <attributes name="occi.core.id" value="urn:uuid:f70f7c0b-eccb-4d0e-b0f8-820e0b3195a0"/>
+    <attributes name="occi.core.title" value="compute1"/>
+    <links xsi:type="infrastructure:Networkinterface" id="urn:uuid:d84a1bb1-2266-4ef8-9a5c-f2be28b69a0c" target="//@resources.1">
+      <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='networkinterface']"/>
+      <attributes name="occi.core.id" value="urn:uuid:d84a1bb1-2266-4ef8-9a5c-f2be28b69a0c"/>
+      <parts xsi:type="infrastructure:Ipnetworkinterface" occiNetworkinterfaceAddress="192.168.35.47">
+        <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ipnetworkinterface']"/>
+      </parts>
+    </links>
+  </resources>
+  <resources xsi:type="infrastructure:Network" id="urn:uuid:4d5c817a-9b5b-499c-989d-a7018f282a94" title="network2" rlinks="//@resources.0/@links.0" occiNetworkState="active">
+    <kind href="http://schemas.ogf.org/occi/infrastructure#//@kinds[term='network']"/>
+  </resources>
+  <resources xsi:type="platform:Component" id="urn:uuid:6d996b64-2573-4e6d-96a5-97cf4713ebc6" title="component3" rlinks="//@resources.3/@links.0">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
+    <attributes name="occi.core.id" value="urn:uuid:6d996b64-2573-4e6d-96a5-97cf4713ebc6"/>
+    <attributes name="occi.core.title" value="component3"/>
+    <parts xsi:type="lamp:Apacheserver">
+      <mixin href="http://schemas.modmacao.org/lamp#//@mixins[term='apacheserver']"/>
+    </parts>
+    <parts xsi:type="lamp:Mysql">
+      <mixin href="http://schemas.modmacao.org/lamp#//@mixins[term='mysql']"/>
+    </parts>
+    <links xsi:type="placement:Placementlink" id="urn:uuid:4482ff1b-7610-44af-a223-4b6b3283e4d0" target="//@resources.0">
+      <kind href="http://schemas.modmacao.org/placement#//@kinds[term='placementlink']"/>
+    </links>
+  </resources>
+  <resources xsi:type="platform:Application" id="urn:uuid:2a24136f-f269-4419-b724-a9979d11df80" title="application4">
+    <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='application']"/>
+    <links xsi:type="platform:Componentlink" id="urn:uuid:74df228f-141b-46fb-bf85-2e7b041296cf" target="//@resources.2">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+    </links>
+  </resources>
+</occi:Configuration>

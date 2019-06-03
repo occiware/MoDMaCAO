@@ -1,0 +1,35 @@
+- name: Deploy ApacheWebServer
+  block:
+   - copy: src=install.sh dest=~/install.sh mode=700
+   - yum: name=httpd state=present
+   - shell: ~/install.sh
+  when: task == "DEPLOY"
+  become: yes
+  
+- name: Configure ApacheWebServer  
+  block:
+   - copy: src=configure.sh dest=~/configure.sh mode=700
+   - shell: export httpdport=80 && ~/configure.sh
+  when: task == "CONFIGURE"
+  become: yes
+  
+- name: Start ApacheWebServer  
+  block:
+   - copy: src=start.sh dest=~/start.sh mode=700
+   - shell: ~/start.sh
+  when: task == "START"
+  become: yes
+  
+- name: Stop ApacheWebServer
+  block:
+   - copy: src=stop.sh dest=~/stop.sh mode=700
+   - shell: ~/stop.sh
+
+  when: task == "STOP"
+  become: yes
+
+- name: Undeploy ApacheWebServer
+  block:
+   - yum: name=httpd state=absent
+  when: task == "UNDEPLOY"
+  become: yes

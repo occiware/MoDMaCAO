@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2015-2017 Obeo, Inria&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#x9;&#xA;Contributors:&#xA;- William Piers &lt;william.piers@obeo.fr>&#xA;- Philippe Merle &lt;philippe.merle@inria.fr>&#xA;- Faiez Zalila &lt;faiez.zalila@inria.fr>" modelDirectory="/org.modmacao.all.extensions/src-gen" editDirectory="/org.modmacao.all.extensions.edit/src-gen" editorDirectory="/org.modmacao.all.extensions.editor/src-gen" modelPluginID="org.modmacao.all.extensions" modelName="All" testsDirectory="/org.modmacao.all.extensions.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="org.modmacao.all.extensions.edit" editorPluginID="org.modmacao.all.extensions.editor" testsPluginID="org.modmacao.all.extensions.tests" operationReflection="true">
+  <genAnnotations source="http://www.eclipse.org/OCL/GenModel">
+    <details key="Use Delegates" value="false"/>
+  </genAnnotations>
+  <foreignModel>all.ecore</foreignModel>
+  <genPackages prefix="All" disposableProviderFactory="true">
+    <ecorePackage href="all.ecore#/"/>
+  </genPackages>
+  <usedGenPackages href="platform:/resource/org.modmacao.mongodb/model/mongodb.genmodel#//mongodb"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.core/model/modmacao.genmodel#//modmacao"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.apache.spark/model/apache_spark.genmodel#//apache_spark"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.occi.platform/model/platform.genmodel#//platform"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.client.server/model/client_server.genmodel#//client_server"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.placement/model/placement.genmodel#//placement"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.lamp/model/lamp.genmodel#//lamp"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.genmodel#//infrastructure"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.apache.cassandra/model/apache_cassandra.genmodel#//apache_cassandra"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.openstack.runtime/model/openstackruntime.genmodel#//openstackruntime"/>
+  <usedGenPackages href="platform:/resource/org.modmacao.ansible/model/ansibleconfiguration.genmodel#//ansibleconfiguration"/>
+  <usedGenPackages href="platform:/plugin/org.eclipse.cmf.occi.core/model/OCCI.genmodel#//occi"/>
+</genmodel:GenModel>

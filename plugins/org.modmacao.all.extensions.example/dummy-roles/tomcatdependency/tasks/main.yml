@@ -1,0 +1,30 @@
+- name: Deploy TomcatDependency
+  block:
+   - debug: msg="Operation deploy not implemented."
+  when: task == "DEPLOY"
+  become_user: root
+  
+- name: Configure TomcatDependency  
+  block:
+  - debug: msg="Operation configure not implemented."
+  when: task == "CONFIGURE"
+  become_user: root
+  
+- name: Start TomcatDependency  
+  block:
+  - debug: msg="Operation start not implemented."
+  when: task == "START"
+  become_user: root
+  
+- name: Stop TomcatDependency
+  block:
+  - debug: msg="Operation stop not implemented."
+
+  when: task == "STOP"
+  become_user: root
+
+- name: Undeploy TomcatDependency
+  block:
+  - debug: msg="Operation undeploy not implemented."
+  when: task == "UNDEPLOY"
+  become_user: root

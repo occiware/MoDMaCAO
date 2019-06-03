@@ -34,16 +34,20 @@ import org.eclipse.cmf.occi.infrastructure.SuspendMethod;
 import org.eclipse.cmf.occi.infrastructure.User_data;
 import org.openstack4j.api.Builders;
 import org.openstack4j.api.OSClient.OSClientV2;
+import org.openstack4j.model.compute.Action;
 import org.openstack4j.model.compute.FloatingIP;
+import org.openstack4j.model.compute.RebootType;
 import org.openstack4j.model.compute.Server;
 import org.openstack4j.model.compute.Server.Status;
 import org.openstack4j.model.compute.ServerCreate;
 import org.openstack4j.model.compute.builder.ServerCreateBuilder;
+import org.openstack4j.model.network.Port;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.apache.commons.codec.binary.Base64;
 
+import openstackruntime.Flavor;
 import openstackruntime.Floatingip;
+import openstackruntime.Image;
 import openstackruntime.OpenstackruntimeFactory;
 import openstackruntime.Runtimeid; 
 
@@ -85,8 +89,11 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 	{
 		LOGGER.debug("occiCreate() called on " + this);
 		List<String> networkList = new ArrayList<String>();
+		List<Port> portList = new ArrayList<Port>();
 		String flavorID = null;
 		String imageID = null;
+		String publickey = null;
+		List<Link> linksToBeProvisioned = new ArrayList<Link>();
 		ServerCreateBuilder builder = Builders.server();
 		
 		os = OpenStackHelper.getInstance().getOSClient();
@@ -118,44 +125,55 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 			if (link instanceof Networkinterface) {
 				String networkID = OpenStackHelper.getInstance().getRuntimeID(link.getTarget());
 				if (networkID  != null) {
-					networkList.add(networkID);
+					link.occiCreate();
+					portList.add(((NetworkinterfaceConnector)(link)).getRuntimeObject());
 				}
 			}	
 		}
 		
 		// add default network, since OpenStack
 		// does not allow the creation of vms without network connection
-		if (networkList.size() == 0) {
+		if (portList.size() == 0) {
 			networkList.add(OpenStackHelper.getInstance().getDefaultNetwork());
+			builder.networks(networkList);
+		} else {
+			for (Port port: portList) {
+				builder.addNetworkPort(port.getId());
+			}
 		}
 		
-		builder.networks(networkList);	
 		
 		for (MixinBase mixin: this.getParts()) {
 			if (mixin instanceof Ssh_key) {
-				String publickey = ((Ssh_key) mixin).getOcciCredentialsSshPublickey();
-				// create new ssh key on OpenStack
-			    os.compute().keypairs().create(this.getTitle() + "_keypair", publickey);	
-					
-				builder.keypairName(this.getTitle() + "_keypair");
+				publickey = ((Ssh_key) mixin).getOcciCredentialsSshPublickey();
 			}
 			
 			if (mixin instanceof Resource_tpl) {
 				LOGGER.info("Found resource template in " + this);
-				for (Attribute attribute: mixin.getMixin().getAttributes()) {
-					if (attribute.getName().equals("openstack.runtime.id")) {
-						flavorID = attribute.getDefault();
-						break;
+				if (mixin instanceof Flavor) {
+					flavorID = ((Flavor) (mixin)).getOpenstackFlavorId();
+				}
+				else {
+					for (Attribute attribute: mixin.getMixin().getAttributes()) {
+						if (attribute.getName().equals("openstack.runtime.id")) {
+							flavorID = attribute.getDefault();
+							break;
+						}
 					}
 				}
 			}
 	
 			if (mixin instanceof Os_tpl) {
 				LOGGER.info("Found os template in " + this);
-				for (Attribute attribute: mixin.getMixin().getAttributes()) {
-					if (attribute.getName().equals("openstack.runtime.id")) {
-						imageID = attribute.getDefault();
-						break;
+				if (mixin instanceof Image) {
+					imageID = ((Image) (mixin)).getOpenstackImageId();
+				}
+				else {
+					for (Attribute attribute: mixin.getMixin().getAttributes()) {
+						if (attribute.getName().equals("openstack.runtime.id")) {
+							imageID = attribute.getDefault();
+							break;
+						}
 					}
 				}
 			}
@@ -181,6 +199,16 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		
 		builder.image(imageID);
 		
+		if (publickey == null) {
+			LOGGER.warn("No key is set for compute resource, trying default value.");
+			publickey = OpenStackHelper.getInstance().getDefaultPublicKey();
+		}
+		
+		if (publickey != null) {
+			os.compute().keypairs().create(this.getTitle() + "_keypair", publickey);	
+			builder.keypairName(this.getTitle() + "_keypair");
+		}
+		
 		ServerCreate sc = builder.build();
 		
 		try {
@@ -190,21 +218,29 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 			OpenStackHelper.getInstance().setAttributeState(runtimeIDMixin, "openstack.runtime.id", 
 						server.getId());
 
-				this.getParts().add(runtimeIDMixin);
+			this.getParts().add(runtimeIDMixin);
 
-				for (MixinBase mixin: this.getParts()) {
-					if (mixin instanceof Floatingip) {
-						String pool = ((Floatingip) mixin).getOpenstackFloatingipPool();
-						String address = ((Floatingip) mixin).getOpenstackFloatingipAddress();
-						if (address != null) {
-							//TODO: Implement
-						} else {
-							FloatingIP fip = os.compute().floatingIps().allocateIP(pool);
-							LOGGER.debug("Allocated new floating ip " + fip.getFloatingIpAddress());
-							os.compute().floatingIps().addFloatingIP(server, fip.getFloatingIpAddress());
-						}				
-					}
+			for (MixinBase mixin: this.getParts()) {
+				if (mixin instanceof Floatingip) {
+					String pool = ((Floatingip) mixin).getOpenstackFloatingipPool();
+					String address = ((Floatingip) mixin).getOpenstackFloatingipAddress();
+					if (address != null) {
+						//TODO: Implement
+					} else {
+						FloatingIP fip = os.compute().floatingIps().allocateIP(pool);
+						LOGGER.debug("Allocated new floating ip " + fip.getFloatingIpAddress());
+						os.compute().floatingIps().addFloatingIP(server, fip.getFloatingIpAddress());
+					}				
 				}
+			}
+			// Make sure all Network Links are correctly created.
+			for (Link link: linksToBeProvisioned) {
+				link.occiCreate();
+			}
+			
+			// Added for automatic model update
+			this.occiRetrieve();
+			
 		} catch (Exception e) {
 			LOGGER.debug("Problem while creating VM: " + e.getMessage());
 			os.compute().keypairs().delete(this.getTitle() + "_keypair");
@@ -232,11 +268,43 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		}
 		
 		// Retrieving Status
-		Status status = server.getStatus();
-		
-		if (status == Status.ACTIVE) {
-			this.setOcciComputeState(ComputeStatus.ACTIVE);
+		Status status = server.getStatus();	
+		switch (status) {
+			case ACTIVE:
+				this.setOcciComputeState(ComputeStatus.ACTIVE);
+				break;
+			case ERROR:
+				this.setOcciComputeState(ComputeStatus.ERROR);
+				break;
+			case SUSPENDED:
+				this.setOcciComputeState(ComputeStatus.SUSPENDED);
+				break;
+			case STOPPED:
+			case BUILD:
+			case DELETED:
+			case HARD_REBOOT:
+			case MIGRATING:
+			case PASSWORD:
+			case PAUSED:
+			case REBOOT:
+			case REBUILD:
+			case RESIZE:
+			case REVERT_RESIZE:
+			case SHELVED:
+			case SHELVED_OFFLOADED:
+			case SHUTOFF:
+			case UNKNOWN:
+			case UNRECOGNIZED:
+			case VERIFY_RESIZE:
+			default:
+				this.setOcciComputeState(ComputeStatus.INACTIVE);
 		}
+		
+		// Retrieving Configuration
+		this.setOcciComputeCores(server.getFlavor().getVcpus());
+		this.setOcciComputeMemory(Float.valueOf(server.getFlavor().getRam()));
+		this.setOcciComputeHostname(server.getName());
+		this.setOcciComputeStateMessage(status.name());
 	}
 	// End of user code
 
@@ -267,12 +335,16 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		if (server != null) {
 			os.compute().servers().delete(server.getId());
 			os.compute().keypairs().delete(this.getTitle() + "_keypair");
-
+		}
+		
+		for (Link link: this.getLinks()) {
+			link.occiDelete();
 		}
 		
 		OpenStackHelper.getInstance().removeRuntimeID(this);
 		
 		this.setOcciComputeState(ComputeStatus.INACTIVE);
+		this.setOcciComputeStateMessage("DELETED");
 	}
 	// End of user code
 
@@ -310,12 +382,25 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 	public void restart(final RestartMethod method)
 	{
 		LOGGER.debug("Action restart(" + "method=" + method + ") called on " + this);
-
-		// Compute State Machine.
-		switch(getOcciComputeState().getValue()) {
-		default:
-			break;
+		os = OpenStackHelper.getInstance().getOSClient();
+		server = getRuntimeObject();
+		if (server != null) {
+			switch (method) {
+			case COLD:
+				os.compute().servers().reboot(server.getId(), RebootType.HARD);
+				break;
+			case GRACEFUL:
+				os.compute().servers().reboot(server.getId(), RebootType.SOFT);
+				break;
+			case WARM:
+				os.compute().servers().reboot(server.getId(), RebootType.SOFT);
+				break;
+			default:
+				os.compute().servers().reboot(server.getId(), RebootType.HARD);
+			}
 		}
+		
+		this.occiRetrieve();
 	}
 	// End of user code
 	// Start of user code Compute_Kind_Stop_action
@@ -336,18 +421,22 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 		case ComputeStatus.ACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=active, action=\"stop\")...");
 			// TODO Implement transition(state=active, action="stop")
-			if(true){
-				setOcciComputeState(ComputeStatus.ERROR);
-			}
-			else	
-				if(true){
-					setOcciComputeState(ComputeStatus.INACTIVE);
+			os = OpenStackHelper.getInstance().getOSClient();
+			server = getRuntimeObject();
+			if (server != null) {
+				switch (method) {
+				case ACPIOFF:
+				case GRACEFUL:
+				case POWEROFF:
+				default:
+					os.compute().servers().action(server.getId(), Action.STOP);
 				}
-			break;
-
+			}
+			
 		default:
 			break;
 		}
+		this.occiRetrieve();
 	}
 	// End of user code
 	// Start of user code Compute_Kind_Start_action
@@ -367,32 +456,18 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 
 		case ComputeStatus.INACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=inactive, action=\"start\")...");
-			// TODO Implement transition(state=inactive, action="start")
-			if(true){
-				setOcciComputeState(ComputeStatus.ERROR);
-			}
-			else	
-				if(true){
-					setOcciComputeState(ComputeStatus.ACTIVE);
-				}
-			break;
-
+			// TODO Implement transition(state=inactive, action="start"
 
 		case ComputeStatus.SUSPENDED_VALUE:
-			LOGGER.debug("Fire transition(state=suspended, action=\"start\")...");
-			// TODO Implement transition(state=suspended, action="start")
-			if(true){
-				setOcciComputeState(ComputeStatus.ERROR);
-			}
-			else	
-				if(true){
-					setOcciComputeState(ComputeStatus.ACTIVE);
-				}
-			break;
 
 		default:
-			break;
+			os = OpenStackHelper.getInstance().getOSClient();
+			server = getRuntimeObject();
+			if (server != null) {
+				os.compute().servers().action(server.getId(), Action.START);
+			}
 		}
+		this.occiRetrieve();
 	}
 	// End of user code
 	// Start of user code Compute_Kind_Suspend_action
@@ -412,19 +487,14 @@ public class ComputeConnector extends org.eclipse.cmf.occi.infrastructure.impl.C
 
 		case ComputeStatus.ACTIVE_VALUE:
 			LOGGER.debug("Fire transition(state=active, action=\"suspend\")...");
-			// TODO Implement transition(state=active, action="suspend")
-			if(true){
-				setOcciComputeState(ComputeStatus.ERROR);
-			}
-			else	
-				if(true){
-					setOcciComputeState(ComputeStatus.SUSPENDED);
-				}
-			break;
-
 		default:
-			break;
+			os = OpenStackHelper.getInstance().getOSClient();
+			server = getRuntimeObject();
+			if (server != null) {
+				os.compute().servers().action(server.getId(), Action.SUSPEND);
+			}
 		}
+		this.occiRetrieve();
 	}
 	// End of user code
 

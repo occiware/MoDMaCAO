@@ -16,7 +16,6 @@ import java.util.Map;
 
 import modmacao.util.ModmacaoValidator;
 
-import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -131,8 +130,8 @@ public class MongodbValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case MongodbPackage.COMPONENT:
-				return validateComponent((Component)value, diagnostics, context);
+			case MongodbPackage.MONGODBCOMPONENT:
+				return validateMongodbcomponent((Mongodbcomponent)value, diagnostics, context);
 			case MongodbPackage.CONFIGSERVER:
 				return validateConfigserver((Configserver)value, diagnostics, context);
 			case MongodbPackage.ROUTER:
@@ -141,6 +140,10 @@ public class MongodbValidator extends EObjectValidator {
 				return validateShard((Shard)value, diagnostics, context);
 			case MongodbPackage.CLUSTER:
 				return validateCluster((Cluster)value, diagnostics, context);
+			case MongodbPackage.CONFIGSERVERDEPENDENCY:
+				return validateConfigserverdependency((Configserverdependency)value, diagnostics, context);
+			case MongodbPackage.REPLICABLEMONGODBCOMPONENT:
+				return validateReplicablemongodbcomponent((Replicablemongodbcomponent)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -151,18 +154,18 @@ public class MongodbValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComponent(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(component, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component, diagnostics, context);
-		if (result || diagnostics != null) result &= modmacaoValidator.validateComponent_OnlyOnePlacementLink(component, diagnostics, context);
-		if (result || diagnostics != null) result &= modmacaoValidator.validateComponent_appliesConstraint(component, diagnostics, context);
+	public boolean validateMongodbcomponent(Mongodbcomponent mongodbcomponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(mongodbcomponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(mongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(mongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(mongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(mongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(mongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(mongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(mongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(mongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= modmacaoValidator.validateComponent_OnlyOnePlacementLink(mongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= modmacaoValidator.validateComponent_appliesConstraint(mongodbcomponent, diagnostics, context);
 		return result;
 	}
 
@@ -250,16 +253,6 @@ public class MongodbValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the OneOrMoreRouters constraint of '<em>Cluster</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateCluster_OneOrMoreRouters(Cluster cluster, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return cluster.OneOrMoreRouters(diagnostics, context);
-	}
-
-	/**
 	 * Validates the OneOrMoreShards constraint of '<em>Cluster</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -277,6 +270,57 @@ public class MongodbValidator extends EObjectValidator {
 	 */
 	public boolean validateCluster_OneOrMoreConfigServers(Cluster cluster, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return cluster.OneOrMoreConfigServers(diagnostics, context);
+	}
+
+	/**
+	 * Validates the OneOrMoreRouters constraint of '<em>Cluster</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCluster_OneOrMoreRouters(Cluster cluster, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return cluster.OneOrMoreRouters(diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConfigserverdependency(Configserverdependency configserverdependency, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(configserverdependency, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(configserverdependency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(configserverdependency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(configserverdependency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(configserverdependency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(configserverdependency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(configserverdependency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(configserverdependency, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(configserverdependency, diagnostics, context);
+		if (result || diagnostics != null) result &= modmacaoValidator.validateDependency_SourceMustBeComponent(configserverdependency, diagnostics, context);
+		if (result || diagnostics != null) result &= modmacaoValidator.validateDependency_TargetMustBeComponent(configserverdependency, diagnostics, context);
+		if (result || diagnostics != null) result &= modmacaoValidator.validateDependency_appliesConstraint(configserverdependency, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReplicablemongodbcomponent(Replicablemongodbcomponent replicablemongodbcomponent, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(replicablemongodbcomponent, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(replicablemongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(replicablemongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(replicablemongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(replicablemongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(replicablemongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(replicablemongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(replicablemongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(replicablemongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= modmacaoValidator.validateComponent_OnlyOnePlacementLink(replicablemongodbcomponent, diagnostics, context);
+		if (result || diagnostics != null) result &= modmacaoValidator.validateComponent_appliesConstraint(replicablemongodbcomponent, diagnostics, context);
+		return result;
 	}
 
 	/**

@@ -54,7 +54,8 @@
       <!-- @generated mongodb -->
       <package
             uri="http://schemas.modmacao.org/mongodb/ecore"
-            class="org.modmacao.mongodb.MongodbPackage"/>
+            class="org.modmacao.mongodb.MongodbPackage"
+            genModel="model/mongodb.genmodel"/>
    </extension>
 
 </plugin>

@@ -29,7 +29,7 @@ import org.modmacao.mongodb.Configserver;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConfigserverItemProvider extends ComponentItemProvider {
+public class ConfigserverItemProvider extends ReplicablemongodbcomponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public class ConfigserverItemProvider extends ComponentItemProvider {
 			getString("_UI_Configserver_type") :
 			getString("_UI_Configserver_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

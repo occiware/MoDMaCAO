@@ -12,25 +12,21 @@
  */
 package org.modmacao.ansibleconfiguration.impl;
 
-import modmacao.ModmacaoPackage;
-
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
 import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EGenericType;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EValidator;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.modmacao.ansibleconfiguration.Ansibleconfiguration;
 import org.modmacao.ansibleconfiguration.AnsibleconfigurationFactory;
 import org.modmacao.ansibleconfiguration.AnsibleconfigurationPackage;
 import org.modmacao.ansibleconfiguration.Ansibleendpoint;
+
 import org.modmacao.ansibleconfiguration.util.AnsibleconfigurationValidator;
 
 /**
@@ -46,13 +42,6 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 	 * @generated
 	 */
 	private EClass ansibleendpointEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass ansibleconfigurationEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -82,7 +71,7 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
+	 * 
 	 * <p>This method is used to initialize {@link AnsibleconfigurationPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -96,14 +85,12 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 		if (isInited) return (AnsibleconfigurationPackage)EPackage.Registry.INSTANCE.getEPackage(AnsibleconfigurationPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredAnsibleconfigurationPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		AnsibleconfigurationPackageImpl theAnsibleconfigurationPackage = registeredAnsibleconfigurationPackage instanceof AnsibleconfigurationPackageImpl ? (AnsibleconfigurationPackageImpl)registeredAnsibleconfigurationPackage : new AnsibleconfigurationPackageImpl();
+		AnsibleconfigurationPackageImpl theAnsibleconfigurationPackage = (AnsibleconfigurationPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof AnsibleconfigurationPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new AnsibleconfigurationPackageImpl());
 
 		isInited = true;
 
 		// Initialize simple dependencies
 		InfrastructurePackage.eINSTANCE.eClass();
-		ModmacaoPackage.eINSTANCE.eClass();
 		OCCIPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -114,7 +101,7 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
-			(theAnsibleconfigurationPackage,
+			(theAnsibleconfigurationPackage, 
 			 new EValidator.Descriptor() {
 				 public EValidator getEValidator() {
 					 return AnsibleconfigurationValidator.INSTANCE;
@@ -124,6 +111,7 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 		// Mark meta-data to indicate it can't be changed
 		theAnsibleconfigurationPackage.freeze();
 
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(AnsibleconfigurationPackage.eNS_URI, theAnsibleconfigurationPackage);
 		return theAnsibleconfigurationPackage;
@@ -143,8 +131,8 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getAnsibleendpoint__AppliesConstraint__DiagnosticChain_Map() {
-		return ansibleendpointEClass.getEOperations().get(0);
+	public EAttribute getAnsibleendpoint_AnsibleRemoteuser() {
+		return (EAttribute)ansibleendpointEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -152,26 +140,8 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAnsibleconfiguration() {
-		return ansibleconfigurationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAnsibleconfiguration_AnsiblePrivatekey() {
-		return (EAttribute)ansibleconfigurationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAnsibleconfiguration_AnsibleRemoteuser() {
-		return (EAttribute)ansibleconfigurationEClass.getEStructuralFeatures().get(1);
+	public EAttribute getAnsibleendpoint_AnsiblePrivatekey() {
+		return (EAttribute)ansibleendpointEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -203,11 +173,8 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 
 		// Create classes and their features
 		ansibleendpointEClass = createEClass(ANSIBLEENDPOINT);
-		createEOperation(ansibleendpointEClass, ANSIBLEENDPOINT___APPLIES_CONSTRAINT__DIAGNOSTICCHAIN_MAP);
-
-		ansibleconfigurationEClass = createEClass(ANSIBLECONFIGURATION);
-		createEAttribute(ansibleconfigurationEClass, ANSIBLECONFIGURATION__ANSIBLE_PRIVATEKEY);
-		createEAttribute(ansibleconfigurationEClass, ANSIBLECONFIGURATION__ANSIBLE_REMOTEUSER);
+		createEAttribute(ansibleendpointEClass, ANSIBLEENDPOINT__ANSIBLE_REMOTEUSER);
+		createEAttribute(ansibleendpointEClass, ANSIBLEENDPOINT__ANSIBLE_PRIVATEKEY);
 	}
 
 	/**
@@ -235,7 +202,6 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 
 		// Obtain other dependent packages
 		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
-		ModmacaoPackage theModmacaoPackage = (ModmacaoPackage)EPackage.Registry.INSTANCE.getEPackage(ModmacaoPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -243,24 +209,11 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 
 		// Add supertypes to classes
 		ansibleendpointEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		ansibleconfigurationEClass.getESuperTypes().add(theModmacaoPackage.getComponent());
-		ansibleconfigurationEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ansibleendpointEClass, Ansibleendpoint.class, "Ansibleendpoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		EOperation op = initEOperation(getAnsibleendpoint__AppliesConstraint__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "appliesConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
-		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(ecorePackage.getEJavaObject());
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(ansibleconfigurationEClass, Ansibleconfiguration.class, "Ansibleconfiguration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAnsibleconfiguration_AnsiblePrivatekey(), theOCCIPackage.getString(), "ansiblePrivatekey", null, 0, 1, Ansibleconfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAnsibleconfiguration_AnsibleRemoteuser(), theOCCIPackage.getString(), "ansibleRemoteuser", null, 0, 1, Ansibleconfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnsibleendpoint_AnsibleRemoteuser(), theOCCIPackage.getString(), "ansibleRemoteuser", null, 0, 1, Ansibleendpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAnsibleendpoint_AnsiblePrivatekey(), theOCCIPackage.getString(), "ansiblePrivatekey", null, 0, 1, Ansibleendpoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -268,6 +221,10 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
 	}
 
 	/**
@@ -277,17 +234,53 @@ public class AnsibleconfigurationPackageImpl extends EPackageImpl implements Ans
 	 * @generated
 	 */
 	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
 		addAnnotation
-		  (this,
-		   source,
+		  (this, 
+		   source, 
 		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });	
+		addAnnotation
+		  (ansibleendpointEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
 		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";	
 		addAnnotation
-		  (ansibleendpointEClass,
-		   source,
+		  (this, 
+		   source, 
 		   new String[] {
-			   "constraints", "appliesConstraint"
+			 "occi", "http://schemas.ogf.org/occi/core/ecore",
+			 "infrastructure", "http://schemas.ogf.org/occi/infrastructure/ecore"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (ansibleendpointEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(infrastructure::Networkinterface)"
 		   });
 	}
 

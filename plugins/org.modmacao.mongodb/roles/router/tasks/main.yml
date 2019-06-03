@@ -1,0 +1,58 @@
+- name: Deploy Router
+  block:	
+  - apt_key:
+      keyserver: hkp://keyserver.ubuntu.com:80
+      id: 9DA31620334BD75D9DCB49F368818C72E52529D4
+      state: present
+  - apt_repository:
+      repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse
+      state: present
+  - apt:
+      name: mongodb-org
+      update_cache: yes
+      state: present
+  when: task == "DEPLOY"
+  become: yes
+  
+- name: Configure Router  
+  block:
+  - name: Copy startup script
+    template: src=mongos_init.j2 dest=/etc/init/mongos.conf owner=mongodb
+  - name: Copy configuration file template
+    template: src=mongos.conf.j2 dest=/etc/mongos.conf owner=mongodb
+  when: task == "CONFIGURE"
+  become: yes
+  
+- name: Start Router  
+  block:
+  - name: Start mongos 
+    service: 
+      name: mongos
+      state: restarted
+  when: task == "START"
+  become: yes
+  
+- name: Stop Router
+  block:
+  - name: Stop mongos 
+    service: 
+      name: mongos
+      state: stopped
+  when: task == "STOP"
+  become: yes
+
+- name: Undeploy Router
+  block:
+  - apt_key:
+      keyserver: hkp://keyserver.ubuntu.com:80
+      id: 9DA31620334BD75D9DCB49F368818C72E52529D4
+      state: absent
+  - apt_repository:
+      repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.0 multiverse
+      state: absent
+  - apt:
+      name: mongodb-org
+      update_cache: yes
+      state: absent
+  when: task == "UNDEPLOY"
+  become: yes

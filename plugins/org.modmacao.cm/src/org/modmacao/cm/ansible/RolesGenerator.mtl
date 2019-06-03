@@ -1,0 +1,39 @@
+[comment encoding = UTF-8 /]
+[module RolesGenerator('http://schemas.ogf.org/occi/core/ecore')]
+
+
+[template public generateElement(aMixin : occi::Mixin)]
+[comment @main/]
+[file (aMixin.name.toLowerCase() + '/tasks/main.yml', false, 'UTF-8')]
+- name: Deploy [aMixin.name/]
+  block:
+   - debug: msg="Operation deploy not implemented."
+  when: task == "DEPLOY"
+  become: yes
+  
+- name: Configure [aMixin.name/]  
+  block:
+  - debug: msg="Operation configure not implemented."
+  when: task == "CONFIGURE"
+  become: yes
+  
+- name: Start [aMixin.name/]  
+  block:
+  - debug: msg="Operation start not implemented."
+  when: task == "START"
+  become: yes
+  
+- name: Stop [aMixin.name/]
+  block:
+  - debug: msg="Operation stop not implemented."
+
+  when: task == "STOP"
+  become: yes
+
+- name: Undeploy [aMixin.name/]
+  block:
+  - debug: msg="Operation undeploy not implemented."
+  when: task == "UNDEPLOY"
+  become: yes
+[/file]
+[/template]

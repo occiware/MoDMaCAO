@@ -24,7 +24,7 @@ import org.modmacao.mongodb.MongodbPackage;
  *
  * @generated
  */
-public class ConfigserverImpl extends ComponentImpl implements Configserver {
+public class ConfigserverImpl extends ReplicablemongodbcomponentImpl implements Configserver {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -13,7 +13,9 @@
 package org.modmacao.mongodb;
 
 import java.util.Map;
+
 import org.eclipse.cmf.occi.core.MixinBase;
+
 import org.eclipse.emf.common.util.DiagnosticChain;
 
 /**
@@ -27,7 +29,6 @@ import org.eclipse.emf.common.util.DiagnosticChain;
  * @generated
  */
 public interface Cluster extends modmacao.Cluster, MixinBase {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,4 +52,5 @@ public interface Cluster extends modmacao.Cluster, MixinBase {
 	 * @generated
 	 */
 	boolean OneOrMoreShards(DiagnosticChain diagnostics, Map<Object, Object> context);
+
 } // Cluster

@@ -14,6 +14,8 @@ package openstackruntime;
 
 import org.eclipse.cmf.occi.core.OCCIPackage;
 
+import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -33,7 +35,7 @@ import org.eclipse.emf.ecore.EPackage;
  * @see openstackruntime.OpenstackruntimeFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
- *        annotation="http://www.eclipse.org/OCL/Import occi='http://schemas.ogf.org/occi/core/ecore'"
+ *        annotation="http://www.eclipse.org/OCL/Import occi='http://schemas.ogf.org/occi/core/ecore' infrastructure='http://schemas.ogf.org/occi/infrastructure/ecore'"
  * @generated
  */
 public interface OpenstackruntimePackage extends EPackage {
@@ -206,6 +208,134 @@ public interface OpenstackruntimePackage extends EPackage {
 	 */
 	int FLOATINGIP_OPERATION_COUNT = OCCIPackage.MIXIN_BASE_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link openstackruntime.impl.ImageImpl <em>Image</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see openstackruntime.impl.ImageImpl
+	 * @see openstackruntime.impl.OpenstackruntimePackageImpl#getImage()
+	 * @generated
+	 */
+	int IMAGE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__MIXIN = InfrastructurePackage.OS_TPL__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__ENTITY = InfrastructurePackage.OS_TPL__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__ATTRIBUTES = InfrastructurePackage.OS_TPL__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Openstack Image Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__OPENSTACK_IMAGE_ID = InfrastructurePackage.OS_TPL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_FEATURE_COUNT = InfrastructurePackage.OS_TPL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_OPERATION_COUNT = InfrastructurePackage.OS_TPL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link openstackruntime.impl.FlavorImpl <em>Flavor</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see openstackruntime.impl.FlavorImpl
+	 * @see openstackruntime.impl.OpenstackruntimePackageImpl#getFlavor()
+	 * @generated
+	 */
+	int FLAVOR = 3;
+
+	/**
+	 * The feature id for the '<em><b>Mixin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR__MIXIN = InfrastructurePackage.RESOURCE_TPL__MIXIN;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR__ENTITY = InfrastructurePackage.RESOURCE_TPL__ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR__ATTRIBUTES = InfrastructurePackage.RESOURCE_TPL__ATTRIBUTES;
+
+	/**
+	 * The feature id for the '<em><b>Openstack Flavor Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR__OPENSTACK_FLAVOR_ID = InfrastructurePackage.RESOURCE_TPL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Flavor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR_FEATURE_COUNT = InfrastructurePackage.RESOURCE_TPL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Flavor</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLAVOR_OPERATION_COUNT = InfrastructurePackage.RESOURCE_TPL_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link openstackruntime.Runtimeid <em>Runtimeid</em>}'.
@@ -259,6 +389,48 @@ public interface OpenstackruntimePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getFloatingip_OpenstackFloatingipPool();
+
+	/**
+	 * Returns the meta object for class '{@link openstackruntime.Image <em>Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Image</em>'.
+	 * @see openstackruntime.Image
+	 * @generated
+	 */
+	EClass getImage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link openstackruntime.Image#getOpenstackImageId <em>Openstack Image Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Openstack Image Id</em>'.
+	 * @see openstackruntime.Image#getOpenstackImageId()
+	 * @see #getImage()
+	 * @generated
+	 */
+	EAttribute getImage_OpenstackImageId();
+
+	/**
+	 * Returns the meta object for class '{@link openstackruntime.Flavor <em>Flavor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Flavor</em>'.
+	 * @see openstackruntime.Flavor
+	 * @generated
+	 */
+	EClass getFlavor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link openstackruntime.Flavor#getOpenstackFlavorId <em>Openstack Flavor Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Openstack Flavor Id</em>'.
+	 * @see openstackruntime.Flavor#getOpenstackFlavorId()
+	 * @see #getFlavor()
+	 * @generated
+	 */
+	EAttribute getFlavor_OpenstackFlavorId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -326,6 +498,42 @@ public interface OpenstackruntimePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FLOATINGIP__OPENSTACK_FLOATINGIP_POOL = eINSTANCE.getFloatingip_OpenstackFloatingipPool();
+
+		/**
+		 * The meta object literal for the '{@link openstackruntime.impl.ImageImpl <em>Image</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see openstackruntime.impl.ImageImpl
+		 * @see openstackruntime.impl.OpenstackruntimePackageImpl#getImage()
+		 * @generated
+		 */
+		EClass IMAGE = eINSTANCE.getImage();
+
+		/**
+		 * The meta object literal for the '<em><b>Openstack Image Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE__OPENSTACK_IMAGE_ID = eINSTANCE.getImage_OpenstackImageId();
+
+		/**
+		 * The meta object literal for the '{@link openstackruntime.impl.FlavorImpl <em>Flavor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see openstackruntime.impl.FlavorImpl
+		 * @see openstackruntime.impl.OpenstackruntimePackageImpl#getFlavor()
+		 * @generated
+		 */
+		EClass FLAVOR = eINSTANCE.getFlavor();
+
+		/**
+		 * The meta object literal for the '<em><b>Openstack Flavor Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FLAVOR__OPENSTACK_FLAVOR_ID = eINSTANCE.getFlavor_OpenstackFlavorId();
 
 	}
 

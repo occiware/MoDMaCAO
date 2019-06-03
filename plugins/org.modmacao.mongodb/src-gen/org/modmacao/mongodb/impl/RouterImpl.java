@@ -24,7 +24,7 @@ import org.modmacao.mongodb.Router;
  *
  * @generated
  */
-public class RouterImpl extends ComponentImpl implements Router {
+public class RouterImpl extends MongodbcomponentImpl implements Router {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -27,7 +27,8 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * </ul>
  *
  * @see openstackruntime.OpenstackruntimePackage#getRuntimeid()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(infrastructure::Network) or self.entity.oclIsKindOf(infrastructure::Compute) or self.entity.oclIsKindOf(infrastructure::Storage) or self.entity.oclIsKindOf(infrastructure::Storagelink) or self.entity.oclIsKindOf(infrastructure::Networkinterface)'"
  * @generated
  */
 public interface Runtimeid extends MixinBase {

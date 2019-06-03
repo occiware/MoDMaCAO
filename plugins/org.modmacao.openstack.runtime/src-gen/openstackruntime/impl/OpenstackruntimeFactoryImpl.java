@@ -68,6 +68,8 @@ public class OpenstackruntimeFactoryImpl extends EFactoryImpl implements Opensta
 		switch (eClass.getClassifierID()) {
 			case OpenstackruntimePackage.RUNTIMEID: return createRuntimeid();
 			case OpenstackruntimePackage.FLOATINGIP: return createFloatingip();
+			case OpenstackruntimePackage.IMAGE: return createImage();
+			case OpenstackruntimePackage.FLAVOR: return createFlavor();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -91,6 +93,26 @@ public class OpenstackruntimeFactoryImpl extends EFactoryImpl implements Opensta
 	public Floatingip createFloatingip() {
 		FloatingipImpl floatingip = new FloatingipImpl();
 		return floatingip;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Image createImage() {
+		ImageImpl image = new ImageImpl();
+		return image;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Flavor createFlavor() {
+		FlavorImpl flavor = new FlavorImpl();
+		return flavor;
 	}
 
 	/**

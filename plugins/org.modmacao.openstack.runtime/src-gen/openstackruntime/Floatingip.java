@@ -28,11 +28,11 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * </ul>
  *
  * @see openstackruntime.OpenstackruntimePackage#getFloatingip()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='appliesConstraint'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot appliesConstraint='self.entity.oclIsKindOf(infrastructure::Compute)'"
  * @generated
  */
 public interface Floatingip extends MixinBase {
-
 	/**
 	 * Returns the value of the '<em><b>Openstack Floatingip Address</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -82,4 +82,5 @@ public interface Floatingip extends MixinBase {
 	 * @generated
 	 */
 	void setOpenstackFloatingipPool(String value);
+
 } // Floatingip

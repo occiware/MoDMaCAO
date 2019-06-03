@@ -24,7 +24,7 @@ import org.modmacao.mongodb.Shard;
  *
  * @generated
  */
-public class ShardImpl extends ComponentImpl implements Shard {
+public class ShardImpl extends ReplicablemongodbcomponentImpl implements Shard {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

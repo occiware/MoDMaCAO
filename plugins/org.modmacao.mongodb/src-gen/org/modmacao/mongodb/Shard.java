@@ -24,5 +24,5 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Shard extends Component, MixinBase {
+public interface Shard extends Replicablemongodbcomponent, MixinBase {
 } // Shard

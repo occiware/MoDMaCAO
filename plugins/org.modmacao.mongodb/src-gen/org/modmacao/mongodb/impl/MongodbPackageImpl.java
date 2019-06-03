@@ -28,10 +28,12 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.modmacao.mongodb.Cluster;
-import org.modmacao.mongodb.Component;
 import org.modmacao.mongodb.Configserver;
+import org.modmacao.mongodb.Configserverdependency;
 import org.modmacao.mongodb.MongodbFactory;
 import org.modmacao.mongodb.MongodbPackage;
+import org.modmacao.mongodb.Mongodbcomponent;
+import org.modmacao.mongodb.Replicablemongodbcomponent;
 import org.modmacao.mongodb.Router;
 import org.modmacao.mongodb.Shard;
 
@@ -53,7 +55,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass componentEClass = null;
+	private EClass mongodbcomponentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -82,6 +84,20 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * @generated
 	 */
 	private EClass clusterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass configserverdependencyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass replicablemongodbcomponentEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -165,8 +181,8 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComponent() {
-		return componentEClass;
+	public EClass getMongodbcomponent() {
+		return mongodbcomponentEClass;
 	}
 
 	/**
@@ -174,8 +190,17 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponent_MongodbReplicationSetName() {
-		return (EAttribute)componentEClass.getEStructuralFeatures().get(0);
+	public EAttribute getMongodbcomponent_MongodbBindIP() {
+		return (EAttribute)mongodbcomponentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMongodbcomponent_MongodbPort() {
+		return (EAttribute)mongodbcomponentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -219,7 +244,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCluster__OneOrMoreConfigServers__DiagnosticChain_Map() {
+	public EOperation getCluster__OneOrMoreConfigServers__DiagnosticChain_Map_1() {
 		return clusterEClass.getEOperations().get(0);
 	}
 
@@ -228,7 +253,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCluster__OneOrMoreRouters__DiagnosticChain_Map() {
+	public EOperation getCluster__OneOrMoreRouters__DiagnosticChain_Map_1() {
 		return clusterEClass.getEOperations().get(1);
 	}
 
@@ -237,8 +262,35 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCluster__OneOrMoreShards__DiagnosticChain_Map() {
+	public EOperation getCluster__OneOrMoreShards__DiagnosticChain_Map_1() {
 		return clusterEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConfigserverdependency() {
+		return configserverdependencyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getReplicablemongodbcomponent() {
+		return replicablemongodbcomponentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getReplicablemongodbcomponent_MongodbReplicationSetName() {
+		return (EAttribute)replicablemongodbcomponentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -269,8 +321,9 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		componentEClass = createEClass(COMPONENT);
-		createEAttribute(componentEClass, COMPONENT__MONGODB_REPLICATION_SET_NAME);
+		mongodbcomponentEClass = createEClass(MONGODBCOMPONENT);
+		createEAttribute(mongodbcomponentEClass, MONGODBCOMPONENT__MONGODB_BIND_IP);
+		createEAttribute(mongodbcomponentEClass, MONGODBCOMPONENT__MONGODB_PORT);
 
 		configserverEClass = createEClass(CONFIGSERVER);
 
@@ -279,9 +332,14 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		shardEClass = createEClass(SHARD);
 
 		clusterEClass = createEClass(CLUSTER);
-		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP);
-		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP);
-		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP_1);
+
+		configserverdependencyEClass = createEClass(CONFIGSERVERDEPENDENCY);
+
+		replicablemongodbcomponentEClass = createEClass(REPLICABLEMONGODBCOMPONENT);
+		createEAttribute(replicablemongodbcomponentEClass, REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME);
 	}
 
 	/**
@@ -316,20 +374,25 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		componentEClass.getESuperTypes().add(theModmacaoPackage.getComponent());
-		componentEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		configserverEClass.getESuperTypes().add(this.getComponent());
+		mongodbcomponentEClass.getESuperTypes().add(theModmacaoPackage.getComponent());
+		mongodbcomponentEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		configserverEClass.getESuperTypes().add(this.getReplicablemongodbcomponent());
 		configserverEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		routerEClass.getESuperTypes().add(this.getComponent());
+		routerEClass.getESuperTypes().add(this.getMongodbcomponent());
 		routerEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
-		shardEClass.getESuperTypes().add(this.getComponent());
+		shardEClass.getESuperTypes().add(this.getReplicablemongodbcomponent());
 		shardEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		clusterEClass.getESuperTypes().add(theModmacaoPackage.getCluster());
 		clusterEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		configserverdependencyEClass.getESuperTypes().add(theModmacaoPackage.getExecutiondependency());
+		configserverdependencyEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		replicablemongodbcomponentEClass.getESuperTypes().add(this.getMongodbcomponent());
+		replicablemongodbcomponentEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComponent_MongodbReplicationSetName(), theOCCIPackage.getString(), "mongodbReplicationSetName", null, 1, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(mongodbcomponentEClass, Mongodbcomponent.class, "Mongodbcomponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMongodbcomponent_MongodbBindIP(), ecorePackage.getEString(), "mongodbBindIP", null, 0, 1, Mongodbcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMongodbcomponent_MongodbPort(), theModmacaoPackage.getPort(), "mongodbPort", null, 0, 1, Mongodbcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(configserverEClass, Configserver.class, "Configserver", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -339,7 +402,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 
 		initEClass(clusterEClass, Cluster.class, "Cluster", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getCluster__OneOrMoreConfigServers__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "OneOrMoreConfigServers", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getCluster__OneOrMoreConfigServers__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "OneOrMoreConfigServers", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -348,7 +411,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getCluster__OneOrMoreRouters__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "OneOrMoreRouters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getCluster__OneOrMoreRouters__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "OneOrMoreRouters", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -357,7 +420,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getCluster__OneOrMoreShards__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "OneOrMoreShards", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getCluster__OneOrMoreShards__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "OneOrMoreShards", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -365,6 +428,11 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(configserverdependencyEClass, Configserverdependency.class, "Configserverdependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(replicablemongodbcomponentEClass, Replicablemongodbcomponent.class, "Replicablemongodbcomponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getReplicablemongodbcomponent_MongodbReplicationSetName(), ecorePackage.getEString(), "mongodbReplicationSetName", null, 0, 1, Replicablemongodbcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

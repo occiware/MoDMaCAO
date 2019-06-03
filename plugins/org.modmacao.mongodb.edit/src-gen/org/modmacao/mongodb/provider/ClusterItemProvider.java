@@ -76,7 +76,7 @@ public class ClusterItemProvider extends modmacao.provider.ClusterItemProvider {
 	public String getText(Object object) {
 		return getString("_UI_Cluster_type");
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

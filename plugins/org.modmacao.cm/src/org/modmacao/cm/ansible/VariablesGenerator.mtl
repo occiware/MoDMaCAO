@@ -1,0 +1,88 @@
+[comment encoding = UTF-8 /]
+[module VariablesGenerator('http://schemas.ogf.org/occi/core/ecore', 'http://schemas.ogf.org/occi/infrastructure/ecore')]
+
+
+[template public generateElement(aResource : occi::Resource)]
+[comment @main/]
+[file ('vars2.yaml', false, 'UTF-8')]
+id: [aResource.id/]
+kind: [aResource.kind.term/]
+[if (aResource.kind.term.toString() = 'component')]
+  [let host : Resource = aResource.links
+     ->select(l : Link | l.kind.term = 'placementlink')
+     ->first().target ]
+  [let ipaddresses : Sequence(String) = host.links->select(l: Link | l.oclIsKindOf(infrastructure::Networkinterface))
+	 ->collect(parts)->filter(infrastructure::Ipnetworkinterface)->collect(occiNetworkinterfaceAddress)
+  ]
+ipaddresses: 
+  [for (ip : String | ipaddresses) ]
+ - [ip/]
+  [/for]
+  [/let]
+  [/let]
+[/if]
+[if (aResource.parts->size() > 0)]
+mixins:
+[for (part : MixinBase | aResource.parts)]
+ - name: [part.mixin.name/]
+   [for (as : AttributeState | part.attributes)]
+   [as.name/]: [as.value/]
+   [/for]
+[/for]
+[/if]
+[if (aResource.attributes->size() > 0)]
+attributes:
+[for (as : AttributeState | aResource.attributes)]
+  [as.name/]: [as.value/]
+[/for]
+[/if]
+
+[if (aResource.links->size() > 0)]
+links:
+[for (link : Link | aResource.links)]
+  - id: [link.id/]
+    kind: [link.kind.term/]
+  [if (link.title <> null)]
+    title: [link.title/]
+  [/if]
+  [if (link.parts->size() > 0)]
+    mixins:
+    [for (part : MixinBase | link.parts)]
+      - [part.mixin.name/]
+    [/for]
+  [/if]
+  [if (link.target <> null)]
+    target: 
+      id: [link.target.id/]
+      kind: [link.target.kind.term/]
+      [if (link.target.title <> null)]
+      title: [link.target.title/]
+      [/if]
+      [if (link.target.parts->size() > 0)]
+      mixins:
+      [for (part : MixinBase | link.target.parts)]
+        - name: [part.mixin.name/]
+          [for (as : AttributeState | part.attributes)]
+          [as.name/]: [as.value/]
+          [/for]
+      [/for]
+      [/if]
+      [if (link.target.kind.term.toString() = 'component')]
+      [let host : Resource = link.target.links
+           ->select(l : Link | l.kind.term = 'placementlink')
+           ->first().target ]
+      [let ipaddresses : Sequence(String) = host.links->select(l: Link | l.oclIsKindOf(infrastructure::Networkinterface))
+	       ->collect(parts)->filter(infrastructure::Ipnetworkinterface)->collect(occiNetworkinterfaceAddress)
+      ]
+      ipaddresses: 
+      [for (ip : String | ipaddresses) ]
+        - [ip/]
+      [/for]
+      [/let]
+      [/let]
+      [/if]
+  [/if]
+[/for]
+[/if]
+[/file]
+[/template]

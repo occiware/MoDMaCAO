@@ -29,7 +29,7 @@ import org.modmacao.mongodb.Shard;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ShardItemProvider extends ComponentItemProvider {
+public class ShardItemProvider extends ReplicablemongodbcomponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public class ShardItemProvider extends ComponentItemProvider {
 			getString("_UI_Shard_type") :
 			getString("_UI_Shard_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

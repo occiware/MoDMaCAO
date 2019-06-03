@@ -1,0 +1,51 @@
+- name: Deploy Tomcat
+  block:
+   - yum: name=java-1.8.0-openjdk-devel state=present
+   - unarchive: 
+       src: https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.14/bin/apache-tomcat-9.0.14.tar.gz
+       dest: /tmp
+       remote_src: yes
+   - file:
+      path: /opt/tomcat/
+      state: directory
+   - shell: cp -r /tmp/apache-tomcat-9.0.14/* /opt/tomcat/
+  when: task == "DEPLOY"
+  become: yes
+  
+- name: Configure Tomcat  
+  block:
+  - user:
+     name: tomcat
+     shell: /bin/false
+     home: /opt/tomcat
+  - file:
+     path: /opt/tomcat/
+     owner: tomcat
+     recurse: yes
+  - copy:
+     src: tomcat.service
+     dest: /etc/systemd/system/tomcat.service
+  when: task == "CONFIGURE"
+  become: yes
+  
+- name: Start Tomcat  
+  block:
+  - service:
+     name: tomcat
+     state: started 
+  when: task == "START"
+  become: yes
+  
+- name: Stop Tomcat
+  block:
+  - service: 
+     name: tomcat
+     state: stopped
+  when: task == "STOP"
+  become: yes
+
+- name: Undeploy Tomcat
+  block:
+  - debug: msg="Operation undeploy not implemented."
+  when: task == "UNDEPLOY"
+  become_user: root

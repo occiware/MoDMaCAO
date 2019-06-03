@@ -41,15 +41,6 @@ public interface AnsibleconfigurationFactory extends EFactory {
 	Ansibleendpoint createAnsibleendpoint();
 
 	/**
-	 * Returns a new object of class '<em>Ansibleconfiguration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Ansibleconfiguration</em>'.
-	 * @generated
-	 */
-	Ansibleconfiguration createAnsibleconfiguration();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

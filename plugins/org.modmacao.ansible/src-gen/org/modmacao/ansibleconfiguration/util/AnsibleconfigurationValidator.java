@@ -14,8 +14,7 @@ package org.modmacao.ansibleconfiguration.util;
 
 import java.util.Map;
 
-import modmacao.util.ModmacaoValidator;
-
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
@@ -52,20 +51,12 @@ public class AnsibleconfigurationValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.modmacao.ansibleconfiguration";
 
 	/**
-	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Applies Constraint' of 'Ansibleendpoint'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final int ANSIBLEENDPOINT__APPLIES_CONSTRAINT = 1;
-
-	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 1;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -76,14 +67,6 @@ public class AnsibleconfigurationValidator extends EObjectValidator {
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
-	 * The cached base package validator.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ModmacaoValidator modmacaoValidator;
-
-	/**
 	 * Creates an instance of the switch.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,7 +74,6 @@ public class AnsibleconfigurationValidator extends EObjectValidator {
 	 */
 	public AnsibleconfigurationValidator() {
 		super();
-		modmacaoValidator = ModmacaoValidator.INSTANCE;
 	}
 
 	/**
@@ -116,8 +98,6 @@ public class AnsibleconfigurationValidator extends EObjectValidator {
 		switch (classifierID) {
 			case AnsibleconfigurationPackage.ANSIBLEENDPOINT:
 				return validateAnsibleendpoint((Ansibleendpoint)value, diagnostics, context);
-			case AnsibleconfigurationPackage.ANSIBLECONFIGURATION:
-				return validateAnsibleconfiguration((Ansibleconfiguration)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -143,33 +123,32 @@ public class AnsibleconfigurationValidator extends EObjectValidator {
 	}
 
 	/**
+	 * The cached validation expression for the appliesConstraint constraint of '<em>Ansibleendpoint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String ANSIBLEENDPOINT__APPLIES_CONSTRAINT__EEXPRESSION = "self.entity.oclIsKindOf(infrastructure::Networkinterface)";
+
+	/**
 	 * Validates the appliesConstraint constraint of '<em>Ansibleendpoint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateAnsibleendpoint_appliesConstraint(Ansibleendpoint ansibleendpoint, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return ansibleendpoint.appliesConstraint(diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateAnsibleconfiguration(Ansibleconfiguration ansibleconfiguration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(ansibleconfiguration, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(ansibleconfiguration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(ansibleconfiguration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(ansibleconfiguration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(ansibleconfiguration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(ansibleconfiguration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(ansibleconfiguration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(ansibleconfiguration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(ansibleconfiguration, diagnostics, context);
-		if (result || diagnostics != null) result &= modmacaoValidator.validateComponent_OnlyOnePlacementLink(ansibleconfiguration, diagnostics, context);
-		if (result || diagnostics != null) result &= modmacaoValidator.validateComponent_appliesConstraint(ansibleconfiguration, diagnostics, context);
-		return result;
+		return
+			validate
+				(AnsibleconfigurationPackage.Literals.ANSIBLEENDPOINT,
+				 ansibleendpoint,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "appliesConstraint",
+				 ANSIBLEENDPOINT__APPLIES_CONSTRAINT__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**

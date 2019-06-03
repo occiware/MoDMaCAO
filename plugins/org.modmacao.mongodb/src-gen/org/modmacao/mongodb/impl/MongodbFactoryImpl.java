@@ -66,11 +66,13 @@ public class MongodbFactoryImpl extends EFactoryImpl implements MongodbFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case MongodbPackage.COMPONENT: return createComponent();
+			case MongodbPackage.MONGODBCOMPONENT: return createMongodbcomponent();
 			case MongodbPackage.CONFIGSERVER: return createConfigserver();
 			case MongodbPackage.ROUTER: return createRouter();
 			case MongodbPackage.SHARD: return createShard();
 			case MongodbPackage.CLUSTER: return createCluster();
+			case MongodbPackage.CONFIGSERVERDEPENDENCY: return createConfigserverdependency();
+			case MongodbPackage.REPLICABLEMONGODBCOMPONENT: return createReplicablemongodbcomponent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,9 +83,9 @@ public class MongodbFactoryImpl extends EFactoryImpl implements MongodbFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component createComponent() {
-		ComponentImpl component = new ComponentImpl();
-		return component;
+	public Mongodbcomponent createMongodbcomponent() {
+		MongodbcomponentImpl mongodbcomponent = new MongodbcomponentImpl();
+		return mongodbcomponent;
 	}
 
 	/**
@@ -124,6 +126,26 @@ public class MongodbFactoryImpl extends EFactoryImpl implements MongodbFactory {
 	public Cluster createCluster() {
 		ClusterImpl cluster = new ClusterImpl();
 		return cluster;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Configserverdependency createConfigserverdependency() {
+		ConfigserverdependencyImpl configserverdependency = new ConfigserverdependencyImpl();
+		return configserverdependency;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Replicablemongodbcomponent createReplicablemongodbcomponent() {
+		ReplicablemongodbcomponentImpl replicablemongodbcomponent = new ReplicablemongodbcomponentImpl();
+		return replicablemongodbcomponent;
 	}
 
 	/**

@@ -29,7 +29,7 @@ import org.modmacao.mongodb.Router;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RouterItemProvider extends ComponentItemProvider {
+public class RouterItemProvider extends MongodbcomponentItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -74,12 +74,12 @@ public class RouterItemProvider extends ComponentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Router)object).getMongodbReplicationSetName();
+		String label = ((Router)object).getModmacaoComponentVersion();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Router_type") :
 			getString("_UI_Router_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

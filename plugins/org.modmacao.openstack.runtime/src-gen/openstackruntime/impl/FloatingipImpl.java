@@ -18,7 +18,9 @@ import openstackruntime.OpenstackruntimePackage;
 import org.eclipse.cmf.occi.core.impl.MixinBaseImpl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -45,6 +47,7 @@ public class FloatingipImpl extends MixinBaseImpl implements Floatingip {
 	 * @ordered
 	 */
 	protected static final String OPENSTACK_FLOATINGIP_ADDRESS_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getOpenstackFloatingipAddress() <em>Openstack Floatingip Address</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,6 +67,7 @@ public class FloatingipImpl extends MixinBaseImpl implements Floatingip {
 	 * @ordered
 	 */
 	protected static final String OPENSTACK_FLOATINGIP_POOL_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getOpenstackFloatingipPool() <em>Openstack Floatingip Pool</em>}' attribute.
 	 * <!-- begin-user-doc -->

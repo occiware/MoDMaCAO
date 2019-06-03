@@ -10,22 +10,16 @@ import org.eclipse.cmf.occi.core.Entity;
 import org.eclipse.cmf.occi.core.MixinBase;
 import org.eclipse.cmf.occi.core.util.Occi2Ecore;
 import org.eclipse.cmf.occi.core.util.OcciHelper;
-import org.eclipse.emf.common.notify.Adapter;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.openstack4j.api.OSClient.OSClientV2;
 import org.openstack4j.openstack.OSFactory;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import openstackruntime.Runtimeid;
 
 public final class OpenStackHelper {
-	private static Logger LOGGER = LoggerFactory.getLogger(ComputeConnector.class);
 	private OSClientV2 os = null;
 	private Properties props;
 	
@@ -176,6 +170,10 @@ public final class OpenStackHelper {
 		}
 		// Get the attribute.
 		return mixinBase.eGet(eStructuralFeature).toString();
+	}
+
+	public String getDefaultPublicKey() {
+		return this.getProperties().getProperty("openstack_default_key");
 	}
 	
 }

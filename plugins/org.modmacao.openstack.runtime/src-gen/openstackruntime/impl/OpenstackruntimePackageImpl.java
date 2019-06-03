@@ -12,16 +12,23 @@
  */
 package openstackruntime.impl;
 
+import openstackruntime.Flavor;
 import openstackruntime.Floatingip;
+import openstackruntime.Image;
 import openstackruntime.OpenstackruntimeFactory;
 import openstackruntime.OpenstackruntimePackage;
 import openstackruntime.Runtimeid;
 
+import openstackruntime.util.OpenstackruntimeValidator;
+
 import org.eclipse.cmf.occi.core.OCCIPackage;
+
+import org.eclipse.cmf.occi.infrastructure.InfrastructurePackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -45,6 +52,20 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 	 * @generated
 	 */
 	private EClass floatingipEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass imageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass flavorEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -93,6 +114,7 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		isInited = true;
 
 		// Initialize simple dependencies
+		InfrastructurePackage.eINSTANCE.eClass();
 		OCCIPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -100,6 +122,15 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 
 		// Initialize created meta-data
 		theOpenstackruntimePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theOpenstackruntimePackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return OpenstackruntimeValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theOpenstackruntimePackage.freeze();
@@ -160,6 +191,42 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getImage() {
+		return imageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImage_OpenstackImageId() {
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFlavor() {
+		return flavorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFlavor_OpenstackFlavorId() {
+		return (EAttribute)flavorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public OpenstackruntimeFactory getOpenstackruntimeFactory() {
 		return (OpenstackruntimeFactory)getEFactoryInstance();
 	}
@@ -189,6 +256,12 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		floatingipEClass = createEClass(FLOATINGIP);
 		createEAttribute(floatingipEClass, FLOATINGIP__OPENSTACK_FLOATINGIP_ADDRESS);
 		createEAttribute(floatingipEClass, FLOATINGIP__OPENSTACK_FLOATINGIP_POOL);
+
+		imageEClass = createEClass(IMAGE);
+		createEAttribute(imageEClass, IMAGE__OPENSTACK_IMAGE_ID);
+
+		flavorEClass = createEClass(FLAVOR);
+		createEAttribute(flavorEClass, FLAVOR__OPENSTACK_FLAVOR_ID);
 	}
 
 	/**
@@ -216,6 +289,7 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 
 		// Obtain other dependent packages
 		OCCIPackage theOCCIPackage = (OCCIPackage)EPackage.Registry.INSTANCE.getEPackage(OCCIPackage.eNS_URI);
+		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -224,6 +298,10 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		// Add supertypes to classes
 		runtimeidEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 		floatingipEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		imageEClass.getESuperTypes().add(theInfrastructurePackage.getOs_tpl());
+		imageEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
+		flavorEClass.getESuperTypes().add(theInfrastructurePackage.getResource_tpl());
+		flavorEClass.getESuperTypes().add(theOCCIPackage.getMixinBase());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(runtimeidEClass, Runtimeid.class, "Runtimeid", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -233,6 +311,12 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		initEAttribute(getFloatingip_OpenstackFloatingipAddress(), theOCCIPackage.getString(), "openstackFloatingipAddress", null, 0, 1, Floatingip.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFloatingip_OpenstackFloatingipPool(), theOCCIPackage.getString(), "openstackFloatingipPool", null, 0, 1, Floatingip.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getImage_OpenstackImageId(), theOCCIPackage.getString(), "openstackImageId", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(flavorEClass, Flavor.class, "Flavor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFlavor_OpenstackFlavorId(), theOCCIPackage.getString(), "openstackFlavorId", null, 0, 1, Flavor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -241,6 +325,8 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		createEcoreAnnotations();
 		// http://www.eclipse.org/OCL/Import
 		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
 	}
 
 	/**
@@ -258,6 +344,30 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });	
+		addAnnotation
+		  (runtimeidEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (floatingipEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (imageEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
+		   });	
+		addAnnotation
+		  (flavorEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "appliesConstraint"
 		   });
 	}
 
@@ -273,7 +383,42 @@ public class OpenstackruntimePackageImpl extends EPackageImpl implements Opensta
 		  (this, 
 		   source, 
 		   new String[] {
-			 "occi", "http://schemas.ogf.org/occi/core/ecore"
+			 "occi", "http://schemas.ogf.org/occi/core/ecore",
+			 "infrastructure", "http://schemas.ogf.org/occi/infrastructure/ecore"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (runtimeidEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(infrastructure::Network) or self.entity.oclIsKindOf(infrastructure::Compute) or self.entity.oclIsKindOf(infrastructure::Storage) or self.entity.oclIsKindOf(infrastructure::Storagelink) or self.entity.oclIsKindOf(infrastructure::Networkinterface)"
+		   });	
+		addAnnotation
+		  (floatingipEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(infrastructure::Compute)"
+		   });	
+		addAnnotation
+		  (imageEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(infrastructure::Compute)"
+		   });	
+		addAnnotation
+		  (flavorEClass, 
+		   source, 
+		   new String[] {
+			 "appliesConstraint", "self.entity.oclIsKindOf(infrastructure::Compute)"
 		   });
 	}
 

@@ -24,5 +24,5 @@ import org.eclipse.cmf.occi.core.MixinBase;
  * @model
  * @generated
  */
-public interface Configserver extends Component, MixinBase {
+public interface Configserver extends Replicablemongodbcomponent, MixinBase {
 } // Configserver
