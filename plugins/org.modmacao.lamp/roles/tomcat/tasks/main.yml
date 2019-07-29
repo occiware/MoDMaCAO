@@ -25,6 +25,11 @@
   - copy:
      src: tomcat.service
      dest: /etc/systemd/system/tomcat.service
+  - lineinfile:
+     path: /opt/tomcat/webapps/ROOT/index.jsp
+     insertafter: pageContext
+     line: "<h1>Tomcat of VM with internal address:  {{ ansible_default_ipv4.address }}</h1>"
+     
   when: task == "CONFIGURE"
   become: yes
   
@@ -49,3 +54,4 @@
   - debug: msg="Operation undeploy not implemented."
   when: task == "UNDEPLOY"
   become_user: root
+
