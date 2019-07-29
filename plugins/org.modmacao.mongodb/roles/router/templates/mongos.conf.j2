@@ -33,7 +33,7 @@ net:
 #replication:
 
 sharding:
-  configDB: configserver.local:27018
+  configDB: {{ links | json_query('[?kind==`componentlink`].target') | json_query('[?contains(mixins.to_string(@), `ConfigServer`)].mixins[].attributes[].mongodb_replication_set_name | [0]') }}/{{ links | json_query('[?kind==`componentlink`].target') | json_query('[?contains(mixins.to_string(@), `ConfigServer`)].ipaddresses[] | [0]') }}:27017
 
 ## Enterprise-Only Options:
 

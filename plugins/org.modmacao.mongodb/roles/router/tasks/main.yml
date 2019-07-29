@@ -17,7 +17,7 @@
 - name: Configure Router  
   block:
   - name: Copy startup script
-    template: src=mongos_init.j2 dest=/etc/init/mongos.conf owner=mongodb
+    template: src=mongos_init_systemd.j2 dest=/etc/systemd/system/mongos.service owner=mongodb
   - name: Copy configuration file template
     template: src=mongos.conf.j2 dest=/etc/mongos.conf owner=mongodb
   when: task == "CONFIGURE"
@@ -26,9 +26,14 @@
 - name: Start Router  
   block:
   - name: Start mongos 
-    service: 
+    systemd: 
       name: mongos
       state: restarted
+      daemon_reload: yes
+  - name: Register shards
+    shell: mongo {{ ansible_default_ipv4.address }} --eval 'sh.addShard("{{ item.mixins[0].attributes.mongodb_replication_set_name }}/{{ item.ipaddresses[0] }}")'
+    with_items:
+      - "{{ links | json_query('[?kind==`componentlink`].target') | json_query('[?contains(mixins.to_string(@), `Shard`)]') }}"
   when: task == "START"
   become: yes
   
@@ -56,3 +61,4 @@
       state: absent
   when: task == "UNDEPLOY"
   become: yes
+

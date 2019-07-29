@@ -27,6 +27,8 @@
     service: 
       name: mongod
       state: restarted
+  - name: Initiate shard
+    shell: mongo {{ ansible_default_ipv4.address }} --eval 'printjson(rs.initiate())'
   when: task == "START"
   become: yes
   
