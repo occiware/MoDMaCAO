@@ -2,13 +2,13 @@
   block:
    - yum: name=java-1.8.0-openjdk-devel state=present
    - unarchive: 
-       src: https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.14/bin/apache-tomcat-9.0.14.tar.gz
+       src: https://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.21/bin/apache-tomcat-9.0.21.tar.gz
        dest: /tmp
        remote_src: yes
    - file:
       path: /opt/tomcat/
       state: directory
-   - shell: cp -r /tmp/apache-tomcat-9.0.14/* /opt/tomcat/
+   - shell: cp -r /tmp/apache-tomcat-9.0.21/* /opt/tomcat/
   when: task == "DEPLOY"
   become: yes
   
@@ -25,6 +25,11 @@
   - copy:
      src: tomcat.service
      dest: /etc/systemd/system/tomcat.service
+  - lineinfile:
+     path: /opt/tomcat/webapps/ROOT/index.jsp
+     insertafter: pageContext
+     line: "<h1>Tomcat of VM with internal address:  {{ ansible_default_ipv4.address }}</h1>"
+     
   when: task == "CONFIGURE"
   become: yes
   
@@ -49,3 +54,4 @@
   - debug: msg="Operation undeploy not implemented."
   when: task == "UNDEPLOY"
   become_user: root
+

@@ -14,10 +14,6 @@
     <attributes name="occi.core.id" value="urn:uuid:b70c8f95-9f5b-4c30-9d3b-3f5c59f9638c"/>
     <attributes name="occi.core.title" value="VM for WebServer"/>
     <parts>
-      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
-      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
-    </parts>
-    <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
       <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCmNwIC9ldGMvc3lzY29uZmlnL25ldHdvcmstc2NyaXB0cy9pZmNmZy1ldGgwIC9ldGMvc3lzY29uZmlnL25ldHdvcmstc2NyaXB0cy9pZmNmZy1ldGgxCnN1ZG8gc2VkIC1pICdzL2V0aDAvZXRoMS9nJyAvZXRjL3N5c2NvbmZpZy9uZXR3b3JrLXNjcmlwdHMvaWZjZmctZXRoMQppZnVwIGV0aDEKCgoK"/>
     </parts>
@@ -36,6 +32,7 @@
       </parts>
       <parts>
         <mixin href="http://schemas.modmacao.org/occi/ansible#//@mixins[term='ansibleendpoint']"/>
+<attributes name="ansible.remoteuser" value="centos"/>
       </parts>
     </links>
   </resources>
@@ -112,10 +109,6 @@
     <attributes name="occi.core.id" value="urn:uuid:b6441c2e-9542-46b7-bbe8-ca2c83b4fbd7"/>
     <attributes name="occi.core.title" value="VM for Database"/>
     <parts>
-      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
-      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
-    </parts>
-    <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
       <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCmNwIC9ldGMvc3lzY29uZmlnL25ldHdvcmstc2NyaXB0cy9pZmNmZy1ldGgwIC9ldGMvc3lzY29uZmlnL25ldHdvcmstc2NyaXB0cy9pZmNmZy1ldGgxCnN1ZG8gc2VkIC1pICdzL2V0aDAvZXRoMS9nJyAvZXRjL3N5c2NvbmZpZy9uZXR3b3JrLXNjcmlwdHMvaWZjZmctZXRoMQppZnVwIGV0aDEKCgoK"/>
     </parts>
@@ -130,6 +123,7 @@
       </parts>
       <parts>
         <mixin href="http://schemas.modmacao.org/occi/ansible#//@mixins[term='ansibleendpoint']"/>
+<attributes name="ansible.remoteuser" value="centos"/>
       </parts>
     </links>
   </resources>

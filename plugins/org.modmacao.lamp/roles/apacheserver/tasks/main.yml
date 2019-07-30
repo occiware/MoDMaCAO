@@ -8,6 +8,23 @@
   
 - name: Configure ApacheWebServer  
   block:
+   - copy: src=proxy.conf dest=/etc/httpd/conf.d/proxy.conf
+   - replace: path=/etc/httpd/conf.d/proxy.conf  regexp='(\s+)*:port(\s+.*)?$' replace="*:80"
+   - replace: path=/etc/httpd/conf.d/proxy.conf  regexp='(\s+)sern(\s+.*)?$' replace=" {{ ansible_default_ipv4.address }}"
+  
+   - name: Add tomcats as virtualhosts
+     blockinfile:
+       path: /etc/httpd/conf.d/proxy.conf
+       insertafter: ProxyRequests On
+       block: |
+         ProxyPass "/tomcat{{ my_idx }}" "http://{{ item }}:8080/"
+         ProxyPassReverse "/tomcat{{ my_idx }}" "http://{{ item }}:8080/"
+       marker: "#ANSIBLE MANAGED BLOCK {{ my_idx }}"
+     with_items:
+       - "{{ links | json_query('[?contains(mixins.to_string(@), `TomcatDependency`)].target.ipaddresses[0]') }}"
+     loop_control:
+       index_var: my_idx
+
    - copy: src=configure.sh dest=~/configure.sh mode=700
    - shell: export httpdport=80 && ~/configure.sh
   when: task == "CONFIGURE"
@@ -17,6 +34,7 @@
   block:
    - copy: src=start.sh dest=~/start.sh mode=700
    - shell: ~/start.sh
+   - command:  "/usr/sbin/setsebool httpd_can_network_connect 1"
   when: task == "START"
   become: yes
   
@@ -33,3 +51,4 @@
    - yum: name=httpd state=absent
   when: task == "UNDEPLOY"
   become: yes
+
