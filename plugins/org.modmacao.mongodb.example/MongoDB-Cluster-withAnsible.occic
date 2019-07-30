@@ -68,15 +68,42 @@
       <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13675"/>
       <attributes name="occi.core.target" value="/compute/urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2592"/>
     </links>
-    <links id="urn:uuid:4b9a6567-7cc8-4643-98a6-533068062b55" title="" location="/componentlink/urn:uuid:4b9a6567-7cc8-4643-98a6-533068062b55" target="//@resources.6">
+    <links id="urn:uuid:4b9a6567-7cc8-4643-98a6-533068062b55" title="" location="/componentlink/urn:uuid:4b9a6567-7cc8-4643-98a6-533068062b55" target="//@resources.3">
       <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
       <attributes name="occi.core.id" value="urn:uuid:4b9a6567-7cc8-4643-98a6-533068062b55"/>
       <attributes name="occi.core.title" value=""/>
       <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13675"/>
       <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/modmacao#//@mixins[term='executiondependency']"/>
+      </parts>
+    </links>
+    <links id="urn:uuid:d82fc64d-9e58-4c58-8a00-c4cd39614150" title="link3" target="//@resources.4">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:d82fc64d-9e58-4c58-8a00-c4cd39614150"/>
+      <attributes name="occi.core.title" value="link3"/>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/modmacao#//@mixins[term='executiondependency']"/>
+      </parts>
+    </links>
+    <links id="urn:uuid:4f9b9617-80f5-456a-ab0e-c23860754887" title="link4" target="//@resources.2">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:4f9b9617-80f5-456a-ab0e-c23860754887"/>
+      <attributes name="occi.core.title" value="link4"/>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/modmacao#//@mixins[term='executiondependency']"/>
+      </parts>
+    </links>
+    <links id="urn:uuid:d60fb5e9-3905-4d0a-b6d9-13313bd9eb57" title="link5" target="//@resources.6">
+      <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='componentlink']"/>
+      <attributes name="occi.core.id" value="urn:uuid:d60fb5e9-3905-4d0a-b6d9-13313bd9eb57"/>
+      <attributes name="occi.core.title" value="link5"/>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/modmacao#//@mixins[term='executiondependency']"/>
+      </parts>
     </links>
   </resources>
-  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678" title="shard3" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678" summary="3rd MongoDB cluster shard" rlinks="//@resources.0/@links.3">
+  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678" title="shard3" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678" summary="3rd MongoDB cluster shard" rlinks="//@resources.0/@links.3 //@resources.1/@links.3">
     <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
     <attributes name="occi.core.id" value="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678"/>
     <attributes name="occi.core.title" value="shard3"/>
@@ -98,9 +125,12 @@
       <attributes name="occi.core.title" value=""/>
       <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13678"/>
       <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/modmacao#//@mixins[term='executiondependency']"/>
+      </parts>
     </links>
   </resources>
-  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677" title="shard2" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677" summary="2nd MongoDB cluster shard" rlinks="//@resources.0/@links.2">
+  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677" title="shard2" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677" summary="2nd MongoDB cluster shard" rlinks="//@resources.0/@links.2 //@resources.1/@links.1">
     <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
     <attributes name="occi.core.id" value="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677"/>
     <attributes name="occi.core.title" value="shard2"/>
@@ -122,9 +152,12 @@
       <attributes name="occi.core.title" value=""/>
       <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13677"/>
       <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/modmacao#//@mixins[term='executiondependency']"/>
+      </parts>
     </links>
   </resources>
-  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676" title="shard1" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676" summary="1st MongoDB shard" rlinks="//@resources.0/@links.1">
+  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676" title="shard1" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676" summary="1st MongoDB shard" rlinks="//@resources.0/@links.1 //@resources.1/@links.2">
     <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
     <attributes name="occi.core.id" value="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676"/>
     <attributes name="occi.core.title" value="shard1"/>
@@ -146,6 +179,9 @@
       <attributes name="occi.core.title" value=""/>
       <attributes name="occi.core.source" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13676"/>
       <attributes name="occi.core.target" value="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
+      <parts>
+        <mixin href="http://schemas.modmacao.org/modmacao#//@mixins[term='executiondependency']"/>
+      </parts>
     </links>
   </resources>
   <resources id="urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2592" title="vm1" location="/compute/urn:uuid:330dd44c-5af0-4ec0-a862-173774cd2592" rlinks="//@resources.1/@links.0">
@@ -158,10 +194,6 @@
     <attributes name="occi.compute.hostname" value="host1"/>
     <attributes name="occi.compute.speed" value="1"/>
     <attributes name="occi.compute.memory" value="1"/>
-    <parts>
-      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
-      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
-    </parts>
     <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
       <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
@@ -180,7 +212,7 @@
       </parts>
     </links>
   </resources>
-  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679" title="configserver" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679" rlinks="//@resources.0/@links.4 //@resources.1/@links.1 //@resources.4/@links.1 //@resources.3/@links.1 //@resources.2/@links.1">
+  <resources id="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679" title="configserver" location="/component/urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679" rlinks="//@resources.0/@links.4 //@resources.4/@links.1 //@resources.3/@links.1 //@resources.2/@links.1 //@resources.1/@links.4">
     <kind href="http://schemas.modmacao.org/occi/platform#//@kinds[term='component']"/>
     <attributes name="occi.core.id" value="urn:uuid:b6fc880a-0571-46ba-86db-a206c0d13679"/>
     <attributes name="occi.core.title" value="configserver"/>
@@ -207,10 +239,6 @@
     <attributes name="occi.compute.hostname" value="host2"/>
     <attributes name="occi.compute.speed" value="1"/>
     <attributes name="occi.compute.memory" value="1"/>
-    <parts>
-      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
-      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
-    </parts>
     <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
       <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
@@ -240,10 +268,6 @@
     <attributes name="occi.compute.speed" value="1"/>
     <attributes name="occi.compute.memory" value="1"/>
     <parts>
-      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
-      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
-    </parts>
-    <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
       <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
     </parts>
@@ -272,10 +296,6 @@
     <attributes name="occi.compute.speed" value="1"/>
     <attributes name="occi.compute.memory" value="1"/>
     <parts>
-      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
-      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
-    </parts>
-    <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
       <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
     </parts>
@@ -303,10 +323,6 @@
     <attributes name="occi.compute.hostname" value="host5"/>
     <attributes name="occi.compute.speed" value="1"/>
     <attributes name="occi.compute.memory" value="1"/>
-    <parts>
-      <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='ssh_key']"/>
-      <attributes name="occi.credentials.ssh.publickey" value="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3y+/DnTyhETdDGREFT9PzqA3DWY3h5O5l0cgRu37NiWSyHJUD8RgdRXd/GtJ4iNQqudvvABNYR65304o6ayO9nZKsyL4Q0o789eCiqk6oU/gY7t8LotJYpvk5Hn+bEznaykmZmOJ/56vSigntUKjke0TMCOrnzof765mapePZkT4Vqj1gD6owpLceGd3iLK8kd+iKISyp9Ca4Q1D6hXmLdw0aB4t8eJr+rulPvjU1WoqE/miU76+Qj5/foMNwiEJN2GpNSUdTv9+FBpi4AESGpeOukVlOsZQshmKzeQqUnjb/R8ZSjebZOwmE+KZBHg39iIiqumK4vppYhk5huUeV"/>
-    </parts>
     <parts>
       <mixin href="http://schemas.ogf.org/occi/infrastructure#//@mixins[term='user_data']"/>
       <attributes name="occi.compute.userdata" value="IyEvYmluL2Jhc2gKCnN5c3RlbWN0bCBzdG9wIGFwdC1kYWlseS5zZXJ2aWNlCnN5c3RlbWN0bCBraWxsIC0ta2lsbC13aG89YWxsIGFwdC1kYWlseS5zZXJ2aWNlCgoK"/>
