@@ -25,15 +25,16 @@ ipaddresses:
 mixins:
 [for (part : MixinBase | aResource.parts)]
  - name: [part.mixin.name/]
-   [for (as : AttributeState | part.attributes)]
-   [as.name/]: [as.value/]
-   [/for]
+   attributes:
+      [for (as : AttributeState | part.attributes)]
+      [as.name.replaceAll('\\.', '_')/]: [as.value/]
+      [/for]
 [/for]
 [/if]
 [if (aResource.attributes->size() > 0)]
 attributes:
 [for (as : AttributeState | aResource.attributes)]
-  [as.name/]: [as.value/]
+  [as.name.replaceAll('\\.', '_')/]: [as.value/]
 [/for]
 [/if]
 
@@ -62,9 +63,10 @@ links:
       mixins:
       [for (part : MixinBase | link.target.parts)]
         - name: [part.mixin.name/]
-          [for (as : AttributeState | part.attributes)]
-          [as.name/]: [as.value/]
-          [/for]
+          attributes:
+             [for (as : AttributeState | part.attributes)]
+             [as.name.replaceAll('\\.', '_')/]: [as.value/]
+             [/for]
       [/for]
       [/if]
       [if (link.target.kind.term.toString() = 'component')]
