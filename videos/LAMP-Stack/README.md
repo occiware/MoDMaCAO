@@ -5,4 +5,4 @@ Please note that the provisioning and deployment times are speeded up:
 
 ![Lamp Cluster](LAMP-Stack-Deployment.gif)
 
-A video is also available [here](LAMP-Stack-Deployment.mp4).
+A video is also available [here](https://github.com/occiware/MoDMaCAO/raw/master/videos/LAMP-Stack/LAMP-Stack-Deployment.mp4).
