@@ -71,7 +71,7 @@ public class ComponentImpl extends modmacao.impl.ComponentImpl implements Compon
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MongodbPackage.Literals.COMPONENT;
+		return MongodbPackage.Literals.MONGODBCOMPONENT;
 	}
 
 	/**
@@ -92,7 +92,7 @@ public class ComponentImpl extends modmacao.impl.ComponentImpl implements Compon
 		String oldMongodbReplicationSetName = mongodbReplicationSetName;
 		mongodbReplicationSetName = newMongodbReplicationSetName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MongodbPackage.COMPONENT__MONGODB_REPLICATION_SET_NAME, oldMongodbReplicationSetName, mongodbReplicationSetName));
+			eNotify(new ENotificationImpl(this, Notification.SET, MongodbPackage.REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME, oldMongodbReplicationSetName, mongodbReplicationSetName));
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class ComponentImpl extends modmacao.impl.ComponentImpl implements Compon
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MongodbPackage.COMPONENT__MONGODB_REPLICATION_SET_NAME:
+			case MongodbPackage.REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME:
 				return getMongodbReplicationSetName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -117,7 +117,7 @@ public class ComponentImpl extends modmacao.impl.ComponentImpl implements Compon
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MongodbPackage.COMPONENT__MONGODB_REPLICATION_SET_NAME:
+			case MongodbPackage.REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME:
 				setMongodbReplicationSetName((String)newValue);
 				return;
 		}
@@ -132,7 +132,7 @@ public class ComponentImpl extends modmacao.impl.ComponentImpl implements Compon
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MongodbPackage.COMPONENT__MONGODB_REPLICATION_SET_NAME:
+			case MongodbPackage.REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME:
 				setMongodbReplicationSetName(MONGODB_REPLICATION_SET_NAME_EDEFAULT);
 				return;
 		}
@@ -147,7 +147,7 @@ public class ComponentImpl extends modmacao.impl.ComponentImpl implements Compon
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MongodbPackage.COMPONENT__MONGODB_REPLICATION_SET_NAME:
+			case MongodbPackage.REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME:
 				return MONGODB_REPLICATION_SET_NAME_EDEFAULT == null ? mongodbReplicationSetName != null : !MONGODB_REPLICATION_SET_NAME_EDEFAULT.equals(mongodbReplicationSetName);
 		}
 		return super.eIsSet(featureID);

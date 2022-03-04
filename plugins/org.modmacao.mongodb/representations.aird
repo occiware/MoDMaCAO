@@ -18,14 +18,14 @@
     <semanticResources>platform:/plugin/org.eclipse.cmf.occi.infrastructure/model/Infrastructure.ecore</semanticResources>
     <semanticResources>platform:/resource/org.modmacao.core/model/modmacao.ecore</semanticResources>
     <semanticResources>platform:/resource/org.modmacao.core/model/modmacao.genmodel</semanticResources>
-    <semanticResources>model/mongodb.ecore</semanticResources>
     <semanticResources>platform:/plugin/org.modmacao.core/model/modmacao.ecore</semanticResources>
-    <semanticResources>model/mongodb.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.modmacao.occi.platform/model/platform.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.modmacao.placement/model/placement.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.modmacao.core/model/modmacao.genmodel</semanticResources>
     <semanticResources>platform:/plugin/org.modmacao.occi.platform/model/platform.ecore</semanticResources>
     <semanticResources>platform:/plugin/org.modmacao.placement/model/placement.ecore</semanticResources>
+    <semanticResources>model/mongodb.ecore</semanticResources>
+    <semanticResources>model/mongodb.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_HggXoCRfEei5GZn6_EF4uw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.cmf.occi.core.design/description/OCCIware.odesign#//@ownedViewpoints[name='OCCI%20Extension']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_H4KpsCRfEei5GZn6_EF4uw" name="mongodb" repPath="#_Hp2g4CRfEei5GZn6_EF4uw">

@@ -2,95 +2,39 @@
 This repository contains the prototypical implementation of the Model-Driven Configuration Management
 of Cloud Applications with OCCI (MoDMaCAO) framework and the models for several example use cases.
 
-MoDMaCAO is based on ![OCCI-Studio](https://github.com/occiware/OCCI-Studio).
-
-## The MoDMaCAO Modeling Framework
-The MoDMaCAO modeling framework is
-based on OCCIware and allows cloud architects to: 
+The MoDMaCAO modeling framework is based on [OCCI-Studio](https://github.com/occiware/OCCI-Studio) and allows cloud architects to: 
 1.  design abstract types modeling cloud applications  and  their  components, 
 2.  model  configured instances of cloud applications that use the defined abstract types, and 
 3.  check the validity of instances of cloud applications.
 
-An overview of the MoDMaCAO modeling framework is shown below:
-![MoDMaCAO modeling framework](/doc/modmacao-modeling-framework.jpg "MoDMaCAO modeling framework")
+## Getting Started
+1. Requirements: Java (11.0.13), Ansible
 
-* The Application mixin  type  abstracts  the  notion  of  cloud  application. This  mixin  applies
-to  OCCI  Platform Application resources. A cloud  application  is  composed  of  one  or  more
-cloud application components as enforced by the OneOrMoreComponents constraint. Then, modeling specific cloud applications 
-requires to design new  mixin  types  inheriting  from Application, e.g., Cluster and ClientServer types. These new  types  
-could  define  their  own  attributes  and constraints. For  instance,   a  client-server  ap-
-plication  has  only  one  server  component  (i.e., OnlyOneServer constraint) and some client com-
-ponents (i.e., OneOrMoreClients constraint).
+2. Download the latest release of OCCI-Studio [here](https://github.com/occiware/OCCI-Studio/releases/tag/current).
 
-* The Cluster mixin  type  abstracts  the  notion  of
-clustered cloud application.
+3. After downloading the proper archive according to your OS, unzip and you should find an executable file `OCCI-Studio`.
 
-* The Component mixin  type  abstracts  the  notion of cloud application component.  This mixin applies to OCCI Platform
-Component resources. Each   component   has   an   optional   immutable modmacao.component.version attribute  repre
-senting the version of the component used at runtime,  and  must  be  placed  on  only  one  OCCI
-Compute resource (i.e., OnlyOnePlacementLink constraint).  Then, modeling specific cloud application components requires to 
-define new mixin types  inheriting  from Component, e.g., Client and Server
-types.  These new component types can  define  their  own  attributes  and  constraints.
-For instance,  a server component has a network port  on  which  to  listen  to  client  requests  (i.e., server.port
-immutable  attribute)  and  a  client component  must  be  connected  to  a  server  component (i.e., OneServerDependency constraint).
+	1.  You can start the exectuable by double-clicking it or by running  `./Eclipse` on the command line.
 
-* The Version data type defines the valid string pattern for version values, i.e., <major>.<minor>.
+4. Import the `MoDMaCAO` project from this site.
+	1. File->Import->Git..
+5.  After downloading the project register the Ecore packages and OCCI extensions in the Eclipse environment.
+	1. Select all plugin projects (Ctrl+a).
+	6. Right click and select OCCI-Studio.
+	7. Register all EPackages.
+	8. Repeat for Register all OCCI Extensions.
 
-* The Port data type defines the valid network port values, i.e., range from 0 to 65535.
+Now you can navigate to the `*.example` projects and launch the `MoDMaCAO` modeling tools. 
+We included the prebuilt `MoDMaCAO` configurations such as `Lamp` and `Mongodb` visualized below.
 
-* The Dependency mixin type abstracts the notion of dependency    between    two    cloud
-application    components.         This    mixin    ap-
-plies     to     OCCI     Platform
-ComponentLink
-links.        Both
-SourceMustBeComponent
-and
-TargetMustBeComponent
-constraints    enforce
-that a dependency link connects two
-Component
-instances.  Then, modeling specific dependencies
-requires to define new mixin types inheriting from
-Dependency
-,   e.g.,
-InstallationDependency
-,
-ExecutionDependency
-,     and
-ServerDepen-
-dency
-.      These  new  types  could  define  their
-own  attributes  and  constraints.     For  instance,
-ServerDependency
-defines    two    constraints
-enforcing  the  dependency  source  to  be  a  client
-component  and  the  dependency  target  to  be  a
-server component.
+![MoDMaCAO modeling framework](/doc/modmacao-configuration-framework.png)
 
-* The InstallationDependency
-mixin   type   ab-
-stracts an installation dependency, i.e., the source
-component could be deployed only when the tar-
-get component is already deployed.
-
-* The ExecutionDependency mixin type abstracts
-an  execution  dependency,  i.e.,  the  source  com-
-ponent  could  be  started  only  when  the  target
-component  is  already  started.   For  instance,  the
-ServerDependency type abstracts the execution
-dependency from a client and a server component,
-i.e.,  the  client  component can  not  start  until  the
-server component is started.
-
-## The MoDMaCAO Implementation Framework
-tba
 
 ## Tutorials and Use Cases
-- [Example use cases](doc/usecases/usecasedoc.md)
+- [Custom designs for OCCI applications](doc/designertutorial/overview.md)
 - [Using MoDMaCAO with Ansible](doc/ansibletutorial/overview.md)
 - [Using the OpenStack Connector of MoDMaCAO](doc/openstacktutorial/overview.md)
 
 ## Further Reading
+Under the following links an explanation of the [extended OCCI platform extension](doc/extension) can be found, as well as some [Example use cases](doc/usecases/usecasedoc.md).
 If you are interested in the full story, [read the paper](https://doi.org/10.5220/0006693001000111).
-
-

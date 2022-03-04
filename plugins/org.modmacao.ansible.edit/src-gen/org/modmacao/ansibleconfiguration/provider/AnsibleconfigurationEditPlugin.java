@@ -55,7 +55,6 @@ public final class AnsibleconfigurationEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     InfrastructureEditPlugin.INSTANCE,
-		     ModmacaoEditPlugin.INSTANCE,
 		     OCCIEditPlugin.INSTANCE,
 		   });
 	}

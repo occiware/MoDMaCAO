@@ -23,7 +23,12 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.modmacao.ansibleconfiguration.AnsibleconfigurationPackage;
+import org.modmacao.ansibleconfiguration.Ansibleendpoint;
 
 /**
  * This is the item provider adapter for a {@link org.modmacao.ansibleconfiguration.Ansibleendpoint} object.
@@ -53,8 +58,54 @@ public class AnsibleendpointItemProvider extends MixinBaseItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addAnsibleRemoteuserPropertyDescriptor(object);
+			addAnsiblePrivatekeyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Ansible Remoteuser feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnsibleRemoteuserPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Ansibleendpoint_ansibleRemoteuser_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Ansibleendpoint_ansibleRemoteuser_feature", "_UI_Ansibleendpoint_type"),
+				 AnsibleconfigurationPackage.Literals.ANSIBLEENDPOINT__ANSIBLE_REMOTEUSER,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ansible Privatekey feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAnsiblePrivatekeyPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Ansibleendpoint_ansiblePrivatekey_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Ansibleendpoint_ansiblePrivatekey_feature", "_UI_Ansibleendpoint_type"),
+				 AnsibleconfigurationPackage.Literals.ANSIBLEENDPOINT__ANSIBLE_PRIVATEKEY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -76,7 +127,10 @@ public class AnsibleendpointItemProvider extends MixinBaseItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Ansibleendpoint_type");
+		String label = ((Ansibleendpoint)object).getAnsibleRemoteuser();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Ansibleendpoint_type") :
+			getString("_UI_Ansibleendpoint_type") + " " + label;
 	}
 
 
@@ -90,6 +144,13 @@ public class AnsibleendpointItemProvider extends MixinBaseItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Ansibleendpoint.class)) {
+			case AnsibleconfigurationPackage.ANSIBLEENDPOINT__ANSIBLE_REMOTEUSER:
+			case AnsibleconfigurationPackage.ANSIBLEENDPOINT__ANSIBLE_PRIVATEKEY:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

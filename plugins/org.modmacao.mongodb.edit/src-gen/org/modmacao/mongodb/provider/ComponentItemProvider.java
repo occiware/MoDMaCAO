@@ -75,7 +75,7 @@ public class ComponentItemProvider extends modmacao.provider.ComponentItemProvid
 				 getResourceLocator(),
 				 getString("_UI_Component_mongodbReplicationSetName_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Component_mongodbReplicationSetName_feature", "_UI_Component_type"),
-				 MongodbPackage.Literals.COMPONENT__MONGODB_REPLICATION_SET_NAME,
+				 MongodbPackage.Literals.REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME,
 				 true,
 				 false,
 				 false,
@@ -122,7 +122,7 @@ public class ComponentItemProvider extends modmacao.provider.ComponentItemProvid
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Component.class)) {
-			case MongodbPackage.COMPONENT__MONGODB_REPLICATION_SET_NAME:
+			case MongodbPackage.REPLICABLEMONGODBCOMPONENT__MONGODB_REPLICATION_SET_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

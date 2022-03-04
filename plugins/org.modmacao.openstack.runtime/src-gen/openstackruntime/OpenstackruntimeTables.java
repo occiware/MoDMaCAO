@@ -234,12 +234,12 @@ public class OpenstackruntimeTables
 			Operations.init();
 		}
 
-		public static final /*@NonNull*/ ExecutorProperty _Flavor__openstackRuntimeId = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.FLAVOR__OPENSTACK_RUNTIME_ID, Types._Flavor, 0);
+		//public static final /*@NonNull*/ ExecutorProperty _Flavor__openstackRuntimeId = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.FLAVOR__OPENSTACK_RUNTIME_ID, Types._Flavor, 0);
 
 		public static final /*@NonNull*/ ExecutorProperty _Floatingip__openstackFloatingipAddress = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.FLOATINGIP__OPENSTACK_FLOATINGIP_ADDRESS, Types._Floatingip, 0);
 		public static final /*@NonNull*/ ExecutorProperty _Floatingip__openstackFloatingipPool = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.FLOATINGIP__OPENSTACK_FLOATINGIP_POOL, Types._Floatingip, 1);
 
-		public static final /*@NonNull*/ ExecutorProperty _Image__openstackRuntimeId = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.IMAGE__OPENSTACK_RUNTIME_ID, Types._Image, 0);
+		//public static final /*@NonNull*/ ExecutorProperty _Image__openstackRuntimeId = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.IMAGE__OPENSTACK_RUNTIME_ID, Types._Image, 0);
 
 		public static final /*@NonNull*/ ExecutorProperty _Runtimeid__openstackRuntimeId = new EcoreExecutorProperty(OpenstackruntimePackage.Literals.RUNTIMEID__OPENSTACK_RUNTIME_ID, Types._Runtimeid, 0);
 		static {
@@ -489,7 +489,7 @@ public class OpenstackruntimeTables
 		}
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Flavor = {
-			OpenstackruntimeTables.Properties._Flavor__openstackRuntimeId
+			//OpenstackruntimeTables.Properties._Flavor__openstackRuntimeId
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Floatingip = {
@@ -498,7 +498,7 @@ public class OpenstackruntimeTables
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Image = {
-			OpenstackruntimeTables.Properties._Image__openstackRuntimeId
+			//OpenstackruntimeTables.Properties._Image__openstackRuntimeId
 		};
 
 		private static final /*@NonNull*/ ExecutorProperty /*@NonNull*/ [] _Runtimeid = {

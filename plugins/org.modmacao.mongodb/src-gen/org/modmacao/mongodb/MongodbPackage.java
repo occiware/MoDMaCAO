@@ -558,7 +558,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP_1 = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 0;
+	int CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>One Or More Routers</em>' operation.
@@ -567,7 +567,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP_1 = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 1;
+	int CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>One Or More Shards</em>' operation.
@@ -576,7 +576,7 @@ public interface MongodbPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP_1 = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 2;
+	int CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP = ModmacaoPackage.CLUSTER_OPERATION_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Cluster</em>' class.
@@ -723,7 +723,7 @@ public interface MongodbPackage extends EPackage {
 	 * @see org.modmacao.mongodb.Cluster#OneOrMoreConfigServers(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getCluster__OneOrMoreConfigServers__DiagnosticChain_Map_1();
+	EOperation getCluster__OneOrMoreConfigServers__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.modmacao.mongodb.Cluster#OneOrMoreRouters(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>One Or More Routers</em>}' operation.
@@ -733,7 +733,7 @@ public interface MongodbPackage extends EPackage {
 	 * @see org.modmacao.mongodb.Cluster#OneOrMoreRouters(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getCluster__OneOrMoreRouters__DiagnosticChain_Map_1();
+	EOperation getCluster__OneOrMoreRouters__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for the '{@link org.modmacao.mongodb.Cluster#OneOrMoreShards(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>One Or More Shards</em>}' operation.
@@ -743,7 +743,7 @@ public interface MongodbPackage extends EPackage {
 	 * @see org.modmacao.mongodb.Cluster#OneOrMoreShards(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
 	 * @generated
 	 */
-	EOperation getCluster__OneOrMoreShards__DiagnosticChain_Map_1();
+	EOperation getCluster__OneOrMoreShards__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for class '{@link org.modmacao.mongodb.Configserverdependency <em>Configserverdependency</em>}'.
@@ -871,7 +871,7 @@ public interface MongodbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getCluster__OneOrMoreConfigServers__DiagnosticChain_Map_1();
+		EOperation CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCluster__OneOrMoreConfigServers__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>One Or More Routers</b></em>' operation.
@@ -879,7 +879,7 @@ public interface MongodbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getCluster__OneOrMoreRouters__DiagnosticChain_Map_1();
+		EOperation CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCluster__OneOrMoreRouters__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em><b>One Or More Shards</b></em>' operation.
@@ -887,7 +887,7 @@ public interface MongodbPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP_1 = eINSTANCE.getCluster__OneOrMoreShards__DiagnosticChain_Map_1();
+		EOperation CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP = eINSTANCE.getCluster__OneOrMoreShards__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '{@link org.modmacao.mongodb.impl.ConfigserverdependencyImpl <em>Configserverdependency</em>}' class.

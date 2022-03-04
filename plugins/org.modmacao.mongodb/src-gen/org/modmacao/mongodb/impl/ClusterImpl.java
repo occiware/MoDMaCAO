@@ -413,11 +413,11 @@ public class ClusterImpl extends modmacao.impl.ClusterImpl implements Cluster {
 	@SuppressWarnings("unchecked")
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case MongodbPackage.CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP_1:
+			case MongodbPackage.CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP:
 				return OneOrMoreConfigServers((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case MongodbPackage.CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP_1:
+			case MongodbPackage.CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP:
 				return OneOrMoreRouters((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-			case MongodbPackage.CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP_1:
+			case MongodbPackage.CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP:
 				return OneOrMoreShards((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);

@@ -105,29 +105,6 @@ public class AnsibleconfigurationItemProviderAdapterFactory extends Ansibleconfi
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.modmacao.ansibleconfiguration.Ansibleconfiguration} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AnsibleconfigurationItemProvider ansibleconfigurationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.modmacao.ansibleconfiguration.Ansibleconfiguration}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAnsibleconfigurationAdapter() {
-		if (ansibleconfigurationItemProvider == null) {
-			ansibleconfigurationItemProvider = new AnsibleconfigurationItemProvider(this);
-		}
-
-		return ansibleconfigurationItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -227,7 +204,6 @@ public class AnsibleconfigurationItemProviderAdapterFactory extends Ansibleconfi
 	 */
 	public void dispose() {
 		if (ansibleendpointItemProvider != null) ansibleendpointItemProvider.dispose();
-		if (ansibleconfigurationItemProvider != null) ansibleconfigurationItemProvider.dispose();
 	}
 
 }

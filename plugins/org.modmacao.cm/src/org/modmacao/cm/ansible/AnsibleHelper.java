@@ -191,6 +191,7 @@ public final class AnsibleHelper {
 		process.waitFor();
 				
 		message = buffer.toString();
+		System.out.println(message);
 		
 		return new AnsibleReturnState(process.exitValue(), message);
 	}

@@ -244,7 +244,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCluster__OneOrMoreConfigServers__DiagnosticChain_Map_1() {
+	public EOperation getCluster__OneOrMoreConfigServers__DiagnosticChain_Map() {
 		return clusterEClass.getEOperations().get(0);
 	}
 
@@ -253,7 +253,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCluster__OneOrMoreRouters__DiagnosticChain_Map_1() {
+	public EOperation getCluster__OneOrMoreRouters__DiagnosticChain_Map() {
 		return clusterEClass.getEOperations().get(1);
 	}
 
@@ -262,7 +262,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCluster__OneOrMoreShards__DiagnosticChain_Map_1() {
+	public EOperation getCluster__OneOrMoreShards__DiagnosticChain_Map() {
 		return clusterEClass.getEOperations().get(2);
 	}
 
@@ -332,9 +332,9 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		shardEClass = createEClass(SHARD);
 
 		clusterEClass = createEClass(CLUSTER);
-		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP_1);
-		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP_1);
-		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP_1);
+		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_CONFIG_SERVERS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_ROUTERS__DIAGNOSTICCHAIN_MAP);
+		createEOperation(clusterEClass, CLUSTER___ONE_OR_MORE_SHARDS__DIAGNOSTICCHAIN_MAP);
 
 		configserverdependencyEClass = createEClass(CONFIGSERVERDEPENDENCY);
 
@@ -402,7 +402,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 
 		initEClass(clusterEClass, Cluster.class, "Cluster", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getCluster__OneOrMoreConfigServers__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "OneOrMoreConfigServers", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getCluster__OneOrMoreConfigServers__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "OneOrMoreConfigServers", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -411,7 +411,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getCluster__OneOrMoreRouters__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "OneOrMoreRouters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getCluster__OneOrMoreRouters__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "OneOrMoreRouters", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());
@@ -420,7 +420,7 @@ public class MongodbPackageImpl extends EPackageImpl implements MongodbPackage {
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getCluster__OneOrMoreShards__DiagnosticChain_Map_1(), ecorePackage.getEBoolean(), "OneOrMoreShards", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getCluster__OneOrMoreShards__DiagnosticChain_Map(), ecorePackage.getEBoolean(), "OneOrMoreShards", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDiagnosticChain(), "diagnostics", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType(ecorePackage.getEJavaObject());

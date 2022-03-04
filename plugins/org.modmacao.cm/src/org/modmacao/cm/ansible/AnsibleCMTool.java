@@ -247,6 +247,7 @@ public class AnsibleCMTool implements ConfigurationManagementTool {
 		Path inventory = helper.createInventory(ipaddress, Paths.get(basedir, "inventory"));
 			
 		LOGGER.info("Executing role " + roles + " with task " + task + " on host " + ipaddress + " with user " + user + ".");
+		System.out.println("Executing role " + roles + " with task " + task + " on host " + ipaddress + " with user " + user + ".");
 		
 		AnsibleReturnState state = helper.executePlaybook(playbook, task, inventory, options);	
 		
