@@ -8,30 +8,28 @@ The MoDMaCAO modeling framework is based on [OCCI-Studio](https://github.com/occ
 3.  check the validity of instances of cloud applications.
 
 ## Getting Started
+To get started with MoDMaCAO you can download and setup OCCI-Studio or use our preconfigured virtual machine (vm) image.
+The virtual machine image can be found here, with the password being `modmacao`.
+If the vm image is used you can start with point 4. from the manual setup:
+
 1. Requirements: Java (11.0.13), Ansible
 
 2. Download the latest release of OCCI-Studio [here](https://github.com/occiware/OCCI-Studio/releases/tag/current).
 
-3. After downloading the proper archive according to your OS, unzip and you should find an executable file `OCCI-Studio`.
+3. After downloading the proper archive according to your OS, unzip it
 
-	1.  You can start the exectuable by double-clicking it or by running  `./Eclipse` on the command line.
+4. Navigate to the OCCI-Studio folder and double click on the executable file `OCCI-Studio`.
 
-4. Import the `MoDMaCAO` project from this site.
+5. Import the `MoDMaCAO` project into the workspace:
 	1. File->Import->Git..
-5.  After downloading the project register the Ecore packages and OCCI extensions in the Eclipse environment.
-	1. Select all plugin projects (Ctrl+a).
-	6. Right click and select OCCI-Studio.
-	7. Register all EPackages.
-	8. Repeat for Register all OCCI Extensions.
-
-Now you can navigate to the `*.example` projects and launch the `MoDMaCAO` modeling tools. 
-We included the prebuilt `MoDMaCAO` configurations such as `Lamp` and `Mongodb` visualized below.
+6. Now you can, e.g., navigate to the `*.example` projects and launch the `MoDMaCAO` modeling tools. 
+7. For further scenarios refer to the Tutorials and Use Cases section.
 
 ![MoDMaCAO modeling framework](/doc/modmacao-configuration-framework.png)
 
 
 ## Tutorials and Use Cases
-- [Custom designs for OCCI applications](doc/designertutorial/overview.md)
+- [Custom designers for OCCI applications](doc/designertutorial/overview.md)
 - [Using MoDMaCAO with Ansible](doc/ansibletutorial/overview.md)
 - [Using the OpenStack Connector of MoDMaCAO](doc/openstacktutorial/overview.md)
 
